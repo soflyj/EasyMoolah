@@ -35,14 +35,12 @@ export class Q6Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'I give permission for EasyMoolah to do a credit check.', this.credit_check.valueOf.toString(), this.StartTime.toString(), (new Date).toString()));
-    // Test
-    console.log(this.borrowerService.getBorrowerApplicationLog());
+    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'I give permission for EasyMoolah to do a credit check.', this.credit_check + '', this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q7', { skipLocationChange: true });
   }
 
   Back() {
-    this.router.navigateByUrl('/q5', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq5', { skipLocationChange: true });
   }
 }

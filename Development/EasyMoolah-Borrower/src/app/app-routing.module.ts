@@ -45,6 +45,7 @@ const appRoutes: Routes = [
   { path: 'q13', component: Q13Component, data: {state: 'q13'}},
   { path: 'q14', component: Q14Component, data: {state: 'q14'}},
   { path: 'q15', component: Q15Component, data: {state: 'q15'}},
+  { path: 'q16', component: Q16Component, data: {state: 'q16'}},
   // Back
   { path: 'bq1', component: Q1Component, data: {state: 'bq1'}},
   { path: 'bq2', component: Q2Component, data: {state: 'bq2'}},

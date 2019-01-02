@@ -1,23 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { BorrowerService } from 'src/app/service/borrower.service';
+import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+
 @Component({
-selector: 'app-q13',
-templateUrl: './q13.component.html',
-styleUrls: ['./q13.component.css'],
-animations: [ routerTransition ]
+    selector: 'app-q13',
+    templateUrl: './q13.component.html',
+    styleUrls: ['./q13.component.css'],
+    animations: [routerTransition]
 })
 export class Q13Component implements OnInit {
 
-constructor(private router: Router) { }
+    Q13: FormGroup;
+    URL = false;
+    StartTime: Date;
+    temp: BorrowerApplicationLog[];
 
-ngOnInit() {
+    constructor(private router: Router,
+        private route: ActivatedRoute,
+        private borrowerService: BorrowerService) { }
+
+    ngOnInit() {
+        this.StartTime = new Date();
+
+        // Not allowed to navigate directly to component
+        this.URL = (window.location.href).includes('/application');
+        if (!this.URL) {
+            this.router.navigate(['notfound'], { relativeTo: this.route });
+        }
+
+        this.Q13 = new FormGroup({
+            'homeowner': new FormControl(
+                '',
+                [Validators.required]
+            ),
+        });
+    }
+
+    Next() {
+        // tslint:disable-next-line:max-line-length
+        this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));
+
+        this.router.navigateByUrl('/q14', { skipLocationChange: true });
+    }
+
+    Back() {
+        this.router.navigateByUrl('/bq12', { skipLocationChange: true });
+    }
 }
-
-next() {
-this.router.navigateByUrl('/q14', { skipLocationChange: true });
-}
-
-back() {
-this.router.navigateByUrl('/q12', { skipLocationChange: true });
-}}

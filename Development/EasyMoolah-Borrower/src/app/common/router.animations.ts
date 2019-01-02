@@ -1,25 +1,25 @@
-import {trigger, animate, style, group, query, transition} from '@angular/animations';
+import { trigger, animate, style, group, query, transition } from '@angular/animations';
 
 export const routerTransition = trigger('routerTransition', [
-// Next
-//   transition('* => q1', [
-//     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-//       , { optional: true }),
-//     group([
-//       query(':enter', [
-//         style({ transform: 'translateX(-100%)' }),
-//         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-//       ], { optional: true }),
-//       query(':leave', [
-//         style({ transform: 'translateX(0%)' }),
-//         animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-//       ], { optional: true }),
-//     ])
-//   ]),
+  // Next
+  //   transition('* => q1', [
+  //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
+  //       , { optional: true }),
+  //     group([
+  //       query(':enter', [
+  //         style({ transform: 'translateX(-100%)' }),
+  //         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+  //       ], { optional: true }),
+  //       query(':leave', [
+  //         style({ transform: 'translateX(0%)' }),
+  //         animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
+  //       ], { optional: true }),
+  //     ])
+  //   ]),
   transition('* => q2', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -30,10 +30,10 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-   transition('* => q3', [
+  transition('* => q3', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -47,7 +47,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q4', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -61,7 +61,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q5', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -75,7 +75,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q6', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -89,7 +89,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q7', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -103,7 +103,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q8', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -117,7 +117,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q9', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -131,7 +131,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q10', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -145,7 +145,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q11', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -159,7 +159,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q12', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -173,7 +173,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q13', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -187,7 +187,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q14', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -201,7 +201,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q15', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -215,7 +215,7 @@ export const routerTransition = trigger('routerTransition', [
   transition('* => q16', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -226,11 +226,11 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-//   Back
-transition('* => q1', [
+  //   Back
+  transition('* => bq1', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -241,10 +241,10 @@ transition('* => q1', [
       ], { optional: true }),
     ])
   ]),
-transition('* => bq2', [
+  transition('* => bq2', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -255,10 +255,10 @@ transition('* => bq2', [
       ], { optional: true }),
     ])
   ]),
-   transition('* => bq3', [
+  transition('* => bq3', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -272,7 +272,7 @@ transition('* => bq2', [
   transition('* => bq4', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -286,7 +286,7 @@ transition('* => bq2', [
   transition('* => bq5', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -300,7 +300,7 @@ transition('* => bq2', [
   transition('* => bq6', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -314,7 +314,7 @@ transition('* => bq2', [
   transition('* => bq7', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -328,7 +328,7 @@ transition('* => bq2', [
   transition('* => bq8', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -342,7 +342,7 @@ transition('* => bq2', [
   transition('* => bq9', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -356,7 +356,7 @@ transition('* => bq2', [
   transition('* => bq10', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -370,7 +370,7 @@ transition('* => bq2', [
   transition('* => bq11', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -384,7 +384,7 @@ transition('* => bq2', [
   transition('* => bq12', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -398,7 +398,7 @@ transition('* => bq2', [
   transition('* => bq13', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -412,7 +412,7 @@ transition('* => bq2', [
   transition('* => bq14', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -426,7 +426,7 @@ transition('* => bq2', [
   transition('* => bq15', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -440,7 +440,7 @@ transition('* => bq2', [
   transition('* => bq16', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
+        , { optional: true }),
       query(':enter', [
         style({ transform: 'translateX(-100%)' }),
         animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
@@ -450,47 +450,5 @@ transition('* => bq2', [
         animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
       ], { optional: true }),
     ])
-  ]),
-  transition('* => bq4', [
-    group([
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
-      query(':enter', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-      ], { optional: true }),
-      query(':leave', [
-        style({ transform: 'translateX(0%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-      ], { optional: true }),
-    ])
-  ]),
-  transition('* => bq4', [
-    group([
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
-      query(':enter', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-      ], { optional: true }),
-      query(':leave', [
-        style({ transform: 'translateX(0%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-      ], { optional: true }),
-    ])
-  ]),
-  transition('* => bq4', [
-    group([
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-      , { optional: true }),
-      query(':enter', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-      ], { optional: true }),
-      query(':leave', [
-        style({ transform: 'translateX(0%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-      ], { optional: true }),
-    ])
-  ]),
+  ])
 ]);

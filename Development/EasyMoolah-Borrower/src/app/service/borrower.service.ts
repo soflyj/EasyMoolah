@@ -8,6 +8,8 @@ export class BorrowerService {
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
 
         this.borrowerapplicationlog.push(borrowerapplicationlog);
+        // Test
+        console.log(this.getBorrowerApplicationLog());
     }
 
     getBorrowerApplicationLog() {

@@ -55,7 +55,7 @@ import { ErrorComponent } from './error/error.component';
     Q13Component,
     Q14Component,
     Q15Component,
-    // Q16Component,
+    Q16Component,
     FinancialresultComponent,
     NotFoundComponent,
     ErrorComponent,

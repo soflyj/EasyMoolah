@@ -13,7 +13,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 })
 export class Q3Component implements OnInit {
 
-  borrow_slider: string;
+  borrowamount_slider: string;
   URL = false;
   StartTime: Date;
 
@@ -23,7 +23,7 @@ export class Q3Component implements OnInit {
 
   ngOnInit() {
     this.StartTime = new Date();
-    this.borrow_slider = '50000'; // Default range
+    this.borrowamount_slider = '50000'; // Default range
 
     // Not allowed to navigate directly to component
     this.URL = (window.location.href).includes('/application');
@@ -34,14 +34,12 @@ export class Q3Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'What type of automobile repair?', this.borrow_slider, this.StartTime.toString(), (new Date).toString()));
-    // Test
-    console.log(this.borrowerService.getBorrowerApplicationLog());
+    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'How much do you want to borrow?', this.borrowamount_slider, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q4', { skipLocationChange: true });
   }
 
   Back() {
-    this.router.navigateByUrl('/q2', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq2', { skipLocationChange: true });
   }
 }

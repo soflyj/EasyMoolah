@@ -41,9 +41,7 @@ export class Q1Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.borrowerapplicationlog = [new BorrowerApplicationLog('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
-    // Test
-    console.log(this.borrowerService.getBorrowerApplicationLog());
+    this.borrowerService.borrowerapplicationlog = [new BorrowerApplicationLog('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];    
 
     this.router.navigateByUrl('/q2', { skipLocationChange: true });
   }

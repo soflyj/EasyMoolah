@@ -1,62 +1,64 @@
-12<div class="divider"></div>
-<div class="container">
-  <div class="row">
-    <div class="col m6 offset-m3">
-      <div class="progress page-progress">
-        <div class="determinate" style="width: 75%"></div>
-      </div>
-      <div class="input-field">
-        <p>How many dependants do you have?</p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>0</span> </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>1</span> </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>2</span> </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>3</span> </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>4</span> </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" type="radio" class="with-gap" />
-            <span>4+</span> </label>
-        </p>
+<form [formGroup]="Q12" (ngSubmit)="Next()">
+  <div class="divider"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col m6 offset-m3">
+        <div class="progress page-progress">
+          <div class="determinate" style="width: 75%"></div>
+        </div>
+        <div class="input-field">
+          <p>How many dependants do you have?</p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="0" />
+              <span>0</span> </label>
+          </p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="1" />
+              <span>1</span> </label>
+          </p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="2" />
+              <span>2</span> </label>
+          </p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="3" />
+              <span>3</span> </label>
+          </p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="4" />
+              <span>4</span> </label>
+          </p>
+          <p>
+            <label>
+              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="4+" />
+              <span>4+</span> </label>
+          </p>
+        </div>
       </div>
     </div>
+    <!--row-->
   </div>
-  <!--row-->
-</div>
-<footer class="container">
-    <div class="row pagination-btns">
-      <div class="col m6 offset-m3">
-        <div class="col m4">
-          <a class="waves-effect waves-light btn-small" (click)="back()"><i class="material-icons left">chevron_left</i>Prev</a>
-        </div>
-        <div class="col m4">
-        </div>
-        <div class="col m4">
-          <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a>
-        </div>
-      </div>
-    </div>
+  <footer class="container">
+      <div class="row pagination-btns">
+          <div class="col m6 offset-m3">
+              <div class="col m4">
+          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Back</button>
+                </div>
+              <div class="col m4">
+                </div>
+              <div class="col m4">
+          <button type="submit" class="waves-effect waves-light btn-small" [disabled]="!Q2.valid"><i class="material-icons right">chevron_right</i>Next</button>
+                </div>
+            </div>
+        </div>
   </footer>
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>

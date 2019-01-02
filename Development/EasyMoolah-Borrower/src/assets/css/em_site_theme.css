@@ -60,7 +60,7 @@ input[type=range]+.thumb {display:none}
 .service-options input[type="radio"]:checked + label > svg path {fill:#2a2e76}
 .service-options input[type="radio"]:checked + label {font-size:1.1em; color:#2a2e76; line-height: 1em}
 .service-options input[type="radio"]:checked + label strong {margin-top: 20px; display: inline-block}
-.bank-options input[type="radio"] + label > span {width: 110px; height:110px; display:block; background-image: url('../images/bank-logos-sprite-sheet.jpg'); opacity: 0.5;}
+.bank-options input[type="radio"] + label > span {width: 110px; height:110px; display:block; background-image: url('../images/bank-logos-sprite-sheet.png'); opacity: 0.5;}
 .bank-options input[type="radio"] + label:hover > span, .bank-options input[type="radio"]:checked + label > span {opacity:1}
 .absa-logo {background-position:-140px -10px}
 .bank-options input[type="radio"] + label:hover .absa-logo, .bank-options input[type="radio"]:checked + label .absa-logo {background-position:-10px -10px}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, Validators  } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
 
@@ -9,7 +9,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
   selector: 'app-q5',
   templateUrl: './q5.component.html',
   styleUrls: ['./q5.component.css'],
-  animations: [ routerTransition ]
+  animations: [routerTransition]
 })
 export class Q5Component implements OnInit {
 
@@ -22,31 +22,29 @@ export class Q5Component implements OnInit {
     private route: ActivatedRoute,
     private borrowerService: BorrowerService) { }
 
-    ngOnInit() {
-      this.StartTime = new Date();
+  ngOnInit() {
+    this.StartTime = new Date();
 
-      // Not allowed to navigate directly to component
-      this.URL = (window.location.href).includes('/application');
-      if (!this.URL) {
-        this.router.navigate(['notfound'], { relativeTo: this.route });
-      }
-
-      this.Q5 = new FormGroup({
-        'insolvent': new FormControl(
-          '',
-          [Validators.required]
-        ),
-      });
+    // Not allowed to navigate directly to component
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
-    Next() {
-      // tslint:disable-next-line:max-line-length
-       this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));
-       // Test
-       console.log(this.borrowerService.getBorrowerApplicationLog());
+    this.Q5 = new FormGroup({
+      'insolvent': new FormControl(
+        '',
+        [Validators.required]
+      ),
+    });
+  }
 
-      this.router.navigateByUrl('/q6', { skipLocationChange: true });
-    }
+  Next() {
+    // tslint:disable-next-line:max-line-length
+    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));
+
+    this.router.navigateByUrl('/q6', { skipLocationChange: true });
+  }
 
   Back() {
     this.router.navigateByUrl('/q4', { skipLocationChange: true });

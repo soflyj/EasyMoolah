@@ -42,13 +42,11 @@ export class Q4Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'Have you applied for or are you under formal debt review?', this.Q4.get('formal-debt-review').value, this.StartTime.toString(), (new Date).toString()));
-    // Test
-    console.log(this.borrowerService.getBorrowerApplicationLog());
 
     this.router.navigateByUrl('/q5', { skipLocationChange: true });
   }
 
   Back() {
-    this.router.navigateByUrl('/q3', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq3', { skipLocationChange: true });
   }
 }

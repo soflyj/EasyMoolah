@@ -41,14 +41,12 @@ export class Q2Component implements OnInit {
 
     Next() {
       // tslint:disable-next-line:max-line-length
-       this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'What type of automobile repair?', this.Q2.get('sub-service').value, this.StartTime.toString(), (new Date).toString()));
-       // Test
-       console.log(this.borrowerService.getBorrowerApplicationLog());
+       this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'What type of automobile repair?', this.Q2.get('sub-service').value, this.StartTime.toString(), (new Date).toString()));
 
       this.router.navigateByUrl('/q3', { skipLocationChange: true });
     }
 
   Back() {
-    this.router.navigateByUrl('/q1', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq1', { skipLocationChange: true });
   }
 }

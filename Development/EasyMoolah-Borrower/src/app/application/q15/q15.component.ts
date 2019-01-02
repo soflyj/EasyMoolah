@@ -19,5 +19,5 @@ this.router.navigateByUrl('/q16', { skipLocationChange: true });
 }
 
 back() {
-this.router.navigateByUrl('/q14', { skipLocationChange: true });
+this.router.navigateByUrl('/bq14', { skipLocationChange: true });
 }}
