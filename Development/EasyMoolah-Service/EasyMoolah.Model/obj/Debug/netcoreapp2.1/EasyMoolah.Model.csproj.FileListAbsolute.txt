@@ -1,0 +1,8 @@
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\netcoreapp2.1\EasyMoolah.Model.deps.json
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.csproj.CoreCompileInputs.cache
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.AssemblyInfoInputs.cache
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.AssemblyInfo.cs
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.pdb

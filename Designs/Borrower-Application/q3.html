@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/em_site_theme.css" type="text/css">
+<title>q3</title>
+</head>
+<body>
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col m6 offset-m3">
+				<a href="index.html"><img class="responsive-img logo" src="https://res.cloudinary.com/kemoso/image/upload/v1541622491/EasyMoolah/em_logo_final.svg" alt="EasyMoolah" width="340" /></a>
+			</div>
+			<div class="col m6 offset-m3">
+				<h5 class="center-align">Borrower Application</h5>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="divider"></div>
+<div class="container">
+	<div class="row">
+		<div class="col m6 offset-m3">
+		  <div class="progress page-progress">
+			  <div class="determinate" style="width: 18.75%"></div>
+		  </div>
+			<div class="input-field">
+				<p>How much do you want to borrow?</p>
+				<p class="range-field">
+					<form oninput="result.value=parseInt(borrow_slider.value)">
+						<input type="range" id="borrow_slider" min="5000" max="100000" step="100" />
+						<span class="amount_output">R <output name="result">5000</output></span>
+					</form>
+				</p>
+			</div>
+		</div>
+	</div><!--row-->
+</div>
+<footer class="container">
+	<div class="row pagination-btns">
+		<div class="col m6 offset-m3">
+			<div class="col m4">
+				<a class="waves-effect waves-light btn-small" href="q2.html"><i class="material-icons left">chevron_left</i>Prev</a>
+			</div>
+			<div class="col m4">
+			</div>
+			<div class="col m4">
+				<a class="waves-effect waves-light btn-small" href="q4.html"><i class="material-icons right">chevron_right</i>Next</a>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

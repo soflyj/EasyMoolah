@@ -1,0 +1,9 @@
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\bin\Debug\EasyMoolah.DataBase.dacpac
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\bin\Debug\EasyMoolah.DataBase.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\bin\Debug\EasyMoolah.DataBase.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\Model.xml
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\refactor.xml
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\postdeploy.sql
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\predeploy.sql
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.pdb

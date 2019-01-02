@@ -1,0 +1,41 @@
+<div class="col-xs-12">
+        <form [formGroup]="Contactform" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group col-md-5">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" formControlName="fullname" class="form-control">
+                <span style="color: red" class="help-block" *ngIf="!Contactform.get('fullname').valid && Contactform.get('fullname').touched">Please enter a Full Name!</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group col-md-5">
+                <label for="email">Email</label>
+                <input type="text" id="email" formControlName="email" class="form-control">
+                <span style="color: red" class="help-block" *ngIf="!Contactform.get('email').valid && Contactform.get('email').touched">Please enter a valid Email!</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group col-md-5">
+                <label for="contactnumber">Contact Number</label>
+                <input type="text" id="contactnumber" formControlName="contactnumber" class="form-control">
+                <span style="color: red" class="help-block" *ngIf="!Contactform.get('contactnumber').valid && Contactform.get('contactnumber').touched">Please enter a valid Contact Number!</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group col-md-5">
+                <label for="message">Message</label>
+                <textarea type="text" id="message" formControlName="message" class="form-control"></textarea>
+                <span style="color: red" class="help-block" *ngIf="!Contactform.get('message').valid && Contactform.get('message').touched">Please enter a message!</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!Contactform.valid">Send Message</button>
+        </form>
+      </div>

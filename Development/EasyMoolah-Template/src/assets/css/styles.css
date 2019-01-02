@@ -1,0 +1,321 @@
+html body {font-family: 'Lato', sans-serif;}
+.login-alt {background: url(../img/savings-finances-economy-and-home-budget-blue.jpg) no-repeat; background-repeat: no-repeat; background-size:cover}
+.login-alt .logo-img {margin: 0 0 35px; display:block; padding:10px 0 0 50px}
+.page_login .title {font-size:24px}
+.btn, .btn-large {background-color:#9caed7}
+.prev.btn {background-color:transparent; border: solid 1px  #6582c1; color: #6582c1; margin-right: 5px }
+.btn:hover, .btn-large:hover {background-color: #6582c1; color:#fff}
+.transparent-header .menuzord .menuzord-menu>li.active>a {color:#99c2df!important}
+.section-padding {padding:30px 0}
+.copy-text {font-size:10px}
+.newsletter_bg {background-color: #e3e8f4}
+.light-blue-bg {background-color:#e3e8f4}
+.blue_bg {background-color:#6582C2}
+
+  /* label color */
+   .input-field label {
+     color: #777;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label, input-field input[type=date]:focus + label, input-field textarea:focus + label {
+     color:  #6582c1;
+   }
+   /* label underline focus color */
+   .registration_page .input-field input[type=text]:focus, .input-field input[type=date]:focus, .input-field textarea:focus, .input-field input[type=text]:focus {
+     border-bottom: 1px solid  #6582c1;
+     box-shadow: 0 1px 0 0  #6582c1;
+   }
+   /* valid color */
+   .input-field input[type=text].valid, .input-field input[type=date].valid, .input-field textarea.valid .input[type=date]:not(.browser-default):focus:not([readonly]) {
+     border-bottom: 1px solid  #6582c1;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid, .input-field input[type=date].invalid, .input-field textarea.invalid {
+     border-bottom: 1px solid  #6582c1;
+     box-shadow: 0 1px 0 0  #6582c1;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color:  #6582c1;
+   }
+
+  input[type=range]::-webkit-slider-thumb {
+    background-color:#a0c1dc;
+  }
+  input[type=range]::-moz-range-thumb {
+    background-color: #a0c1dc;
+  }
+  input[type=range]::-ms-thumb {
+    background-color: #a0c1dc;
+  }
+.datepicker-day-button:focus {background-color:  #6582c1;}
+.datepicker-table td.is-today {color: #6582c1;}
+.datepicker-table td.is-selected {background-color:  #6582c1;}
+.datepicker-table td.is-selected.is-selected {color:#fff}
+#industries .brand-icon {
+	font-size: 60px;
+    color: #e3e8f4!important;
+    padding: 20px;
+    background-color:  #6582c1;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;	
+}
+#industries p {color:#3e5c9b}
+#industries ul li {margin-bottom: 40px}
+.progress {background-color:#c0cce6}
+.progress .determinate {background-color: #6582c1;}
+.datepicker-date-display {background-color: #6582c1;}
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {color:  #6582c1;}
+.tabs .tab a:hover, .tabs .tab a.active {color:  #6582c1;}
+.tabs .tab a {color:rgba(101,130,193, 0.7)}
+.tabs .tab a:focus, .tabs .tab a:focus.active {color:rgba(101,130,193, 0.2)}
+.tabs .tab a:focus, .tabs .tab a:focus.active {background-color:rgba(101,130,193, 0.2)}
+.tabs .indicator {background-color:#99c2df}
+input[type=range]+.thumb .value, .dropdown-content li>a, .dropdown-content li>span {color:  #6582c1;}
+input[type=range]+.thumb {background-color: #6582c1;}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {border: 2px solid #99c2df;}
+.form-field {margin-bottom: 20px; display:block}
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid  #6582c1;
+    border-bottom: 2px solid  #6582c1;	
+}
+
+.form_section {display:none}
+#section01 {display:block}
+.registration-wrapper .card-wrapper {padding: 30px 30px 40px; max-width: 70%; margin: auto;}
+.registration-wrapper .card-wrapper:first-child {width:68%; padding:10px 10px 20px}
+.registration_page .login-alt {background-attachment: fixed}
+.app_page .page-title {min-height: 100px}
+.app_page h1 {font-size:28px; font-weight: 700}
+.app_page h2 {font-size:24px; font-weight: 700}
+.app_page h3 {font-size:20px; font-weight: 700}
+.app_page h4 {font-size:18px; font-weight: 700}
+.app_page .logo-brand {margin: 3% auto}
+.app_page .tt-nav .logo-brand img {height:30px!important}
+.app_page .column {float:left}
+.alert {padding: 20px; background-color:#fff9c4; overflow: auto}
+.merchant-contact-information i {vertical-align: top}
+.merchant-contact-information span {display: inline-block}
+.merchant-contact-item {display: block; margin-bottom: 20px}
+.no-margin {
+    margin: 0 !important;
+}
+ 
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.app_page .container {
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;	
+}
+@media screen and (min-width: 992px) {
+    /*padding left*/
+    .pl-100 {
+        padding-left: 100px;
+    }
+	.page .page-title {padding: 200px 0 120px}
+	/*margin top*/
+	.mt-15 {
+		margin-top: 15px;
+	}
+	.mt-20 {
+		margin-top: 20px;
+	}
+	.mt-30 {
+		margin-top: 30px;
+	}
+	.mt-40 {
+		margin-top: 40px;
+	}
+	.mt-50 {
+		margin-top: 50px;
+	}
+	.mt-80 {
+		margin-top: 80px;
+	}
+	.mt-100 {
+		margin-top: 100px;
+	}
+	/*margin bottom*/
+	.mb-0 {
+		margin-bottom: 0 !important;
+	}
+	.mb-15 {
+		margin-bottom: 15px !important;
+	}
+	.mb-20 {
+		margin-bottom: 20px !important;
+	}
+	.mb-30 {
+		margin-bottom: 30px !important;
+	}
+	.mb-40 {
+		margin-bottom: 40px !important;
+	}
+
+	.mb-50 {
+		margin-bottom: 50px !important;
+	}
+	.mb-80 {
+		margin-bottom: 80px !important;
+	}
+	.mb-100 {
+		margin-bottom: 100px !important;
+	}
+	.mtb-50 {
+		margin: 50px 0 !important;
+	}
+	/*margin right*/
+	.mr-10 {
+		margin-right: 10px;
+	}
+	.mr-20 {
+		margin-right: 20px;
+	}
+
+	/*padding-top*/
+	.padding-top-50 {
+		padding-top: 50px;
+	}
+	.padding-top-70 {
+		padding-top: 70px;
+	}
+	.padding-top-90 {
+		padding-top: 90px;
+	}
+	.padding-top-100 {
+		padding-top: 100px;
+	}
+	.padding-top-110 {
+		padding-top: 110px;
+	}
+	.padding-top-120 {
+		padding-top: 120px;
+	}
+	.padding-top-160 {
+		padding-top: 160px;
+	}
+	.padding-top-200 {
+		padding-top: 200px;
+	}
+	/*padding-bottom*/
+	.padding-bottom-20 {
+		padding-bottom: 20px;
+	}
+	.padding-bottom-30 {
+		padding-bottom: 30px;
+	}
+	.padding-bottom-50 {
+		padding-bottom: 50px;
+	}
+	.padding-bottom-70 {
+		padding-bottom: 70px;
+	}
+	.padding-bottom-80 {
+		padding-bottom: 80px;
+	}
+	.padding-bottom-90 {
+		padding-bottom: 90px;
+	}
+	.padding-bottom-100 {
+		padding-bottom: 100px;
+	}
+
+	.padding-bottom-110 {
+		padding-bottom: 110px;
+	}
+	.padding-bottom-120 {
+		padding-bottom: 120px;
+	}
+	/*padding top bottom*/
+	.ptb-30 {
+		padding: 30px 0;
+	}
+	.ptb-50 {
+		padding: 50px 0;
+	}
+	.ptb-70 {
+		padding: 70px 0;
+	}
+	.ptb-90 {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+	.ptb-110 {
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+
+	.ptb-120 {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	.ptb-150 {
+		padding: 150px 0;
+	}
+	.ptb-190 {
+		padding: 190px 0;
+	}
+} 
+/*Margin for small devices*/
+@media only screen and (min-width:992px) {
+	#materialize-menu {vertical-align: middle; display: flex}
+	.page-title span {display: none}
+}
+@media (max-width: 991px) {
+    .mb-sm-30 {
+        margin-bottom: 30px;
+    }
+    .mb-sm-50 {
+        margin-bottom: 50px;
+    }
+    .mt-sm-50 {
+        margin-top: 50px;
+    }
+	.page-title span {
+		margin-top: 10%;
+		font-size: 24px;
+		display: block;		
+	}
+}
+@media only screen and (min-width:481px) {
+	.registration_page .logo-img {width: 300px}
+	.lender-img-grid .col:nth-child(4n) {clear: left}
+}
+@media only screen and (max-width:480px) {
+	.tt-nav .logo-brand img {max-width: 300px; height:auto}
+	.featured-box {min-height: 150px}
+	.featured-wrapper .intro-header i {margin-bottom: 0}
+	.promo-box {padding: 20px}
+	.footer-one .primary-footer {padding-top: 20px; padding-bottom: 15px}
+	.footer .widget:last-child {margin-bottom: 0}
+	.section-padding {padding:10px 0}
+	#industries ul li {display:block}
+	.container {width:100%}
+	.section-title {margin-top: 0}
+	.featured-item.border-box {padding: 25px 10px}
+	.featured-item.flat-border-box .icon {margin-bottom: 0}
+	.featured-item.flat-border-box {padding:20px 15px}
+	.registration-wrapper .card-wrapper {max-width: 90%}
+	.login-alt .logo-img {padding: 0; margin-bottom: 15px}
+	.page_login .card-wrapper .title {margin-bottom: 10px}
+	.registration-wrapper .card-wrapper {padding: 15px 15px 20px}
+	html, body, .registration_page .login-alt {min-height: 100vh}
+	#header.transparent-header .light-header, #header.transparent-header {padding: 0 10px}
+}
+@media only screen and (max-width:414px) {
+	.tt-nav .logo-brand img {max-width: 250px; margin-top: 3px}
+	.registration-wrapper .card-wrapper:first-child {display: none}
+}
+@media only screen and (max-width:375px) {
+	.tt-nav .logo-brand img {max-width: 200px; margin-top: 5px}
+}

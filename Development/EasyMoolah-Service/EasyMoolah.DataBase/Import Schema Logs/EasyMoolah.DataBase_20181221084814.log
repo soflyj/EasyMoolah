@@ -1,0 +1,7 @@
+12/21/2018 10:48:14 AM	This log contains information about the import schema operation into project 'EasyMoolah.DataBase' on computer 'HONB00549' by user 'JRamsaroop'.
+12/21/2018 10:48:14 AM	Import of database schema has started.
+12/21/2018 10:48:34 AM	An exception was generated.
+The reverse engineering operation cannot continue because you do not have View Definition permission on the 'EM-live' database.
+12/21/2018 10:48:34 AM	Finished importing database.
+12/21/2018 10:48:34 AM	A summary of the import was saved to the following location: C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\Import Schema Logs\EasyMoolah.DataBase_20181221084814.log
+12/21/2018 10:48:34 AM	Click Finish to continue...

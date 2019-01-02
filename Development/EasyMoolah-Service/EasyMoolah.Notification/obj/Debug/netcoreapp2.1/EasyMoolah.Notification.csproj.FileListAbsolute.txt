@@ -1,0 +1,8 @@
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.deps.json
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.csproj.CoreCompileInputs.cache
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.AssemblyInfoInputs.cache
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.AssemblyInfo.cs
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
