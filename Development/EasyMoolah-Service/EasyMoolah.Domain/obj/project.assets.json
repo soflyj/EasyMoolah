@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
+      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
       "projectName": "EasyMoolah.Domain",
-      "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
+      "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
       "packagesPath": "C:\\Users\\jramsaroop\\.nuget\\packages\\",
-      "outputPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\obj\\",
+      "outputPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

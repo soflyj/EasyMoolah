@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj",
+      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj",
       "projectName": "EasyMoolah.Integration.API",
-      "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj",
+      "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj",
       "packagesPath": "C:\\Users\\jramsaroop\\.nuget\\packages\\",
-      "outputPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\obj\\",
+      "outputPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
