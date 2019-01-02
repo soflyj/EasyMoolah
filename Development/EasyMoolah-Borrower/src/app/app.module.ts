@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng5SliderModule } from 'ng5-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutocompleteComponent } from './google-places.component';
 
 // Services
 import { BorrowerService } from './service/borrower.service';
@@ -33,6 +34,7 @@ import { Q15Component } from './application/q15/q15.component';
 import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { ErrorComponent } from './error/error.component';
     FinancialresultComponent,
     NotFoundComponent,
     ErrorComponent,
+    AddressComponent,
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,

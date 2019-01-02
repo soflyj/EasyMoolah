@@ -25,6 +25,7 @@ import { Q14Component } from './application/q14/q14.component';
 import { Q15Component } from './application/q15/q15.component';
 import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddressComponent } from './address/address.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
   { path: 'bq13', component: Q13Component, data: {state: 'bq13'}},
   { path: 'bq14', component: Q14Component, data: {state: 'bq14'}},
   { path: 'bq15', component: Q15Component, data: {state: 'bq15'}},
+  { path: 'address', component: AddressComponent},
 
   { path: '**', component: NotFoundComponent },
   { path: 'notfound', component: NotFoundComponent }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
 import { Router } from '@angular/router';
 @Component({
