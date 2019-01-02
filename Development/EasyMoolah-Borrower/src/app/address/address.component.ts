@@ -22,6 +22,7 @@ export class AddressComponent {
     this.phone = this.getPhone(place);
     this.formattedAddress = place['formatted_address'];
     this.zone.run(() => this.formattedAddress = place['formatted_address']);
+    // alert(this.getAddrComponent(place,{ street_number: 'short_name' } ));
   }
 
   getEstablishmentAddress(place: object) {
@@ -101,5 +102,7 @@ export class AddressComponent {
     return phone;
   }
 
-
+  test() {
+    alert("test");
+  }
 }

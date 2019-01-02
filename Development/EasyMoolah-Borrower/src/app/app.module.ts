@@ -9,6 +9,7 @@ import { AutocompleteComponent } from './google-places.component';
 
 // Services
 import { BorrowerService } from './service/borrower.service';
+import { GoogleMaps } from './common/googlemaps.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -62,7 +63,7 @@ import { AddressComponent } from './address/address.component';
     NotFoundComponent,
     ErrorComponent,
     AddressComponent,
-    AutocompleteComponent
+    AutocompleteComponent,     
   ],
   imports: [
     BrowserModule,
@@ -72,7 +73,7 @@ import { AddressComponent } from './address/address.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [BorrowerService],
+  providers: [BorrowerService, GoogleMaps],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
