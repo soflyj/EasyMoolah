@@ -8,13 +8,17 @@
       <div class="input-field">
         <p>What's your home address?</p>
         <div class="group"> -->
-          <AutocompleteComponent (setAddress)="GetAddress($event)" adressType="geocode"></AutocompleteComponent>
+            <p>
+                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
+              </p>
+              {{formattedAddress}}
+              <b>Address: </b> {{Street}}
+          <!-- <input [(ngModel)]="Street"  type="text"> -->
           <!-- <span class="highlight"></span>
           <span class="bar"></span>
           <label for="address">Address</label>
-        </div> -->
-        {{Street}}
-        <!-- <div class="input-field">
+        </div>
+        <div class="input-field">
           <input [(ngModel)]="Street" id="Street" type="text" readonly>
           <label for="street">Street</label>
         </div>
