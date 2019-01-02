@@ -1,0 +1,66 @@
+1
+<div class="divider"></div>
+<div class="container">
+  <div class="row">
+    <div class="col m6 offset-m3">
+      <div class="progress page-progress">
+        <div class="determinate" style="width: 6.25%"></div>
+      </div>
+      <div class="image-radio-buttons service-options">
+        <p>Which service would you like a loan for?</p>
+        <div class="radio-group">
+          <input type="radio" name="service" id="auto-repair" class="input-hidden" />
+          <label for="auto-repair" class="col s6 m3">
+            <svg viewBox="0 0 24 24">
+              <path d="M16,6L19,10H21C22.11,10 23,10.89 23,12V15H21A3,3 0 0,1 18,18A3,3 0 0,1 15,15H9A3,3 0 0,1 6,18A3,3 0 0,1 3,15H1V12C1,10.89 1.89,10 3,10L6,6H16M10.5,7.5H6.75L4.86,10H10.5V7.5M12,7.5V10H17.14L15.25,7.5H12M6,13.5A1.5,1.5 0 0,0 4.5,15A1.5,1.5 0 0,0 6,16.5A1.5,1.5 0 0,0 7.5,15A1.5,1.5 0 0,0 6,13.5M18,13.5A1.5,1.5 0 0,0 16.5,15A1.5,1.5 0 0,0 18,16.5A1.5,1.5 0 0,0 19.5,15A1.5,1.5 0 0,0 18,13.5Z" />
+            </svg>
+            <br><strong>Auto Repair</strong>
+          </label>
+
+          <input type="radio" name="service" id="funeral-service" class="input-hidden" />
+          <label for="funeral-service" class="col s6 m3">
+            <svg viewBox="0 0 24 24">
+              <path d="M8,22L5,8L8,2H16L19,8L16,22H8M11,6V8H9V10H11V15H13V10H15V8H13V6H11Z" />
+            </svg>
+            <br><strong>Funeral Service</strong>
+          </label>
+
+          <input type="radio" name="service" id="engagement-wedding" class="input-hidden" />
+          <label for="engagement-wedding" class="col s6 m3">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,10L8,4.4L9.6,2H14.4L16,4.4L12,10M15.5,6.8L14.3,8.5C16.5,9.4 18,11.5 18,14A6,6 0 0,1 12,20A6,6 0 0,1 6,14C6,11.5 7.5,9.4 9.7,8.5L8.5,6.8C5.8,8.1 4,10.8 4,14A8,8 0 0,0 12,22A8,8 0 0,0 20,14C20,10.8 18.2,8.1 15.5,6.8Z" />
+            </svg>
+            <br><strong>Engagement / Wedding</strong>
+          </label>
+
+          <input type="radio" name="service" id="home-improvement" class="input-hidden" />
+          <label for="home-improvement" class="col s6 m3">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L2,12H5V20H19V12H22L12,3M11,10H13V13H16V15H13V18H11V15H8V13H11V10Z" />
+            </svg>
+            <br><strong>Home Improvement</strong>
+          </label>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--row-->
+</div>
+<footer class="container">
+  <div class="row pagination-btns">
+    <div class="col m6 offset-m3">
+      <div class="col m4">
+        <!-- <a class="waves-effect waves-light btn-small disabled" (click)=""><i class="material-icons left">chevron_left</i>Prev</a> -->
+      </div>
+      <div class="col m4">
+      </div>
+      <div class="col m4">
+        <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
