@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators  } from '@angular/forms';
+import { BorrowerService } from 'src/app/service/borrower.service';
+import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+
 @Component({
   selector: 'app-q5',
   templateUrl: './q5.component.html',
@@ -9,16 +13,42 @@ import { Router } from '@angular/router';
 })
 export class Q5Component implements OnInit {
 
-  constructor(private router: Router) { }
+  Q5: FormGroup;
+  URL = false;
+  StartTime: Date;
+  temp: BorrowerApplicationLog[];
 
-  ngOnInit() {
-  }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private borrowerService: BorrowerService) { }
 
-  next() {
-    this.router.navigateByUrl('/q6', { skipLocationChange: true });
-  }
+    ngOnInit() {
+      this.StartTime = new Date();
 
-  back() {
-    this.router.navigateByUrl('/bq4', { skipLocationChange: true });
+      // Not allowed to navigate directly to component
+      this.URL = (window.location.href).includes('/application');
+      if (!this.URL) {
+        this.router.navigate(['notfound'], { relativeTo: this.route });
+      }
+
+      this.Q5 = new FormGroup({
+        'insolvent': new FormControl(
+          '',
+          [Validators.required]
+        ),
+      });
+    }
+
+    Next() {
+      // tslint:disable-next-line:max-line-length
+       this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));
+       // Test
+       console.log(this.borrowerService.getBorrowerApplicationLog());
+
+      this.router.navigateByUrl('/q6', { skipLocationChange: true });
+    }
+
+  Back() {
+    this.router.navigateByUrl('/q4', { skipLocationChange: true });
   }
 }

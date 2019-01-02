@@ -1,37 +1,37 @@
-6<div class="divider"></div>
+<div class="divider"></div>
 <div class="container">
 	<div class="row">
 		<div class="col m6 offset-m3">
-		  <div class="progress page-progress">
-			  <div class="determinate" style="width: 37.5%"></div>
-		  </div>
-		  <div class="input-field">
-			  <form>
+			<div class="progress page-progress">
+				<div class="determinate" style="width: 37.5%"></div>
+			</div>
+			<div class="input-field">
 				<p>
 					<label style="color:#000">
-					<input type="checkbox" />
-					<span>I give permission for EasyMoolah to do a credit check.</span>
+						<input type="checkbox" [(ngModel)]="credit_check" id="credit_check"/>
+						<span>I give permission for EasyMoolah to do a credit check.</span>
 					</label>
 				</p>
-			  </form>
-		  </div>
+			</div>
 		</div>
-	</div><!--row-->
+	</div>
+	<!--row-->
 </div>
 <footer class="container">
 	  <div class="row pagination-btns">
-	    <div class="col m6 offset-m3">
-	      <div class="col m4">
-	        <a class="waves-effect waves-light btn-small" (click)="back()"><i class="material-icons left">chevron_left</i>Prev</a>
-	      </div>
-	      <div class="col m4">
-	      </div>
-	      <div class="col m4">
-	        <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a>
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		    <div class="col m6 offset-m3">
+			      <div class="col m4">
+				        <a class="waves-effect waves-light btn-small" (click)="back()"><i class="material-icons left">chevron_left</i>Prev</a>
+				      </div>
+			      <div class="col m4">
+				      </div>
+			      <div class="col m4">
+				        <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a>
+				      </div>
+			    </div>
+		  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
