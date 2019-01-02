@@ -1,24 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { BorrowerService } from 'src/app/service/borrower.service';
+import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+
 @Component({
   selector: 'app-q4',
   templateUrl: './q4.component.html',
   styleUrls: ['./q4.component.css'],
-  animations: [ routerTransition ]
+  animations: [routerTransition]
 })
 export class Q4Component implements OnInit {
 
-  constructor(private router: Router) { }
+  Q4: FormGroup;
+  URL = false;
+  StartTime: Date;
+  temp: BorrowerApplicationLog[];
+
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private borrowerService: BorrowerService) { }
 
   ngOnInit() {
+    this.StartTime = new Date();
+
+    // Not allowed to navigate directly to component
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
+    }
+
+    this.Q4 = new FormGroup({
+      'formal-debt-review': new FormControl(
+        '',
+        [Validators.required]
+      ),
+    });
   }
 
-  next() {
+  Next() {
+    // tslint:disable-next-line:max-line-length
+    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'Have you applied for or are you under formal debt review?', this.Q4.get('formal-debt-review').value, this.StartTime.toString(), (new Date).toString()));
+    // Test
+    console.log(this.borrowerService.getBorrowerApplicationLog());
+
     this.router.navigateByUrl('/q5', { skipLocationChange: true });
   }
 
-  back() {
-    this.router.navigateByUrl('/bq3', { skipLocationChange: true });
+  Back() {
+    this.router.navigateByUrl('/q3', { skipLocationChange: true });
   }
 }

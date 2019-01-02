@@ -1,3 +1,4 @@
+// Angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -5,10 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { Ng5SliderModule } from 'ng5-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Services
+import { BorrowerService } from './service/borrower.service';
+
+// Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
 import { FinancialresultComponent } from './application/financialresult/financialresult.component';
 import { LandingComponent } from './application/landing/landing.component';
 import { Q1Component } from './application/q1/q1.component';
@@ -64,7 +68,7 @@ import { ErrorComponent } from './error/error.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BorrowerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
