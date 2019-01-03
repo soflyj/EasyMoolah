@@ -8,7 +8,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
   selector: 'app-q8',
   templateUrl: './q8.component.html',
-  styleUrls: ['./q8.component.css'],
+  styleUrls: ['../../../assets/css/em_site_theme.css'],
   animations: [routerTransition]
 })
 export class Q8Component implements OnInit {

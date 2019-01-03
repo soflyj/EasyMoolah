@@ -8,7 +8,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
     selector: 'app-q15',
     templateUrl: './q15.component.html',
-    styleUrls: ['./q15.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css'],
     animations: [routerTransition]
 })
 export class Q15Component implements OnInit {
@@ -17,11 +17,11 @@ export class Q15Component implements OnInit {
     URL = false;
     StartTime: Date;
 
-    first_name: string;
-    last_name: string;
-    email: string;
     mobiletel: string;
+    mobiletelLength: number;
     landtel: string;
+    landtelLength: number;
+    mask: any;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -30,14 +30,43 @@ export class Q15Component implements OnInit {
 
     ngOnInit() {
         this.StartTime = new Date();
+        
+
+        // Not allowed to navigate directly to component
+        // this.URL = (window.location.href).includes('/application');
+        // if (!this.URL) {
+        //     this.router.navigate(['notfound'], { relativeTo: this.route });
+        // }
+
+        this.mask = ['(', /[0-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
         this.Q15 = new FormGroup({
             'first_name': new FormControl('', Validators.required),
             'last_name': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
-            'mobiletel': new FormControl('', [Validators.required]),
-            'landtel': new FormControl('', Validators.required)
+            'mobiletel': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
+            'landtel': new FormControl('', [this.CheckLandlineNumber.bind(this)])
         });
+    }
+
+    CheckMobileNumber(control: FormControl): { [s: string]: boolean } {
+        this.mobiletel = control.value;
+        this.mobiletelLength = this.mobiletel.replace(/[-_() ]/g,'').length;        
+        if (this.mobiletelLength != 10) {
+            return { 'MobileValid': true };
+        } else {
+        return null;
+        }
+    }
+
+    CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
+        this.landtel = control.value;
+        this.landtelLength = this.landtel.replace(/[-_() ]/g,'').length;        
+        if (this.landtelLength != 10 && this.landtelLength != 0) {
+            return { 'LandlineValid': true };
+        } else {
+        return null;
+        }
     }
 
     Next() {

@@ -8,7 +8,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
     selector: 'app-q16',
     templateUrl: './q16.component.html',
-    styleUrls: ['./q16.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css'],
     animations: [routerTransition]
 })
 export class Q16Component implements OnInit {
@@ -28,6 +28,13 @@ export class Q16Component implements OnInit {
 
     ngOnInit() {
         this.StartTime = new Date();
+
+        // Not allowed to navigate directly to component
+        this.URL = (window.location.href).includes('/application');
+        if (!this.URL) {
+            this.router.navigate(['notfound'], { relativeTo: this.route });
+        }
+        
         this.idnumber = '';
         this.Q16 = new FormGroup({
             'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])

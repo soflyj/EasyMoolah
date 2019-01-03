@@ -8,7 +8,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
     selector: 'app-q12',
     templateUrl: './q12.component.html',
-    styleUrls: ['./q12.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css'],
     animations: [routerTransition]
 })
 export class Q12Component implements OnInit {
@@ -26,10 +26,10 @@ export class Q12Component implements OnInit {
         this.StartTime = new Date();
 
         // Not allowed to navigate directly to component
-        this.URL = (window.location.href).includes('/application');
-        if (!this.URL) {
-            this.router.navigate(['notfound'], { relativeTo: this.route });
-        }
+        // this.URL = (window.location.href).includes('/application');
+        // if (!this.URL) {
+        //     this.router.navigate(['notfound'], { relativeTo: this.route });
+        // }
 
         this.Q12 = new FormGroup({
             'dependants': new FormControl(

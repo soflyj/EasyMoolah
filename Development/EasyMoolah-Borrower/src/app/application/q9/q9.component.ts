@@ -8,8 +8,8 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
   selector: 'app-q9',
   templateUrl: './q9.component.html',
-  styleUrls: ['./q9.component.css'],
-  animations: [ routerTransition ]
+  styleUrls: ['../../../assets/css/em_site_theme.css'],
+  animations: [routerTransition]
 })
 export class Q9Component implements OnInit {
 

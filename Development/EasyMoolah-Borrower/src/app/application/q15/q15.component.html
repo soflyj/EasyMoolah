@@ -20,15 +20,15 @@
             </div>
             <div class="input-field">
               <input id="email" type="email" class="validate" formControlName="email">
-              <label for="email">Email</label>
+              <!-- <label for="email">Email</label> -->
             </div>
             <div class="input-field">
-              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel">
-              <label for="mobiletel">Mobile Number</label>
+              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel" [textMask]="{mask: mask}" >
+              <!-- <label for="mobiletel">Mobile Number</label> -->
             </div>
             <div class="input-field">
-              <input id="landtel" type="tel" class="validate" formControlName="landtel">
-              <label for="landtel">Landline Number (optional)</label>
+              <input id="landtel" type="tel" class="validate" formControlName="landtel" [textMask]="{mask: mask}">
+              <!-- <label for="landtel">Landline Number (optional)</label> -->
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
     <div class="row pagination-btns">
       <div class="col m6 offset-m3">
         <div class="col m4">
-          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Back</button>
+          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
         </div>
         <div class="col m4">
         </div>

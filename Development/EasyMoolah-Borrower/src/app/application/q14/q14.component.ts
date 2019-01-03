@@ -9,7 +9,7 @@ import 'linq4js';
 @Component({
     selector: 'app-q14',
     templateUrl: './q14.component.html',
-    styleUrls: ['./q14.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css'],
     animations: [routerTransition]
 })
 export class Q14Component implements OnInit {
@@ -23,6 +23,7 @@ export class Q14Component implements OnInit {
     Suburb: string;
     City: string;
     PostalCode: string;
+    AutoCompleteMaps: any;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -30,7 +31,12 @@ export class Q14Component implements OnInit {
         private borrowerService: BorrowerService) { }
 
     ngOnInit() {
-        this.StartTime = new Date();
+        this.StartTime = new Date();        
+        // Not allowed to navigate directly to component
+        // this.URL = (window.location.href).includes('/application');
+        // if (!this.URL) {
+        //     this.router.navigate(['notfound'], { relativeTo: this.route });
+        // }
 
         this.Q14 = new FormGroup({
             'street': new FormControl('', Validators.required),

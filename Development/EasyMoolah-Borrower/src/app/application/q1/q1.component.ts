@@ -9,7 +9,7 @@ import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.mod
 @Component({
   selector: 'app-q1',
   templateUrl: './q1.component.html',
-  styleUrls: ['./q1.component.css'],
+  styleUrls: ['../../../assets/css/em_site_theme.css'],
   animations: [routerTransition]
 })
 export class Q1Component implements OnInit {

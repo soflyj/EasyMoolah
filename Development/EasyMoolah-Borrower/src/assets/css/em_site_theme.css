@@ -41,7 +41,7 @@ input[type=range]+.thumb {display:none}
     box-sizing: border-box;
     max-width: 80%;
 }
-.sub-service-buttons input[type="radio"]:checked + label background-color:#2a2e76}
+.sub-service-buttons input[type="radio"]:checked + label {background-color:#2a2e76};
 .image-radio-buttons input[type="radio"] + label {display:inline-block;text-align: center}
 .service-options input[type="radio"] + label > svg {
 	border: 1px dashed #a0dee5;

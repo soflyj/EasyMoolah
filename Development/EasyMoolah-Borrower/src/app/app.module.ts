@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { Ng5SliderModule } from 'ng5-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutocompleteComponent } from './google-places.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 // Services
 import { BorrowerService } from './service/borrower.service';
@@ -70,10 +70,10 @@ import { ProcessingComponent } from './application/processing/processing.compone
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    Ng5SliderModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextMaskModule
   ],
   providers: [BorrowerService, GoogleMaps],
   bootstrap: [AppComponent]
