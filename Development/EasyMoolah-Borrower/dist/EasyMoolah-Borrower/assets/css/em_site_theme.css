@@ -1,0 +1,113 @@
+/*==========================
+General
+============================*/
+html, body {font-family: 'Montserrat', sans-serif;}
+h1 {font-size:28px; font-weight: 700}
+h2 {
+    font-size: 22px;
+    font-weight: 700
+}
+h3 {font-size:21px; font-weight: 700}
+h4 {font-size: 18px; font-weight: 700}
+p {font-size:16px}
+.btn, .btn-small, .btn-large {background-color: #55c4d1;}
+.btn:hover, .btn-large:hover, .btn-small:hover {background-color:#0393a0}
+.progress {background-color:rgba(160,222,229,0.5)}
+.progress .determinate {background-color: #55c4d1}
+.center-align-btn {display: block; margin:0 auto}
+.page-progress {margin: 30px 0 50px}
+input[type=text]:not(.browser-default):focus:not([readonly]) {border-bottom-color: #55c4d1}
+input[type=range]+.thumb {display:none}
+.input-hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+.service-options input[type="radio"]:checked + label > svg {
+	border: 1px solid #fff;
+	box-shadow: 0 0 3px 3px #2a2e76;
+}
+
+/* Stuff after this is only to make things more pretty */
+.sub-service-buttons input[type="radio"] + label {
+    display: block;
+    background-color: #eee;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    height: 80px;
+    margin-right: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 80%;
+}
+.sub-service-buttons input[type="radio"]:checked + label {background-color:#2a2e76};
+.image-radio-buttons input[type="radio"] + label {display:inline-block;text-align: center}
+.service-options input[type="radio"] + label > svg {
+	border: 1px dashed #a0dee5;
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+	transition: 500ms all;
+}
+.service-options input[type="radio"] + label > svg path {fill:#55c4d1}
+.service-options.image-radio-buttons input[type="radio"] + label:hover > svg path {fill:#0393a0}
+.image-radio-buttons input[type="radio"] + label:hover {cursor:pointer}
+.service-options input[type="radio"] + label:last-child > svg {margin-right:0}
+.service-options input[type="radio"]:checked + label > svg {
+	transform: scale(1.2);
+}
+.service-options input[type="radio"]:checked + label > svg path {fill:#2a2e76}
+.service-options input[type="radio"]:checked + label {font-size:1.1em; color:#2a2e76; line-height: 1em}
+.service-options input[type="radio"]:checked + label strong {margin-top: 20px; display: inline-block}
+.bank-options input[type="radio"] + label > span {width: 110px; height:110px; display:block; background-image: url('../images/bank-logos-sprite-sheet.png'); opacity: 0.5;}
+.bank-options input[type="radio"] + label:hover > span, .bank-options input[type="radio"]:checked + label > span {opacity:1}
+.absa-logo {background-position:-140px -10px}
+.bank-options input[type="radio"] + label:hover .absa-logo, .bank-options input[type="radio"]:checked + label .absa-logo {background-position:-10px -10px}
+.capitec-logo {background-position:-140px -140px}
+.bank-options input[type="radio"] + label:hover .capitec-logo, .bank-options input[type="radio"]:checked + label .capitec-logo {background-position:-10px -140px}
+.fnb-logo {background-position:-270px -140px}
+.bank-options input[type="radio"] + label:hover .fnb-logo, .bank-options input[type="radio"]:checked + label .fnb-logo {background-position:-270px -10px}
+.nedbank-logo {background-position:-140px -270px}
+.bank-options input[type="radio"] + label:hover .nedbank-logo, .bank-options input[type="radio"]:checked + label .nedbank-logo {background-position:-10px -270px}
+.sb-logo {background-position:-400px -10px}
+.bank-options input[type="radio"] + label:hover .sb-logo, .bank-options input[type="radio"]:checked + label .sb-logo {background-position:-270px -270px}
+/*==========================
+Header
+============================*/
+header {margin-bottom: 30px}
+.logo {display: block; margin: 0 auto}
+
+/*==========================
+Body/Content
+============================*/
+.pagination-btns .material-icons.left {margin-right:5px}
+.pagination-btns .btn-small .material-icons.right {margin-left:5px}
+.amount_output {
+    display: block;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;	
+}
+
+/*==========================
+Footer
+============================*/
+.footer_menu_bottom a {color:#55c4d1}
+.footer_menu_bottom a:hover {color:#2e9eab; text-decoration: underline}
+ul.footer_menu_bottom {
+	display:block; width:160px; margin:150px auto 0;
+	margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 50%;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+.footer_menu_bottom li {float:left}
+.footer_menu_bottom li::after {content:'|'; padding: 0 10px; display:inline-block}
+.footer_menu_bottom li:last-child::after {content: ''; padding: 0}
+
+/*==========================
+Media Queries
+============================*/

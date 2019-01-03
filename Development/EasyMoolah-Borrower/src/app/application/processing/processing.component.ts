@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-processing',
   templateUrl: './processing.component.html',
-  styleUrls: ['./processing.component.css']
+  styleUrls: ['../../../assets/css/em_site_theme.css'],
 })
 export class ProcessingComponent implements OnInit {
 

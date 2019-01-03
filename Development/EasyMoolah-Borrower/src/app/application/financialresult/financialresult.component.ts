@@ -3,7 +3,7 @@ import { FinanceResult } from '../../model/financeresult.model';
 @Component({
   selector: 'app-financialresult',
   templateUrl: './financialresult.component.html',
-  styleUrls: ['./financialresult.component.css']
+  styleUrls: ['../../../assets/css/em_site_theme.css'],
 })
 export class FinancialresultComponent implements OnInit {
 

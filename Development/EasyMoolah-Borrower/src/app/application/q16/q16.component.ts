@@ -30,22 +30,23 @@ export class Q16Component implements OnInit {
         this.StartTime = new Date();
 
         // Not allowed to navigate directly to component
-        this.URL = (window.location.href).includes('/application');
-        if (!this.URL) {
-            this.router.navigate(['notfound'], { relativeTo: this.route });
-        }
+        // this.URL = (window.location.href).includes('/application');
+        // if (!this.URL) {
+        //     this.router.navigate(['notfound'], { relativeTo: this.route });
+        // }
         
         this.idnumber = '';
         this.Q16 = new FormGroup({
-            'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])
+            //'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])
+            'idnumber': new FormControl('', [Validators.required])
         });
 
     }
 
     CheckSAIdNumber(control: FormControl): { [s: string]: boolean } {
-        this.saIdParser = this.require('south-african-id-parser');
-        this.isIdNumberValid = this.saIdParser.validate(control.value);
-        console.log(control.value);
+         this.saIdParser = this.require('south-african-id-parser');
+         this.isIdNumberValid = this.saIdParser.validate(control.value);        
+        // console.log(this.saIdParser(control.value));
         if (!this.isIdNumberValid) {
             return { 'IdNumberValid': true };
         } else {
