@@ -1,51 +1,58 @@
-15<div class="divider"></div>
-<div class="container">
-  <div class="row">
-    <div class="col m6 offset-m3">
-      <div class="progress page-progress">
-        <div class="determinate" style="width: 93.75%"></div>
+<form [formGroup]="Q15" (ngSubmit)="Next()">
+  <div class="divider"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col m6 offset-m3">
+        <div class="progress page-progress">
+          <div class="determinate" style="width: 93.75%"></div>
+        </div>
+
+        <div class="input-field">
+          <p>Personal Information</p>
+          <div class="group">
+            <div class="input-field">
+              <input id="first_name" type="text" class="validate" formControlName="first_name">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field">
+              <input id="last_name" type="text" class="validate" formControlName="last_name">
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="input-field">
+              <input id="email" type="email" class="validate" formControlName="email">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel">
+              <label for="mobiletel">Mobile Number</label>
+            </div>
+            <div class="input-field">
+              <input id="landtel" type="tel" class="validate" formControlName="landtel">
+              <label for="landtel">Landline Number (optional)</label>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="input-field">
-		  <p>Personal Information</p>
-		<div class="input-field">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-        <div class="input-field">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-        <div class="input-field">
-          <input id="tel" type="tel" class="validate">
-          <label for="tel">Mobile Number</label>
-        </div>  
-        <div class="input-field">
-          <input id="tel" type="tel" class="validate">
-          <label for="tel">Landline Number (optional)</label>
-        </div>  		 
-		</div>
     </div>
   </div>
-  <!--row--> 
-</div>
-<footer class="container">
-    <div class="row pagination-btns">
-      <div class="col m6 offset-m3">
-        <div class="col m4">
-          <a class="waves-effect waves-light btn-small" (click)="back()"><i class="material-icons left">chevron_left</i>Prev</a>
-        </div>
-        <div class="col m4">
-        </div>
-        <div class="col m4">
-          <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a>
-        </div>
-      </div>
-    </div>
+  <!--row-->
+
+  <footer class="container">
+    <div class="row pagination-btns">
+      <div class="col m6 offset-m3">
+        <div class="col m4">
+          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Back</button>
+        </div>
+        <div class="col m4">
+        </div>
+        <div class="col m4">
+          <button type="submit" class="waves-effect waves-light btn-small" [disabled]="!Q15.valid"><i class="material-icons right">chevron_right</i>Next</button>
+        </div>
+      </div>  
+    </div>
   </footer>
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>
