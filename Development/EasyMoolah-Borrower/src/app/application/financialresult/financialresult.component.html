@@ -16,7 +16,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let fsp of financeResults; let i = index">              
-              <td><img src="{{fsp.ImagePath}}" class="responsive-img" alt="Capfin" /></td>
+              <td><img src="{{fsp.ImagePath}}" class="responsive-img" alt="{{fsp.ImageAlt}}" /></td>
               <td align="right" style="text-align: right"><label>Loan approved for</label><br><strong>{{'R ' + fsp.ApprovedAmount}}</strong></td>
               <td align="right" style="text-align: right"><a class="waves-effect waves-light btn-small">Call Me</a></td>
             </tr>            
