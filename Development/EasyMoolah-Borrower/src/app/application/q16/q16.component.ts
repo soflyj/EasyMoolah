@@ -36,7 +36,7 @@ export class Q16Component implements OnInit {
     }
 
     CheckSAIdNumber(control: FormControl): { [s: string]: boolean } {
-        this.saIdParser = require('south-african-id-parser');
+        this.saIdParser = this.require('south-african-id-parser');
         this.isIdNumberValid = this.saIdParser.validate(control.value);
         console.log(control.value);
         if (!this.isIdNumberValid) {
