@@ -1,59 +1,57 @@
-<!-- <div class="divider"></div>
-<div class="container">
-  <div class="row">
-    <div class="col m6 offset-m3">
-      <div class="progress page-progress">
-        <div class="determinate" style="width: 87.5%"></div>
-      </div>
-      <div class="input-field">
-        <p>What's your home address?</p>
-        <div class="group"> -->
-            <p>
-                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
-              </p>
-              {{formattedAddress}}
-              <b>Address: </b> {{Street}}
-          <!-- <input [(ngModel)]="Street"  type="text"> -->
-          <!-- <span class="highlight"></span>
-          <span class="bar"></span>
-          <label for="address">Address</label>
+<form [formGroup]="Q14" (ngSubmit)="Next()">
+  <div class="divider">
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col m6 offset-m3">
+        <div class="progress page-progress">
+          <div class="determinate" style="width: 87.5%"></div>
         </div>
         <div class="input-field">
-          <input [(ngModel)]="Street" id="Street" type="text" readonly>
-          <label for="street">Street</label>
-        </div>
-        <div class="input-field">
-          <input [(ngModel)]="Suburb" id="Suburb" type="text" readonly>
-          <label for="suburb">Suburb</label>
-        </div>
-        <div class="input-field">
-          <input [(ngModel)]="City" id="City" type="text" readonly>
-          <label for="city">City</label>
-        </div>
-        <div class="input-field">
-          <input [(ngModel)]="PostalCode" id="PostalCode" type="text" readonly>
-          <label for="postalcode">Postal Code</label>
+          <p>What's your home address?</p>
+          <div class="group">
+            <!-- <p> -->
+            <div class="input-field">
+              <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
+            </div>
+            <!-- </p> -->
+            <div class="input-field">
+              <input [(ngModel)]="Street" id="Street" type="text" readonly formControlName="street">
+              <label for="street">Street</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="Suburb" id="Suburb" type="text" readonly formControlName="suburb">
+              <label for="suburb">Suburb</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="City" id="City" type="text" readonly formControlName="city">
+              <label for="city">City</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="PostalCode" id="PostalCode" type="text" readonl formControlName="postalcode" y>
+              <label for="postalcode">Postal Code</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-</div>
-<footer class="container">
-    <div class="row pagination-btns">
-    <div class="col m6 offset-m3">
-      <div class="col m4">
-        <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Back</button>
-      </div>
-      <div class="col m4">
-      </div>
-      <div class="col m4">
-        <button type="button" class="waves-effect waves-light btn-small" (click)="Next()"><i class="material-icons right">chevron_right</i>Next</button>
-      </div>
-    </div>  
-  </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <footer class="container">
+      <div class="row pagination-btns">
+      <div class="col m6 offset-m3">
+        <div class="col m4">
+          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Back</button>
+        </div>
+        <div class="col m4">
+        </div>
+        <div class="col m4">
+          <button type="submit" class="waves-effect waves-light btn-small"><i class="material-icons right">chevron_right</i>Next</button>
+        </div>
+      </div>  
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>

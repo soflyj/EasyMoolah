@@ -4,8 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
-import 'linq4js'; 
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
+import 'linq4js';
 
 @Component({
     selector: 'app-q14',
@@ -13,112 +12,51 @@ import { createOfflineCompileUrlResolver } from '@angular/compiler';
     styleUrls: ['./q14.component.css'],
     animations: [routerTransition]
 })
-export class Q14Component {
+export class Q14Component implements OnInit {
 
-    address: Object;
-    establishmentAddress: Object;
+    Q14: FormGroup;
+    URL = false;
+    StartTime: Date;
 
     formattedAddress: string;
-    formattedEstablishmentAddress: string;
-
-    phone: string;
-
     Street: string;
+    Suburb: string;
+    City: string;
+    PostalCode: string;
 
-    constructor(public zone: NgZone) { }
+    constructor(public zone: NgZone,
+        private router: Router,
+        private route: ActivatedRoute,
+        private borrowerService: BorrowerService) { }
 
-    getAddress(place: object) {
-        //this.address = place['formatted_address'];
-        //this.phone = this.getPhone(place);
-        // this.Street = 'dssdsd';
-        this.formattedAddress = place['formatted_address'];
-        this.zone.run(() => this.formattedAddress = place['formatted_address']);
-        this.Street = this.getAddrComponent(place, { street_number: 'short_name' });
-        // console.log(this.getAddrComponent(place, { street_number: 'short_name' }));
-        console.log(place);
-        console.log(place['address_components'].Where(w => w.long_name == 'Boston').Select(s => s.types[0]));
-        // this.Street = place['address_components'].Where(w => w.long_name == 'Boston').Select(s => s.long_name)
-        //console.log(place['address_components'].Select(x => x.long_name));
-    }
+    ngOnInit() {
+        this.StartTime = new Date();
 
-    getEstablishmentAddress(place: object) {
-        this.establishmentAddress = place['formatted_address'];
-        this.phone = this.getPhone(place);
-        this.formattedEstablishmentAddress = place['formatted_address'];
-        this.zone.run(() => {
-            this.formattedEstablishmentAddress = place['formatted_address'];
-            this.phone = place['formatted_phone_number'];
+        this.Q14 = new FormGroup({
+            'street': new FormControl('', Validators.required),
+            'suburb': new FormControl('', Validators.required),
+            'city': new FormControl('', Validators.required),
+            'postalcode': new FormControl('', Validators.required)
         });
     }
-
-    getAddrComponent(place, componentTemplate) {
-        let result;
-
-        for (let i = 0; i < place.address_components.length; i++) {
-            const addressType = place.address_components[i].types[0];
-            if (componentTemplate[addressType]) {
-                result = place.address_components[i][componentTemplate[addressType]];
-                return result;
-            }
-        }
-        return;
+    getAddress(place: object) {
+        this.formattedAddress = place['formatted_address'];
+        // tslint:disable-next-line:max-line-length
+        this.Street = place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0] + ' ' + place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0];
+        this.Suburb = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_2').Select(s => s.long_name)[0];
+        this.City = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_1').Select(s => s.long_name)[0];
+        this.PostalCode = place['address_components'].Where(w => w.types[0] === 'postal_code').Select(s => s.long_name)[0];
+        this.zone.run(() => this.formattedAddress = place['formatted_address']);
     }
 
-    getStreetNumber(place) {
-        const COMPONENT_TEMPLATE = { street_number: 'short_name' },
-            streetNumber = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return streetNumber;
+    Next() {
+        // tslint:disable-next-line:max-line-length
+        this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'Address?', this.Q14.value, this.StartTime.toString(), (new Date).toString()));
+
+        this.router.navigateByUrl('/q15', { skipLocationChange: true });
     }
 
-    getStreet(place) {
-        const COMPONENT_TEMPLATE = { route: 'long_name' },
-            street = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return street;
-    }
-
-    getCity(place) {
-        const COMPONENT_TEMPLATE = { locality: 'long_name' },
-            city = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return city;
-    }
-
-    getState(place) {
-        const COMPONENT_TEMPLATE = { administrative_area_level_1: 'short_name' },
-            state = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return state;
-    }
-
-    getDistrict(place) {
-        const COMPONENT_TEMPLATE = { administrative_area_level_2: 'short_name' },
-            state = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return state;
-    }
-
-    getCountryShort(place) {
-        const COMPONENT_TEMPLATE = { country: 'short_name' },
-            countryShort = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return countryShort;
-    }
-
-    getCountry(place) {
-        const COMPONENT_TEMPLATE = { country: 'long_name' },
-            country = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return country;
-    }
-
-    getPostCode(place) {
-        const COMPONENT_TEMPLATE = { postal_code: 'long_name' },
-            postCode = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return postCode;
-    }
-
-    getPhone(place) {
-        const COMPONENT_TEMPLATE = { formatted_phone_number: 'formatted_phone_number' },
-            phone = this.getAddrComponent(place, COMPONENT_TEMPLATE);
-        return phone;
-    }
-
-    test() {
-        alert("test");
+    Back() {
+        this.router.navigateByUrl('/bq13', { skipLocationChange: true });
     }
 }
