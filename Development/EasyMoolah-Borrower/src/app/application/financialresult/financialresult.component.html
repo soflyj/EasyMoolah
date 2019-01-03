@@ -1,3 +1,47 @@
-<p>
-  financialresult works!
-</p>
+<div class="divider"></div>
+<div class="container">
+  <div class="row">
+    <div class="col m6 offset-m3">
+      <div class="introduction center-align">
+        <h2>FSP Results</h2>
+      </div>
+      <div class="row">
+        <table width="100%">
+          <thead>
+            <tr>
+              <td width="30%" style="font-style: italic"></td>
+              <td width="40%" align="right" style="text-align: right; font-style: italic"></td>
+              <td width="30%"></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fsp of financeResults; let i = index">              
+              <td><img src="{{fsp.ImagePath}}" class="responsive-img" alt="Capfin" /></td>
+              <td align="right" style="text-align: right"><label>Loan approved for</label><br><strong>{{'R ' + fsp.ApprovedAmount}}</strong></td>
+              <td align="right" style="text-align: right"><a class="waves-effect waves-light btn-small">Call Me</a></td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--row-->
+</div>
+<footer class="container">
+  <div class="row">
+    <div class="col m6 offset-m3">
+      <div class="col s12">
+        <p class="center-align">Congratulations on getting approval for your loan amount. Please click on the 'call me'
+          button next to any of the service providers so that a consultant can call you back today!</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('select').formSelect();
+  });
+</script>

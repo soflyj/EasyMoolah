@@ -36,6 +36,7 @@ import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
 import { AddressComponent } from './address/address.component';
+import { ProcessingComponent } from './application/processing/processing.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AddressComponent } from './address/address.component';
     NotFoundComponent,
     ErrorComponent,
     AddressComponent,
-    AutocompleteComponent,     
+    AutocompleteComponent,
+    ProcessingComponent
   ],
   imports: [
     BrowserModule,

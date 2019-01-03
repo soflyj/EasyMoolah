@@ -50,7 +50,7 @@ export class Q16Component implements OnInit {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
 
-        // this.router.navigateByUrl('/q16', { skipLocationChange: true });
+        this.router.navigateByUrl('/processing', { skipLocationChange: true });
     }
 
     Back() {

@@ -35,7 +35,7 @@ export class Q15Component implements OnInit {
             'first_name': new FormControl('', Validators.required),
             'last_name': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
-            'mobiletel': new FormControl('', [Validators.required, Validators.),
+            'mobiletel': new FormControl('', [Validators.required]),
             'landtel': new FormControl('', Validators.required)
         });
     }
@@ -44,7 +44,7 @@ export class Q15Component implements OnInit {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'Address?', this.Q15.value, this.StartTime.toString(), (new Date).toString()));
 
-       // this.router.navigateByUrl('/q16', { skipLocationChange: true });
+        this.router.navigateByUrl('/q16', { skipLocationChange: true });
     }
 
     Back() {

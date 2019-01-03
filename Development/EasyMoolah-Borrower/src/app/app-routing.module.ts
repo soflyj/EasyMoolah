@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { FinancialresultComponent } from './application/financialresult/financialresult.component';
 import { LandingComponent } from './application/landing/landing.component';
 import { Q1Component } from './application/q1/q1.component';
 import { Q2Component } from './application/q2/q2.component';
@@ -26,6 +27,7 @@ import { Q15Component } from './application/q15/q15.component';
 import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddressComponent } from './address/address.component';
+import { ProcessingComponent } from './application/processing/processing.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
@@ -62,8 +64,11 @@ const appRoutes: Routes = [
   { path: 'bq12', component: Q12Component, data: {state: 'bq12'}},
   { path: 'bq13', component: Q13Component, data: {state: 'bq13'}},
   { path: 'bq14', component: Q14Component, data: {state: 'bq14'}},
-  { path: 'bq15', component: Q15Component, data: {state: 'bq15'}},
-  { path: 'address', component: AddressComponent},
+  { path: 'bq15', component: Q15Component},
+
+  { path: 'address', component: AddressComponent, data: {state: 'address'}},
+  { path: 'processing', component: ProcessingComponent, data: {state: 'processing'}},
+  { path: 'financialresult', component: FinancialresultComponent, data: {state: 'financialresult'}},
 
   { path: '**', component: NotFoundComponent },
   { path: 'notfound', component: NotFoundComponent }
