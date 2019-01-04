@@ -4615,26 +4615,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "EasyMoolah.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/EasyMoolah.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Domain.dll": {}
-        }
-      },
-      "EasyMoolah.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/EasyMoolah.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Model.dll": {}
-        }
       }
     }
   },
@@ -12228,22 +12208,10 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
-    },
-    "EasyMoolah.Domain/1.0.0": {
-      "type": "project",
-      "path": "../EasyMoolah.Domain/EasyMoolah.Domain.csproj",
-      "msbuildProject": "../EasyMoolah.Domain/EasyMoolah.Domain.csproj"
-    },
-    "EasyMoolah.Model/1.0.0": {
-      "type": "project",
-      "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
-      "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "EasyMoolah.Domain >= 1.0.0",
-      "EasyMoolah.Model >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12279,14 +12247,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {
-            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj"
-            },
-            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

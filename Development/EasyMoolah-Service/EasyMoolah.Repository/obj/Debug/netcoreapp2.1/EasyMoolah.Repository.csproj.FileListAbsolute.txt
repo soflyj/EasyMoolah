@@ -7,3 +7,15 @@ C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Reposi
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.dll
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.deps.json
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.csprojAssemblyReference.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.AssemblyInfoInputs.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.AssemblyInfo.cs
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\netcoreapp2.1\EasyMoolah.Repository.csproj.CopyComplete

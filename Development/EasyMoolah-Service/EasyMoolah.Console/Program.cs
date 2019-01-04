@@ -1,4 +1,5 @@
 ﻿using System;
+using EasyMoolah.Repository;
 
 namespace EasyMoolah.Console
 {
@@ -7,6 +8,10 @@ namespace EasyMoolah.Console
         static void Main(string[] args)
         {
             System.Console.WriteLine("Hello World!");
+
+            Repository.BorrowerRepository borrower = new BorrowerRepository();
+            
+            var result = borrower.GetAllBorrowers();
         }
     }
 }

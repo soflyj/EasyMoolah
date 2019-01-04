@@ -17,3 +17,16 @@ C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bi
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.csprojAssemblyReference.cache
 C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.csproj.CopyComplete
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.csproj.CoreCompileInputs.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.RazorAssemblyInfo.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.RazorAssemblyInfo.cs
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.AssemblyInfoInputs.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.AssemblyInfo.cs
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.API.deps.json
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.API.runtimeconfig.json
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.API.runtimeconfig.dev.json
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.API.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\bin\Debug\netcoreapp2.1\EasyMoolah.API.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.RazorTargetAssemblyInfo.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.pdb

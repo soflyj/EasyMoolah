@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="EasyMoolah.DataBase.dll" />
-			<Metadata Name="FileName" Value="C:\JARROD\EASYMOOLAH\EASYMOOLAH\DEVELOPMENT\EASYMOOLAH-SERVICE\EASYMOOLAH.DATABASE\OBJ\DEBUG\EASYMOOLAH.DATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\JARROD\EASYMOOLAH\GITHUB\EASYMOOLAH2019\DEVELOPMENT\EASYMOOLAH-SERVICE\EASYMOOLAH.DATABASE\OBJ\DEBUG\EASYMOOLAH.DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="EasyMoolah.DataBase" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Jarrod\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

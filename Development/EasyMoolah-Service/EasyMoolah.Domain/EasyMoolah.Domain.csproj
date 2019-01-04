@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+    <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -9,7 +9,7 @@ import 'linq4js';
 @Component({
     selector: 'app-q14',
     templateUrl: './q14.component.html',
-    styleUrls: ['../../../assets/css/em_site_theme.css'],
+    styleUrls: ['./q14.component.css'],
     animations: [routerTransition]
 })
 export class Q14Component implements OnInit {
@@ -31,7 +31,7 @@ export class Q14Component implements OnInit {
         private borrowerService: BorrowerService) { }
 
     ngOnInit() {
-        this.StartTime = new Date();        
+        this.StartTime = new Date();
         // Not allowed to navigate directly to component
         // this.URL = (window.location.href).includes('/application');
         // if (!this.URL) {

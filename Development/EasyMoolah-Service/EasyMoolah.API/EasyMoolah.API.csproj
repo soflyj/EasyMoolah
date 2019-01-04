@@ -14,9 +14,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EasyMoolah.Domain\EasyMoolah.Domain.csproj" />
-    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
-  </ItemGroup>
-
 </Project>

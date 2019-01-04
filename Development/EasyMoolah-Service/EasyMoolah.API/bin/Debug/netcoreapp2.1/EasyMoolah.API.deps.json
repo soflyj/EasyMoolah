@@ -24,8 +24,6 @@
     ".NETCoreApp,Version=v2.1": {
       "EasyMoolah.API/1.0.0": {
         "dependencies": {
-          "EasyMoolah.Domain": "1.0.0",
-          "EasyMoolah.Model": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
@@ -514,22 +512,6 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
-        }
-      },
-      "EasyMoolah.Domain/1.0.0": {
-        "runtime": {
-          "EasyMoolah.Domain.dll": {}
-        },
-        "compile": {
-          "EasyMoolah.Domain.dll": {}
-        }
-      },
-      "EasyMoolah.Model/1.0.0": {
-        "runtime": {
-          "EasyMoolah.Model.dll": {}
-        },
-        "compile": {
-          "EasyMoolah.Model.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3661,16 +3643,6 @@
       "sha512": "sha512-td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
-    },
-    "EasyMoolah.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "EasyMoolah.Model/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
