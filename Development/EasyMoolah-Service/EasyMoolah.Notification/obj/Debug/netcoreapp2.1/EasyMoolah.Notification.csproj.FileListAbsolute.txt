@@ -14,3 +14,7 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.dll
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.csprojAssemblyReference.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\netcoreapp2.1\EasyMoolah.Notification.csproj.CopyComplete

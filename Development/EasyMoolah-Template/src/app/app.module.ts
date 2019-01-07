@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {DropdownModule} from "ngx-dropdown";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,6 +11,9 @@ import { ContactComponent } from './content/contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { MatMenuModule} from '@angular/material/menu';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    DropdownModule
+    MatMenuModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

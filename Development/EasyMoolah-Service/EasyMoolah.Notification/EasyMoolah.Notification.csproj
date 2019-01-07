@@ -8,4 +8,8 @@
     <Folder Include="Templates\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+  </ItemGroup>
+
 </Project>

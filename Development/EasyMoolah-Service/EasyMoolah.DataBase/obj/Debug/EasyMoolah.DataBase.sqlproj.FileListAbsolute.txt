@@ -16,3 +16,4 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\refactor.xml
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\postdeploy.sql
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\predeploy.sql
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.sqlprojAssemblyReference.cache

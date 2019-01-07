@@ -9,20 +9,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Model", "EasyMoo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Domain", "EasyMoolah.Domain\EasyMoolah.Domain.csproj", "{A411AEB2-0189-4259-AC60-0C9B77CDE044}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{3033419E-0771-42E3-8972-E1D7C16FEBF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{3033419E-0771-42E3-8972-E1D7C16FEBF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Notification", "EasyMoolah.Notification\EasyMoolah.Notification.csproj", "{936AC402-5433-4087-BB47-40A83076DF8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Notification", "EasyMoolah.Notification\EasyMoolah.Notification.csproj", "{936AC402-5433-4087-BB47-40A83076DF8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{C42892C7-E1EE-498C-8370-9766FE5B79AC}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.txt = Readme.txt
 	EndProjectSection
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EasyMoolah.DataBase", "EasyMoolah.DataBase\EasyMoolah.DataBase.sqlproj", "{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.API", "EasyMoolah.API\EasyMoolah.API.csproj", "{67FF4EEC-444B-4597-AB05-BCD75AF7E023}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.API", "EasyMoolah.API\EasyMoolah.API.csproj", "{67FF4EEC-444B-4597-AB05-BCD75AF7E023}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Integration.API", "Integration\EasyMoolah.Integration.API\EasyMoolah.Integration.API.csproj", "{5010B9A0-47A7-458D-8226-2C0968DF04E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Test", "EasyMoolah.Test\EasyMoolah.Test.csproj", "{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,12 +50,6 @@ Global
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2509E4DF-092B-4A56-AE8D-25D4F5FB73B3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,6 +58,10 @@ Global
 		{5010B9A0-47A7-458D-8226-2C0968DF04E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5010B9A0-47A7-458D-8226-2C0968DF04E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5010B9A0-47A7-458D-8226-2C0968DF04E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

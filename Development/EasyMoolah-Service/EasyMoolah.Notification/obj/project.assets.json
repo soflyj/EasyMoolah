@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "EasyMoolah.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/EasyMoolah.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Model.dll": {}
+        }
       }
     }
   },
@@ -673,10 +683,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "EasyMoolah.Model/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
+      "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "EasyMoolah.Model >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -709,7 +725,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

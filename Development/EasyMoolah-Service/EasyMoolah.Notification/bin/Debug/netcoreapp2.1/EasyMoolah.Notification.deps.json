@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "EasyMoolah.Notification/1.0.0": {
+        "dependencies": {
+          "EasyMoolah.Model": "1.0.0"
+        },
         "runtime": {
           "EasyMoolah.Notification.dll": {}
+        }
+      },
+      "EasyMoolah.Model/1.0.0": {
+        "runtime": {
+          "EasyMoolah.Model.dll": {}
         }
       }
     }
   },
   "libraries": {
     "EasyMoolah.Notification/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyMoolah.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
