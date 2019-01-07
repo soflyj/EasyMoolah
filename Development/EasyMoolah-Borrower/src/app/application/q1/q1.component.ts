@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -20,9 +21,31 @@ export class Q1Component implements OnInit {
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private borrowerService: BorrowerService) { }
+    private borrowerService: BorrowerService,
+    private http: HttpClient) { }
 
   ngOnInit() {
+    // Test
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // tslint:disable-next-line:max-line-length
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY4NjY5MDcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.ElaSUArdMR8bvoEMV622r_C2fVaLH6tZc56IiMLmmd4'
+      })
+    };
+    const body: any = '';
+
+    const req = this.http.post('http://localhost:58007/api/books', null , httpOptions)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log('Error occured');
+        }
+      );
+
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
@@ -41,7 +64,7 @@ export class Q1Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.borrowerapplicationlog = [new BorrowerApplicationLog('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];    
+    this.borrowerService.borrowerapplicationlog = [new BorrowerApplicationLog('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
 
     this.router.navigateByUrl('/q2', { skipLocationChange: true });
   }
