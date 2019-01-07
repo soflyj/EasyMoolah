@@ -12,3 +12,12 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.dll
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.API.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Integration.API.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.API.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Integration.API.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csproj.CopyComplete

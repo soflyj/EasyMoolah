@@ -30,3 +30,4 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.RazorTargetAssemblyInfo.cache
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.dll
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\netcoreapp2.1\EasyMoolah.API.csprojAssemblyReference.cache

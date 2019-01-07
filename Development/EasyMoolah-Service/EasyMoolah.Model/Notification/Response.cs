@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Email
+namespace EasyMoolah.Model.Notification
 {
     public class Response
     {

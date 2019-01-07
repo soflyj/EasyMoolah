@@ -25,3 +25,4 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\Integr
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\Integration\EasyMoolah.Integration.API\obj\Debug\netcoreapp2.1\EasyMoolah.Integration.API.RazorTargetAssemblyInfo.cache
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\Integration\EasyMoolah.Integration.API\obj\Debug\netcoreapp2.1\EasyMoolah.Integration.API.dll
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\Integration\EasyMoolah.Integration.API\obj\Debug\netcoreapp2.1\EasyMoolah.Integration.API.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\Integration\EasyMoolah.Integration.API\obj\Debug\netcoreapp2.1\EasyMoolah.Integration.API.csprojAssemblyReference.cache

@@ -3,14 +3,15 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using EasyMoolah.Model.Email;
-
+using EasyMoolah.Model.Notification;
 
 namespace EasyMoolah.Notification
 {
     public class Email
     {
-        public Response sendEmail()
+        private ConfirmationOfApplication confirmationOfApplication;
+
+        public Response SendEmail(Request _request)
         {
             Response response = new Response();
 
@@ -34,9 +35,9 @@ namespace EasyMoolah.Notification
                     builder.Replace("{{name-tmp}}", "Bar!");
 
                     // configure the mail message
-                    mailMessage.From = new MailAddress("jar.ninja.nas@gmail.com");
-                    mailMessage.To.Insert(0, new MailAddress("soflyj@gmail.com"));
-                    mailMessage.Subject = "Test Subject";
+                    mailMessage.From = new MailAddress(_request.FromAddress);
+                    mailMessage.To.Insert(0, new MailAddress(_request.ToAddress));
+                    mailMessage.Subject = _request.Subject;
                     mailMessage.Body = builder.ToString();
                     mailMessage.IsBodyHtml = true;
 
@@ -54,6 +55,26 @@ namespace EasyMoolah.Notification
                 response.Friendly = "Isn't this awkard. Your email could not be sent.";
             }
 
+            return response;
+        }
+
+        public Response SendNotificationConfirmationOfApplication(Request _request,
+            ConfirmationOfApplication _confirmationOfApplication)
+        {
+            Response response = new Response();
+            confirmationOfApplication = _confirmationOfApplication;
+
+            try
+            {
+                response = SendEmail(_request);
+            }
+            catch (Exception ex)
+            {
+                response.ResultCode = 1;
+                response.Message = ex.InnerException.ToString();
+                response.Friendly = "Isn't this awkard. Your email could not be sent.";
+            }
+            
             return response;
         }
     }
