@@ -3,17 +3,23 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading.Tasks;
+using EasyMoolah.Model;
 using EasyMoolah.Model.Notification;
+using EasyMoolah.Model.Notification.ViewModel;
 
 namespace EasyMoolah.Notification
 {
     public class Email
     {
         private ConfirmationOfApplication confirmationOfApplication;
+        private FSPResult FSPResult;
 
         public Response SendEmail(Request _request)
         {
             Response response = new Response();
+            string templateLocation = "./Templates/";
+            string templateHTML = "";
 
             try
             {
@@ -26,13 +32,29 @@ namespace EasyMoolah.Notification
                     client.EnableSsl = true;
 
                     var builder = new StringBuilder();
-
-                    using (var reader = File.OpenText("c:\\testemail.html"))
+                    
+                    if (_request.Template == "FSPResults")
                     {
-                        builder.Append(reader.ReadToEnd());
+                        if (FSPResult.IsSuccessful)
+                        {
+                            templateHTML = templateLocation + "fsp_results-successful.html";
+                        }
+                        else
+                        {
+                            templateHTML = templateLocation + "fsp_results-unsuccessful.html";
+                        }
+
+                        using (var reader = File.OpenText(templateHTML))
+                        {
+                            builder.Append(reader.ReadToEnd());
+                        }
+
+                        builder.Replace("{{name}}", FSPResult.Name);
+                        builder.Replace("{{date}}", FSPResult.Date);
+
                     }
 
-                    builder.Replace("{{name-tmp}}", "Bar!");
+
 
                     // configure the mail message
                     mailMessage.From = new MailAddress(_request.FromAddress);
@@ -75,6 +97,25 @@ namespace EasyMoolah.Notification
                 response.Friendly = "Isn't this awkard. Your email could not be sent.";
             }
             
+            return response;
+        }
+
+        public async Task<Response> SendFSPResults(FSPResultViewModel _request)
+        {
+            Response response = new Response();
+            FSPResult = _request.FspResult;
+
+            try
+            {
+                response = SendEmail(_request.Request);
+            }
+            catch (Exception ex)
+            {
+                response.ResultCode = 1;
+                response.Message = ex.InnerException.ToString();
+                response.Friendly = "Isn't this awkard. Your results email could not be sent.";
+            }
+
             return response;
         }
     }

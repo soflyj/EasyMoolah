@@ -4615,6 +4615,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "EasyMoolah.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/EasyMoolah.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Model.dll": {}
+        }
+      },
+      "EasyMoolah.Notification/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "EasyMoolah.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        }
       }
     }
   },
@@ -12208,10 +12231,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "EasyMoolah.Model/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
+      "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
+    },
+    "EasyMoolah.Notification/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj",
+      "msbuildProject": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "EasyMoolah.Model >= 1.0.0",
+      "EasyMoolah.Notification >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12247,7 +12282,14 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            },
+            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
+              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

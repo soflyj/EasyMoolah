@@ -14,3 +14,7 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.dll
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.csprojAssemblyReference.cache
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\netcoreapp2.1\Newtonsoft.Json.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\netcoreapp2.1\Newtonsoft.Json.xml
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.csproj.CopyComplete

@@ -5,11 +5,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Templates\" />
+    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+    <None Update="Templates\activate_account.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\activation_confirmation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\fsp_results-successful.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\fsp_results-unsuccessful.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\retrieve_password.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

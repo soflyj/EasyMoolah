@@ -31,12 +31,12 @@ export class Q1Component implements OnInit {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         // tslint:disable-next-line:max-line-length
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY4NjY5MDcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.ElaSUArdMR8bvoEMV622r_C2fVaLH6tZc56IiMLmmd4'
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY5Mzk4ODIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.NAJBEJ0xtz_cABUuGm9xCLLZH8R6V_E27Qz26CrjRyQ'
       })
     };
     const body: any = '';
 
-    const req = this.http.post('http://localhost:58007/api/books', null , httpOptions)
+    const req = this.http.get('http://localhost:58007/api/books', httpOptions)
       .subscribe(
         res => {
           console.log(res);
