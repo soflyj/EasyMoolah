@@ -3,7 +3,7 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+import { Question } from 'src/app/model/question.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
@@ -17,6 +17,7 @@ export class Q1Component implements OnInit {
 
   Q1: FormGroup;
   URL = false;
+  Debug = false;
   StartTime: Date;
 
   constructor(private router: Router,
@@ -49,11 +50,13 @@ export class Q1Component implements OnInit {
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
+    this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
-    if (!this.URL) {
+    if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    //Reactive validation
     this.Q1 = new FormGroup({
       'service': new FormControl(
         '',
@@ -64,12 +67,8 @@ export class Q1Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.borrowerapplicationlog = [new BorrowerApplicationLog('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
+    this.borrowerService.question = [new Question('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
 
     this.router.navigateByUrl('/q2', { skipLocationChange: true });
   }
-
-  // back() {
-  //   this.router.navigateByUrl('/q2', { skipLocationChange: true });
-  // }
 }

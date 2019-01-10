@@ -21,3 +21,7 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Integration.API.pdb
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csproj.CopyComplete
+F:\GIT\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.AssemblyInfo.cs

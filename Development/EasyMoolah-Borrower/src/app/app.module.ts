@@ -9,46 +9,16 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {
-  MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
   MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
   MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
   MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
   MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
 
 // Services
 import { BorrowerService } from './service/borrower.service';
+import { HeaderService } from './service/header.service';
 import { GoogleMaps } from './common/googlemaps.service';
 
 // Components
@@ -118,10 +88,11 @@ import { ProcessingComponent } from './application/processing/processing.compone
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatProgressBarModule,
     HttpModule,
     HttpClientModule
   ],
-  providers: [BorrowerService, GoogleMaps],
+  providers: [BorrowerService, GoogleMaps, HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

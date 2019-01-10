@@ -423,6 +423,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -910,6 +919,9 @@
       "EasyMoolah.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
         "compile": {
           "bin/placeholder/EasyMoolah.Model.dll": {}
         },
@@ -1420,10 +1432,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
+      "sha512": "aSTPL94NloSiQVL5Len8wbjFKOnoAX/vOh3s3DF6g3c7GUUMLCDvnBhmA72M2iN2AedyA8hpr7m89kzSAKUnJQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -1617,11 +1630,52 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Newtonsoft.Json/12.0.1": {
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.pdb",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.pdb",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.pdb",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.pdb",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.pdb",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
     "Remotion.Linq/2.2.0": {
-      "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
+      "sha512": "twDAH8dAXXCAf3sRv1Tf94u66eEHvgU75hfn1nn2v4fSWXD50XoDOAk8WpSrbViNuMkB4kN1ElnOGm1c519IHg==",
       "type": "package",
       "path": "remotion.linq/2.2.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -2349,10 +2403,11 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "hZk9sNoImGM8frXsefi1l8nwEWf666XS09i+RVK0ohXpfWf+PCcjQ9LSngefDG+PGTzN7JKuda1aPa7lFIFXbg==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -2976,10 +3031,11 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
+      "sha512": "x/3d5xb+mc9e4I2GOOT+HPRWMZLbYjNN/kYKsb0fyUKcWizn/t1CIrGRLIBhv7H0ptYEt+WTTztdPmwSUMyKig==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -3423,23 +3479,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jramsaroop\\.nuget\\packages\\": {},
+    "C:\\Users\\Jarro\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj",
+      "projectUniqueName": "F:\\GIT\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj",
       "projectName": "EasyMoolah.Repository",
-      "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj",
-      "packagesPath": "C:\\Users\\jramsaroop\\.nuget\\packages\\",
-      "outputPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\obj\\",
+      "projectPath": "F:\\GIT\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj",
+      "packagesPath": "C:\\Users\\Jarro\\.nuget\\packages\\",
+      "outputPath": "F:\\GIT\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jramsaroop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3452,8 +3508,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\GITHUB\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            "F:\\GIT\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah2019\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
             }
           }
         }

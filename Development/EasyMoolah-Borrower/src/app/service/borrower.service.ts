@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { BorrowerApplicationLog } from '../model/borrowerapplicationLog.model';
+import { Question } from '../model/question.model';
+import { AuditLog } from '../model/auditlog.model';
 
 @Injectable()
 export class BorrowerService {
@@ -10,6 +12,9 @@ export class BorrowerService {
     }
 
     public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
+    public question: Question[] = [null];
+    public auditlog: AuditLog = null;
+
 
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
 
@@ -20,5 +25,17 @@ export class BorrowerService {
 
     getBorrowerApplicationLog() {
         return this.borrowerapplicationlog;
+    }
+
+    addToQuestionLog(question: Question) {
+        this.question.push(question);
+    }
+
+    addToAuditLog(auditlog: AuditLog) {
+        this.auditlog = auditlog;
+    }
+
+    debugMode(){
+        return true;
     }
 }

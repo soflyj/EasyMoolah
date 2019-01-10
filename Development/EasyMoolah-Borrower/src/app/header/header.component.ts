@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/service/header.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(headerService: HeaderService) { }
 
   ngOnInit() {
+    // this.subscription = this.headerService.getProgressValue()
+    // .subscribe(item => this.onMain=item);
   }
 
 }

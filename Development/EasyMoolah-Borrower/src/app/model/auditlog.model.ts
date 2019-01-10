@@ -1,5 +1,4 @@
-export class BorrowerApplicationLogs {
-  // public Key: Number;
+export class AuditLog {  
   public SessionGUID: string;
   public IPAddress: string;
   public XML: string;
