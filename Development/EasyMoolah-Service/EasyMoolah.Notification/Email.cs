@@ -54,8 +54,6 @@ namespace EasyMoolah.Notification
 
                     }
 
-
-
                     // configure the mail message
                     mailMessage.From = new MailAddress(_request.FromAddress);
                     mailMessage.To.Insert(0, new MailAddress(_request.ToAddress));

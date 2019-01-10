@@ -25,3 +25,5 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.pdb
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.1\EasyMoolah.Console.csproj.CopyComplete
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\Newtonsoft.Json.dll
+C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\Newtonsoft.Json.xml
