@@ -10,7 +10,7 @@ import { Question } from 'src/app/model/question.model';
 @Component({
     selector: 'app-q14',
     templateUrl: './q14.component.html',
-    styleUrls: ['../../../assets/css/em_site_theme.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css', './q14.component.css'],
     animations: [routerTransition]
 })
 export class Q14Component implements OnInit {
@@ -26,11 +26,6 @@ export class Q14Component implements OnInit {
     City: string;
     PostalCode: string;
     AutoCompleteMaps: any;
-
-    StreetLabel: string;
-    SuburbLabel: string;
-    CityLabel: string;
-    PostalCodeLabel: string;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -63,12 +58,6 @@ export class Q14Component implements OnInit {
         this.Suburb = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_2').Select(s => s.long_name)[0];
         this.City = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_1').Select(s => s.long_name)[0];
         this.PostalCode = place['address_components'].Where(w => w.types[0] === 'postal_code').Select(s => s.long_name)[0];
-
-        this.StreetLabel = 'active';
-        this.SuburbLabel = 'active';
-        this.CityLabel = 'active';
-        this.PostalCodeLabel = 'active';   
-
         this.zone.run(() => this.formattedAddress = place['formatted_address']);
     }
 

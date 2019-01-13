@@ -5,58 +5,41 @@
         <div class="input-field">
           <p>Personal Information</p>
           <div class="group">
-            <!-- <mat-form-field class="example-full-width" style="width: 60%">
-              <input matInput placeholder="First Name" formControlName="first_name">
+            <!-- First Name -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="FirstName" id="FirstName" type="text"
+                formControlName="firstname" placeholder="First Name"></textarea>
             </mat-form-field>
             <div class="clearfix"></div>
-            <mat-form-field class="example-full-width" style="width: 60%">
-              <input matInput placeholder="First Name">
+            <!-- Last Name -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="LastName" id="LastName" type="text" formControlName="lastname"
+                placeholder="Last Name"></textarea>
             </mat-form-field>
             <div class="clearfix"></div>
-            <mat-form-field class="example-full-width" style="width: 60%">
-              <input matInput placeholder="Last Name">
+            <!-- Email -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="Email" id="Email" type="text" formControlName="email"
+                placeholder="Email"></textarea>
             </mat-form-field>
             <div class="clearfix"></div>
-            <mat-form-field class="example-full-width" style="width: 60%">
-              <input matInput placeholder="Email">
+            <!-- Mobile Number -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="MobileNumber" id="MobileNumber" type="text" [textMask]="{mask: Fmask}"
+                formControlName="mobilenumber" placeholder="Mobile Number"></textarea>
             </mat-form-field>
             <div class="clearfix"></div>
-            <mat-form-field class="example-full-width" style="width: 60%">
-              <input matInput placeholder="Mobile Number">
+            <!-- Landline Number -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="LandlineNumber" id="LandlineNumber" type="text" 
+                formControlName="landlinenumber" placeholder="Landline Number (Optional)"></textarea>
             </mat-form-field>
-            <div class="clearfix"></div> -->
-            <mat-form-field class="example-full-width">
-                <textarea matInput placeholder="Leave a comment" style="height: 20px"></textarea>
-              </mat-form-field>
-
-            <!-- 
-            <div class="input-field">
-              <input id="first_name" type="text" class="validate" formControlName="first_name">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field">
-              <input id="last_name" type="text" class="validate" formControlName="last_name">
-              <label for="last_name">Last Name</label>
-            </div>
-            <div class="input-field">
-              <input id="email" type="email" class="validate" formControlName="email">
-              <label for="email">Email</label>
-            </div>
-            <div class="input-field">
-              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel" [textMask]="{mask: mask}">
-              <label for="mobiletel">Mobile Number</label> F
-            </div>
-            <div class="input-field">
-              <input id="landtel" type="tel" class="validate" formControlName="landtel" [textMask]="{mask: mask}">
-              <label for="landtel">Landline Number (optional)</label>
-            </div> -->
           </div>
         </div>
       </div>
     </div>
   </div>
   <!--row-->
-
   <footer class="container">
     <div class="row pagination-btns">
       <div class="col m6 offset-m3">
@@ -71,9 +54,7 @@
       </div>  
     </div>
   </footer>
-<!-- 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </form>

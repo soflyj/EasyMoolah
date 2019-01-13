@@ -1,31 +1,36 @@
 <form [formGroup]="Q14" (ngSubmit)="Next()">
   <div class="container">
     <div class="row">
-      <div class="col m6 offset-m3">        
+      <div class="col m6 offset-m3">
         <div class="input-field">
           <p>What's your home address?</p>
           <div class="group">
-            <!-- <p> -->
             <div class="input-field">
               <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
             </div>
-            <!-- </p> -->
-            <div class="input-field">
-              <input [(ngModel)]="Street" id="Street" type="text" formControlName="street" readonly>
-              <label for="street" [ngClass]="StreetLabel">Street</label>
-            </div>
-            <div class="input-field">
-              <input [(ngModel)]="Suburb" id="Suburb" type="text" formControlName="suburb" readonly>
-              <label for="suburb" [ngClass]="SuburbLabel">Suburb</label>
-            </div>
-            <div class="input-field">
-              <input [(ngModel)]="City" id="City" type="text" formControlName="city" readonly>
-              <label for="city" [ngClass]="CityLabel">City</label>
-            </div>
-            <div class="input-field">
-              <input [(ngModel)]="PostalCode" id="PostalCode" type="text" formControlName="postalcode" readonly>
-              <label for="postalcode" [ngClass]="PostalCodeLabel">Postal Code</label>
-            </div>
+            <!-- Street -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="Street" id="Street" placeholder="Street"
+                formControlName="street"></textarea>
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Suburb -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="Suburb" id="Suburb" type="text" formControlName="suburb"
+                placeholder="Suburb"></textarea>
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- City -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="City" id="City" type="text" formControlName="city"
+                placeholder="City"></textarea>
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Postal Code -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <textarea matInput class="floattextarea" [(ngModel)]="PostalCode" id="PostalCode" type="text"
+                formControlName="postalcode" placeholder="Postal Code"></textarea>
+            </mat-form-field>
           </div>
         </div>
       </div>

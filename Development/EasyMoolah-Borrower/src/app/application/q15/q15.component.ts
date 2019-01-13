@@ -9,7 +9,7 @@ import { Question } from 'src/app/model/question.model';
 @Component({
     selector: 'app-q15',
     templateUrl: './q15.component.html',
-    styleUrls: ['./q15.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css', './q15.component.css'],
     animations: [routerTransition]
 })
 export class Q15Component implements OnInit {
@@ -19,10 +19,10 @@ export class Q15Component implements OnInit {
     StartTime: Date;
     Debug = false;
 
-    mobiletel: string;
-    mobiletelLength: number;
-    landtel: string;
-    landtelLength: number;
+    MobileNumber: string;
+    MobileNumberLength: number;
+    LandlineNumber: string;
+    LandlineNumberLength: number;
     mask: any;
 
     constructor(public zone: NgZone,
@@ -33,7 +33,7 @@ export class Q15Component implements OnInit {
 
     ngOnInit() {
         this.StartTime = new Date();
-        this.headerservice.progress.next(78);
+        this.headerservice.progress.next(84);
 
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
@@ -44,18 +44,18 @@ export class Q15Component implements OnInit {
         this.mask = ['(', /[0-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
         this.Q15 = new FormGroup({
-            // 'first_name': new FormControl('', Validators.required),
-            // 'last_name': new FormControl('', Validators.required),
-            // 'email': new FormControl('', [Validators.required, Validators.email]),
-            // 'mobiletel': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
-            // 'landtel': new FormControl('', [this.CheckLandlineNumber.bind(this)])
+            'firstname': new FormControl('', Validators.required),
+            'lastname': new FormControl('', Validators.required),
+            'email': new FormControl('', [Validators.required, Validators.email]),
+            'mobilenumber': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
+            'landlinenumber': new FormControl('', [this.CheckLandlineNumber.bind(this)])
         });
     }
 
     CheckMobileNumber(control: FormControl): { [s: string]: boolean } {
-        this.mobiletel = control.value;
-        this.mobiletelLength = this.mobiletel.replace(/[-_() ]/g,'').length;
-        if (this.mobiletelLength != 10) {
+        this.MobileNumber = control.value;
+        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g,'').length;
+        if (this.MobileNumberLength != 10) {
             return { 'MobileValid': true };
         } else {
         return null;
@@ -63,9 +63,9 @@ export class Q15Component implements OnInit {
     }
 
     CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
-        this.landtel = control.value;
-        this.landtelLength = this.landtel.replace(/[-_() ]/g,'').length;
-        if (this.landtelLength != 10 && this.landtelLength != 0) {
+        this.LandlineNumber = control.value;
+        this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g,'').length;
+        if (this.LandlineNumberLength != 10 && this.LandlineNumberLength != 0) {
             return { 'LandlineValid': true };
         } else {
         return null;
