@@ -1,11 +1,7 @@
 <form [formGroup]="Q12" (ngSubmit)="Next()">
-  <div class="divider"></div>
   <div class="container">
     <div class="row">
       <div class="col m6 offset-m3">
-        <div class="progress page-progress">
-          <div class="determinate" style="width: 75%"></div>
-        </div>
         <div class="input-field">
           <p>How many dependants do you have?</p>
           <p>
@@ -27,11 +23,6 @@
             <label>
               <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="3" />
               <span>3</span> </label>
-          </p>
-          <p>
-            <label>
-              <input name="dependants" type="radio" class="with-gap" formControlName="dependants" value="4" />
-              <span>4</span> </label>
           </p>
           <p>
             <label>

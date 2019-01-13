@@ -1,5 +1,7 @@
-export class HeaderService {
+import { Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
-    constructor() {
-    }
+// @Injectable()
+export class HeaderService {
+    progress = new Subject();
 }

@@ -1,15 +1,35 @@
 <form [formGroup]="Q15" (ngSubmit)="Next()">
-  <div class="divider"></div>
   <div class="container">
     <div class="row">
       <div class="col m6 offset-m3">
-        <div class="progress page-progress">
-          <div class="determinate" style="width: 93.75%"></div>
-        </div>
-
         <div class="input-field">
           <p>Personal Information</p>
           <div class="group">
+            <!-- <mat-form-field class="example-full-width" style="width: 60%">
+              <input matInput placeholder="First Name" formControlName="first_name">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <mat-form-field class="example-full-width" style="width: 60%">
+              <input matInput placeholder="First Name">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <mat-form-field class="example-full-width" style="width: 60%">
+              <input matInput placeholder="Last Name">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <mat-form-field class="example-full-width" style="width: 60%">
+              <input matInput placeholder="Email">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <mat-form-field class="example-full-width" style="width: 60%">
+              <input matInput placeholder="Mobile Number">
+            </mat-form-field>
+            <div class="clearfix"></div> -->
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Leave a comment" style="height: 20px"></textarea>
+              </mat-form-field>
+
+            <!-- 
             <div class="input-field">
               <input id="first_name" type="text" class="validate" formControlName="first_name">
               <label for="first_name">First Name</label>
@@ -20,16 +40,16 @@
             </div>
             <div class="input-field">
               <input id="email" type="email" class="validate" formControlName="email">
-              <!-- <label for="email">Email</label> -->
+              <label for="email">Email</label>
             </div>
             <div class="input-field">
-              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel" [textMask]="{mask: mask}" >
-              <!-- <label for="mobiletel">Mobile Number</label> -->
+              <input id="mobiletel" type="tel" class="validate" formControlName="mobiletel" [textMask]="{mask: mask}">
+              <label for="mobiletel">Mobile Number</label> F
             </div>
             <div class="input-field">
               <input id="landtel" type="tel" class="validate" formControlName="landtel" [textMask]="{mask: mask}">
-              <!-- <label for="landtel">Landline Number (optional)</label> -->
-            </div>
+              <label for="landtel">Landline Number (optional)</label>
+            </div> -->
           </div>
         </div>
       </div>
@@ -51,8 +71,9 @@
       </div>  
     </div>
   </footer>
-
+<!-- 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </form>

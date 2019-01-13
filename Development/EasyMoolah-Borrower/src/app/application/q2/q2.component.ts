@@ -3,6 +3,7 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
+import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 
 @Component({
@@ -20,11 +21,13 @@ export class Q2Component implements OnInit {
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private borrowerService: BorrowerService) { }
+    private borrowerService: BorrowerService,
+    private headerservice: HeaderService) { }
 
   ngOnInit() {
     this.StartTime = new Date();
-
+    this.headerservice.progress.next(6);
+    
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');

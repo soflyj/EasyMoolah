@@ -8,11 +8,17 @@ import { HeaderService } from 'src/app/service/header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(headerService: HeaderService) { }
+  progress = 0;
+
+  constructor(private headerService: HeaderService) { }
 
   ngOnInit() {
-    // this.subscription = this.headerService.getProgressValue()
-    // .subscribe(item => this.onMain=item);
+    // Update the progress bar
+    this.headerService.progress.subscribe(
+      (progress: number) => {
+        this.progress = progress;
+      }
+    )
   }
 
 }

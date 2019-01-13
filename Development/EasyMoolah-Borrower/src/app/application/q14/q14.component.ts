@@ -3,19 +3,21 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
 import 'linq4js';
+import { HeaderService } from 'src/app/service/header.service';
+import { Question } from 'src/app/model/question.model';
 
 @Component({
     selector: 'app-q14',
     templateUrl: './q14.component.html',
-    styleUrls: ['./q14.component.css'],
+    styleUrls: ['../../../assets/css/em_site_theme.css'],
     animations: [routerTransition]
 })
 export class Q14Component implements OnInit {
 
     Q14: FormGroup;
     URL = false;
+    Debug = false;
     StartTime: Date;
 
     formattedAddress: string;
@@ -25,18 +27,26 @@ export class Q14Component implements OnInit {
     PostalCode: string;
     AutoCompleteMaps: any;
 
+    StreetLabel: string;
+    SuburbLabel: string;
+    CityLabel: string;
+    PostalCodeLabel: string;
+
     constructor(public zone: NgZone,
         private router: Router,
         private route: ActivatedRoute,
-        private borrowerService: BorrowerService) { }
+        private borrowerService: BorrowerService,
+        private headerservice: HeaderService) { }
 
     ngOnInit() {
         this.StartTime = new Date();
-        // Not allowed to navigate directly to component
-        // this.URL = (window.location.href).includes('/application');
-        // if (!this.URL) {
-        //     this.router.navigate(['notfound'], { relativeTo: this.route });
-        // }
+        this.headerservice.progress.next(78);
+        
+        this.Debug = this.borrowerService.debugMode();
+        this.URL = (window.location.href).includes('/application');
+        if (!this.URL && !this.Debug) {
+            this.router.navigate(['notfound'], { relativeTo: this.route });
+        }
 
         this.Q14 = new FormGroup({
             'street': new FormControl('', Validators.required),
@@ -47,17 +57,24 @@ export class Q14Component implements OnInit {
     }
     getAddress(place: object) {
         this.formattedAddress = place['formatted_address'];
+        console.log(place);
         // tslint:disable-next-line:max-line-length
-        this.Street = place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0] + ' ' + place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0];
+        this.Street = place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0] + ' ' + place['address_components'][1].long_name;
         this.Suburb = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_2').Select(s => s.long_name)[0];
         this.City = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_1').Select(s => s.long_name)[0];
         this.PostalCode = place['address_components'].Where(w => w.types[0] === 'postal_code').Select(s => s.long_name)[0];
+
+        this.StreetLabel = 'active';
+        this.SuburbLabel = 'active';
+        this.CityLabel = 'active';
+        this.PostalCodeLabel = 'active';   
+
         this.zone.run(() => this.formattedAddress = place['formatted_address']);
     }
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Question', 'Address?', this.Q14.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('Question', 'Address?',  this.Q14.value, this.StartTime.toString(), (new Date).toString()));        
 
         this.router.navigateByUrl('/q15', { skipLocationChange: true });
     }

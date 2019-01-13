@@ -1,13 +1,7 @@
 <form [formGroup]="Q14" (ngSubmit)="Next()">
-  <div class="divider">
-
-  </div>
   <div class="container">
     <div class="row">
-      <div class="col m6 offset-m3">
-        <div class="progress page-progress">
-          <div class="determinate" style="width: 87.5%"></div>
-        </div>
+      <div class="col m6 offset-m3">        
         <div class="input-field">
           <p>What's your home address?</p>
           <div class="group">
@@ -17,20 +11,20 @@
             </div>
             <!-- </p> -->
             <div class="input-field">
-              <input [(ngModel)]="Street" id="Street" type="text" formControlName="street">
-              <label for="street">Street</label>
+              <input [(ngModel)]="Street" id="Street" type="text" formControlName="street" readonly>
+              <label for="street" [ngClass]="StreetLabel">Street</label>
             </div>
             <div class="input-field">
-              <input [(ngModel)]="Suburb" id="Suburb" type="text" readonly formControlName="suburb">
-              <label for="suburb">Suburb</label>
+              <input [(ngModel)]="Suburb" id="Suburb" type="text" formControlName="suburb" readonly>
+              <label for="suburb" [ngClass]="SuburbLabel">Suburb</label>
             </div>
             <div class="input-field">
-              <input [(ngModel)]="City" id="City" type="text" readonly formControlName="city">
-              <label for="city">City</label>
+              <input [(ngModel)]="City" id="City" type="text" formControlName="city" readonly>
+              <label for="city" [ngClass]="CityLabel">City</label>
             </div>
             <div class="input-field">
-              <input [(ngModel)]="PostalCode" id="PostalCode" type="text" readonl formControlName="postalcode">
-              <label for="postalcode">Postal Code</label>
+              <input [(ngModel)]="PostalCode" id="PostalCode" type="text" formControlName="postalcode" readonly>
+              <label for="postalcode" [ngClass]="PostalCodeLabel">Postal Code</label>
             </div>
           </div>
         </div>

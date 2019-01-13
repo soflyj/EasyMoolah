@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
+import { HeaderService } from 'src/app/service/header.service';
+import { Question } from 'src/app/model/question.model';
 
 @Component({
   selector: 'app-q10',
@@ -15,26 +17,30 @@ export class Q10Component implements OnInit {
 
   monthlyexpense_slider: string;
   URL = false;
+  Debug = false;
   StartTime: Date;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private borrowerService: BorrowerService) { }
+    private borrowerService: BorrowerService,
+    private headerservice: HeaderService) { }
 
   ngOnInit() {
     this.StartTime = new Date();
+    this.headerservice.progress.next(54);
     this.monthlyexpense_slider = '50000'; // Default range
 
     // Not allowed to navigate directly to component
+    this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
-    if (!this.URL) {
+    if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addBorrowerApplicationLog(new BorrowerApplicationLog('Questions', 'What\'s your total monthly expense?', this.monthlyexpense_slider, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('Question', 'What\'s your total monthly expense?', this.monthlyexpense_slider, this.StartTime.toString(), (new Date).toString()));                
 
     this.router.navigateByUrl('/q11', { skipLocationChange: true });
   }
