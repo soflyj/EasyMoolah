@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HeaderService } from 'src/app/service/header.service';
 
 @Component({
   selector: 'app-processing',
@@ -8,10 +9,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProcessingComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private headerservice: HeaderService) { }
 
   ngOnInit() {
     this.go_next();
+    // this.headerservice.setMode('indeterminate');
   }
 
   go_next() {

@@ -31,11 +31,15 @@ export class BorrowerService {
         this.question.push(question);
     }
 
-    addToAuditLog(auditlog: AuditLog) {
+    addAuditLog(auditlog: AuditLog) {
         this.auditlog = auditlog;
     }
 
-    debugMode(){
+    getAuditLog() {
+        return this.auditlog;
+    }
+
+    debugMode() {
         return true;
     }
 }

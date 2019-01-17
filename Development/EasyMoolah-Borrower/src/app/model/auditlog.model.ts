@@ -1,4 +1,4 @@
-export class AuditLog {  
+export class AuditLog {
   public SessionGUID: string;
   public IPAddress: string;
   public XML: string;

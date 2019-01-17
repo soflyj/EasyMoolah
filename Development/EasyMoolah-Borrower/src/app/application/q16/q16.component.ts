@@ -41,7 +41,8 @@ export class Q16Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
-        this.Fmask = '/^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/';
+    // tslint:disable-next-line:max-line-length
+    //    this.Fmask = '/^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/';
 
         this.idnumber = '';
         this.Q16 = new FormGroup({
@@ -82,6 +83,7 @@ export class Q16Component implements OnInit {
     //     let cb = true;
     //     let ex = ''
     //     if (cb) {
+    // tslint:disable-next-line:max-line-length
     //         this.Fmask = '/^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/';
     //     } else {
     //         // some other validation here

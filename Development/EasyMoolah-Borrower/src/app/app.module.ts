@@ -13,13 +13,17 @@ import {
   MatInputModule,
   MatProgressBarModule,
   MatRippleModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatExpansionModule
+
 } from '@angular/material';
 
 // Services
 import { BorrowerService } from './service/borrower.service';
 import { HeaderService } from './service/header.service';
 import { GoogleMaps } from './common/googlemaps.service';
+
+import { AuditLog } from './model/auditlog.model';
 
 // Components
 import { AppComponent } from './app.component';
@@ -89,6 +93,7 @@ import { ProcessingComponent } from './application/processing/processing.compone
     MatInputModule,
     MatRippleModule,
     MatProgressBarModule,
+    MatExpansionModule,
     HttpModule,
     HttpClientModule
   ],

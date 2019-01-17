@@ -29,12 +29,14 @@ export class Q1Component implements OnInit {
 
   ngOnInit() {
     this.StartTime = new Date();
-    this.headerService.progress.next(0);
-
+    // this.headerService.progress.next(0);
+    // this.headerService.mode.next('indeterminate');
+    // this.headerService.setMode('determinate');
     // const httpOptions = {
     //   headers: new HttpHeaders({
     //     'Content-Type': 'application/json',
     //     // tslint:disable-next-line:max-line-length
+    // tslint:disable-next-line:max-line-length
     //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY5Mzk4ODIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.NAJBEJ0xtz_cABUuGm9xCLLZH8R6V_E27Qz26CrjRyQ'
     //   })
     // };
@@ -53,13 +55,13 @@ export class Q1Component implements OnInit {
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
-    this.Debug = this.borrowerService.debugMode();
-    this.URL = (window.location.href).includes('/application');
-    if (!this.URL && !this.Debug) {
-      this.router.navigate(['notfound'], { relativeTo: this.route });
-    }
+    // this.Debug = this.borrowerService.debugMode();
+    // this.URL = (window.location.href).includes('/application');
+    // if (!this.URL && !this.Debug) {
+    //   this.router.navigate(['notfound'], { relativeTo: this.route });
+    // }
 
-    //Reactive validation
+    // Reactive validation
     this.Q1 = new FormGroup({
       'service': new FormControl(
         '',
@@ -68,7 +70,7 @@ export class Q1Component implements OnInit {
     });
   }
 
-  Next() {    
+  Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.question = [new Question('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
 

@@ -47,15 +47,15 @@ export class Q15Component implements OnInit {
             'firstname': new FormControl('', Validators.required),
             'lastname': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
-            'mobilenumber': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
+            'mobilenumber': new FormControl('', [Validators.required]),
             'landlinenumber': new FormControl('', [this.CheckLandlineNumber.bind(this)])
         });
     }
 
     CheckMobileNumber(control: FormControl): { [s: string]: boolean } {
         this.MobileNumber = control.value;
-        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g,'').length;
-        if (this.MobileNumberLength != 10) {
+        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g,  '').length;
+        if (this.MobileNumberLength !== 10) {
             return { 'MobileValid': true };
         } else {
         return null;
@@ -64,8 +64,8 @@ export class Q15Component implements OnInit {
 
     CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
         this.LandlineNumber = control.value;
-        this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g,'').length;
-        if (this.LandlineNumberLength != 10 && this.LandlineNumberLength != 0) {
+        this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g, '').length;
+        if (this.LandlineNumberLength !== 10 && this.LandlineNumberLength !== 0) {
             return { 'LandlineValid': true };
         } else {
         return null;

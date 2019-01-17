@@ -27,13 +27,12 @@ export class Q2Component implements OnInit {
   ngOnInit() {
     this.StartTime = new Date();
     this.headerservice.progress.next(6);
-    
     // Not allowed to navigate directly to component
-    this.Debug = this.borrowerService.debugMode();
-    this.URL = (window.location.href).includes('/application');
-    if (!this.URL && !this.Debug) {
-      this.router.navigate(['notfound'], { relativeTo: this.route });
-    }
+    // this.Debug = this.borrowerService.debugMode();
+    // this.URL = (window.location.href).includes('/application');
+    // if (!this.URL && !this.Debug) {
+    //   this.router.navigate(['notfound'], { relativeTo: this.route });
+    // }
 
     this.Q2 = new FormGroup({
       'sub-service': new FormControl(
