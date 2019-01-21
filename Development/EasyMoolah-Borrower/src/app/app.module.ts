@@ -49,7 +49,6 @@ import { Q15Component } from './application/q15/q15.component';
 import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
-import { AddressComponent } from './address/address.component';
 import { ProcessingComponent } from './application/processing/processing.component';
 
 @NgModule({
@@ -77,7 +76,6 @@ import { ProcessingComponent } from './application/processing/processing.compone
     FinancialresultComponent,
     NotFoundComponent,
     ErrorComponent,
-    AddressComponent,
     AutocompleteComponent,
     ProcessingComponent
   ],

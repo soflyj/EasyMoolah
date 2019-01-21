@@ -23,10 +23,11 @@ export class Q6Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
-    private headerservice: HeaderService) { }
+    private headerService: HeaderService) { }
   ngOnInit() {
     this.StartTime = new Date();
-    this.headerservice.progress.next(30);
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(30);
     this.credit_check = false;
 
     // Not allowed to navigate directly to component

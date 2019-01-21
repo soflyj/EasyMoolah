@@ -24,18 +24,18 @@ namespace EasyMoolah.API.Controllers
         public IActionResult CreateToken([FromBody]LoginModel login)
         {
             IActionResult response = Unauthorized();
-            var user = Authenticate(login);
+            bool grantAccess = Authenticate(login);
 
-            if (user != null)
+            if (grantAccess)
             {
-                var tokenString = BuildToken(user);
+                var tokenString = BuildToken();
                 response = Ok(new { token = tokenString });
             }
 
             return response;
         }
 
-        private string BuildToken(UserModel user)
+        private string BuildToken()
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -48,15 +48,16 @@ namespace EasyMoolah.API.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private UserModel Authenticate(LoginModel login)
+        private bool Authenticate(LoginModel login)
         {
-            UserModel user = null;
+            bool result = false;
 
-            if (login.Username == "mario" && login.Password == "secret")
+            if (login.Username == "easymoolah" && login.Password == "easymoolah")
             {
-                user = new UserModel { Name = "Mario Rossi", Email = "mario.rossi@domain.com" };
+                result = true;
             }
-            return user;
+
+            return result;
         }
 
         public class LoginModel

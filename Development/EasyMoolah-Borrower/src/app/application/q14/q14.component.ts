@@ -31,12 +31,13 @@ export class Q14Component implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
-        private headerservice: HeaderService) { }
+        private headerService: HeaderService) { }
 
     ngOnInit() {
         this.StartTime = new Date();
-        this.headerservice.progress.next(78);
-        
+        this.headerService.mode.next('determinate');
+        this.headerService.progress.next(78);
+
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
         if (!this.URL && !this.Debug) {
@@ -44,10 +45,10 @@ export class Q14Component implements OnInit {
         }
 
         this.Q14 = new FormGroup({
-            'street': new FormControl('', Validators.required),
-            'suburb': new FormControl('', Validators.required),
-            'city': new FormControl('', Validators.required),
-            'postalcode': new FormControl('', Validators.required)
+            'street': new FormControl('', [Validators.required]),
+            'suburb': new FormControl('', [Validators.required]),
+            'city': new FormControl('', [Validators.required]),
+            'postalcode': new FormControl('', [Validators.required])
         });
     }
     getAddress(place: object) {
@@ -63,7 +64,7 @@ export class Q14Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'Address?',  this.Q14.value, this.StartTime.toString(), (new Date).toString()));        
+        this.borrowerService.addToQuestionLog(new Question('Question', 'Address?', this.Q14.value, this.StartTime.toString(), (new Date).toString()));
 
         this.router.navigateByUrl('/q15', { skipLocationChange: true });
     }

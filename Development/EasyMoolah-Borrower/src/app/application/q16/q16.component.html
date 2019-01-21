@@ -4,16 +4,14 @@
       <div class="col m6 offset-m3">
         <div class="input-field">
           <p>Personal Identification Number</p>
-          <div class="input-field">
-            <input [(ngModel)]="idnumber" id="idnumber" type="text" class="validate" formControlName="idnumber">
-            <label for="idnumber">ID Number</label>
-          </div>
-
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="IdNumber" [(ngModel)]="IdNumber" placeholder="ID Number" formControlName="idnumber">
+          </mat-form-field>
         </div>
       </div>
     </div>
     <!--row-->
-  </div>  
+  </div>
   <footer class="container">
     <div class="row pagination-btns">
       <div class="col m6 offset-m3">

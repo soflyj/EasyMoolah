@@ -22,17 +22,19 @@ export class Q2Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
-    private headerservice: HeaderService) { }
+    private headerService: HeaderService) { }
 
   ngOnInit() {
     this.StartTime = new Date();
-    this.headerservice.progress.next(6);
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(6);  
+
     // Not allowed to navigate directly to component
-    // this.Debug = this.borrowerService.debugMode();
-    // this.URL = (window.location.href).includes('/application');
-    // if (!this.URL && !this.Debug) {
-    //   this.router.navigate(['notfound'], { relativeTo: this.route });
-    // }
+    this.Debug = this.borrowerService.debugMode();
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL && !this.Debug) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
+    }
 
     this.Q2 = new FormGroup({
       'sub-service': new FormControl(
