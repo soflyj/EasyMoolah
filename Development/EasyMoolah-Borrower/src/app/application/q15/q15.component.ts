@@ -48,7 +48,7 @@ export class Q15Component implements OnInit {
             'firstname': new FormControl('', Validators.required),
             'lastname': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
-            'mobilenumber': new FormControl('', [Validators.required]),
+            'mobilenumber': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
             'landlinenumber': new FormControl('', [this.CheckLandlineNumber.bind(this)])
         });
     }

@@ -10,26 +10,22 @@
             </div>
             <!-- Street -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="Street" id="Street" placeholder="Street"
-                formControlName="street"></textarea>
+              <input matInput placeholder="Street" [(ngModel)]="Street" placeholder="Street" formControlName="street">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Suburb -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="Suburb" id="Suburb" type="text" formControlName="suburb"
-                placeholder="Suburb"></textarea>
+              <input matInput placeholder="Street" [(ngModel)]="Suburb" placeholder="Suburb" formControlName="suburb">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- City -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="City" id="City" type="text" formControlName="city"
-                placeholder="City"></textarea>
+              <input matInput placeholder="City" [(ngModel)]="City" placeholder="City" formControlName="city">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Postal Code -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="PostalCode" id="PostalCode" type="text"
-                formControlName="postalcode" placeholder="Postal Code"></textarea>
+              <input matInput placeholder="PostalCode" [(ngModel)]="PostalCode" placeholder="PostalCode" formControlName="postalcode">
             </mat-form-field>
           </div>
         </div>
@@ -45,7 +41,7 @@
         <div class="col m4">
         </div>
         <div class="col m4">
-          <button type="submit" class="waves-effect waves-light btn-small"><i class="material-icons right">chevron_right</i>Next</button>
+          <button type="submit" class="waves-effect waves-light btn-small" [disabled]="!Q14.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>  
     </div>

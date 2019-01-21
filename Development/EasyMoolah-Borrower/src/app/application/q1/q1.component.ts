@@ -55,11 +55,11 @@ export class Q1Component implements OnInit {
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
-    // this.Debug = this.borrowerService.debugMode();
-    // this.URL = (window.location.href).includes('/application');
-    // if (!this.URL && !this.Debug) {
-    //   this.router.navigate(['notfound'], { relativeTo: this.route });
-    // }
+    this.Debug = this.borrowerService.debugMode();
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL && !this.Debug) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
+    }
 
     // Reactive validation
     this.Q1 = new FormGroup({

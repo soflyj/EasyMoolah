@@ -31,11 +31,11 @@ export class Q3Component implements OnInit {
     this.borrowamount_slider = '50000'; // Default range
 
     // Not allowed to navigate directly to component
-    // this.Debug = this.borrowerService.debugMode();
-    // this.URL = (window.location.href).includes('/application');
-    // if (!this.URL && !this.Debug) {
-    //   this.router.navigate(['notfound'], { relativeTo: this.route });
-    // }
+    this.Debug = this.borrowerService.debugMode();
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL && !this.Debug) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
+    }
   }
 
   Next() {
