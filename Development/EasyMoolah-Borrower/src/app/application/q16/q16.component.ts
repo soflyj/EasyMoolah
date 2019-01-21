@@ -29,11 +29,12 @@ export class Q16Component implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
-        private headerservice: HeaderService) { }
+        private headerService: HeaderService) { }
 
     ngOnInit() {
         this.StartTime = new Date();
-        this.headerservice.progress.next(100);
+        this.headerService.mode.next('determinate');
+        this.headerService.progress.next(100);
 
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');

@@ -29,9 +29,9 @@ export class Q1Component implements OnInit {
 
   ngOnInit() {
     this.StartTime = new Date();
-    // this.headerService.progress.next(0);
-    // this.headerService.mode.next('indeterminate');
-    // this.headerService.setMode('determinate');
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(0);    
+
     // const httpOptions = {
     //   headers: new HttpHeaders({
     //     'Content-Type': 'application/json',
