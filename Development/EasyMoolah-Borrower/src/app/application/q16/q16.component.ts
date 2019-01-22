@@ -85,5 +85,6 @@ export class Q16Component implements OnInit {
     resolved(captchaResponse: string) {
         this.reCAPTCHA = true;
         console.log(`Resolved captcha with response ${captchaResponse}:`);
+        // Lebo Testing 22012019
     }
 }
