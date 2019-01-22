@@ -7,32 +7,32 @@
           <div class="group">
             <!-- First Name -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="FirstName" id="FirstName" type="text"
+              <textarea matInput class="floattextarea" [(ngModel)]="FirstName" id="First Name" type="text"
                 formControlName="firstname" placeholder="First Name"></textarea>
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Last Name -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="LastName" id="LastName" type="text" formControlName="lastname"
-                placeholder="Last Name"></textarea>
+              <input matInput placeholder="LastName" [(ngModel)]="LastName" placeholder="Last Name" formControlName="lastname">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Email -->
             <mat-form-field class="example-full-width" style="width: 70%">
               <textarea matInput class="floattextarea" [(ngModel)]="Email" id="Email" type="text" formControlName="email"
                 placeholder="Email"></textarea>
+              <input matInput placeholder="Email" [(ngModel)]="Email" placeholder="Email" formControlName="email">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Mobile Number -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="MobileNumber" id="MobileNumber" type="text"
-                formControlName="mobilenumber" placeholder="Mobile Number"></textarea>
+              <input matInput placeholder="MobileNumber" [(ngModel)]="MobileNumber" placeholder="Mobile Number" [textMask]="{mask: mask}"
+                formControlName="mobilenumber">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Landline Number -->
             <mat-form-field class="example-full-width" style="width: 70%">
-              <textarea matInput class="floattextarea" [(ngModel)]="LandlineNumber" id="LandlineNumber" type="text" 
-                formControlName="landlinenumber" placeholder="Landline Number (Optional)"></textarea>
+              <input matInput placeholder="LandlineNumber" [(ngModel)]="LandlineNumber" placeholder="Landline Number (Optional)"  [textMask]="{mask: mask}"
+                formControlName="landlinenumber">
             </mat-form-field>
           </div>
         </div>

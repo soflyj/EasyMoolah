@@ -29,11 +29,12 @@ export class Q15Component implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
-        private headerservice: HeaderService) { }
+        private headerService: HeaderService) { }
 
     ngOnInit() {
         this.StartTime = new Date();
-        this.headerservice.progress.next(84);
+        this.headerService.mode.next('determinate');
+        this.headerService.progress.next(84);
 
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
@@ -47,7 +48,7 @@ export class Q15Component implements OnInit {
             'firstname': new FormControl('', Validators.required),
             'lastname': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
-            'mobilenumber': new FormControl('', [Validators.required]),
+            'mobilenumber': new FormControl('', [Validators.required, this.CheckMobileNumber.bind(this)]),
             'landlinenumber': new FormControl('', [this.CheckLandlineNumber.bind(this)])
         });
     }

@@ -29,9 +29,9 @@ export class Q1Component implements OnInit {
 
   ngOnInit() {
     this.StartTime = new Date();
-    // this.headerService.progress.next(0);
-    // this.headerService.mode.next('indeterminate');
-    // this.headerService.setMode('determinate');
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(0);    
+
     // const httpOptions = {
     //   headers: new HttpHeaders({
     //     'Content-Type': 'application/json',
@@ -55,11 +55,11 @@ export class Q1Component implements OnInit {
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
-    // this.Debug = this.borrowerService.debugMode();
-    // this.URL = (window.location.href).includes('/application');
-    // if (!this.URL && !this.Debug) {
-    //   this.router.navigate(['notfound'], { relativeTo: this.route });
-    // }
+    this.Debug = this.borrowerService.debugMode();
+    this.URL = (window.location.href).includes('/application');
+    if (!this.URL && !this.Debug) {
+      this.router.navigate(['notfound'], { relativeTo: this.route });
+    }
 
     // Reactive validation
     this.Q1 = new FormGroup({

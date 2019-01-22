@@ -26,7 +26,6 @@ import { Q14Component } from './application/q14/q14.component';
 import { Q15Component } from './application/q15/q15.component';
 import { Q16Component } from './application/q16/q16.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AddressComponent } from './address/address.component';
 import { ProcessingComponent } from './application/processing/processing.component';
 
 const appRoutes: Routes = [
@@ -66,7 +65,6 @@ const appRoutes: Routes = [
   { path: 'bq14', component: Q14Component, data: {state: 'bq14'}},
   { path: 'bq15', component: Q15Component},
 
-  { path: 'address', component: AddressComponent, data: {state: 'address'}},
   { path: 'processing', component: ProcessingComponent, data: {state: 'processing'}},
   { path: 'financialresult', component: FinancialresultComponent, data: {state: 'financialresult'}},
 

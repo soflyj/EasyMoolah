@@ -9,6 +9,7 @@ import { HeaderService } from 'src/app/service/header.service';
 export class HeaderComponent implements OnInit {
 
   progress = 0;
+  mode = '';
 
   constructor(private headerService: HeaderService) { }
 
@@ -17,6 +18,12 @@ export class HeaderComponent implements OnInit {
     this.headerService.progress.subscribe(
       (progress: number) => {
         this.progress = progress;
+      }
+    )
+
+    this.headerService.mode.subscribe(
+      (mode: string) => {
+        this.mode = mode;
       }
     )
   }

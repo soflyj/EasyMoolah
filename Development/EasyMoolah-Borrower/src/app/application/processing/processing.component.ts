@@ -10,9 +10,11 @@ import { HeaderService } from 'src/app/service/header.service';
 export class ProcessingComponent implements OnInit {
 
   constructor(private router: Router,
-    private headerservice: HeaderService) { }
+    private headerService: HeaderService) { }
 
   ngOnInit() {
+    this.headerService.mode.next('query');
+
     this.go_next();
     // this.headerservice.setMode('indeterminate');
   }

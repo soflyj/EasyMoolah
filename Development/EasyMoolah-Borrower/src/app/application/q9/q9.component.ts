@@ -22,11 +22,12 @@ export class Q9Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
-    private headerservice: HeaderService) { }
+    private headerService: HeaderService) { }
 
   ngOnInit() {
     this.StartTime = new Date();
-    this.headerservice.progress.next(48);
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(48);
     this.nettincome_slider = '50000'; // Default range
 
     // Not allowed to navigate directly to component
