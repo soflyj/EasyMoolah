@@ -21,6 +21,7 @@ export class Q16Component implements OnInit {
 
     idnumber: string;
     maxLength = 13;
+    pattern: any;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -46,8 +47,9 @@ export class Q16Component implements OnInit {
 
     CheckSAIdNumber(control: FormControl): { [s: string]: boolean } {
         this.idnumber = control.value;
-        var pattern = /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
-        if (!(pattern.test(this.idnumber) && this.idnumber.length == 13)) {
+        // tslint:disable-next-line:max-line-length
+        this.pattern = /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
+        if (!(this.pattern.test(this.idnumber) && this.idnumber.length == 13)) {
             return { 'IdNumberValid': true };
         } else {
             return null;
