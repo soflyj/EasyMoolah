@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FinanceResult } from '../../model/financeresult.model';
+import { HeaderService } from 'src/app/service/header.service';
 @Component({
   selector: 'app-financialresult',
   templateUrl: './financialresult.component.html',
@@ -14,9 +15,11 @@ export class FinancialresultComponent implements OnInit {
     new FinanceResult(100000, 'DirectAxis', '../../../assets/images/fsp-logos/directaxis.png', 'directaxis')
   ];
 
-  constructor() { }
+  constructor(private headerService: HeaderService) { }
 
   ngOnInit() {
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(0);
   }
 
 }

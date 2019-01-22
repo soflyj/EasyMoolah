@@ -5,7 +5,7 @@
         <div class="input-field">
           <p>Personal Identification Number</p>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="IdNumber" [(ngModel)]="IdNumber" placeholder="ID Number" formControlName="idnumber">
+            <input matInput placeholder="IdNumber" placeholder="ID Number" formControlName="idnumber">
           </mat-form-field>
         </div>
       </div>
@@ -24,6 +24,9 @@
           <button type="submit" class="waves-effect waves-light btn-small" [disabled]="!Q16.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>  
+    </div>
+    <div>
+      <!-- <re-captcha (resolved)="resolved($event)" siteKey="6Lc04osUAAAAAF5BCgjtU-bdF6uC7l27PFcFXQWB"></re-captcha> -->
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

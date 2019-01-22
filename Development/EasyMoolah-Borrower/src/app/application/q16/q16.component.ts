@@ -21,6 +21,9 @@ export class Q16Component implements OnInit {
 
     idnumber: string;
     maxLength = 13;
+    pattern: any;
+
+    reCAPTCHA = false;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -46,10 +49,24 @@ export class Q16Component implements OnInit {
 
     CheckSAIdNumber(control: FormControl): { [s: string]: boolean } {
         this.idnumber = control.value;
-        var pattern = /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
-        if (!(pattern.test(this.idnumber) && this.idnumber.length == 13)) {
+        // tslint:disable-next-line:max-line-length
+        this.pattern = /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
+        if (!(this.pattern.test(this.idnumber) && this.idnumber.length == 13)) {
+            console.log('ID False');
             return { 'IdNumberValid': true };
         } else {
+            console.log('ID True');
+            return null;
+        }
+    }
+
+    CheckreCAPTCHA(control: FormControl): { [s: string]: boolean } {
+        
+        if (!this.reCAPTCHA) {
+            console.log('reCaptcha False');
+            return { 'reCAPTCHA': true };
+        } else {
+            console.log('reCaptcha True');
             return null;
         }
     }
@@ -63,5 +80,10 @@ export class Q16Component implements OnInit {
 
     Back() {
         this.router.navigateByUrl('/bq15', { skipLocationChange: true });
+    }
+
+    resolved(captchaResponse: string) {
+        this.reCAPTCHA = true;
+        console.log(`Resolved captcha with response ${captchaResponse}:`);
     }
 }

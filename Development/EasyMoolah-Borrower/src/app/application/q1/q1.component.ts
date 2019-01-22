@@ -30,7 +30,7 @@ export class Q1Component implements OnInit {
   ngOnInit() {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
-    this.headerService.progress.next(0);    
+    this.headerService.progress.next(0);
 
     // const httpOptions = {
     //   headers: new HttpHeaders({
