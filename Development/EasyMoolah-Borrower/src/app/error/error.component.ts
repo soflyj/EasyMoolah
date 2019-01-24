@@ -10,7 +10,6 @@ export class ErrorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // Test for Lebo's branch
   }
 
 }

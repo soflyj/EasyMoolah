@@ -1683,11 +1683,10 @@
       ]
     },
     "Remotion.Linq/2.2.0": {
-      "sha512": "twDAH8dAXXCAf3sRv1Tf94u66eEHvgU75hfn1nn2v4fSWXD50XoDOAk8WpSrbViNuMkB4kN1ElnOGm1c519IHg==",
+      "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
       "path": "remotion.linq/2.2.0",
       "files": [
-        ".signature.p7s",
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -1825,7 +1824,7 @@
       ]
     },
     "System.Collections.Immutable/1.5.0": {
-      "sha512": "erLSnZLBCA8EKIE2bKtXynjWBWSoMlmCFrOOYN+sPKCeYd3oGj9h8hqRPODtsRlPANkOW7L8tEQlEadHbUXC6A==",
+      "sha512": "RGxi2aQoXgZ5ge0zxrKqI4PU9LrYYoLC+cnEnWXKsSduCOUhE1GEAAoTexUVT8RZOILQyy1B27HC8Xw/XLGzdQ==",
       "type": "package",
       "path": "system.collections.immutable/1.5.0",
       "files": [
@@ -1847,7 +1846,7 @@
       ]
     },
     "System.ComponentModel.Annotations/4.5.0": {
-      "sha512": "rQj1sVZa0jtt+RObqgxvBBm6Pwigmuq+cobsLG65487uuwPTl2eg1ksjmErJUyozRmwamo2KZN8Vyveif0edWA==",
+      "sha512": "IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
       "type": "package",
       "path": "system.componentmodel.annotations/4.5.0",
       "files": [
@@ -2415,7 +2414,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "hZk9sNoImGM8frXsefi1l8nwEWf666XS09i+RVK0ohXpfWf+PCcjQ9LSngefDG+PGTzN7JKuda1aPa7lFIFXbg==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -2472,7 +2471,7 @@
       ]
     },
     "System.Memory/4.5.1": {
-      "sha512": "oonnLQPZAGD21qtNMG4EtVmbYOInk2jV7M+g108B6OHOb67ZOaWnA/K8P5oQ6uK9wxKzB1iEXSChQOi2scKOqA==",
+      "sha512": "vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
       "type": "package",
       "path": "system.memory/4.5.1",
       "files": [
@@ -3042,7 +3041,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "x/3d5xb+mc9e4I2GOOT+HPRWMZLbYjNN/kYKsb0fyUKcWizn/t1CIrGRLIBhv7H0ptYEt+WTTztdPmwSUMyKig==",
+      "sha512": "qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "files": [
@@ -3493,23 +3492,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jarrod\\.nuget\\packages\\": {},
+    "C:\\Users\\jramsaroop\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\EasyMoolah.Console.csproj",
+      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\EasyMoolah.Console.csproj",
       "projectName": "EasyMoolah.Console",
-      "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\EasyMoolah.Console.csproj",
-      "packagesPath": "C:\\Users\\Jarrod\\.nuget\\packages\\",
-      "outputPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\obj\\",
+      "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\EasyMoolah.Console.csproj",
+      "packagesPath": "C:\\Users\\jramsaroop\\.nuget\\packages\\",
+      "outputPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Console\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jarrod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jramsaroop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3522,8 +3521,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
-              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+            "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             }
           }
         }
