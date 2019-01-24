@@ -2620,20 +2620,6 @@
           "bin/placeholder/EasyMoolah.API.dll": {}
         }
       },
-      "EasyMoolah.Integration.API/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1"
-        },
-        "compile": {
-          "bin/placeholder/EasyMoolah.Integration.API.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Integration.API.dll": {}
-        }
-      },
       "EasyMoolah.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -8137,11 +8123,6 @@
       "path": "../EasyMoolah.API/EasyMoolah.API.csproj",
       "msbuildProject": "../EasyMoolah.API/EasyMoolah.API.csproj"
     },
-    "EasyMoolah.Integration.API/1.0.0": {
-      "type": "project",
-      "path": "../Integration/EasyMoolah.Integration.API/EasyMoolah.Integration.API.csproj",
-      "msbuildProject": "../Integration/EasyMoolah.Integration.API/EasyMoolah.Integration.API.csproj"
-    },
     "EasyMoolah.Model/1.0.0": {
       "type": "project",
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
@@ -8156,7 +8137,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "EasyMoolah.API >= 1.0.0",
-      "EasyMoolah.Integration.API >= 1.0.0",
       "EasyMoolah.Model >= 1.0.0",
       "EasyMoolah.Notification >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.8.0",
@@ -8203,9 +8183,6 @@
             },
             "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
               "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
-            },
-            "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Integration\\EasyMoolah.Integration.API\\EasyMoolah.Integration.API.csproj"
             }
           }
         }
