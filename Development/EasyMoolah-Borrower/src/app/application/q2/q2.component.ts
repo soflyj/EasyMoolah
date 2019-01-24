@@ -37,10 +37,7 @@ export class Q2Component implements OnInit {
     }
 
     this.Q2 = new FormGroup({
-      'sub-service': new FormControl(
-        '',
-        [Validators.required]
-      ),
+      'sub-service': new FormControl('', [Validators.required]),
     });
   }
 

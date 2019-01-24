@@ -8,6 +8,7 @@ import { AutocompleteComponent } from './google-places.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { RecaptchaModule } from 'ng-recaptcha';
 import {
   MatButtonModule,
   MatInputModule,
@@ -93,7 +94,8 @@ import { ProcessingComponent } from './application/processing/processing.compone
     MatProgressBarModule,
     MatExpansionModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule
   ],
   providers: [BorrowerService, GoogleMaps, HeaderService],
   bootstrap: [AppComponent]

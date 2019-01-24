@@ -24,11 +24,11 @@ namespace EasyMoolah.Notification
             try
             {
                 using (var mailMessage = new MailMessage())
-                using (var client = new SmtpClient("smtp.gmail.com", 587))
+                using (var client = new SmtpClient("mail.easymoolah.co.za", 465))
                 {
                     // configure the client and send the message
                     client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential("jar.ninja.nas@gmail.com", "hOnda123");
+                    client.Credentials = new NetworkCredential("info@easymoolah.co.za", "EasyMoolah@101");
                     client.EnableSsl = true;
 
                     var builder = new StringBuilder();

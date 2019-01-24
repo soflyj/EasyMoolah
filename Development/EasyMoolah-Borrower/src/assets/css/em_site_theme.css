@@ -107,7 +107,9 @@ ul.footer_menu_bottom {
 .footer_menu_bottom li {float:left}
 .footer_menu_bottom li::after {content:'|'; padding: 0 10px; display:inline-block}
 .footer_menu_bottom li:last-child::after {content: ''; padding: 0}
-
+input.no-double-underline-input, input.no-double-underline-input:not([type]):focus:not([readonly]) {border-bottom:0; margin: 0; box-shadow:none}
+.no-double-underline .mat-form-field-appearance-legacy .mat-form-field-infix {padding-bottom: 0}
+form .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-empty {color:#2e9eab}
 /*==========================
 Media Queries
 ============================*/

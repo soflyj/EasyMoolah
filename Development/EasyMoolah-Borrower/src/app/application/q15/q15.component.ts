@@ -55,8 +55,8 @@ export class Q15Component implements OnInit {
 
     CheckMobileNumber(control: FormControl): { [s: string]: boolean } {
         this.MobileNumber = control.value;
-        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g,  '').length;
-        if (this.MobileNumberLength !== 10) {
+        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g,  '').length;        
+        if (this.MobileNumberLength !== 10 || this.MobileNumber.substring(1,2) !== '0') {
             return { 'MobileValid': true };
         } else {
         return null;
@@ -66,7 +66,7 @@ export class Q15Component implements OnInit {
     CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
         this.LandlineNumber = control.value;
         this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g, '').length;
-        if (this.LandlineNumberLength !== 10 && this.LandlineNumberLength !== 0) {
+        if ((this.LandlineNumberLength !== 10 && this.LandlineNumberLength !== 0) || this.LandlineNumber.substring(1,2) !== '0' ) {
             return { 'LandlineValid': true };
         } else {
         return null;
