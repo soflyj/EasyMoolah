@@ -9,7 +9,6 @@
       "EasyMoolah.Test/1.0.0": {
         "dependencies": {
           "EasyMoolah.API": "1.0.0",
-          "EasyMoolah.Integration.API": "1.0.0",
           "EasyMoolah.Model": "1.0.0",
           "EasyMoolah.Notification": "1.0.0",
           "Microsoft.NET.Test.Sdk": "15.8.0",
@@ -1802,14 +1801,6 @@
           "EasyMoolah.API.dll": {}
         }
       },
-      "EasyMoolah.Integration.API/1.0.0": {
-        "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1"
-        },
-        "runtime": {
-          "EasyMoolah.Integration.API.dll": {}
-        }
-      },
       "EasyMoolah.Model/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -2766,11 +2757,6 @@
       "hashPath": "xunit.runner.visualstudio.2.3.1.nupkg.sha512"
     },
     "EasyMoolah.API/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "EasyMoolah.Integration.API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.1": {
       "EasyMoolah.Console/1.0.0": {
         "dependencies": {
-          "EasyMoolah.Repository": "1.0.0"
+          "EasyMoolah.Repository": "1.0.0",
+          "Fincheck.Integration": "1.0.0"
         },
         "runtime": {
           "EasyMoolah.Console.dll": {}
@@ -524,6 +525,14 @@
         "runtime": {
           "EasyMoolah.Repository.dll": {}
         }
+      },
+      "Fincheck.Integration/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "Fincheck.Integration.dll": {}
+        }
       }
     }
   },
@@ -917,6 +926,11 @@
       "sha512": ""
     },
     "EasyMoolah.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Fincheck.Integration/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
