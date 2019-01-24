@@ -16,7 +16,7 @@ namespace EasyMoolah.Console
 
             Fincheck.Integration.Intent intent = new Intent();
 
-            intent.getIntentById(1);
+         //   intent.getIntentById(1);
         }
     }
 }

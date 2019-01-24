@@ -3,37 +3,41 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Newtonsoft.Json;
 
 namespace Fincheck.Integration
 {
     public class Intent
     {
-        public void getIntentById(int id)
-        {
-            var apiUrl = "https://jsonplaceholder.typicode.com/todos/" + id;
 
-            HttpClient httpClient = new HttpClient
+        private string result = "";
+
+        public string GetIntentById(int id)
+        {            
+            var apiUrl = "https://engine.fincheck.co.za/api/v1/intent/" + id;
+
+            try
             {
-                BaseAddress = new Uri(apiUrl)
-            };
-            httpClient.DefaultRequestHeaders.Accept.Clear();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
-            //httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
+                using (var httpClient = new HttpClient())
+                {
+                    httpClient.BaseAddress = new Uri(apiUrl);
+                    httpClient.DefaultRequestHeaders.Accept.Clear();
+                    httpClient.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+                    httpClient.DefaultRequestHeaders.Authorization =
+                        new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                    httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
-            var temp = httpClient.GetAsync(apiUrl).Result;
-            string content = temp.Content.ReadAsStringAsync().Result;
+                    var asyncResult = httpClient.GetAsync(apiUrl).Result;
 
-            var yourObject = JsonConvert.DeserializeObject<todos>(content);
+                    result = asyncResult.Content.ReadAsStringAsync().Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = "Failed to call intent - " + ex.InnerException.ToString();
+            }
+
+            return result;
         }
-    }
-
-    public class todos
-    {
-        public int userId { get; set; }
-        public int id { get; set; }
-        public string title { get; set; }
-        public string completed { get; set; }  
     }
 }

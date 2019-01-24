@@ -6,3 +6,4 @@ C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Finche
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.dll
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csprojAssemblyReference.cache
