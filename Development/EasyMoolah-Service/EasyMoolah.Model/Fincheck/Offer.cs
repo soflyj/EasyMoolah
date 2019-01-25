@@ -24,7 +24,7 @@ namespace EasyMoolah.Model.Fincheck
         public bool citizen { get; set; } // true / false
         public string debt_review { get; set; } // yes / no
         public bool debt_review_opt { get; set; } // true / false
-        public string popi { get; set; } // yes / no
+        public bool popi { get; set; } // true / false
         public decimal loan_amount_required { get; set; }
         public int repayment_period { get; set; } // in months
         public int expenses { get; set; }
@@ -37,7 +37,34 @@ namespace EasyMoolah.Model.Fincheck
         public int payment_frequency { get; set; }
         public string bank_name { get; set; }
         public int credit_score { get; set; }
-        public string timestamp { get; set; } // yes / no
+        //public string timestamp { get; set; } // yes / no
+    }
+
+    public class OfferResponse
+    {
+        public List<offerMatches> OfferMatches { get; set; }
+        public List<offerAll> offerAll { get; set; }
+    }
+
+    public class offerMatches
+    {
+        public int id { get; set; }
+        public string company_name { get; set; }
+        public string company_logo_path { get; set; }
+        public string company_logo_url { get; set; }
+        public string company_website_url { get; set; }
+        public int rank { get; set; }
+        public decimal probability { get; set; }
+        public string userable { get; set; }
+    }
+
+    public class offerAll
+    {
+        public int id { get; set; }
+        public string company_name { get; set; }
+        public string company_logo_path { get; set; }
+        public string company_logo_url { get; set; }
+        public string company_website_url { get; set; }        
     }
 
     public class Accept
