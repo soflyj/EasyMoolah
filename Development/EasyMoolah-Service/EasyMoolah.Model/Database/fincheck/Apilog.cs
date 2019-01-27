@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyMoolah.Repository.Models
+namespace EasyMoolah.Model.Database.Fincheck
 {
     public partial class Apilog
     {
