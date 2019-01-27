@@ -1,9 +1,12 @@
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.deps.json
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.dll
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.pdb
-C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csprojAssemblyReference.cache
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csproj.CoreCompileInputs.cache
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.AssemblyInfoInputs.cache
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.AssemblyInfo.cs
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.dll
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csprojAssemblyReference.cache
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csproj.CopyComplete

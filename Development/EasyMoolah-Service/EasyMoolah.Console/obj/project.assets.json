@@ -942,6 +942,20 @@
         "runtime": {
           "bin/placeholder/EasyMoolah.Repository.dll": {}
         }
+      },
+      "Fincheck.Integration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "EasyMoolah.Model": "1.0.0",
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Fincheck.Integration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Fincheck.Integration.dll": {}
+        }
       }
     }
   },
@@ -3483,11 +3497,17 @@
       "type": "project",
       "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
       "msbuildProject": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj"
+    },
+    "Fincheck.Integration/1.0.0": {
+      "type": "project",
+      "path": "../Fincheck.Integration/Fincheck.Integration.csproj",
+      "msbuildProject": "../Fincheck.Integration/Fincheck.Integration.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "EasyMoolah.Repository >= 1.0.0",
+      "Fincheck.Integration >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -3523,6 +3543,9 @@
           "projectReferences": {
             "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
               "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+            },
+            "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj": {
+              "projectPath": "C:\\Jarrod\\EasyMoolah\\EasyMoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj"
             }
           }
         }
