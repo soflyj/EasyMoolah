@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
     <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj" />
   </ItemGroup>
 

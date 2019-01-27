@@ -13,13 +13,15 @@ namespace EasyMoolah.Notification
 {
     public class Email
     {
-        private ConfirmationOfApplication confirmationOfApplication;
+        private readonly ConfirmationOfApplication confirmationOfApplication;
         private FSPResult FSPResult;
 
-        public Response SendEmail(Request request)
+        public Result SendEmail(Request request)
         {
-            Response response = new Response();
-            response.Input = JsonConvert.SerializeObject(request).ToString();
+            Result result = new Result
+            {
+                input = JsonConvert.SerializeObject(request).ToString()
+            };
 
             string templateLocation = "./Templates/";
             string templateHTML = "";
@@ -66,60 +68,60 @@ namespace EasyMoolah.Notification
 
                     client.Send(mailMessage);
 
-                    response.ResultCode = 0;                    
-                    response.Output = "";
-                    response.Result = "Email Successfully Sent - " + request.Template.ToString();
+                    result.resultCode = 0;                    
+                    result.output = "";
+                    result.result = "Email Successfully Sent - " + request.Template.ToString();
                 }
             }
             catch (Exception ex)
             {
-                response.ResultCode = 401;                
-                response.Error = ex.InnerException.ToString();
-                response.ErrorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendEmail";
+                result.resultCode = 401;                
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendEmail";
             }
 
-            return response;
+            return result;
         }
 
-        public Response SendNotificationConfirmationOfApplication(Request request)
+        public Result SendNotificationConfirmationOfApplication(Request request)
         {
-            Response response = new Response();
+            Result result = new Result();
 
             try
             {
-                response = SendEmail(request);
+                result = SendEmail(request);
 
-                response.ResultCode = 0;
-                response.Output = "";
-                response.Result = "Email Successfully Sent - " + request.Template.ToString();
+                result.resultCode = 0;
+                result.output = "";
+                result.result = "Email Successfully Sent - " + request.Template.ToString();
             }
             catch (Exception ex)
             {
-                response.ResultCode = 101;
-                response.Error = ex.InnerException.ToString();
-                response.ErrorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendNotificationConfirmationOfApplication";
+                result.resultCode = 101;
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendNotificationConfirmationOfApplication";
             }
             
-            return response;
+            return result;
         }
 
-        public async Task<Response> SendFSPResults(FSPResultViewModel request)
+        public Result SendFSPResults(FSPResultViewModel request)
         {
-            Response response = new Response();
+            Result result = new Result();
             FSPResult = request.FspResult;
 
             try
             {
-                response = SendEmail(request.Request);
+                result = SendEmail(request.Request);
             }
             catch (Exception ex)
             {
-                response.ResultCode = 401;
-                response.Error = ex.InnerException.ToString();
-                response.ErrorFriendly = "Email Unsuccessfully Sent - " + request.Request.Template.ToString() + "_SendFSPResults";
+                result.resultCode = 401;
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Request.Template.ToString() + "_SendFSPResults";
             }
 
-            return response;
+            return result;
         }
     }
 }

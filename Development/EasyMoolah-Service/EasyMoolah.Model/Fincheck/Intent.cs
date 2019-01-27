@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EasyMoolah.Model.Fincheck
@@ -10,11 +11,11 @@ namespace EasyMoolah.Model.Fincheck
 
     public class LeadResponse
     {
-        public List<intents> intents { get; set; }
+        public List<Intents> intents { get; set; }
     }
 
-    public class intentFields
-    {
+    public class IntentFields
+    {        
         public int id { get; set; }
         public string title { get; set; }
         public bool required { get; set; }
@@ -22,10 +23,10 @@ namespace EasyMoolah.Model.Fincheck
         public string description { get; set; }
     }
 
-    public class intents
+    public class Intents
     {
         public int id { get; set; }
         public string title { get; set; }
-        public List<intentFields> fields { get; set; }
+        public List<IntentFields> fields { get; set; }
     }
 }
