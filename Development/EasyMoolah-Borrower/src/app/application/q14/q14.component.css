@@ -6,6 +6,7 @@
  ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
   background-color: #2e9eab !important;
+  display:none;
 } 
 
 ::ng-deep.mat-form-field-ripple {

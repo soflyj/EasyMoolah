@@ -4,17 +4,26 @@
       <div class="introduction center-align">
         <h2>FSP Results</h2>
       </div>
+      <img src="https://res.cloudinary.com/easy-moolah/image/upload/v1548630698/Fincheck_LogoSmall.png" width="200"/>
     </div>
   </div>
   <div class="row">
     <mat-accordion *ngFor="let fsp of financeResults; let i = index">
-      <mat-expansion-panel style="height: 200px;">
-        <mat-expansion-panel-header>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header [collapsedHeight]="'160px'" [expandedHeight]="'220px'">
           <mat-panel-title>
-            <img src="{{fsp.ImagePath}}" width="10px" height="10px"/>
+            <img src="{{fsp.ImagePath}}" width="160" height="160"/>
           </mat-panel-title>
           <mat-panel-description>
-            <label>Loan approved for</label><br><strong>{{'R ' + fsp.ApprovedAmount}}</strong>
+            <table class="fsp-result-table">
+              <tbody>
+                <tr>
+                  <td><label>Loan approved for</label><h3>{{'R ' + fsp.ApprovedAmount}}</h3></td>
+                  <td><a class="waves-effect waves-light btn-large center-align-btn">Call Me</a></td>
+                </tr>
+              </tbody>
+            </table>
+            
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p>Blah Blah terms and conditions</p>

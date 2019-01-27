@@ -10,7 +10,14 @@ h2 {
 h3 {font-size:21px; font-weight: 700}
 h4 {font-size: 18px; font-weight: 700}
 p {font-size:16px}
-.btn, .btn-small, .btn-large {background-color: #55c4d1;}
+.amount_output p {font-size:1.5em; margin-top:0}
+.btn, .btn-small, .btn-large {
+    background-color: #55c4d1;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    padding: 0px 9px;
+}
 .btn:hover, .btn-large:hover, .btn-small:hover {background-color:#0393a0}
 .progress {background-color:rgba(160,222,229,0.5)}
 .progress .determinate {background-color: #55c4d1}
@@ -22,7 +29,7 @@ input[type=range]+.thumb {display:none}
 	position: absolute;
 	left: -9999px;
 }
-
+/*form .mat-form-field-appearance-legacy.mat-form-field-invalid:not(.mat-focused) .mat-form-field-ripple {height:0}*/
 .service-options input[type="radio"]:checked + label > span {}
 .service-options strong {text-align: center; display: block}
 /* Stuff after this is only to make things more pretty */
@@ -79,7 +86,7 @@ Body/Content
     font-weight: 700;
     text-align: center;	
 }
-
+form mat-form-field .mat-form-field-underline {height:0}
 /*==========================
 Footer
 ============================*/
@@ -99,6 +106,8 @@ ul.footer_menu_bottom {
 input.no-double-underline-input, input.no-double-underline-input:not([type]):focus:not([readonly]) {border-bottom:0; margin: 0; box-shadow:none}
 .no-double-underline .mat-form-field-appearance-legacy .mat-form-field-infix {padding-bottom: 0}
 form .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-empty {color:#2e9eab}
+.fsp-result-table label {display:block}
+.fsp-result-table tr {border-bottom:none}
 /*==========================
 Media Queries
 ============================*/
