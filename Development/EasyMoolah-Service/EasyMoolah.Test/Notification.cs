@@ -33,10 +33,10 @@ namespace EasyMoolah.Test
         //    }
         //    catch (Exception ex)
         //    {
-        //        response.ResultCode = 1;
+        //        response.resultCode = 1;
         //    }
 
-        //    Assert.Equal(0, response.ResultCode);
+        //    Assert.Equal(0, response.resultCode);
         //}
     }
 }

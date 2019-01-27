@@ -54,9 +54,7 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.1\EasyMoolah.Repository.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.1\EasyMoolah.Domain.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.1\EasyMoolah.Domain.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.1\EasyMoolah.Domain.AssemblyInfoInputs.cache

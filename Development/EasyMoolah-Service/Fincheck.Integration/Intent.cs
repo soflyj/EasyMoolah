@@ -4,19 +4,20 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using EasyMoolah.Model;
+using EasyMoolah.Model.Fincheck;
+using Newtonsoft.Json;
 
 namespace Fincheck.Integration
 {
     public class Intent
     {
 
-        private string result = "";
-        private Response response = new Response();
+        private Result result = new Result();
 
-        public Response GetIntentById(int? id)
+        public Result GetIntentById(int? id)
         {            
             var apiUrl = "https://engine.fincheck.co.za/api/v1/intent/" + id;
-            response.Input = id.ToString();
+            result.input = id.ToString();
 
             if (id != 0 && id != null)
             {
@@ -34,32 +35,32 @@ namespace Fincheck.Integration
 
                         var asyncResult = httpClient.GetAsync(apiUrl).Result;
 
-                        response.ResultCode = 0;
-                        response.Output = asyncResult.Content.ReadAsStringAsync().Result;
-                        response.Result = response.Output;
+                        result.resultCode = 0;
+                        result.output = asyncResult.Content.ReadAsStringAsync().Result;
+                        result.result = result.output;
                     }
                 }
                 catch (Exception ex)
                 {
-                    response.ResultCode = 101;
-                    response.Error = ex.InnerException.ToString();
-                    response.ErrorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + id;
+                    result.resultCode = 101;
+                    result.error = ex.InnerException.ToString();
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + id;
                 }
             }
             else
             {
-                response.ResultCode = 201;
-                response.Error = "parameter is null";
-                response.ErrorFriendly = "Error 201 occurred in Fincheck API - api/v1/intent/" + id;
+                result.resultCode = 201;
+                result.error = "parameter is null";
+                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/intent/" + id;
             }
 
-            return response;
+            return result;
         }
 
-        public Response GetIntent()
+        public Result GetIntent()
         {
             var apiUrl = "https://engine.fincheck.co.za/api/v1/intent";
-            response.Input = "";
+            result.input = "";
 
             try
             {
@@ -74,20 +75,22 @@ namespace Fincheck.Integration
                     httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
                     var asyncResult = httpClient.GetAsync(apiUrl).Result;
+                    var jsonBody = asyncResult.Content.ReadAsStringAsync().Result;
+                    EasyMoolah.Model.Fincheck.Intent intentRepsonse = JsonConvert.DeserializeObject<EasyMoolah.Model.Fincheck.Intent>(jsonBody);
 
-                    response.ResultCode = 0;                    
-                    response.Output = asyncResult.Content.ReadAsStringAsync().Result;
-                    response.Result = response.Output;
+                    result.resultCode = 0;                    
+                    result.output = asyncResult.Content.ReadAsStringAsync().Result;
+                    result.result = result.output;
                 }
             }
             catch (Exception ex)
             {
-                response.ResultCode = 1;
-                response.Error = ex.InnerException.ToString();
-                response.ErrorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/";
+                result.resultCode = 1;
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/";
             }
 
-            return response;
+            return result;
         }
     }
 }

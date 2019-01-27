@@ -10,3 +10,15 @@ C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Finche
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
 C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.deps.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\Fincheck.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\netcoreapp2.1\Fincheck.Integration.csproj.CopyComplete

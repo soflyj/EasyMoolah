@@ -65,13 +65,11 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netco
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Test.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Test.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.API.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Integration.API.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.API.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Notification.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\bin\Debug\netcoreapp2.1\EasyMoolah.Integration.API.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Test\obj\Debug\netcoreapp2.1\EasyMoolah.Test.AssemblyInfoInputs.cache

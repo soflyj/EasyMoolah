@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Model", "EasyMoo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Domain", "EasyMoolah.Domain\EasyMoolah.Domain.csproj", "{A411AEB2-0189-4259-AC60-0C9B77CDE044}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{3033419E-0771-42E3-8972-E1D7C16FEBF8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Notification", "EasyMoolah.Notification\EasyMoolah.Notification.csproj", "{936AC402-5433-4087-BB47-40A83076DF8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{C42892C7-E1EE-498C-8370-9766FE5B79AC}"
@@ -22,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.API", "EasyMoola
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Test", "EasyMoolah.Test\EasyMoolah.Test.csproj", "{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fincheck.Integration", "Fincheck.Integration\Fincheck.Integration.csproj", "{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fincheck.Integration", "Fincheck.Integration\Fincheck.Integration.csproj", "{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{804AEB5E-9AFF-431B-82AD-D265259EFAB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +42,6 @@ Global
 		{A411AEB2-0189-4259-AC60-0C9B77CDE044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A411AEB2-0189-4259-AC60-0C9B77CDE044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A411AEB2-0189-4259-AC60-0C9B77CDE044}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3033419E-0771-42E3-8972-E1D7C16FEBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3033419E-0771-42E3-8972-E1D7C16FEBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3033419E-0771-42E3-8972-E1D7C16FEBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3033419E-0771-42E3-8972-E1D7C16FEBF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{936AC402-5433-4087-BB47-40A83076DF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804AEB5E-9AFF-431B-82AD-D265259EFAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804AEB5E-9AFF-431B-82AD-D265259EFAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804AEB5E-9AFF-431B-82AD-D265259EFAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804AEB5E-9AFF-431B-82AD-D265259EFAB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

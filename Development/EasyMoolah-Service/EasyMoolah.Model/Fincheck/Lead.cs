@@ -10,9 +10,9 @@ namespace EasyMoolah.Model.Fincheck
 
     public class leadRequest
     {
-        public int id_number { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
+        public int Id_number { get; set; }
+        public string First_name { get; set; }
+        public string Last_name { get; set; }
         public string cell_phone_number { get; set; }
         public string email { get; set; }
         public string intent { get; set; }

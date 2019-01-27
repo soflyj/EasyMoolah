@@ -1,5 +1,4 @@
 ﻿using System;
-using EasyMoolah.Repository;
 using Fincheck.Integration;
 
 namespace EasyMoolah.Console

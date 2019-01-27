@@ -42,11 +42,11 @@ namespace EasyMoolah.Model.Fincheck
 
     public class OfferResponse
     {
-        public List<offerMatches> OfferMatches { get; set; }
-        public List<offerAll> offerAll { get; set; }
+        public List<OfferMatches> offerMatches { get; set; }
+        public List<OfferAll> offerAll { get; set; }
     }
 
-    public class offerMatches
+    public class OfferMatches
     {
         public int id { get; set; }
         public string company_name { get; set; }
@@ -58,7 +58,7 @@ namespace EasyMoolah.Model.Fincheck
         public string userable { get; set; }
     }
 
-    public class offerAll
+    public class OfferAll
     {
         public int id { get; set; }
         public string company_name { get; set; }
