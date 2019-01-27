@@ -30,7 +30,7 @@ namespace EasyMoolah.API.Controllers
         //    catch (Exception ex)
         //    {
         //        response.ResultCode = 1;
-        //        response.Message = (ex.InnerException == null ? "" : ex.InnerException.ToString());
+        //        response.Result = (ex.InnerException == null ? "" : ex.InnerException.ToString());
         //        response.Friendly = "Failed to send results email.";
         //    }
         //    return Ok(response);

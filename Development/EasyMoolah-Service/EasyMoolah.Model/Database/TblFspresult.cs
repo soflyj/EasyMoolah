@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyMoolah.Models
+namespace EasyMoolah.Model
 {
     public partial class TblFspresult
     {

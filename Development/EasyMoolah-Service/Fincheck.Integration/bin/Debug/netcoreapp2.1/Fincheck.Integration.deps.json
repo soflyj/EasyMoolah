@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Fincheck.Integration/1.0.0": {
         "dependencies": {
+          "EasyMoolah.Model": "1.0.0",
           "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
@@ -20,6 +21,14 @@
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.1.22727"
           }
+        }
+      },
+      "EasyMoolah.Model/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "EasyMoolah.Model.dll": {}
         }
       }
     }
@@ -36,6 +45,11 @@
       "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "EasyMoolah.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

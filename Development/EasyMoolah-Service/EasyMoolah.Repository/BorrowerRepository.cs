@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EasyMoolah.Models;
+using EasyMoolah.Model;
 using EasyMoolah.Repository.Models;
 
 namespace EasyMoolah.Repository
