@@ -75,3 +75,5 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\ne
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.1\EasyMoolah.Console.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.1\EasyMoolah.Console.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.1\EasyMoolah.Console.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\Fincheck.Integration.dll
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\netcoreapp2.1\Fincheck.Integration.pdb

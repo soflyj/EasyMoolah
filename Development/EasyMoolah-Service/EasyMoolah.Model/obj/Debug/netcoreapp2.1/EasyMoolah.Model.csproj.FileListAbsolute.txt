@@ -43,3 +43,4 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netc
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.AssemblyInfo.cs
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.pdb
+C:\Jarrod\EasyMoolah\EasyMoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\netcoreapp2.1\EasyMoolah.Model.csprojAssemblyReference.cache

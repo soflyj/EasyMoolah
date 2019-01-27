@@ -1,5 +1,6 @@
 ﻿using System;
 using EasyMoolah.Repository;
+using Fincheck.Integration;
 
 namespace EasyMoolah.Console
 {
@@ -9,9 +10,13 @@ namespace EasyMoolah.Console
         {
             System.Console.WriteLine("Hello World!");
 
-            Repository.BorrowerRepository borrower = new BorrowerRepository();
+            //Repository.BorrowerRepository borrower = new BorrowerRepository();
             
-            var result = borrower.GetAllBorrowers();
+            //var result = borrower.GetAllBorrowers();
+
+            Fincheck.Integration.Intent intent = new Intent();
+
+            intent.GetIntent();
         }
     }
 }
