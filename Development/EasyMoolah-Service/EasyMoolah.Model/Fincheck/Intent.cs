@@ -9,7 +9,13 @@ namespace EasyMoolah.Model.Fincheck
     {        
     }
 
-    public class LeadResponse
+    public class IntentRequest
+    {
+        public int sessionId { get; set; }
+        public int? id { get; set; }
+    }
+
+    public class IntentResponse
     {
         public List<Intents> intents { get; set; }
     }

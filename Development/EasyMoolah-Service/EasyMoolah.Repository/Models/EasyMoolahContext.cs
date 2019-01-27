@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using EasyMoolah.Model;
+using Microsoft.EntityFrameworkCore.Metadata;
+using EasyMoolah.Model.Database.Fincheck;
 
 namespace EasyMoolah.Repository.Models
 {
@@ -16,7 +17,7 @@ namespace EasyMoolah.Repository.Models
         }
 
         public virtual DbSet<Accept> Accept { get; set; }
-        public virtual DbSet<Apilog> Apilog { get; set; }
+        public virtual DbSet<Apilog> Apilog { get; set; }     
         public virtual DbSet<Lead> Lead { get; set; }
         public virtual DbSet<Offer> Offer { get; set; }
 
@@ -100,7 +101,11 @@ namespace EasyMoolah.Repository.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
 
-                entity.Property(e => e.TimeStamp).HasColumnType("datetime");
+                entity.Property(e => e.StartTimeStamp)
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.EndTimeStamp)
+                .HasColumnType("datetime");
 
                 entity.Property(e => e.Token)
                     .HasMaxLength(50)

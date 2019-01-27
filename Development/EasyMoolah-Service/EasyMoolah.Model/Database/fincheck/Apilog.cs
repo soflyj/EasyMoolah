@@ -14,6 +14,7 @@ namespace EasyMoolah.Model.Database.Fincheck
         public string Endpoint { get; set; }
         public string Request { get; set; }
         public string Response { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public DateTime StartTimeStamp { get; set; }
+        public DateTime EndTimeStamp { get; set; }
     }
 }

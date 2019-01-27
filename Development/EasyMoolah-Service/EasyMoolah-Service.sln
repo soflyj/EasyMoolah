@@ -18,11 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.API", "EasyMoolah.API\EasyMoolah.API.csproj", "{67FF4EEC-444B-4597-AB05-BCD75AF7E023}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Test", "EasyMoolah.Test\EasyMoolah.Test.csproj", "{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fincheck.Integration", "Fincheck.Integration\Fincheck.Integration.csproj", "{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{804AEB5E-9AFF-431B-82AD-D265259EFAB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{804AEB5E-9AFF-431B-82AD-D265259EFAB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +48,6 @@ Global
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FF4EEC-444B-4597-AB05-BCD75AF7E023}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F228C7C9-F9ED-4EA0-AEA8-6304CCFDD911}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Release|Any CPU.ActiveCfg = Release|Any CPU

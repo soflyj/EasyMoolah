@@ -1,5 +1,6 @@
 ﻿using System;
 using Fincheck.Integration;
+using EasyMoolah.Repository;
 
 namespace EasyMoolah.Console
 {
@@ -9,13 +10,29 @@ namespace EasyMoolah.Console
         {
             System.Console.WriteLine("Hello World!");
 
-            //Repository.BorrowerRepository borrower = new BorrowerRepository();
-            
+            Repository.FinCheckRepository fincheckRepository = new FinCheckRepository();
+
+            //fincheckRepository.AddApiLog(new Model.Database.Fincheck.Apilog() {Endpoint = "",
+            //Http = "",
+            //Id = 1,
+            //Method = "",
+            //Request = "",
+            //Response = "",
+            //SessionId = 1,
+            //TimeStamp = System.DateTime.Now,
+            //Token = ""});
+
+            //fincheckRepository.GetApiLog();
+
+           
+
+
+
             //var result = borrower.GetAllBorrowers();
 
-            Fincheck.Integration.Intent intent = new Intent();
+            //Fincheck.Integration.Intent intent = new Intent();
 
-            intent.GetIntent();
+            //intent.GetIntent();
         }
     }
 }
