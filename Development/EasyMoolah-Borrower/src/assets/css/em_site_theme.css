@@ -46,12 +46,14 @@ input[type=range]+.thumb {display:none}
     max-width: 80%;
 }
 .sub-service-buttons input[type="radio"]:checked + label {background-color:#2a2e76};
+.sub-service-buttons input[type="radio"]:checked + label:hover {color:#fff}
 .image-radio-buttons input[type="radio"] + label {display:block;text-align: center; padding: 10px}
 .service-options input[type="radio"] + label > span {font-size:40px; display: block; text-align: center; margin:10px 0}
 .service-options.image-radio-buttons input[type="radio"] + label:hover {color:#2e9eab}
 .service-options.image-radio-buttons input[type="radio"] + label:hover > span {}
 .image-radio-buttons input[type="radio"] + label:hover {cursor:pointer; background-color:#e7f1f2}
 .service-options input[type="radio"] + label:last-child > span {}
+.service-options input[type="radio"] + label:hover {color:#fff}
 .service-options input[type="radio"]:checked + label > span {}
 .service-options input[type="radio"]:checked + label > span {}
 .service-options input[type="radio"]:checked + label {background-color:#2a2e76; color:#fff}
