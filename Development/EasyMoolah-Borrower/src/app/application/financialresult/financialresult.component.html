@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col m12 offset-m3">
+    <div class="col m6 offset-m3">
       <div class="introduction center-align">
         <h2>FSP Results</h2>
+        <span>In collaboration with</span><br>
+        <img src="https://res.cloudinary.com/easy-moolah/image/upload/v1548630698/Fincheck_LogoSmall.png" width="200"/>
       </div>
-      <img src="https://res.cloudinary.com/easy-moolah/image/upload/v1548630698/Fincheck_LogoSmall.png" width="200"/>
     </div>
   </div>
   <div class="row">
@@ -19,14 +20,16 @@
               <tbody>
                 <tr>
                   <td><label>Loan approved for</label><h3>{{'R ' + fsp.ApprovedAmount}}</h3></td>
-                  <td><a class="waves-effect waves-light btn-large center-align-btn">Call Me</a></td>
+                  <td><label>Probability</label><h3>58%</h3></td>
+                  <td><a class="waves-effect waves-light btn-large" style="margin:0 auto; line-height: 40px"><i class="material-icons" style="transform:translateY(5px)">call</i>Call Me</a></td>
                 </tr>
               </tbody>
             </table>
             
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>Blah Blah terms and conditions</p>
+        <p>This estimate was created for NAME SURNAME. Please request a callback to communicate with the Financial Services Provider directly</p>
+        <p><strong>Probability</strong>: This is the percentage Probability of acceptance</p>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
