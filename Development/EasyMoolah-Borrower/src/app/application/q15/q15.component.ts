@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { PersonalDetails } from 'src/app/model/personalDetails.model';
 
 @Component({
     selector: 'app-q15',
@@ -66,7 +67,7 @@ export class Q15Component implements OnInit {
     CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
         this.LandlineNumber = control.value;
         this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g, '').length;
-        if ((this.LandlineNumberLength !== 10 && this.LandlineNumberLength !== 0) || this.LandlineNumber.substring(1,2) !== '0' ) {
+        if ((this.LandlineNumberLength !== 10 || this.LandlineNumber.substring(1,2) !== '0') && this.LandlineNumberLength !== 0) {
             return { 'LandlineValid': true };
         } else {
         return null;
@@ -76,6 +77,8 @@ export class Q15Component implements OnInit {
     Next() {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addToQuestionLog(new Question('Question', 'Personal Information',  this.Q15.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToPersonalDetails(this.Q15.value);
+        //console.log(this.Q15.value);
 
         this.router.navigateByUrl('/q16', { skipLocationChange: true });
     }
