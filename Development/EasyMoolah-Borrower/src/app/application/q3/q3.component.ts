@@ -15,6 +15,7 @@ import { Question } from 'src/app/model/question.model';
 export class Q3Component implements OnInit {
 
   borrowamount_slider: string;
+  borrowmonths_slider: string;
   URL = false;
   Debug = false;
   StartTime: Date;
@@ -29,6 +30,7 @@ export class Q3Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(12);
     this.borrowamount_slider = '50000'; // Default range
+    this.borrowmonths_slider = '24';
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();

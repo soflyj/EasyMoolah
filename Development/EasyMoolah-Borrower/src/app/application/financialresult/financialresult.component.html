@@ -13,14 +13,14 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header [collapsedHeight]="'160px'" [expandedHeight]="'220px'">
           <mat-panel-title>
-            <img src="{{fsp.ImagePath}}" width="160" height="160"/>
+            <img src="{{fsp.company_logo_path}}" width="160" height="160"/>
           </mat-panel-title>
           <mat-panel-description>
             <table class="fsp-result-table">
               <tbody>
                 <tr>
-                  <td><label>Loan approved for</label><h3>{{'R ' + fsp.ApprovedAmount}}</h3></td>
-                  <td><label>Probability</label><h3>58%</h3></td>
+                  <!-- <td><label>Loan approved for</label><h3>{{'R ' + fsp.ApprovedAmount}}</h3></td> -->
+                  <td><label>Probability</label><h3>{{fsp.probability}}</h3></td>
                   <td><a class="waves-effect waves-light btn-large" style="margin:0 auto; line-height: 40px"><i class="material-icons" style="transform:translateY(5px)">call</i>Call Me</a></td>
                 </tr>
               </tbody>

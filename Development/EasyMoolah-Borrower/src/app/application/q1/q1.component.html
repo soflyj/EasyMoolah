@@ -1,42 +1,45 @@
-<form [formGroup]="Q1" (ngSubmit)="Next()">  
+<form [formGroup]="Q1" (ngSubmit)="Next()">
   <div class="container">
     <div class="row">
       <div class="col m6 offset-m3">
         <div class="image-radio-buttons service-options">
           <p>Which service would you like a loan for?</p>
           <div class="radio-group">
-            <input type="radio" name="service" id="home-improvement" value="home-improvement" class="input-hidden" formControlName="service"/>
+            <input type="radio" name="service" id="home-improvement" value="home-improvement" class="input-hidden"
+              formControlName="service" />
             <label for="home-improvement" class="col s6 m3">
               <span class="tli-homes_11"></span>
               <br><strong>Home Improvement</strong>
             </label>
 
-            <input type="radio" name="service" id="life-events" value="life-events" class="input-hidden"  formControlName="service"/>
+            <input type="radio" name="service" id="life-events" value="life-events" class="input-hidden"
+              formControlName="service" />
             <label for="life-events" class="col s6 m3">
               <span class="tli-wedding_16"></span>
               <br><strong>Life Events</strong>
             </label>
 
-            <input type="radio" name="service" id="veterinary" value="veterinary" class="input-hidden"  formControlName="service"/>
+            <input type="radio" name="service" id="veterinary" value="veterinary" class="input-hidden" formControlName="service" />
             <label for="veterinary" class="col s6 m3">
               <span class="tli-animal_19"></span>
               <br><strong>Veterinary</strong>
             </label>
 
-            <input type="radio" name="service" id="health-care" value="health-care" class="input-hidden"  formControlName="service"/>
+            <input type="radio" name="service" id="health-care" value="health-care" class="input-hidden"
+              formControlName="service" />
             <label for="health-care" class="col s6 m3">
               <span class="tli-healthcare_19"></span>
               <br><strong>Health-Care</strong>
             </label>
 
-            <input type="radio" name="service" id="funeral" value="funeral" class="input-hidden"  formControlName="service"/>
+            <input type="radio" name="service" id="funeral" value="funeral" class="input-hidden" formControlName="service" />
             <label for="funeral" class="col s6 m3">
               <span class="tli-halloween_03"></span>
               <br><strong>Funeral</strong>
             </label>
 
-            <input type="radio" name="service" id="travel" value="travel" class="input-hidden"  formControlName="service"/>
-            <label for="enbalming" class="col s6 m3">
+            <input type="radio" name="service" id="travel" value="travel" class="input-hidden" formControlName="service" />
+            <label for="travel" class="col s6 m3">
               <span class="tli-travel_01"></span>
               <br><strong>Travel</strong>
             </label>

@@ -46,6 +46,6 @@ export class Q6Component implements OnInit {
   }
 
   Back() {
-    this.router.navigateByUrl('/q5', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq5', { skipLocationChange: true });
   }
 }

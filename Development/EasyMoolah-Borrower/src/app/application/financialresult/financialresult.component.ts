@@ -9,10 +9,10 @@ import { HeaderService } from 'src/app/service/header.service';
 export class FinancialresultComponent implements OnInit {
 
     financeResults: FinanceResult[] = [
-    new FinanceResult(15000, 'Old Mutual', '../../../assets/images/fsp-logos/oldmutual.png', 'old mutual'),
-    new FinanceResult(2000, 'Standard Bank', '../../../assets/images/fsp-logos/standardbank.png', 'standard bank'),
-    new FinanceResult(5000, 'Capfin', '../../../assets/images/fsp-logos/capfin.png', 'capfin'),
-    new FinanceResult(100000, 'DirectAxis', '../../../assets/images/fsp-logos/directaxis.png', 'directaxis')
+    new FinanceResult(1, 'Old Mutual', '../../../assets/images/fsp-logos/oldmutual.png', '', 'https://www.oldmutual.co.za/' , 1, 30),
+    new FinanceResult(2, 'Standard Bank', '../../../assets/images/fsp-logos/standardbank.png', '', 'https://www.standardbank.co.za/', 2, 10),
+    new FinanceResult(3, 'Capfin', '../../../assets/images/fsp-logos/capfin.png', '', 'https://www.capfin.co.za/', 3, 80),
+    new FinanceResult(4, 'DirectAxis', '../../../assets/images/fsp-logos/directaxis.png', '', 'https://www.directaxis.co.za/', 4, 25)
   ];
 
   constructor(private headerService: HeaderService) { }
