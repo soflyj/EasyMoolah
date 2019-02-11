@@ -41,7 +41,7 @@ export class Q10Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'What\'s your total monthly expense?', this.monthlyexpense_slider, this.StartTime.toString(), (new Date).toString()));                
+    this.borrowerService.addToQuestionLog(new Question('q10', 'Question', 'What\'s your total monthly expense?', this.monthlyexpense_slider, this.StartTime.toString(), (new Date).toString()));                
 
     this.router.navigateByUrl('/q11', { skipLocationChange: true });
   }

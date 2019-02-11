@@ -40,7 +40,7 @@ export class Q9Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'What\'s your nett monthly income?', this.nettincome_slider, this.StartTime.toString(), (new Date).toString()));                
+    this.borrowerService.addToQuestionLog(new Question('q9', 'Question', 'What\'s your nett monthly income?', this.nettincome_slider, this.StartTime.toString(), (new Date).toString()));                
 
     this.router.navigateByUrl('/q10', { skipLocationChange: true });
   }

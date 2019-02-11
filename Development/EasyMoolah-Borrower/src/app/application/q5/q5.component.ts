@@ -46,7 +46,7 @@ export class Q5Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));        
+    this.borrowerService.addToQuestionLog(new Question('q5', 'Question', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));        
 
     this.router.navigateByUrl('/q6', { skipLocationChange: true });
   }

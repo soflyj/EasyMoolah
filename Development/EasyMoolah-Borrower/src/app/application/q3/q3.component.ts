@@ -19,6 +19,7 @@ export class Q3Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string = '';
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -32,6 +33,11 @@ export class Q3Component implements OnInit {
     this.borrowamount_slider = '50000'; // Default range
     this.borrowmonths_slider = '24';
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q3');
+    if(this.Answer != '') {
+      this.borrowamount_slider = this.Answer;
+    }
+    
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -42,7 +48,7 @@ export class Q3Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'How much do you want to borrow?', this.borrowamount_slider, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('q3', 'Question', 'How much do you want to borrow?', this.borrowamount_slider, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q4', { skipLocationChange: true });
   }

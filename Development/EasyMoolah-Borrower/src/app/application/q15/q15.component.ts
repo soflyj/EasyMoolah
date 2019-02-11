@@ -76,7 +76,7 @@ export class Q15Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'Personal Information',  this.Q15.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('q15', 'Question', 'Personal Information',  this.Q15.value, this.StartTime.toString(), (new Date).toString()));
         this.borrowerService.addToPersonalDetails(this.Q15.value);
         //console.log(this.Q15.value);
 

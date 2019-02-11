@@ -40,7 +40,7 @@ export class Q6Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'I give permission for EasyMoolah to do a credit check.', this.credit_check.valueOf.toString(), this.StartTime.toString(), (new Date).toString()));            
+    this.borrowerService.addToQuestionLog(new Question('q6', 'Question', 'I give permission for EasyMoolah to do a credit check.', this.credit_check.valueOf.toString(), this.StartTime.toString(), (new Date).toString()));            
 
     this.router.navigateByUrl('/q7', { skipLocationChange: true });
   }

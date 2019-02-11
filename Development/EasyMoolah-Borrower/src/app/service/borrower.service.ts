@@ -4,6 +4,7 @@ import { BorrowerApplicationLog } from '../model/borrowerapplicationLog.model';
 import { Question } from '../model/question.model';
 import { AuditLog } from '../model/auditlog.model';
 import { PersonalDetails } from '../model/personalDetails.model';
+import { isNull } from 'util';
 
 @Injectable()
 export class BorrowerService {
@@ -16,6 +17,7 @@ export class BorrowerService {
     public question: Question[] = [null];
     public auditlog: AuditLog = null;
     public personaldetails: PersonalDetails = null;
+    public Answer: string = '';
 
 
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
@@ -31,6 +33,7 @@ export class BorrowerService {
 
     addToQuestionLog(question: Question) {
         this.question.push(question);
+        console.log(this.question);
     }
 
     addToPersonalDetails(persondetails: PersonalDetails) {
@@ -48,6 +51,16 @@ export class BorrowerService {
     getAuditLog() {
         return this.auditlog;
     }
+
+    getPreviousAnswer(id: string)
+    {
+        if(!isNull(this.question[0])){        
+            this.Answer = this.question.Where(q => q.Id === id).Select(s => s.Answer).toString();        
+            console.log('Answer to '+ id + ': ' + this.Answer);
+        }        
+
+        return this.Answer;
+    }    
 
     debugMode() {
         return true;

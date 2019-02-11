@@ -46,7 +46,7 @@ export class Q13Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));        
+        this.borrowerService.addToQuestionLog(new Question('q13', 'Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));        
 
         this.router.navigateByUrl('/q14', { skipLocationChange: true });
     }

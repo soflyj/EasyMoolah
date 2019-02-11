@@ -6,6 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { isNull } from 'util';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class Q1Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string = '';
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -32,6 +34,8 @@ export class Q1Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(0);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q1');
+    
     // const httpOptions = {
     //   headers: new HttpHeaders({
     //     'Content-Type': 'application/json',
@@ -64,7 +68,7 @@ export class Q1Component implements OnInit {
     // Reactive validation
     this.Q1 = new FormGroup({
       'service': new FormControl(
-        '',
+        this.Answer,
         [Validators.required]
       ),
     });
@@ -72,7 +76,7 @@ export class Q1Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.question = [new Question('Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
+    this.borrowerService.question = [new Question('q1', 'Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString())];
 
     this.router.navigateByUrl('/q2', { skipLocationChange: true });
   }

@@ -73,7 +73,7 @@ export class Q16Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('q16', 'Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
 
         this.router.navigateByUrl('/processing', { skipLocationChange: true });
     }

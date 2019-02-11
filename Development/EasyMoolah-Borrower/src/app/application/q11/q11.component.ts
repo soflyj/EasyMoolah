@@ -46,7 +46,7 @@ export class Q11Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'With which bank do you have an account?', this.Q11.get('bank').value, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('q11', 'Question', 'With which bank do you have an account?', this.Q11.get('bank').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q12', { skipLocationChange: true });
   }

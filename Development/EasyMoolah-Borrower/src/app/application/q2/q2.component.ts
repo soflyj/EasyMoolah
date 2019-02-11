@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { isNull } from 'util';
 
 @Component({
   selector: 'app-q2',
@@ -18,6 +19,7 @@ export class Q2Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,6 +31,8 @@ export class Q2Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(6);  
 
+      this.Answer = this.borrowerService.getPreviousAnswer('q2');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -37,13 +41,13 @@ export class Q2Component implements OnInit {
     }
 
     this.Q2 = new FormGroup({
-      'sub-service': new FormControl('', [Validators.required]),
+      'sub-service': new FormControl(this.Answer, [Validators.required]),
     });
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'What type of automobile repair?', this.Q2.get('sub-service').value, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('q2', 'Question', 'What type of automobile repair?', this.Q2.get('sub-service').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q3', { skipLocationChange: true });
   }
