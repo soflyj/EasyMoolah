@@ -18,6 +18,7 @@ export class Q12Component implements OnInit {
     URL = false;
     StartTime: Date;
     Debug = false;
+    Answer: string = '';
 
     constructor(private router: Router,
         private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q12Component implements OnInit {
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(66);
 
+        this.Answer = this.borrowerService.getPreviousAnswer('q12').toString();
+
         // Not allowed to navigate directly to component
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
@@ -38,7 +41,7 @@ export class Q12Component implements OnInit {
 
         this.Q12 = new FormGroup({
             'dependants': new FormControl(
-                '',
+                this.Answer,
                 [Validators.required]
             ),
         });

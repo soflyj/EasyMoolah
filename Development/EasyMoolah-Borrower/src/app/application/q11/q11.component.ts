@@ -18,6 +18,7 @@ export class Q11Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string = '';
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -28,6 +29,8 @@ export class Q11Component implements OnInit {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(60);
+
+    this.Answer = this.borrowerService.getPreviousAnswer('q11').toString();
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();

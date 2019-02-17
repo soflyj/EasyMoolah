@@ -13,11 +13,13 @@ import { Question } from 'src/app/model/question.model';
   animations: [routerTransition]
 })
 export class Q8Component implements OnInit {
-
+  
+  Q8: FormGroup;
   grossincome_slider: string;
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,17 +32,30 @@ export class Q8Component implements OnInit {
     this.headerService.progress.next(42);
     this.grossincome_slider = '50000'; // Default range
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q8')
+
+    if (this.Answer != undefined) {
+      this.grossincome_slider = this.Answer.toString();      
+    }
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    this.Q8 = new FormGroup({
+      'borrowamount_slider': new FormControl(
+        this.grossincome_slider, 
+        [Validators.required])      
+    });
+
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q8', 'Question', 'What\'s your gross monthly income?', this.grossincome_slider, this.StartTime.toString(), (new Date).toString()));            
+    this.borrowerService.addToQuestionLog(new Question('q8', 'Question', 'What\'s your gross monthly income?', this.Q8.get('grossincome_slider').value, this.StartTime.toString(), (new Date).toString()));            
 
     this.router.navigateByUrl('/q9', { skipLocationChange: true });
   }

@@ -19,6 +19,7 @@ export class Q7Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,6 +31,8 @@ export class Q7Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(36);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q7');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -39,15 +42,14 @@ export class Q7Component implements OnInit {
 
     this.Q7 = new FormGroup({
       'employment-status': new FormControl(
-        '',
-        [Validators.required]
-      ),
+        this.Answer,
+        [Validators.required]),
     });
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q7', 'Question', 'What\'s your employment status?', this.Q7.get('employment-status').value, this.StartTime.toString(), (new Date).toString()));            
+    this.borrowerService.addToQuestionLog(new Question('q7', 'Question', 'What\'s your employment status?', this.Q7.get('employment-status').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q8', { skipLocationChange: true });
   }

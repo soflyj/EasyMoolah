@@ -14,10 +14,12 @@ import { Question } from 'src/app/model/question.model';
 })
 export class Q9Component implements OnInit {
 
+  Q9: FormGroup;
   nettincome_slider: string;
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string = '';
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,17 +32,26 @@ export class Q9Component implements OnInit {
     this.headerService.progress.next(48);
     this.nettincome_slider = '50000'; // Default range
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q9').toString();
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    this.Q9 = new FormGroup({
+      'nettincome_slider': new FormControl(
+        this.nettincome_slider, 
+        [Validators.required])
+    });
+
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q9', 'Question', 'What\'s your nett monthly income?', this.nettincome_slider, this.StartTime.toString(), (new Date).toString()));                
+    this.borrowerService.addToQuestionLog(new Question('q9', 'Question', 'What\'s your nett monthly income?', this.Q9.get('nettincome_slider').value, this.StartTime.toString(), (new Date).toString()));                
 
     this.router.navigateByUrl('/q10', { skipLocationChange: true });
   }

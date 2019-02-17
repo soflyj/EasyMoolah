@@ -11,14 +11,16 @@ import { Question } from 'src/app/model/question.model';
   selector: 'app-q10',
   templateUrl: './q10.component.html',
   styleUrls: ['../../../assets/css/em_site_theme.css'],
-  animations: [ routerTransition ]
+  animations: [routerTransition]
 })
 export class Q10Component implements OnInit {
 
+  Q10: FormGroup;
   monthlyexpense_slider: string;
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer: string = '';
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -31,17 +33,25 @@ export class Q10Component implements OnInit {
     this.headerService.progress.next(54);
     this.monthlyexpense_slider = '50000'; // Default range
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q10').toString();
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    this.Q10 = new FormGroup({
+      'borrowamount_slider': new FormControl(
+        this.monthlyexpense_slider,
+        [Validators.required])
+    });
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q10', 'Question', 'What\'s your total monthly expense?', this.monthlyexpense_slider, this.StartTime.toString(), (new Date).toString()));                
+    this.borrowerService.addToQuestionLog(new Question('q10', 'Question', 'What\'s your total monthly expense?', this.Q10.get('borrowamount_slider').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q11', { skipLocationChange: true });
   }

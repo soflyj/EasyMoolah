@@ -14,11 +14,10 @@ export class BorrowerService {
     }
 
     public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
-    public question: Question[] = [null];
+    public Question: Question[];
     public auditlog: AuditLog = null;
     public personaldetails: PersonalDetails = null;
-    public Answer: string = '';
-
+    public Answer;
 
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
 
@@ -32,8 +31,22 @@ export class BorrowerService {
     }
 
     addToQuestionLog(question: Question) {
-        this.question.push(question);
-        console.log(this.question);
+        if (this.Question == null) {
+            //First question to Add, q1
+            this.Question = [new Question(question.Id, question.Stage, question.Question, question.Answer, question.StartTime, question.EndTime)];
+            console.log('Answer to ' + question.Id + ': ' + question.Answer);
+        }
+        else {
+            if (this.Question.Where(x => x.Id == question.Id).FirstOrDefault() != null) {
+                //Update
+                this.Question.Where(x => x.Id == question.Id).FirstOrDefault().Answer = question.Answer;
+            }
+            else {
+                //Add
+                this.Question.push(question);
+            }
+        }
+        console.log(this.Question);
     }
 
     addToPersonalDetails(persondetails: PersonalDetails) {
@@ -52,15 +65,17 @@ export class BorrowerService {
         return this.auditlog;
     }
 
-    getPreviousAnswer(id: string)
-    {
-        if(!isNull(this.question[0])){        
-            this.Answer = this.question.Where(q => q.Id === id).Select(s => s.Answer).toString();        
-            console.log('Answer to '+ id + ': ' + this.Answer);
-        }        
+    getPreviousAnswer(id: string) {
+        if (this.Question != undefined) {                        
+            if (this.Question.Where(q => q.Id == id).FirstOrDefault() != null) {
+                this.Answer = this.Question.Where(q => q.Id === id).Select(s => s.Answer);                
+                console.log('Answer to ' + id + ': ');
+                console.log(this.Answer);
+            }
+        }
 
         return this.Answer;
-    }    
+    }
 
     debugMode() {
         return true;

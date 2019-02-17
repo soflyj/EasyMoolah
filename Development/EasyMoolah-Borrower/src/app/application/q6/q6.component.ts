@@ -15,10 +15,12 @@ import { HeaderService } from 'src/app/service/header.service';
 })
 export class Q6Component implements OnInit {
 
+  Q6: FormGroup;
   URL = false;
   StartTime: Date;
   Debug = false;
   credit_check: boolean;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,12 +32,21 @@ export class Q6Component implements OnInit {
     this.headerService.progress.next(30);
     this.credit_check = false;
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q6');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    this.Q6 = new FormGroup({
+      'credit_check': new FormControl(
+        this.Answer, 
+        [Validators.required]),
+    });
+
   }
 
   Next() {

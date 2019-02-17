@@ -18,6 +18,7 @@ export class Q5Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q5Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(24);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q5');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -38,9 +41,8 @@ export class Q5Component implements OnInit {
 
     this.Q5 = new FormGroup({
       'insolvent': new FormControl(
-        '',
-        [Validators.required]
-      ),
+        this.Answer,
+        [Validators.required]),
     });
   }
 

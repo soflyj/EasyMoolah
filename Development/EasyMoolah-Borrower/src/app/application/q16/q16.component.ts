@@ -18,6 +18,7 @@ export class Q16Component implements OnInit {
     URL = false;
     Debug = false;
     StartTime: Date;
+    Answer: string = '';
 
     idnumber: string;
     maxLength = 13;
@@ -36,6 +37,8 @@ export class Q16Component implements OnInit {
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(100);
 
+        this.Answer = this.borrowerService.getPreviousAnswer('q16').toString();
+
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
         if (!this.URL && !this.Debug) {
@@ -43,7 +46,7 @@ export class Q16Component implements OnInit {
         }
 
         this.Q16 = new FormGroup({
-            'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])
+            'idnumber': new FormControl(this.Answer, [Validators.required, this.CheckSAIdNumber.bind(this)])
         });
     }
 

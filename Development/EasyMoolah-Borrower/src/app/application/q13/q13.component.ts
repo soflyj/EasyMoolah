@@ -18,6 +18,7 @@ export class Q13Component implements OnInit {
     URL = false;
     StartTime: Date;
     Debug = false;
+    Answer: string = '';
 
     constructor(private router: Router,
         private route: ActivatedRoute,
@@ -28,6 +29,8 @@ export class Q13Component implements OnInit {
         this.StartTime = new Date();
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(72);
+        
+        this.Answer = this.borrowerService.getPreviousAnswer('q13').toString();
 
         // Not allowed to navigate directly to component
         this.Debug = this.borrowerService.debugMode();
@@ -38,7 +41,7 @@ export class Q13Component implements OnInit {
 
         this.Q13 = new FormGroup({
             'homeowner': new FormControl(
-                '',
+                this.Answer,
                 [Validators.required]
             ),
         });

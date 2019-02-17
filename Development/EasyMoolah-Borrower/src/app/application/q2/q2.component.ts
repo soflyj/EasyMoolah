@@ -19,7 +19,7 @@ export class Q2Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
-  Answer: string;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,9 +29,9 @@ export class Q2Component implements OnInit {
   ngOnInit() {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
-    this.headerService.progress.next(6);  
+    this.headerService.progress.next(6);
 
-      this.Answer = this.borrowerService.getPreviousAnswer('q2');
+    this.Answer = this.borrowerService.getPreviousAnswer('q2');
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -39,9 +39,10 @@ export class Q2Component implements OnInit {
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
-
     this.Q2 = new FormGroup({
-      'sub-service': new FormControl(this.Answer, [Validators.required]),
+      'sub-service': new FormControl(
+        this.Answer,
+        [Validators.required]),
     });
   }
 
