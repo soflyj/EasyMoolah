@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="row">
-		<div class="col m6 offset-m3">
+		<div class="col s12 m6 offset-m3">
 			<div class="input-field">
 				<p>
 					<label style="color:#000">
 						<input type="checkbox" [(ngModel)]="credit_check" id="credit_check" />
-						<span>I give permission for EasyMoolah to do a credit check.</span>
+						<span style="text-align:left">I give permission for EasyMoolah to do a credit check.</span>
 					</label>
 				</p>
 			</div>
@@ -15,13 +15,13 @@
 </div>
 <footer class="container">
 	<div class="row pagination-btns">
-		<div class="col m6 offset-m3">
-			<div class="col m4">
+		<div class="col s12 m6 offset-m3">
+			<div class="col s5 m4">
 				<button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
 			</div>
-			<div class="col m4">
+			<div class="col s2 m4">
 			</div>
-			<div class="col m4">
+			<div class="col s5 m4">
 				<button type="button" class="waves-effect waves-light btn-small next-btn" (click)="Next()"><i class="material-icons right">chevron_right</i>Next</button>
 			</div>
 		</div>

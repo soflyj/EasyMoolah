@@ -1,9 +1,9 @@
 <form [formGroup]="Q1" (ngSubmit)="Next()">
   <div class="container">
     <div class="row">
-      <div class="col m6 offset-m3">
+      <div class="col s12 m6 offset-m3 s12">
         <div class="image-radio-buttons service-options">
-          <p>Which service would you like a loan for?</p>
+          <p class="center-align">Which service would you like a loan for?</p>
           <div class="radio-group">
             <input type="radio" name="service" id="home-improvement" value="home-improvement" class="input-hidden"
               formControlName="service" />
@@ -52,13 +52,13 @@
   </div>
   <footer class="container">
     <div class="row pagination-btns">
-      <div class="col m6 offset-m3">
-        <div class="col m4">
+      <div class="col s12 m6 offset-m3">
+        <div class="col s5 m4">
           <!-- <a class="waves-effect waves-light btn-small disabled" (click)=""><i class="material-icons left">chevron_left</i>Prev</a> -->
         </div>
-        <div class="col m4">
+        <div class="col s2 m4">
         </div>
-        <div class="col m4">
+        <div class="col s5 m4">
           <!-- <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a> -->
           <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q1.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>

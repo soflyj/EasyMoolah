@@ -3,12 +3,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <div class="container">
     <div class="row">
-      <div class="col m6 offset-m3">
+      <div class="col s12 m6 offset-m3">
         <div class="input-field">
           <div class="image-radio-buttons bank-options">
-            <p>With which bank do you have an account?</p>
+            <p class="center-align">With which bank do you have an account?</p>
             <div class="radio-group">
-              <div class="row">
                 <input type="radio" name="bank" id="absa-bank-option" formControlName="bank" value="absa-bank" />
                 <label for="absa-bank-option" class="col s6 m4">
                   <span class="absa-logo"></span>
@@ -25,8 +24,6 @@
                   <span class="fnb-logo"></span>
                 </label>
 
-              </div>
-              <div class="row">
                 <input type="radio" name="bank" id="nedbank-bank-option" class="input-hidden" formControlName="bank"
                   value="nedbank-bank" />
                 <label for="nedbank-bank-option" class="col s6 m4">
@@ -38,23 +35,21 @@
                 <label for="capitec-bank-option" class="col s6 m4">
                   <span class="capitec-logo"></span>
                 </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--row-->
-  </div>
+            </div><!--radio-group-->
+          </div><!--image-radio-buttons-->
+        </div><!--input-field-->
+      </div><!--s12-->
+    </div><!--row-->
+  </div><!--container-->
   <footer class="container">
     <div class="row pagination-btns">
-      <div class="col m6 offset-m3">
-        <div class="col m4">
+      <div class="col s12 m6 offset-m3">
+        <div class="col s5 m4">
           <button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
         </div>
-        <div class="col m4">
+        <div class="col s2 m4">
         </div>
-        <div class="col m4">
+        <div class="col s5 m4">
           <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q11.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>

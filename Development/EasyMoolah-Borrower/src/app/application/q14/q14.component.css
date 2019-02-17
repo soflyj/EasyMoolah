@@ -18,3 +18,5 @@
   resize: none;
   height: 20px;
 }
+
+input.ng-pristine {max-width: 100%!important;}
