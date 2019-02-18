@@ -1,30 +1,31 @@
 <form [formGroup]="Q14" (ngSubmit)="Next()">
   <div class="container">
     <div class="row">
-      <div class="col m6 offset-m3">
+      <div class="col s12 m6 offset-m3">
         <div class="input-field">
           <p>What's your home address?</p>
           <div class="group">
-            <div class="input-field">
-              <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
+            <div class="input-field address-input">
+              <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode" class="address-input-field" style="max-width:100%" >
+              </AutocompleteComponent>
             </div>
             <!-- Street -->
-            <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="Street" [(ngModel)]="Street" placeholder="Street" formControlName="street">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Suburb -->
-            <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="Street" [(ngModel)]="Suburb" placeholder="Suburb" formControlName="suburb">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- City -->
-            <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="City" [(ngModel)]="City" placeholder="City" formControlName="city">
             </mat-form-field>
             <div class="clearfix"></div>
             <!-- Postal Code -->
-            <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="PostalCode" [(ngModel)]="PostalCode" placeholder="PostalCode" formControlName="postalcode">
             </mat-form-field>
           </div>
@@ -34,14 +35,14 @@
   </div>
   <footer class="container">
       <div class="row pagination-btns">
-      <div class="col m6 offset-m3">
-        <div class="col m4">
-          <button type="button" class="waves-effect waves-light btn-small" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
+      <div class="col s12 m6 offset-m3">
+        <div class="col s5 m4">
+          <button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
         </div>
-        <div class="col m4">
+        <div class="col s2 m4">
         </div>
-        <div class="col m4">
-          <button type="submit" class="waves-effect waves-light btn-small" [disabled]="!Q14.valid"><i class="material-icons right">chevron_right</i>Next</button>
+        <div class="col s5 m4">
+          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q14.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>  
     </div>

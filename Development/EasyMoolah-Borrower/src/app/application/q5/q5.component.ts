@@ -18,6 +18,7 @@ export class Q5Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q5Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(24);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q5');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -36,22 +39,22 @@ export class Q5Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q5 = new FormGroup({
       'insolvent': new FormControl(
-        '',
-        [Validators.required]
-      ),
+        this.Answer,
+        [Validators.required]),
     });
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));        
+    this.borrowerService.addToQuestionLog(new Question('q5', 'Question', 'Have you applied for or been declared insolvent?', this.Q5.get('insolvent').value, this.StartTime.toString(), (new Date).toString()));        
 
     this.router.navigateByUrl('/q6', { skipLocationChange: true });
   }
 
   Back() {
-    this.router.navigateByUrl('/q4', { skipLocationChange: true });
+    this.router.navigateByUrl('/bq4', { skipLocationChange: true });
   }
 }

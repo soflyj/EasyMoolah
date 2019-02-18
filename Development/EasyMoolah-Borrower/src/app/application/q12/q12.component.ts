@@ -18,6 +18,7 @@ export class Q12Component implements OnInit {
     URL = false;
     StartTime: Date;
     Debug = false;
+    Answer;
 
     constructor(private router: Router,
         private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q12Component implements OnInit {
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(66);
 
+        this.Answer = this.borrowerService.getPreviousAnswer('q12');
+
         // Not allowed to navigate directly to component
         this.Debug = this.borrowerService.debugMode();
         this.URL = (window.location.href).includes('/application');
@@ -36,18 +39,18 @@ export class Q12Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
+        // Reactive validation
         this.Q12 = new FormGroup({
             'dependants': new FormControl(
-                '',
+                this.Answer,
                 [Validators.required]
             ),
         });
-
     }
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'How many dependants do you have?', this.Q12.get('dependants').value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('q12', 'Question', 'How many dependants do you have?', this.Q12.get('dependants').value, this.StartTime.toString(), (new Date).toString()));
 
         this.router.navigateByUrl('/q13', { skipLocationChange: true });
     }

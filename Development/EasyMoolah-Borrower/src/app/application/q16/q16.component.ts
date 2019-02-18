@@ -18,6 +18,7 @@ export class Q16Component implements OnInit {
     URL = false;
     Debug = false;
     StartTime: Date;
+    Answer;
 
     idnumber: string;
     maxLength = 13;
@@ -40,8 +41,12 @@ export class Q16Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
+        // Reactive validation
         this.Q16 = new FormGroup({
-            'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])
+            'idnumber': new FormControl(
+                '', 
+                [Validators.required, this.CheckSAIdNumber.bind(this)]
+                )
         });
     }
 
@@ -58,7 +63,7 @@ export class Q16Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('q16', 'Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
 
         this.router.navigateByUrl('/processing', { skipLocationChange: true });
     }
