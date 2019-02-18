@@ -39,6 +39,7 @@ export class Q5Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q5 = new FormGroup({
       'insolvent': new FormControl(
         this.Answer,

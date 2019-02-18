@@ -45,8 +45,8 @@ export class Q15Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
+        // Reactive validation
         this.mask = ['(', /[0-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-
         this.Q15 = new FormGroup({
             'firstname': new FormControl(
                 (this.Answer == null ? '' : this.Answer[0].firstname),

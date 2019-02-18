@@ -39,16 +39,17 @@ export class Q4Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q4 = new FormGroup({
       'formal-debt-review': new FormControl(
         this.Answer,
         [Validators.required]),
-    });
+    });    
   }
 
-  Next() {
+  Next() {    
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q4', 'Question', 'Have you applied for or are you under formal debt review?', this.Q4.get('formal-debt-review').value, this.StartTime.toString(), (new Date).toString()));    
+    this.borrowerService.addToQuestionLog(new Question('q4', 'Question', 'Have you applied for or are you under formal debt review?', this.Q4.get('credit_check').value, this.StartTime.toString(), (new Date).toString()));    
 
     this.router.navigateByUrl('/q5', { skipLocationChange: true });
   }

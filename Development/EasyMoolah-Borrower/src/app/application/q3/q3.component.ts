@@ -48,6 +48,7 @@ export class Q3Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q3 = new FormGroup({
       'borrowamount_slider': new FormControl(
         this.borrowamount_slider,

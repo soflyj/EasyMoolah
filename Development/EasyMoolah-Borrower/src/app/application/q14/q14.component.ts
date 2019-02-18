@@ -26,7 +26,6 @@ export class Q14Component implements OnInit {
     Suburb: string;
     City: string;
     PostalCode: string;
-    AutoCompleteMaps: any;
 
     constructor(public zone: NgZone,
         private router: Router,
@@ -54,6 +53,7 @@ export class Q14Component implements OnInit {
            this.PostalCode = this.Answer[0].postalcode;
         }
 
+        // Reactive validation
         this.Q14 = new FormGroup({
             'street': new FormControl(
                 (this.Answer == null ? '' : this.Answer[0].street),

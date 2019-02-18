@@ -40,6 +40,7 @@ export class Q7Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q7 = new FormGroup({
       'employment-status': new FormControl(
         this.Answer,

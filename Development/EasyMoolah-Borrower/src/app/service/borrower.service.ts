@@ -66,11 +66,19 @@ export class BorrowerService {
     }
 
     getPreviousAnswer(id: string) {
-        if (this.Question != undefined) {                        
+        if (this.Question != undefined) {
             if (this.Question.Where(q => q.Id == id).FirstOrDefault() != null) {
-                this.Answer = this.Question.Where(q => q.Id === id).Select(s => s.Answer);                
+                if (id != 'q14' && id != 'q15') {
+                    this.Answer = this.Question.Where(q => q.Id === id).Select(s => s.Answer).toString();
+                }
+                else {
+                    this.Answer = this.Question.Where(q => q.Id === id).Select(s => s.Answer);
+                }
                 console.log('Answer to ' + id + ': ');
                 console.log(this.Answer);
+            }
+            else {
+                this.Answer = null; 
             }
         }
 

@@ -19,7 +19,7 @@ export class Q9Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
-  Answer: string = '';
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -32,7 +32,11 @@ export class Q9Component implements OnInit {
     this.headerService.progress.next(48);
     this.nettincome_slider = '50000'; // Default range
 
-    this.Answer = this.borrowerService.getPreviousAnswer('q9').toString();
+    this.Answer = this.borrowerService.getPreviousAnswer('q9');
+
+    if (this.Answer != undefined) {
+      this.nettincome_slider = this.Answer.toString();      
+    }
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -41,6 +45,7 @@ export class Q9Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q9 = new FormGroup({
       'nettincome_slider': new FormControl(
         this.nettincome_slider, 

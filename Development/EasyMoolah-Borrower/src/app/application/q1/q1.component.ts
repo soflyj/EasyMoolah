@@ -33,7 +33,7 @@ export class Q1Component implements OnInit {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(0);
-    
+
     this.Answer = this.borrowerService.getPreviousAnswer('q1');
     
     // const httpOptions = {
@@ -76,7 +76,7 @@ export class Q1Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length    
     this.borrowerService.addToQuestionLog(new Question('q1', 'Questions', 'Which service would you like a loan for?', this.Q1.get('service').value, this.StartTime.toString(), (new Date).toString()));
-console.log('bad');
+
     this.router.navigateByUrl('/q2', { skipLocationChange: true });
   }
 }

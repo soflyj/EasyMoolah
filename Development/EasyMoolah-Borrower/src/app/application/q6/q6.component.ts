@@ -20,7 +20,7 @@ export class Q6Component implements OnInit {
   StartTime: Date;
   Debug = false;
   credit_check: boolean;
-  Answer;
+  Answer: boolean;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,9 +30,8 @@ export class Q6Component implements OnInit {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(30);
-    this.credit_check = false;
 
-    this.Answer = this.borrowerService.getPreviousAnswer('q6');
+    this.Answer = this.borrowerService.getPreviousAnswer('q6') != null ? JSON.parse(this.borrowerService.getPreviousAnswer('q6')) : false;    
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -41,17 +40,19 @@ export class Q6Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q6 = new FormGroup({
       'credit_check': new FormControl(
-        this.Answer, 
+        '',
         [Validators.required]),
     });
 
+    this.credit_check = this.Answer;
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q6', 'Question', 'I give permission for EasyMoolah to do a credit check.', this.credit_check.valueOf.toString(), this.StartTime.toString(), (new Date).toString()));            
+    this.borrowerService.addToQuestionLog(new Question('q6', 'Question', 'I give permission for EasyMoolah to do a credit check.', this.credit_check + '', this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q7', { skipLocationChange: true });
   }

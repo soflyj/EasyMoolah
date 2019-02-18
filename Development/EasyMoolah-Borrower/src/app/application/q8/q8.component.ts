@@ -45,8 +45,9 @@ export class Q8Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q8 = new FormGroup({
-      'borrowamount_slider': new FormControl(
+      'grossincome_slider': new FormControl(
         this.grossincome_slider, 
         [Validators.required])      
     });

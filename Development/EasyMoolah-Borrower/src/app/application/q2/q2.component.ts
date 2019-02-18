@@ -39,6 +39,8 @@ export class Q2Component implements OnInit {
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    // Reactive validation
     this.Q2 = new FormGroup({
       'sub-service': new FormControl(
         this.Answer,

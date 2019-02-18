@@ -18,7 +18,7 @@ export class Q11Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
-  Answer: string = '';
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -30,7 +30,7 @@ export class Q11Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(60);
 
-    this.Answer = this.borrowerService.getPreviousAnswer('q11').toString();
+    this.Answer = this.borrowerService.getPreviousAnswer('q11');
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -39,9 +39,10 @@ export class Q11Component implements OnInit {
         this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q11 = new FormGroup({
       'bank': new FormControl(
-        '',
+        this.Answer,
         [Validators.required]
       ),
     });
