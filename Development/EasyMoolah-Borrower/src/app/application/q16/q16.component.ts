@@ -1,10 +1,10 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { HeaderService } from 'src/app/service/header.service';
 
 @Component({
     selector: 'app-q16',
@@ -18,14 +18,12 @@ export class Q16Component implements OnInit {
     URL = false;
     Debug = false;
     StartTime: Date;
-    Answer;
 
     idnumber: string;
     maxLength = 13;
     pattern: any;
 
-    constructor(public zone: NgZone,
-        private router: Router,
+    constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
         private headerService: HeaderService) { }
@@ -44,9 +42,9 @@ export class Q16Component implements OnInit {
         // Reactive validation
         this.Q16 = new FormGroup({
             'idnumber': new FormControl(
-                '', 
+                '',
                 [Validators.required, this.CheckSAIdNumber.bind(this)]
-                )
+            )
         });
     }
 
