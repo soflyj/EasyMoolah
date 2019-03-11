@@ -1,0 +1,14 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Repository.deps.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Repository.runtimeconfig.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Repository.runtimeconfig.dev.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Repository.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\netcoreapp2.1\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\netcoreapp2.1\EasyMoolah.Repository.pdb

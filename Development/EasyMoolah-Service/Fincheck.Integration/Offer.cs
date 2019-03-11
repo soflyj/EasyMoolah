@@ -1,22 +1,37 @@
-﻿using EasyMoolah.Model;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using EasyMoolah.Model;
+using EasyMoolah.Model.Database.Fincheck;
+using EasyMoolah.Model.Fincheck;
+using Newtonsoft.Json;
 
 namespace Fincheck.Integration
 {
-    public class Offer
+    public class Offer: Base
     {
         private Result result = new Result();
-        private string jsonBody = "";
+        private Apilog apiLog = new Apilog();
+        private string JsonBody = "";
 
-        public Result GetOffer(int? id)
+        public Result SetLead(OfferRequest offerRequest)
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/offer";
-            result.input = id.ToString();
+            var apiUrl = "https://engine.fincheck.co.za/api/v1/lead/";
 
-            if (id != 0 && id != null)
+            //result
+            result.input = "";
+            //apiLog
+            apiLog.SessionId = offerRequest.sessionId;
+            apiLog.Token = "6aezFnDAcPO5vKoma8eW";
+            apiLog.Method = "offer";
+            apiLog.Http = "Post";
+            apiLog.Endpoint = apiUrl;
+            apiLog.Request = "";
+            apiLog.StartTimeStamp = DateTime.Now;
+
+            if (offerRequest != null)
             {
                 try
                 {
@@ -30,30 +45,32 @@ namespace Fincheck.Integration
                             new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
+                        JsonBody = JsonConvert.SerializeObject(offerRequest);
 
-                        // object
-                        jsonBody = ""; // JSON Object
-                        var content = new StringContent(jsonBody.ToString(), Encoding.UTF8, "application/json");
+                        var asyncResult = httpClient.PostAsync(apiUrl, new StringContent(JsonBody)).Result;
 
-                        var asyncResult = httpClient.PostAsync(apiUrl, content).Result;
-
+                        //result
                         result.resultCode = 0;
                         result.output = asyncResult.Content.ReadAsStringAsync().Result;
                         result.result = result.output;
+                        //apiLog
+                        apiLog.Response = result.output;
+                        apiLog.EndTimeStamp = DateTime.Now;
+                        AddApiLog(apiLog);
                     }
                 }
                 catch (Exception ex)
                 {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/offer/" + id;
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/lead/";
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/offer/" + id;
+                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/lead/";
             }
 
             return result;

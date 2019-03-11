@@ -5,13 +5,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace EasyMoolah.Model.Fincheck
 {
-    public class Offer
-    {
-
-    }
-
     public class OfferRequest
     {
+        public int sessionId { get; set; }        
         public int id_number { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
@@ -65,11 +61,5 @@ namespace EasyMoolah.Model.Fincheck
         public string company_logo_path { get; set; }
         public string company_logo_url { get; set; }
         public string company_website_url { get; set; }        
-    }
-
-    public class Accept
-    {
-        public string hasid { get; set; }
-        public int partner_id { get; set; }
     }
 }

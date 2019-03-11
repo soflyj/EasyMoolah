@@ -26,7 +26,7 @@ namespace EasyMoolah.Repository.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=EasyMoolah;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-6MIARM2\\SQLEXPRESS;Database=EasyMoolah;Trusted_Connection=True;");
             }
         }
 
@@ -93,12 +93,10 @@ namespace EasyMoolah.Repository.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Request)
-                    .HasMaxLength(250)
+                entity.Property(e => e.Request)                    
                     .IsUnicode(false);
 
                 entity.Property(e => e.Response)
-                    .HasMaxLength(250)
                     .IsUnicode(false);
 
                 entity.Property(e => e.StartTimeStamp)
