@@ -26,7 +26,8 @@ namespace EasyMoolah.Repository.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-6MIARM2\\SQLEXPRESS;Database=EasyMoolah;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=mi3-wsq4.a2hosting.com;Database=EasyMoolah;Integrated Security=False;User ID=jarrodr;Password=jArrod5891;");
+                //var conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=NewLMCom_ef7;Integrated Security=False;User ID=lmcomdatatest;Password=lmcomdatatest;");
             }
         }
 

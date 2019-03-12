@@ -17,3 +17,11 @@ C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMo
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\postdeploy.sql
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\predeploy.sql
 C:\Jarrod\EasyMoolah\GITHUB\EasyMoolah2019\Development\EasyMoolah-Service\EasyMoolah.DataBase\obj\Debug\EasyMoolah.DataBase.sqlprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\bin\Debug\EasyMoolah.Database.dacpac
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\EasyMoolah.Database.sqlprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\Model.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\refactor.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\postdeploy.sql
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\predeploy.sql
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\EasyMoolah.Database.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Debug\EasyMoolah.Database.pdb
