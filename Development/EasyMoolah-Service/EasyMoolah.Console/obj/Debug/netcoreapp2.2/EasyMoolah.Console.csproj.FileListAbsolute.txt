@@ -1,0 +1,4 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.2\EasyMoolah.Console.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.2\EasyMoolah.Console.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.2\EasyMoolah.Console.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\netcoreapp2.2\EasyMoolah.Console.AssemblyInfo.cs

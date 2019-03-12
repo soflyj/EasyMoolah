@@ -1,0 +1,12 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.2\EasyMoolah.Domain.deps.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.2\EasyMoolah.Domain.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.2\EasyMoolah.Domain.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.2\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\netcoreapp2.2\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\netcoreapp2.2\EasyMoolah.Domain.pdb
