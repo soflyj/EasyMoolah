@@ -10,13 +10,13 @@ using Newtonsoft.Json;
 
 namespace Fincheck.Integration
 {
-    public class Lead: Base
+    public class Lead : Base
     {
         private Result result = new Result();
         private Apilog apiLog = new Apilog();
         private string JsonBody = "";
 
-        public Result SetLead(LeadRequest leadRequest)
+        public Result CreateLead(LeadRequest leadRequest)
         {
             var apiUrl = "https://engine.fincheck.co.za/api/v1/lead/";
 
@@ -38,6 +38,7 @@ namespace Fincheck.Integration
                     using (var httpClient = new HttpClient())
                     {
                         httpClient.BaseAddress = new Uri(apiUrl);
+                        //Headers
                         httpClient.DefaultRequestHeaders.Accept.Clear();
                         httpClient.DefaultRequestHeaders.Accept.Add(
                             new MediaTypeWithQualityHeaderValue("application/json"));
@@ -46,8 +47,10 @@ namespace Fincheck.Integration
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
                         JsonBody = JsonConvert.SerializeObject(leadRequest);
+                        var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonBody);
+                        var content = new FormUrlEncodedContent(dictionary);
 
-                        var asyncResult = httpClient.PostAsync(apiUrl, new StringContent(JsonBody)).Result;
+                        var asyncResult = httpClient.PostAsync(apiUrl, content).Result;
 
                         //result
                         result.resultCode = 0;

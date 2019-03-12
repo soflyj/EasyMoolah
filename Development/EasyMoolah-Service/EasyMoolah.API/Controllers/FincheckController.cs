@@ -30,10 +30,28 @@ namespace EasyMoolah.API.Controllers
 
         // Post: api/lead
         [HttpPost("lead")]
-        public IActionResult Lead(LeadRequest leadrequest)
+        public IActionResult CreateLead(LeadRequest leadRequest)
         {
             Fincheck.Integration.Lead lead = new Fincheck.Integration.Lead();
-            var response = lead.SetLead(leadrequest);
+            var response = lead.CreateLead(leadRequest);
+            return Ok(response);
+        }
+
+        // Post: api/lead
+        [HttpPost("offer")]
+        public IActionResult GetOffer(OfferRequest offerRequest)
+        {
+            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
+            var response = offer.GetOffer(offerRequest);
+            return Ok(response);
+        }
+
+        // Post: api/lead
+        [HttpPost("accept")]
+        public IActionResult AcceptOffer(AcceptRequest acceptrequest)
+        {
+            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
+            var response = offer.AcceptOffer(acceptrequest);
             return Ok(response);
         }
     }

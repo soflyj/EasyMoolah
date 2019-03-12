@@ -11,9 +11,9 @@ namespace EasyMoolah.Model.Fincheck
     public class LeadRequest
     {
         public int sessionId { get; set; }
-        public int Id_number { get; set; } // Mandatory
-        public string First_name { get; set; } // Mandatory
-        public string Last_name { get; set; } // Mandatory
+        public string id_number { get; set; } // Mandatory
+        public string first_name { get; set; } // Mandatory
+        public string last_name { get; set; } // Mandatory
         public string cell_phone_number { get; set; } // Mandatory
         public string email { get; set; } // Mandatory
         public string intent { get; set; } // Mandatory
