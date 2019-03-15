@@ -1,6 +1,5 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using System.Data.Entity;
 using EasyMoolah.Model.Database.Fincheck;
 
 namespace EasyMoolah.Repository.Models

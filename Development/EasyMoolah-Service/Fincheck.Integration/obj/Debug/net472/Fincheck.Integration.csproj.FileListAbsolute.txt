@@ -1,0 +1,4 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.AssemblyInfo.cs
