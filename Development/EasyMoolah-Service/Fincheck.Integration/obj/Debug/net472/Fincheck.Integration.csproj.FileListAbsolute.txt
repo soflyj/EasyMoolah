@@ -2,3 +2,16 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.AssemblyInfoInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\Fincheck.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\Newtonsoft.Json.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EntityFramework.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EasyMoolah.Repository.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EasyMoolah.Repository.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Debug\net472\EntityFramework.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Debug\net472\Fincheck.Integration.pdb

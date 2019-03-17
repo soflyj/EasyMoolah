@@ -10,8 +10,9 @@ namespace Fincheck.Integration
     {
         public void AddApiLog(Apilog apiLog)
         {
-            FinCheckRepository fincheckRepository = new FinCheckRepository();
-            fincheckRepository.AddApiLog(apiLog);
+            //EasyMoolah.Repository.CRUD.APILog repo = new EasyMoolah.Repository.CRUD.APILog();
+            //repo.Insert(apiLog);
+
         }        
     }
 }

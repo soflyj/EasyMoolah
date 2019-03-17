@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APILog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SessionId" Type="int" />
+    <Property Name="Token" Type="varchar" MaxLength="50" />
+    <Property Name="Method" Type="varchar" MaxLength="50" />
+    <Property Name="Http" Type="varchar" MaxLength="50" />
+    <Property Name="Endpoint" Type="varchar" MaxLength="250" />
+    <Property Name="Request" Type="varchar(max)" />
+    <Property Name="Response" Type="varchar(max)" />
+    <Property Name="StartTimeStamp" Type="datetime" />
+    <Property Name="EndTimeStamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EasyMoolahModelStoreContainer">
+    <EntitySet Name="APILog" EntityType="Self.APILog" Schema="fincheck" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

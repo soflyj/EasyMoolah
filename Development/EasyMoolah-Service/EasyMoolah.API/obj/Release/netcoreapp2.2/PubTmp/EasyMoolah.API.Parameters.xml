@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="application.jarrod.a2hosted.com" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah\.API\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

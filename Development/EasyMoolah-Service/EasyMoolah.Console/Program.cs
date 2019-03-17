@@ -1,5 +1,4 @@
 ﻿using System;
-using Fincheck.Integration;
 using EasyMoolah.Repository;
 
 namespace EasyMoolah.Console
@@ -10,7 +9,7 @@ namespace EasyMoolah.Console
         {
             System.Console.WriteLine("Hello World!");
 
-            Repository.FinCheckRepository fincheckRepository = new FinCheckRepository();
+            
 
             //fincheckRepository.AddApiLog(new Model.Database.Fincheck.Apilog() {Endpoint = "",
             //Http = "",

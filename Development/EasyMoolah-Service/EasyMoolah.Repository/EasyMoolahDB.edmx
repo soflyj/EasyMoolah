@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APILog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SessionId" Type="int" />
+          <Property Name="Token" Type="varchar" MaxLength="50" />
+          <Property Name="Method" Type="varchar" MaxLength="50" />
+          <Property Name="Http" Type="varchar" MaxLength="50" />
+          <Property Name="Endpoint" Type="varchar" MaxLength="250" />
+          <Property Name="Request" Type="varchar(max)" />
+          <Property Name="Response" Type="varchar(max)" />
+          <Property Name="StartTimeStamp" Type="datetime" />
+          <Property Name="EndTimeStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EasyMoolahModelStoreContainer">
+          <EntitySet Name="APILog" EntityType="Self.APILog" Schema="fincheck" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APILog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SessionId" Type="Int32" />
+          <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Http" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartTimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="EndTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APILogs" EntityType="Self.APILog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EasyMoolahModelStoreContainer" CdmEntityContainer="EasyMoolahEntities">
+          <EntitySetMapping Name="APILogs">
+            <EntityTypeMapping TypeName="EasyMoolahModel.APILog">
+              <MappingFragment StoreEntitySet="APILog">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Http" ColumnName="Http" />
+                <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="StartTimeStamp" ColumnName="StartTimeStamp" />
+                <ScalarProperty Name="EndTimeStamp" ColumnName="EndTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

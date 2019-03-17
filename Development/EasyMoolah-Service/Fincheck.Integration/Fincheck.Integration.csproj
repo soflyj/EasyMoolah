@@ -12,4 +12,8 @@
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
 </Project>
