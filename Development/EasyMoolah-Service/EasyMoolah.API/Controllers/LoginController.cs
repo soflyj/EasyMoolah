@@ -10,7 +10,8 @@ namespace WEBAPI_JWT_Authentication.Controllers
 {
     public class LoginController : ApiController
     {
-        [HttpPost]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
         public IHttpActionResult Authenticate([FromBody] LoginRequest login)
         {
             var loginResponse = new LoginResponse { };

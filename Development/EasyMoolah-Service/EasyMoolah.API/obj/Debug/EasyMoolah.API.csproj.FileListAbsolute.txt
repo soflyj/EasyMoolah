@@ -95,3 +95,4 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMo
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csprojAssemblyReference.cache
