@@ -12,7 +12,7 @@ namespace EasyMoolah.Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class APILog
+    public partial class ApiLog
     {
         public int Key { get; set; }
         public int Id { get; set; }

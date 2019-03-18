@@ -1,5 +1,4 @@
-﻿using EasyMoolah.Model.Database.Fincheck;
-using EasyMoolah.Repository;
+﻿using EasyMoolah.Model.Audit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,11 +7,11 @@ namespace Fincheck.Integration
 {
     public class Base
     {
-        public void AddApiLog(Apilog apiLog)
+        public void AddApiLog(ApiLog apiLog)
         {
-            //EasyMoolah.Repository.CRUD.APILog repo = new EasyMoolah.Repository.CRUD.APILog();
+            //EasyMoolah.Repository.CRUD.ApiLog repo = new EasyMoolah.Repository.CRUD.ApiLog();
             //repo.Insert(apiLog);
 
-        }        
+        }
     }
 }

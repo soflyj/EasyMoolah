@@ -25,6 +25,7 @@ namespace EasyMoolah.Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<APILog> APILogs { get; set; }
+        public virtual DbSet<Borrower> Borrowers { get; set; }
+        public virtual DbSet<ApiLog> ApiLogs { get; set; }
     }
 }

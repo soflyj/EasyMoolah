@@ -1,8 +1,11 @@
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Console.exe.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Console.exe
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Console.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\Newtonsoft.Json.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EntityFramework.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Model.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Repository.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Repository.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EntityFramework.xml
@@ -13,6 +16,3 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\ne
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\net47\EasyMoolah.Console.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\net47\EasyMoolah.Console.exe
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\obj\Debug\net47\EasyMoolah.Console.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\Newtonsoft.Json.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Model.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Console\bin\Debug\net47\EasyMoolah.Model.pdb

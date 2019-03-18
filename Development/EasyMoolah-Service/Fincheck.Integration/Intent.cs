@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using EasyMoolah.Model;
-using EasyMoolah.Model.Database.Fincheck;
+using EasyMoolah.Model.Audit;
 using EasyMoolah.Model.Fincheck;
 using Newtonsoft.Json;
 
@@ -14,7 +14,7 @@ namespace Fincheck.Integration
     {
 
         private Result result = new Result();
-        private Apilog apiLog = new Apilog();
+        private ApiLog apiLog = new ApiLog();
 
         public Result GetIntentById(IntentRequest intentRequest)
         {            

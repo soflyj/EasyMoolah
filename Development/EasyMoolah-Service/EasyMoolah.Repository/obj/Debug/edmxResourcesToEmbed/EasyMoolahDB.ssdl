@@ -1,6 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="APILog">
+  <EntityType Name="Borrower">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdNumber" Type="varchar" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="100" />
+    <Property Name="LandlineNumber" Type="varchar" MaxLength="100" />
+    <Property Name="LoanAmount" Type="money" />
+    <Property Name="IsUnderDebtReview" Type="bit" />
+    <Property Name="IsDeclaredInsolvent" Type="bit" />
+    <Property Name="PermissionToDoCreditCheck" Type="bit" />
+    <Property Name="EmploymentStatus" Type="varchar" MaxLength="50" />
+    <Property Name="GrossMonthlyIncome" Type="money" />
+    <Property Name="NettMonthlyIncome" Type="money" />
+    <Property Name="TotalMonthlyExpense" Type="money" />
+    <Property Name="BankAccountName" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfDependants" Type="int" />
+    <Property Name="ResidenceType" Type="varchar" MaxLength="50" />
+    <Property Name="FullAddress" Type="varchar" MaxLength="250" />
+    <Property Name="StreetName" Type="varchar" MaxLength="100" />
+    <Property Name="SuburbName" Type="varchar" MaxLength="100" />
+    <Property Name="CityName" Type="varchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ApiLog">
     <Key>
       <PropertyRef Name="Key" />
     </Key>
@@ -17,6 +45,7 @@
     <Property Name="EndTimeStamp" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityContainer Name="EasyMoolahModelStoreContainer">
-    <EntitySet Name="APILog" EntityType="Self.APILog" Schema="fincheck" store:Type="Tables" />
+    <EntitySet Name="Borrower" EntityType="Self.Borrower" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="fincheck" store:Type="Tables" />
   </EntityContainer>
 </Schema>

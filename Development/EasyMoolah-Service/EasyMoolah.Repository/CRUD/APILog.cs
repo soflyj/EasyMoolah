@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace EasyMoolah.Repository.CRUD
 {
-    public class APILog
+    public class ApiLog
     {
 
-        public void Insert(EasyMoolah.Repository.APILog apiLog)
+        public int Insert(EasyMoolah.Repository.ApiLog apiLog)
         {
+            int Id = 0;
             using (var context = new EasyMoolahEntities())
             {
-                context.APILogs.Add(apiLog);
+                context.ApiLogs.Add(apiLog);
 
-                context.SaveChanges();
+                Id = context.SaveChanges();
             }
+
+            return Id;
         }
     }
 }

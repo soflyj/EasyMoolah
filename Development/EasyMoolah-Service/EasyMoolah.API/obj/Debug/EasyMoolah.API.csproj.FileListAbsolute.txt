@@ -1,6 +1,3 @@
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csprojAssemblyReference.cache
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.API.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.API.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.API.pdb
@@ -15,6 +12,7 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Micro
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CodeAnalysis.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.CSharp.Core.targets
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
@@ -73,6 +71,10 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.W
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.WebPages.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.WebPages.Razor.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\WebGrease.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\AutoMapper.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EntityFramework.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.ValueTuple.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Model.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Fincheck.Integration.pdb
@@ -100,6 +102,11 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Antlr3.Runti
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Diagnostics.DiagnosticSource.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Repository.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Repository.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EntityFramework.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.pdb
