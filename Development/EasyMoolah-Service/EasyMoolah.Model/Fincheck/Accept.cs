@@ -12,9 +12,9 @@ namespace EasyMoolah.Model.Fincheck
         public int partner_id { get; set; }
     }
 
-    public class AcceptResponse
-    {
-        public List<OfferMatches> offerMatches { get; set; }
-        public List<OfferAll> offerAll { get; set; }
-    }   
+    //public class AcceptResponse
+    //{
+    //    public List<OfferMatches> offerMatches { get; set; }
+    //    public List<OfferAll> offerAll { get; set; }
+    //}   
 }

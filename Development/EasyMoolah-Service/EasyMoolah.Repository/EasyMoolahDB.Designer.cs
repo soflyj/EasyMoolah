@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Jarro\Documents\Visual Studio 2017\Projects\EasyMoolah.Repository\EasyMoolah.Repository\EasyMoolahDB.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\EasyMoolahDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

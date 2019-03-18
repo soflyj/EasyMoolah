@@ -18,7 +18,7 @@ namespace Fincheck.Integration
 
         public Result GetOffer(OfferRequest offerRequest)
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/lead/";
+            var apiUrl = "https://engine.fincheck.co.za/api/v1/offer/";
 
             //result
             result.input = "";

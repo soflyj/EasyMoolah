@@ -79,10 +79,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/EasyMoolah.API.dll">
-      <publishTime>03/17/2019 09:56:48</publishTime>
+      <publishTime>03/17/2019 14:39:02</publishTime>
     </File>
     <File Include="bin/EasyMoolah.API.pdb">
-      <publishTime>03/17/2019 09:56:48</publishTime>
+      <publishTime>03/17/2019 14:39:02</publishTime>
+    </File>
+    <File Include="bin/EasyMoolah.Domain.dll">
+      <publishTime>03/17/2019 14:39:01</publishTime>
+    </File>
+    <File Include="bin/EasyMoolah.Domain.pdb">
+      <publishTime>03/17/2019 14:39:01</publishTime>
+    </File>
+    <File Include="bin/EasyMoolah.Model.dll">
+      <publishTime>03/17/2019 14:39:01</publishTime>
+    </File>
+    <File Include="bin/EasyMoolah.Model.pdb">
+      <publishTime>03/17/2019 14:39:01</publishTime>
+    </File>
+    <File Include="bin/Fincheck.Integration.dll">
+      <publishTime>03/17/2019 14:39:01</publishTime>
+    </File>
+    <File Include="bin/Fincheck.Integration.pdb">
+      <publishTime>03/17/2019 14:39:01</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.TelemetryCorrelation.dll">
       <publishTime>06/28/2017 15:05:26</publishTime>
@@ -112,7 +130,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>02/18/2018 09:44:54</publishTime>
+      <publishTime>11/27/2018 18:07:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.pdb">
+      <publishTime>11/27/2018 17:59:08</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -385,7 +406,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/17/2019 09:35:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/17/2019 10:09:49</publishTime>
+      <publishTime>03/17/2019 14:39:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

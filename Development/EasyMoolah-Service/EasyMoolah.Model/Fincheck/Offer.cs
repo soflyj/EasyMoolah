@@ -8,7 +8,7 @@ namespace EasyMoolah.Model.Fincheck
     public class OfferRequest
     {
         public int sessionId { get; set; }        
-        public int id_number { get; set; }
+        public string id_number { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string cell_phone_number { get; set; }
@@ -36,30 +36,31 @@ namespace EasyMoolah.Model.Fincheck
         //public string timestamp { get; set; } // yes / no
     }
 
-    public class OfferResponse
+    public class Userable
     {
-        public List<OfferMatches> offerMatches { get; set; }
-        public List<OfferAll> offerAll { get; set; }
+        public string partner_type { get; set; }
     }
 
-    public class OfferMatches
+    public class All
     {
         public int id { get; set; }
         public string company_name { get; set; }
         public string company_logo_path { get; set; }
         public string company_logo_url { get; set; }
         public string company_website_url { get; set; }
-        public int rank { get; set; }
-        public decimal probability { get; set; }
-        public string userable { get; set; }
+        public string rank { get; set; }
+        public Userable userable { get; set; }
     }
 
-    public class OfferAll
+    public class OfferResponse
     {
-        public int id { get; set; }
-        public string company_name { get; set; }
-        public string company_logo_path { get; set; }
-        public string company_logo_url { get; set; }
-        public string company_website_url { get; set; }        
+        public List<matches> matches { get; set; }
+        public List<All> all { get; set; }
+        public string id { get; set; }
+    }
+
+    public class matches
+    {
+
     }
 }

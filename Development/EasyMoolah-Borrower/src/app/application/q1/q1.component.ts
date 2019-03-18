@@ -52,6 +52,46 @@ export class Q1Component implements OnInit {
     //     }
     //   );
 
+    let body = new URLSearchParams();
+    body.set('first_name', 'John');
+    body.set('last_name', 'Doe');
+    body.set('cell_phone_number', '0826426395');
+    body.set('email', 'john@doe.com');
+    body.set('id_number', '08');
+    body.set('intent_id', '1');
+
+    
+    // let options = {
+    //     headers: new HttpHeaders({
+    //       'Content-Type': 'application/x-www-form-urlencoded',
+    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTI4MDg3NzIsImV4cCI6MTU1MzQxMzU3MiwiaWF0IjoxNTUyODA4NzcyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.qKq9oKwiTRSL22UcaKeWD9XUIgoxYrEBkn8RDUDEf6A'
+    //   })
+    // };
+
+    let headers = new HttpHeaders()
+    .set('Content-Type', 'application/x-www-form-urlencoded')
+    .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTI4MDg3NzIsImV4cCI6MTU1MzQxMzU3MiwiaWF0IjoxNTUyODA4NzcyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.qKq9oKwiTRSL22UcaKeWD9XUIgoxYrEBkn8RDUDEf6A')
+    // .set('Access-Control-Allow-Origin', '*')
+    
+    this.http
+         .post('https://application.jarrod.a2hosted.com/api/fincheck/offer', 
+         // body.toString(), 
+         {
+         'first_name': 'John',
+          'last_name': 'Doe',
+          'cell_phone_number': '0826426395',
+          'email': 'john@doe.com',
+          'id_number': '08',
+          'intent_id': '1'
+         },
+         {headers})
+        //.get('https://jsonplaceholder.typicode.com/todos/1',    )
+        .subscribe(response => {
+            let json = response;
+
+            console.log(json);
+        });
+
     this.StartTime = new Date();
 
     // Not allowed to navigate directly to component
