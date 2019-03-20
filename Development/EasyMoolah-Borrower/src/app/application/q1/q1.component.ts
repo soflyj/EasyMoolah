@@ -6,6 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ResponseContentType, RequestOptions } from '@angular/http';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   animations: [routerTransition]
 })
 export class Q1Component implements OnInit {
+  [x: string]: any;
 
   Q1: FormGroup;
   URL = false;
@@ -32,65 +34,36 @@ export class Q1Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(0);
 
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //     // tslint:disable-next-line:max-line-length
-    // tslint:disable-next-line:max-line-length
-    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY5Mzk4ODIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.NAJBEJ0xtz_cABUuGm9xCLLZH8R6V_E27Qz26CrjRyQ'
-    //   })
-    // };
-    // const body: any = '';
+    ////////////////////////////////
 
-    // const req = this.http.get('http://localhost:58007/api/books', httpOptions)
-    //   .subscribe(
-    //     res => {
-    //       console.log(res);
-    //     },
-    //     err => {
-    //       console.log('Error occured');
-    //     }
-    //   );
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        // tslint:disable-next-line:max-line-length
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTMwNzI4NTgsImV4cCI6MTU1MzY3NzY1OCwiaWF0IjoxNTUzMDcyODU4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.1Mj-cYW4gnkB4pIlBMq5WFZhStTLDN7uaFq6CxrVmSk'
+      })
+    };
 
-    let body = new URLSearchParams();
-    body.set('first_name', 'John');
-    body.set('last_name', 'Doe');
-    body.set('cell_phone_number', '0826426395');
-    body.set('email', 'john@doe.com');
-    body.set('id_number', '08');
-    body.set('intent_id', '1');
+    // const formData = new FormData();
+    // formData.append('sessionId', '1');
+    // formData.append('id', '1');
 
-    
-    // let options = {
-    //     headers: new HttpHeaders({
-    //       'Content-Type': 'application/x-www-form-urlencoded',
-    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTI4MDg3NzIsImV4cCI6MTU1MzQxMzU3MiwiaWF0IjoxNTUyODA4NzcyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.qKq9oKwiTRSL22UcaKeWD9XUIgoxYrEBkn8RDUDEf6A'
-    //   })
-    // };
+    const formData = new URLSearchParams();
+    formData.set('sessionId', '1');
+    formData.set('id', '1');
+    console.log(formData);
 
-    let headers = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTI4MDg3NzIsImV4cCI6MTU1MzQxMzU3MiwiaWF0IjoxNTUyODA4NzcyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.qKq9oKwiTRSL22UcaKeWD9XUIgoxYrEBkn8RDUDEf6A')
-    // .set('Access-Control-Allow-Origin', '*')
-    
-    this.http
-         .post('https://application.jarrod.a2hosted.com/api/fincheck/offer', 
-         // body.toString(), 
-         {
-         'first_name': 'John',
-          'last_name': 'Doe',
-          'cell_phone_number': '0826426395',
-          'email': 'john@doe.com',
-          'id_number': '08',
-          'intent_id': '1'
-         },
-         {headers})
-        //.get('https://jsonplaceholder.typicode.com/todos/1',    )
-        .subscribe(response => {
-            let json = response;
 
-            console.log(json);
-        });
+
+    this.http.post('https://application.jarrod.a2hosted.com/api/Fincheck/intentbyid', formData.toString(), httpOptions)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        },
+        err => console.log(err)
+      );
+
+    ////////////////////////////////
 
     this.StartTime = new Date();
 
