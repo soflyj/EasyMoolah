@@ -1,0 +1,17 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\activate_account.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\activation_confirmation.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\fsp_results-successful.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\fsp_results-unsuccessful.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\retrieve_password.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Newtonsoft.Json.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.pdb

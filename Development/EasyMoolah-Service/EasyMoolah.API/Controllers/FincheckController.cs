@@ -1,39 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using EasyMoolah.API.Models;
+using EasyMoolah.Model;
+using EasyMoolah.Model.Fincheck;
+using EasyMoolah.Domain;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Net.Http;
+using System.Security.Claims;
+using System.Web.Http;
 
-namespace EasyMoolah.API.Controllers
+namespace WEBAPI_JWT_Authentication.API.Controllers
 {
-    public class FincheckController : Controller
+    [Authorize]
+    public class FincheckController : ApiController
     {
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> SendEmail([FromBody]FSPResultViewModel _request)
-        //{
-        //    FSPResultViewModel FRVM = new FSPResultViewModel();
-        //    EasyMoolah.Model.Notification.Request R = new Request() { FromAddress = "jar.ninja.nas@gmail.com", Subject = "test subject", Template = "FSPResults", ToAddress = "soflyj@gmail.com", ToAddressName = "soflyj", ToAddressTitle = "Mr" };
-        //    EasyMoolah.Model.Notification.FSPResult F = new FSPResult()
-        //        { Date = "2018-01-01", Name = "Jarrod", IsSuccessful = true };
-        //    FRVM.Request = R;
-        //    FRVM.FspResult = F;
+        [Route("api/fincheck/intent")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult GetIntent()
+        {
+            Fincheck.Integration.Intent intent = new Fincheck.Integration.Intent();
+            var response = intent.GetIntent();
+            return Ok(response);
+        }
 
-        //    var temp = Newtonsoft.Json.JsonConvert.SerializeObject(FRVM);
-        //    //FSPResultViewModel _request = null;
-        //    EasyMoolah.Notification.Email email = new Email();
-        //    EasyMoolah.Model.Response response = new Response();
+        [Route("api/fincheck/intentById")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult GetIntentById(IntentRequest intentRequest)
+        {
+            Fincheck.Integration.Intent intent = new Fincheck.Integration.Intent();
+            var response = intent.GetIntentById(intentRequest);
+            return Ok(response);
+        }
 
-        //    try
-        //    {
-        //        response = await email.SendFSPResults(_request);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        response.resultCode = 1;
-        //        response.Result = (ex.InnerException == null ? "" : ex.InnerException.ToString());
-        //        response.Friendly = "Failed to send results email.";
-        //    }
-        //    return Ok(response);
-        //}
+        [Route("api/fincheck/lead")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult CreateLead(LeadRequest leadRequest)
+        {
+            Fincheck.Integration.Lead lead = new Fincheck.Integration.Lead();
+            var response = lead.CreateLead(leadRequest);
+            return Ok(response);
+        }
+
+        [Route("api/fincheck/offer")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult GetOffer(OfferRequest offerRequest)
+        {
+            //EasyMoolah.Domain.Integration.Fincheck offer = new EasyMoolah.Domain.Integration.Fincheck();
+            //var response = offer.GetOffer(offerRequest);
+            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
+            var response = offer.GetOffer(offerRequest);
+
+            return Ok(response);
+        }
+
+        [Route("api/fincheck/accept")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult AcceptOffer(AcceptRequest acceptrequest)
+        {
+            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
+            var response = offer.AcceptOffer(acceptrequest);
+            return Ok(response);
+        }
     }
 }

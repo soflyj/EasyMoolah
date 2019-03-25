@@ -1,0 +1,14 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\EasyMoolah.Domain.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\EasyMoolah.Domain.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\AutoMapper.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\Newtonsoft.Json.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\System.ValueTuple.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net472\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net472\EasyMoolah.Domain.pdb

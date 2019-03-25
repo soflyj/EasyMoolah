@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net47</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +10,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+    <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj" />
+    <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Integration\" />
+  </ItemGroup>
 </Project>
