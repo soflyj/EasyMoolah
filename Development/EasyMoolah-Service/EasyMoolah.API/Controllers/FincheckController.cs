@@ -49,7 +49,9 @@ namespace WEBAPI_JWT_Authentication.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult GetOffer(OfferRequest offerRequest)
         {
-            EasyMoolah.Domain.Integration.Fincheck offer = new EasyMoolah.Domain.Integration.Fincheck();
+            //EasyMoolah.Domain.Integration.Fincheck offer = new EasyMoolah.Domain.Integration.Fincheck();
+            //var response = offer.GetOffer(offerRequest);
+            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
             var response = offer.GetOffer(offerRequest);
 
             return Ok(response);

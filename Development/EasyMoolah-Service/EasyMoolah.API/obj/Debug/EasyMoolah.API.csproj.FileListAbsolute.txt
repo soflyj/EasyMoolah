@@ -110,3 +110,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMo
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.Cors.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.Http.Cors.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.Http.Cors.xml

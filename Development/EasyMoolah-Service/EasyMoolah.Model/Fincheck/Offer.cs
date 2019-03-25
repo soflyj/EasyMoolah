@@ -48,7 +48,8 @@ namespace EasyMoolah.Model.Fincheck
         public string company_logo_path { get; set; }
         public string company_logo_url { get; set; }
         public string company_website_url { get; set; }
-        public string rank { get; set; }
+        public int probability { get; set; }
+        public int rank { get; set; }
         public Userable userable { get; set; }
     }
 
@@ -61,6 +62,13 @@ namespace EasyMoolah.Model.Fincheck
 
     public class matches
     {
-
+        public int id { get; set; }
+        public string company_name { get; set; }
+        public string company_logo_path { get; set; }
+        public string company_logo_url { get; set; }
+        public string company_website_url { get; set; }
+        public int probability { get; set; }
+        public string rank { get; set; }
+        public Userable userable { get; set; }
     }
 }

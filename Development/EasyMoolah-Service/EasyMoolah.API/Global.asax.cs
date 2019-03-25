@@ -13,6 +13,11 @@ namespace EasyMoolah.API
     {
         protected void Application_Start()
         {
+            //if (Request.Headers.AllKeys.Contains("Origin") && Request.HttpMethod == "OPTIONS")
+            //{
+            //    Response.Flush();
+            //}
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

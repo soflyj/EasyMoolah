@@ -75,7 +75,7 @@ namespace Fincheck.Integration
 
         public Result GetIntent()
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/intent";
+            var apiUrl = "https://dev.engine.fincheck.co.za/api/v1/intent";
             result.input = "";
 
             try

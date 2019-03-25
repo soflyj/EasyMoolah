@@ -18,7 +18,7 @@ namespace Fincheck.Integration
 
         public Result GetOffer(OfferRequest offerRequest)
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/offer/";
+            var apiUrl = "https://dev.engine.fincheck.co.za/api/v1/offer/";
 
             //result
             result.input = "";
@@ -54,6 +54,11 @@ namespace Fincheck.Integration
                         //result
                         result.resultCode = 0;
                         result.output = asyncResult.Content.ReadAsStringAsync().Result;
+
+                        OfferResponse offerResponse = JsonConvert.DeserializeObject<OfferResponse>(result.output);
+
+                        var response = JsonConvert.SerializeObject(offerResponse.matches);
+
                         result.result = result.output;
                         //apiLog
                         apiLog.Response = result.output;
@@ -65,14 +70,14 @@ namespace Fincheck.Integration
                 {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/lead/";
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/offer/";
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/lead/";
+                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/offer/";
             }
 
             return result;
