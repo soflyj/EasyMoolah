@@ -3,9 +3,9 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
   selector: 'app-q10',
@@ -25,6 +25,7 @@ export class Q10Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
+    private fincheck: Fincheck,
     private headerService: HeaderService) { }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class Q10Component implements OnInit {
     this.Answer = this.borrowerService.getPreviousAnswer('q10');
 
     if (this.Answer != undefined) {
-      this.monthlyexpense_slider = this.Answer.toString();      
+      this.monthlyexpense_slider = this.Answer.toString();
     }
 
     // Not allowed to navigate directly to component
@@ -57,6 +58,7 @@ export class Q10Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q10', 'Question', 'What\'s your total monthly expense?', this.Q10.get('monthlyexpense_slider').value, this.StartTime.toString(), (new Date).toString()));
+    this.fincheck.expenses = this.Q10.get('monthlyexpense_slider').value;
 
     this.router.navigateByUrl('/q11', { skipLocationChange: true });
   }

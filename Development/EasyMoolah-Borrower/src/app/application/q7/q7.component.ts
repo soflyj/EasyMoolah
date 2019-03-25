@@ -3,9 +3,9 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
 import { Question } from 'src/app/model/question.model';
 import { HeaderService } from 'src/app/service/header.service';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
   selector: 'app-q7',
@@ -24,6 +24,7 @@ export class Q7Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
+    private fincheck: Fincheck,
     private headerService: HeaderService) { }
 
   ngOnInit() {
@@ -51,7 +52,8 @@ export class Q7Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q7', 'Question', 'What\'s your employment status?', this.Q7.get('employment-status').value, this.StartTime.toString(), (new Date).toString()));
-
+    this.fincheck.employed = this.Q7.get('employment-status').value != 'Unemployed' ? 'true' : 'false';
+        
     this.router.navigateByUrl('/q8', { skipLocationChange: true });
   }
 

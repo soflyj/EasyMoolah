@@ -20,10 +20,11 @@ import {
 
 // Services
 import { BorrowerService } from './service/borrower.service';
+import { FincheckService } from './service/fincheck.service';
 import { HeaderService } from './service/header.service';
 import { GoogleMaps } from './common/googlemaps.service';
 
-import { AuditLog } from './model/auditlog.model';
+import { Fincheck } from './model/fincheck.model';
 
 // Components
 import { AppComponent } from './app.component';
@@ -95,7 +96,7 @@ import { ProcessingComponent } from './application/processing/processing.compone
     HttpModule,
     HttpClientModule
   ],
-  providers: [BorrowerService, GoogleMaps, HeaderService],
+  providers: [BorrowerService, GoogleMaps, HeaderService, FincheckService, Fincheck],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

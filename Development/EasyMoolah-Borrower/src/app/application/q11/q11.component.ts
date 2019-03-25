@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { Question } from 'src/app/model/question.model';
 import { HeaderService } from 'src/app/service/header.service';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
   selector: 'app-q11',
@@ -23,6 +24,7 @@ export class Q11Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
+    private fincheck: Fincheck,
     private headerService: HeaderService) { }
 
   ngOnInit() {
@@ -36,7 +38,7 @@ export class Q11Component implements OnInit {
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
     if (!this.URL && !this.Debug) {
-        this.router.navigate(['notfound'], { relativeTo: this.route });
+      this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
     // Reactive validation
@@ -51,6 +53,7 @@ export class Q11Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q11', 'Question', 'With which bank do you have an account?', this.Q11.get('bank').value, this.StartTime.toString(), (new Date).toString()));
+    this.fincheck.bank_name = this.Q11.get('bank').value;
 
     this.router.navigateByUrl('/q12', { skipLocationChange: true });
   }

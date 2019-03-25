@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { Question } from 'src/app/model/question.model';
 import { HeaderService } from 'src/app/service/header.service';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
     selector: 'app-q16',
@@ -26,6 +27,7 @@ export class Q16Component implements OnInit {
     constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
+        private fincheck: Fincheck,
         private headerService: HeaderService) { }
 
     ngOnInit() {
@@ -62,6 +64,8 @@ export class Q16Component implements OnInit {
     Next() {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addToQuestionLog(new Question('q16', 'Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
+        this.fincheck.id_number = this.Q16.value.idnumber;
+        console.log(this.fincheck);
 
         this.router.navigateByUrl('/processing', { skipLocationChange: true });
     }

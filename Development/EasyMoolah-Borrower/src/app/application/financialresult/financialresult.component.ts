@@ -5,6 +5,7 @@ import { HeaderService } from 'src/app/service/header.service';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PersonalDetails } from 'src/app/model/personalDetails.model';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
   selector: 'app-financialresult',
@@ -21,6 +22,7 @@ export class FinancialresultComponent implements OnInit {
 
   constructor(private headerService: HeaderService,
     private borrowerService: BorrowerService,
+    private fincheck: Fincheck,
     private http: HttpClient) { 
     }
 
@@ -28,7 +30,7 @@ export class FinancialresultComponent implements OnInit {
       this.headerService.mode.next('determinate');
       this.headerService.progress.next(0);
   
-      this.personalDetails = this.borrowerService.getToPersonalDetails();
+      // this.personalDetails = this.borrowerService.getToPersonalDetails();
 
     ////////////////////////////////
 
@@ -42,33 +44,33 @@ export class FinancialresultComponent implements OnInit {
     };
 
     const formData = new URLSearchParams();
-    formData.set('first_name', 'John');
-    formData.set('last_name', 'Doe');
-    formData.set('cell_phone_number', '0826426395');
-    formData.set('email', 'jdoe@gmail.com');
-    formData.set('id_number', '8508155062080');
+    formData.set('first_name', this.fincheck.first_name);
+    formData.set('last_name', this.fincheck.last_name);
+    formData.set('cell_phone_number', this.fincheck.cell_phone_number);
+    formData.set('email', this.fincheck.email);
+    formData.set('id_number', this.fincheck.id_number.toString());
     formData.set('intent_id', '2');
-    formData.set('gross_income', '50000');
-    formData.set('net_income', '40000');
+    formData.set('gross_income', this.fincheck.gross_income.toString());
+    formData.set('net_income', this.fincheck.net_income.toString());
     formData.set('citizen', 'true');
     formData.set('debt_review', 'no');
     formData.set('popi', 'true');
     formData.set('debt_review_opt', 'false');
-    formData.set('repayment_period', '12');
-    formData.set('expenses', '5000');
+    formData.set('repayment_period', this.fincheck.repayment_period.toString());
+    formData.set('expenses', this.fincheck.expenses.toString());
     formData.set('education', 'University');
-    formData.set('street_address', '123 Park town');
-    formData.set('suburb', 'Park town');
-    formData.set('city', 'Johannesburg');
-    formData.set('province', 'Gauteng');
-    formData.set('post_code', '2193');
+    formData.set('street_address', this.fincheck.street_address);
+    formData.set('suburb', this.fincheck.suburb);
+    formData.set('city', this.fincheck.city);
+    formData.set('province', this.fincheck.province);
+    formData.set('post_code', this.fincheck.post_code.toString());
     formData.set('payday', '15');
-    formData.set('employed', 'true');
+    formData.set('employed', this.fincheck.employed);
     formData.set('company_name', 'KPMG');
     formData.set('employment_period', '5 years');
     formData.set('work_phone_number', '0111234567');
     formData.set('payment_frequency', '12');
-    formData.set('bank_name', 'Capitec');
+    formData.set('bank_name', this.fincheck.bank_name);
     formData.set('referee_id', '6q84vq'); //default
 
     console.log(formData);
@@ -80,10 +82,9 @@ export class FinancialresultComponent implements OnInit {
         (res) => {          
           //this.result = JSON.parse(res.toString()).result.toString();
           //this.financeResult = JSON.parse(this.result);
-       //   console.log(res.result);
-          // this.matches = JSON.parse(res.result).matches;
-          // // this.result = JSON.parse(res.toString());
-          // console.log('goodbye');
+          console.log(res.result);
+          this.matches = JSON.parse(res.result).matches;
+           //this.result = JSON.parse(res.toString());          
           // console.log(this.matches.matches);
         },  
         err => console.log(err)

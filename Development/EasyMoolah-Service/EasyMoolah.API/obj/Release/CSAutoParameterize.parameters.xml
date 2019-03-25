@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="EasyMoolahEntities-Web.config Connection String" description="EasyMoolahEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EasyMoolahDB.csdl|res://*/EasyMoolahDB.ssdl|res://*/EasyMoolahDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mi3-wsq4.a2hosting.com;initial catalog=EasyMoolah;integrated security=False;MultipleActiveResultSets=True;User ID=jarrodr;Password=jArrod5891;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EasyMoolahEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { Fincheck } from "src/app/model/fincheck.model";
 
 @Component({
   selector: 'app-q8',
@@ -13,7 +14,7 @@ import { Question } from 'src/app/model/question.model';
   animations: [routerTransition]
 })
 export class Q8Component implements OnInit {
-  
+
   Q8: FormGroup;
   grossincome_slider: string;
   URL = false;
@@ -24,6 +25,7 @@ export class Q8Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
+    private fincheck: Fincheck,
     private headerService: HeaderService) { }
 
   ngOnInit() {
@@ -35,7 +37,7 @@ export class Q8Component implements OnInit {
     this.Answer = this.borrowerService.getPreviousAnswer('q8')
 
     if (this.Answer != undefined) {
-      this.grossincome_slider = this.Answer.toString();      
+      this.grossincome_slider = this.Answer.toString();
     }
 
     // Not allowed to navigate directly to component
@@ -48,15 +50,16 @@ export class Q8Component implements OnInit {
     // Reactive validation
     this.Q8 = new FormGroup({
       'grossincome_slider': new FormControl(
-        this.grossincome_slider, 
-        [Validators.required])      
+        this.grossincome_slider,
+        [Validators.required])
     });
 
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('q8', 'Question', 'What\'s your gross monthly income?', this.Q8.get('grossincome_slider').value, this.StartTime.toString(), (new Date).toString()));            
+    this.borrowerService.addToQuestionLog(new Question('q8', 'Question', 'What\'s your gross monthly income?', this.Q8.get('grossincome_slider').value, this.StartTime.toString(), (new Date).toString()));
+    this.fincheck.gross_income = this.Q8.get('grossincome_slider').value;
 
     this.router.navigateByUrl('/q9', { skipLocationChange: true });
   }
