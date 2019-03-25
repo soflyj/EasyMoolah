@@ -71,8 +71,6 @@ export class FinancialresultComponent implements OnInit {
     formData.set('bank_name', 'Capitec');
     formData.set('referee_id', '6q84vq'); //default
 
-
-
     console.log(formData);
 
     
