@@ -18,6 +18,7 @@ export class Q11Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q11Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(60);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q11');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -36,9 +39,10 @@ export class Q11Component implements OnInit {
         this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q11 = new FormGroup({
       'bank': new FormControl(
-        '',
+        this.Answer,
         [Validators.required]
       ),
     });
@@ -46,7 +50,7 @@ export class Q11Component implements OnInit {
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'With which bank do you have an account?', this.Q11.get('bank').value, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('q11', 'Question', 'With which bank do you have an account?', this.Q11.get('bank').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q12', { skipLocationChange: true });
   }

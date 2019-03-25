@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FinanceResult, matches } from '../../model/financeresult.model';
 import { Result } from "../../model/Result.model";
 import { HeaderService } from 'src/app/service/header.service';
+import { BorrowerService } from 'src/app/service/borrower.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PersonalDetails } from 'src/app/model/personalDetails.model';
 
 @Component({
   selector: 'app-financialresult',
@@ -14,14 +16,19 @@ export class FinancialresultComponent implements OnInit {
   financeResult: FinanceResult;
   matches: matches;
   result: Result;
+  personalDetails: PersonalDetails;
+
 
   constructor(private headerService: HeaderService,
+    private borrowerService: BorrowerService,
     private http: HttpClient) { 
     }
 
-  ngOnInit() {
-    this.headerService.mode.next('determinate');
-    this.headerService.progress.next(0);
+    ngOnInit() {
+      this.headerService.mode.next('determinate');
+      this.headerService.progress.next(0);
+  
+      this.personalDetails = this.borrowerService.getToPersonalDetails();
 
     ////////////////////////////////
 
@@ -76,10 +83,10 @@ export class FinancialresultComponent implements OnInit {
           //this.result = JSON.parse(res.toString()).result.toString();
           //this.financeResult = JSON.parse(this.result);
        //   console.log(res.result);
-          this.matches = JSON.parse(res.result).matches;
-          // this.result = JSON.parse(res.toString());
-          console.log('goodbye');
-          console.log(this.matches.matches);
+          // this.matches = JSON.parse(res.result).matches;
+          // // this.result = JSON.parse(res.toString());
+          // console.log('goodbye');
+          // console.log(this.matches.matches);
         },  
         err => console.log(err)
       );

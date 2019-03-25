@@ -18,6 +18,7 @@ export class Q13Component implements OnInit {
     URL = false;
     StartTime: Date;
     Debug = false;
+    Answer;
 
     constructor(private router: Router,
         private route: ActivatedRoute,
@@ -28,6 +29,8 @@ export class Q13Component implements OnInit {
         this.StartTime = new Date();
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(72);
+        
+        this.Answer = this.borrowerService.getPreviousAnswer('q13');
 
         // Not allowed to navigate directly to component
         this.Debug = this.borrowerService.debugMode();
@@ -36,9 +39,10 @@ export class Q13Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
+        // Reactive validation
         this.Q13 = new FormGroup({
             'homeowner': new FormControl(
-                '',
+                this.Answer,
                 [Validators.required]
             ),
         });
@@ -46,7 +50,7 @@ export class Q13Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));        
+        this.borrowerService.addToQuestionLog(new Question('q13', 'Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));        
 
         this.router.navigateByUrl('/q14', { skipLocationChange: true });
     }

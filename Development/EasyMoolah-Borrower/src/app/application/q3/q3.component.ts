@@ -14,10 +14,13 @@ import { Question } from 'src/app/model/question.model';
 })
 export class Q3Component implements OnInit {
 
+  Q3: FormGroup;
   borrowamount_slider: string;
+  borrowmonths_slider: string;
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -28,7 +31,15 @@ export class Q3Component implements OnInit {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(12);
-    this.borrowamount_slider = '50000'; // Default range
+    this.borrowamount_slider = '5000';
+    this.borrowmonths_slider = '24';
+
+    this.Answer = this.borrowerService.getPreviousAnswer('q3');
+
+    if (this.Answer != undefined) {
+      this.borrowamount_slider = this.Answer.toString().split('|', 3)[0];
+      this.borrowmonths_slider = this.Answer.toString().split('|', 3)[1];
+    }
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -36,11 +47,22 @@ export class Q3Component implements OnInit {
     if (!this.URL && !this.Debug) {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
+
+    // Reactive validation
+    this.Q3 = new FormGroup({
+      'borrowamount_slider': new FormControl(
+        this.borrowamount_slider,
+        [Validators.required]),
+      'borrowmonths_slider': new FormControl(
+        this.borrowmonths_slider,
+        [Validators.required]),
+    });
+
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'How much do you want to borrow?', this.borrowamount_slider, this.StartTime.toString(), (new Date).toString()));
+    this.borrowerService.addToQuestionLog(new Question('q3', 'Question', 'How much do you want to borrow? Over how many months', this.Q3.get('borrowamount_slider').value + '|' + this.Q3.get('borrowmonths_slider').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q4', { skipLocationChange: true });
   }

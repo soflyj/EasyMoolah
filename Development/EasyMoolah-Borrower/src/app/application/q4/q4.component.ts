@@ -18,6 +18,7 @@ export class Q4Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class Q4Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(18);
 
+    this.Answer = this.borrowerService.getPreviousAnswer('q4');
+
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
     this.URL = (window.location.href).includes('/application');
@@ -36,17 +39,17 @@ export class Q4Component implements OnInit {
       this.router.navigate(['notfound'], { relativeTo: this.route });
     }
 
+    // Reactive validation
     this.Q4 = new FormGroup({
       'formal-debt-review': new FormControl(
-        '',
-        [Validators.required]
-      ),
+        this.Answer,
+        [Validators.required]),
     });
   }
 
   Next() {
     // tslint:disable-next-line:max-line-length
-    this.borrowerService.addToQuestionLog(new Question('Question', 'Have you applied for or are you under formal debt review?', this.Q4.get('formal-debt-review').value, this.StartTime.toString(), (new Date).toString()));    
+    this.borrowerService.addToQuestionLog(new Question('q4', 'Question', 'Have you applied for or are you under formal debt review?', this.Q4.get('formal-debt-review').value, this.StartTime.toString(), (new Date).toString()));
 
     this.router.navigateByUrl('/q5', { skipLocationChange: true });
   }

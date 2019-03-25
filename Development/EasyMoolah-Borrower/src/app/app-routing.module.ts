@@ -63,7 +63,7 @@ const appRoutes: Routes = [
   { path: 'bq12', component: Q12Component, data: {state: 'bq12'}},
   { path: 'bq13', component: Q13Component, data: {state: 'bq13'}},
   { path: 'bq14', component: Q14Component, data: {state: 'bq14'}},
-  { path: 'bq15', component: Q15Component},
+  { path: 'bq15', component: Q15Component, data: {state: 'bq15'}},
 
   { path: 'processing', component: ProcessingComponent, data: {state: 'processing'}},
   { path: 'financialresult', component: FinancialresultComponent, data: {state: 'financialresult'}},

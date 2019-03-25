@@ -1,10 +1,10 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { HeaderService } from 'src/app/service/header.service';
 
 @Component({
     selector: 'app-q16',
@@ -23,8 +23,7 @@ export class Q16Component implements OnInit {
     maxLength = 13;
     pattern: any;
 
-    constructor(public zone: NgZone,
-        private router: Router,
+    constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
         private headerService: HeaderService) { }
@@ -40,8 +39,12 @@ export class Q16Component implements OnInit {
             this.router.navigate(['notfound'], { relativeTo: this.route });
         }
 
+        // Reactive validation
         this.Q16 = new FormGroup({
-            'idnumber': new FormControl('', [Validators.required, this.CheckSAIdNumber.bind(this)])
+            'idnumber': new FormControl(
+                '',
+                [Validators.required, this.CheckSAIdNumber.bind(this)]
+            )
         });
     }
 
@@ -58,7 +61,7 @@ export class Q16Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
+        this.borrowerService.addToQuestionLog(new Question('q16', 'Question', 'ID Number', this.Q16.value, this.StartTime.toString(), (new Date).toString()));
 
         this.router.navigateByUrl('/processing', { skipLocationChange: true });
     }
