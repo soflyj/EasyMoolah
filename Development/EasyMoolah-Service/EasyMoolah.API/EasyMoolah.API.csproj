@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.4.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
@@ -294,6 +300,10 @@
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj">
       <Project>{5ABDF0EB-6389-47C8-A210-61F67B78CFFB}</Project>
       <Name>EasyMoolah.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj">
+      <Project>{d8f15e8e-dc39-409e-853b-b6cae99ac74f}</Project>
+      <Name>EasyMoolah.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj">
       <Project>{c32474e8-1be1-4ec8-9d91-8e6b959bd39b}</Project>

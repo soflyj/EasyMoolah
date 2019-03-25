@@ -17,8 +17,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csprojAssemblyReference.cache

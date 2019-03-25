@@ -45,7 +45,7 @@ export class FinancialresultComponent implements OnInit {
     formData.set('net_income', '40000');
     formData.set('citizen', 'true');
     formData.set('debt_review', 'no');
-    formData.set('popi', 'yes');
+    formData.set('popi', 'true');
     formData.set('debt_review_opt', 'false');
     formData.set('repayment_period', '12');
     formData.set('expenses', '5000');
@@ -75,11 +75,11 @@ export class FinancialresultComponent implements OnInit {
         (res) => {          
           //this.result = JSON.parse(res.toString()).result.toString();
           //this.financeResult = JSON.parse(this.result);
-          console.log(res.result);
-          this.matches = JSON.parse(res.result);
+       //   console.log(res.result);
+          this.matches = JSON.parse(res.result).matches;
           // this.result = JSON.parse(res.toString());
           console.log('goodbye');
-          console.log(this.matches.all);
+          console.log(this.matches.matches);
         },  
         err => console.log(err)
       );

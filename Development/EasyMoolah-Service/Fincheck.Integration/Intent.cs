@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using EasyMoolah.Model;
-using EasyMoolah.Model.Audit;
+using EasyMoolah.Repository;
 using EasyMoolah.Model.Fincheck;
 using Newtonsoft.Json;
 

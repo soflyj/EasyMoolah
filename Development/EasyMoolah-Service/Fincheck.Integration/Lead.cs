@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using EasyMoolah.Model;
-using EasyMoolah.Model.Audit;
+using EasyMoolah.Repository;
 using EasyMoolah.Model.Fincheck;
 using Newtonsoft.Json;
 
@@ -15,16 +15,27 @@ namespace Fincheck.Integration
         private Result result = new Result();
         private ApiLog apiLog = new ApiLog();
         private string JsonBody = "";
+        private string fincheckAPI = "";
+        private string apiUrl = "";
 
+        /// <summary>
+        /// POST
+        /// Add Leads for a given Intent to Engine
+        /// https://engine.fincheck.co.za/api/docs
+        /// 2019/03/25
+        /// </summary>
+        /// <param name="leadRequest"></param>
+        /// <returns></returns>
         public Result CreateLead(LeadRequest leadRequest)
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/lead/";
+            apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "lead";
+            fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
             //result
             result.input = "";
             //apiLog
             apiLog.SessionId = leadRequest.sessionId;
-            apiLog.Token = "6aezFnDAcPO5vKoma8eW";
+            apiLog.Token = fincheckAPI;
             apiLog.Method = "lead";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
@@ -43,7 +54,7 @@ namespace Fincheck.Integration
                         httpClient.DefaultRequestHeaders.Accept.Add(
                             new MediaTypeWithQualityHeaderValue("application/json"));
                         httpClient.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                            new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
                         JsonBody = JsonConvert.SerializeObject(leadRequest);
@@ -66,14 +77,14 @@ namespace Fincheck.Integration
                 {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/lead/";
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - /lead/";
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/lead/";
+                result.errorFriendly = "Error 201 occurred in Fincheck API - /lead/";
             }
 
             return result;

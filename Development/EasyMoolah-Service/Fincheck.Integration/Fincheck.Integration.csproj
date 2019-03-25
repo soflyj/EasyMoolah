@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EasyMoolah.Domain\EasyMoolah.Domain.csproj" />
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
-    <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -33,7 +33,7 @@ namespace EasyMoolah.Model.Fincheck
         public int payment_frequency { get; set; }
         public string bank_name { get; set; }
         public int credit_score { get; set; }
-        //public string timestamp { get; set; } // yes / no
+        public string referee_id { get; set; } // yes / no
     }
 
     public class Userable

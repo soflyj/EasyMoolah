@@ -51,6 +51,19 @@
           "bin/placeholder/EasyMoolah.Model.dll": {}
         }
       },
+      "EasyMoolah.Notification/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "EasyMoolah.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        }
+      },
       "EasyMoolah.Repository/1.0.0": {
         "type": "project",
         "compile": {
@@ -58,21 +71,6 @@
         },
         "runtime": {
           "bin/placeholder/EasyMoolah.Repository.dll": {}
-        }
-      },
-      "Fincheck.Integration/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EasyMoolah.Model": "1.0.0",
-          "EasyMoolah.Repository": "1.0.0",
-          "Newtonsoft.Json": "12.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Fincheck.Integration.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Fincheck.Integration.dll": {}
         }
       }
     }
@@ -183,22 +181,23 @@
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
       "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
     },
+    "EasyMoolah.Notification/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj",
+      "msbuildProject": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj"
+    },
     "EasyMoolah.Repository/1.0.0": {
       "type": "project",
       "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
       "msbuildProject": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj"
-    },
-    "Fincheck.Integration/1.0.0": {
-      "type": "project",
-      "path": "../Fincheck.Integration/Fincheck.Integration.csproj",
-      "msbuildProject": "../Fincheck.Integration/Fincheck.Integration.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
       "AutoMapper >= 8.0.0",
       "EasyMoolah.Model >= 1.0.0",
-      "Fincheck.Integration >= 1.0.0"
+      "EasyMoolah.Notification >= 1.0.0",
+      "EasyMoolah.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -234,8 +233,11 @@
             "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
               "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
             },
-            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj": {
-              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
+            },
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             }
           }
         }

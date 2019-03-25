@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyMoolah.Repository.CRUD
 {
-    public class ApiLog
+    public class ApiLogRepo
     {
 
         public int Insert(EasyMoolah.Repository.ApiLog apiLog)

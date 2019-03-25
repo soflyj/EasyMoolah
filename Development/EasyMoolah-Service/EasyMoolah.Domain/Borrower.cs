@@ -1,20 +1,24 @@
 ﻿using System;
 using AutoMapper;
-using EasyMoolah.Model.Borrower;
+using EasyMoolah.Repository;
 
 namespace EasyMoolah.Domain
 {
     public class Borrower
     {
 
-        public int Insert(Model.Borrower.Borrower.InsertRequest _borrower)
+        public int Insert(Repository.Borrower _borrower)
+        {            
+            EasyMoolah.Repository.CRUD.BorrowerRepo borrower = new EasyMoolah.Repository.CRUD.BorrowerRepo();
+
+            return borrower.Insert(_borrower);
+        }
+
+        public Repository.Borrower Get(int _key)
         {
+            EasyMoolah.Repository.CRUD.BorrowerRepo borrower = new EasyMoolah.Repository.CRUD.BorrowerRepo();
 
-            var borrowerMap = Mapper.Map<Model.Borrower.Borrower.InsertRequest,Repository.Borrower>(_borrower);
-
-            EasyMoolah.Repository.CRUD.Borrower borrower = new EasyMoolah.Repository.CRUD.Borrower();
-
-            return borrower.Insert(borrowerMap);
+            return borrower.Get(_key);
         }
 
     }

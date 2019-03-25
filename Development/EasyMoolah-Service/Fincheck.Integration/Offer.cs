@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using EasyMoolah.Model;
-using EasyMoolah.Model.Audit;
+using EasyMoolah.Repository;
 using EasyMoolah.Model.Fincheck;
 using Newtonsoft.Json;
 
@@ -15,23 +15,34 @@ namespace Fincheck.Integration
         private Result result = new Result();
         private ApiLog apiLog = new ApiLog();
         private string JsonBody = "";
+        private string fincheckAPI = "";
+        private string apiUrl = "";
 
-        public Result GetOffer(OfferRequest offerRequest)
+        /// <summary>
+        /// POST
+        /// Add Leads for a given Intent to Engine, return Offers and accept Offer
+        /// https://engine.fincheck.co.za/api/docs
+        /// 2019/03/25
+        /// </summary>
+        /// <param name="offerRequest"></param>
+        /// <returns></returns>
+        public Result GetOffer(OfferRequest _offerRequest)
         {
-            var apiUrl = "https://dev.engine.fincheck.co.za/api/v1/offer/";
+            apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "offer";
+            fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
             //result
             result.input = "";
             //apiLog
-            apiLog.SessionId = offerRequest.sessionId;
-            apiLog.Token = "6aezFnDAcPO5vKoma8eW";
+            apiLog.SessionId = _offerRequest.sessionId;
+            apiLog.Token = fincheckAPI;
             apiLog.Method = "offer";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = "";
             apiLog.StartTimeStamp = DateTime.Now;
 
-            if (offerRequest != null)
+            if (_offerRequest != null)
             {
                 try
                 {
@@ -42,10 +53,13 @@ namespace Fincheck.Integration
                         httpClient.DefaultRequestHeaders.Accept.Add(
                             new MediaTypeWithQualityHeaderValue("application/json"));
                         httpClient.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                            new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
+                        //Reference for Fincheck to know EasyMoolah to calling
+                        _offerRequest.referee_id = System.Configuration.ConfigurationSettings.AppSettings["referee_id"].ToString();
 
-                        JsonBody = JsonConvert.SerializeObject(offerRequest);
+
+                        JsonBody = JsonConvert.SerializeObject(_offerRequest);
                         var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonBody);
                         var content = new FormUrlEncodedContent(dictionary);
 
@@ -67,38 +81,47 @@ namespace Fincheck.Integration
                     }
                 }
                 catch (Exception ex)
-                {
+                { 
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/offer/";
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - /offer/";
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/offer/";
+                result.errorFriendly = "Error 201 occurred in Fincheck API - /offer/";
             }
 
             return result;
         }
 
-        public Result AcceptOffer(AcceptRequest acceptRequest)
+        /// <summary>
+        /// POST
+        /// Accept Offer
+        /// https://engine.fincheck.co.za/api/docs
+        /// 2019/03/25
+        /// </summary>
+        /// <param name="acceptRequest"></param>
+        /// <returns></returns>
+        public Result AcceptOffer(AcceptRequest _acceptRequest)
         {
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/accept/";
+            var apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "accept";
+            fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
             //result
             result.input = "";
             //apiLog
-            apiLog.SessionId = acceptRequest.sessionId;
-            apiLog.Token = "6aezFnDAcPO5vKoma8eW";
+            apiLog.SessionId = _acceptRequest.sessionId;
+            apiLog.Token = fincheckAPI;
             apiLog.Method = "accept";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = "";
             apiLog.StartTimeStamp = DateTime.Now;
 
-            if (acceptRequest != null)
+            if (_acceptRequest != null)
             {
                 try
                 {
@@ -109,10 +132,10 @@ namespace Fincheck.Integration
                         httpClient.DefaultRequestHeaders.Accept.Add(
                             new MediaTypeWithQualityHeaderValue("application/json"));
                         httpClient.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                            new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
-                        JsonBody = JsonConvert.SerializeObject(acceptRequest);
+                        JsonBody = JsonConvert.SerializeObject(_acceptRequest);
 
                         var asyncResult = httpClient.PostAsync(apiUrl, new StringContent(JsonBody)).Result;
 
@@ -130,14 +153,14 @@ namespace Fincheck.Integration
                 {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/lead/";
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - /accept/";
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/lead/";
+                result.errorFriendly = "Error 201 occurred in Fincheck API - /accept/";
             }
 
             return result;

@@ -57,8 +57,8 @@
     <Compile Include="Borrower.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRUD\Borrower.cs" />
-    <Compile Include="CRUD\ApiLog.cs" />
+    <Compile Include="CRUD\BorrowerRepo.cs" />
+    <Compile Include="CRUD\ApiLogRepo.cs" />
     <Compile Include="EasyMoolahDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
