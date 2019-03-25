@@ -16,6 +16,11 @@ namespace EasyMoolah.Notification
         private readonly ConfirmationOfApplication confirmationOfApplication;
         private FSPResult FSPResult;
 
+        /// <summary>
+        /// Send email method that actually does the outcoming
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public Result SendEmail(Request request)
         {
             Result result = new Result

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>EasyMoolah.Model</id>
+    <version>1.0.0</version>
+    <authors>EasyMoolah.Model</authors>
+    <owners>EasyMoolah.Model</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7">
+        <dependency id="Newtonsoft.Json" version="12.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\net47\EasyMoolah.Model.dll" target="lib\net47\EasyMoolah.Model.dll" />
+  </files>
+</package>

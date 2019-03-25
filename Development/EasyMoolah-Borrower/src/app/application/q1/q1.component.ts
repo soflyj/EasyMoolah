@@ -6,6 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ResponseContentType, RequestOptions } from '@angular/http';
 import { isNull } from 'util';
 
 
@@ -16,6 +17,7 @@ import { isNull } from 'util';
   animations: [routerTransition]
 })
 export class Q1Component implements OnInit {
+  [x: string]: any;
 
   Q1: FormGroup;
   URL = false;

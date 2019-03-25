@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -9,22 +7,22 @@ namespace EasyMoolah.Model.Notification
 {
     public class Request
     {
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "ToAddress")]
         public string ToAddress { get; set; }
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "ToAddressTitle")]
         public string ToAddressTitle { get; set; }
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "ToAddressName")]
         public string ToAddressName { get; set; }
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "FromAddress")]
         public string FromAddress { get; set; }
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "Subject")]
         public string Subject { get; set; }
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "Template")]
         public string Template { get; set; }
     }

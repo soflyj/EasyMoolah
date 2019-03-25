@@ -1,0 +1,14 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\Fincheck.Integration.deps.json
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\Fincheck.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\bin\Release\netcoreapp2.1\EasyMoolah.Repository.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.AssemblyInfo.cs
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Fincheck.Integration\obj\Release\netcoreapp2.1\Fincheck.Integration.pdb

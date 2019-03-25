@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Borrower">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNumber" Type="varchar" MaxLength="100" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="100" />
+          <Property Name="LandlineNumber" Type="varchar" MaxLength="100" />
+          <Property Name="LoanAmount" Type="money" />
+          <Property Name="IsUnderDebtReview" Type="bit" />
+          <Property Name="IsDeclaredInsolvent" Type="bit" />
+          <Property Name="PermissionToDoCreditCheck" Type="bit" />
+          <Property Name="EmploymentStatus" Type="varchar" MaxLength="50" />
+          <Property Name="GrossMonthlyIncome" Type="money" />
+          <Property Name="NettMonthlyIncome" Type="money" />
+          <Property Name="TotalMonthlyExpense" Type="money" />
+          <Property Name="BankAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="NumberOfDependants" Type="int" />
+          <Property Name="ResidenceType" Type="varchar" MaxLength="50" />
+          <Property Name="FullAddress" Type="varchar" MaxLength="250" />
+          <Property Name="StreetName" Type="varchar" MaxLength="100" />
+          <Property Name="SuburbName" Type="varchar" MaxLength="100" />
+          <Property Name="CityName" Type="varchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ApiLog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SessionId" Type="int" />
+          <Property Name="Token" Type="varchar" MaxLength="50" />
+          <Property Name="Method" Type="varchar" MaxLength="50" />
+          <Property Name="Http" Type="varchar" MaxLength="50" />
+          <Property Name="Endpoint" Type="varchar" MaxLength="250" />
+          <Property Name="Request" Type="varchar(max)" />
+          <Property Name="Response" Type="varchar(max)" />
+          <Property Name="StartTimeStamp" Type="datetime" />
+          <Property Name="EndTimeStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EasyMoolahModelStoreContainer">
+          <EntitySet Name="Borrower" EntityType="Self.Borrower" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="fincheck" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Borrowers" EntityType="EasyMoolahModel.Borrower" />
+          <EntitySet Name="ApiLogs" EntityType="EasyMoolahModel.ApiLog" />
+        </EntityContainer>
+        <EntityType Name="Borrower">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LandlineNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LoanAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsUnderDebtReview" Type="Boolean" />
+          <Property Name="IsDeclaredInsolvent" Type="Boolean" />
+          <Property Name="PermissionToDoCreditCheck" Type="Boolean" />
+          <Property Name="EmploymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GrossMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NettMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalMonthlyExpense" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BankAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfDependants" Type="Int32" />
+          <Property Name="ResidenceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SuburbName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ApiLog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SessionId" Type="Int32" />
+          <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Http" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartTimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="EndTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EasyMoolahModelStoreContainer" CdmEntityContainer="EasyMoolahEntities">
+          <EntitySetMapping Name="Borrowers">
+            <EntityTypeMapping TypeName="EasyMoolahModel.Borrower">
+              <MappingFragment StoreEntitySet="Borrower">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="SuburbName" ColumnName="SuburbName" />
+                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+                <ScalarProperty Name="ResidenceType" ColumnName="ResidenceType" />
+                <ScalarProperty Name="NumberOfDependants" ColumnName="NumberOfDependants" />
+                <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+                <ScalarProperty Name="TotalMonthlyExpense" ColumnName="TotalMonthlyExpense" />
+                <ScalarProperty Name="NettMonthlyIncome" ColumnName="NettMonthlyIncome" />
+                <ScalarProperty Name="GrossMonthlyIncome" ColumnName="GrossMonthlyIncome" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="PermissionToDoCreditCheck" ColumnName="PermissionToDoCreditCheck" />
+                <ScalarProperty Name="IsDeclaredInsolvent" ColumnName="IsDeclaredInsolvent" />
+                <ScalarProperty Name="IsUnderDebtReview" ColumnName="IsUnderDebtReview" />
+                <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+                <ScalarProperty Name="LandlineNumber" ColumnName="LandlineNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApiLogs">
+            <EntityTypeMapping TypeName="EasyMoolahModel.ApiLog">
+              <MappingFragment StoreEntitySet="ApiLog">
+                <ScalarProperty Name="EndTimeStamp" ColumnName="EndTimeStamp" />
+                <ScalarProperty Name="StartTimeStamp" ColumnName="StartTimeStamp" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
+                <ScalarProperty Name="Http" ColumnName="Http" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

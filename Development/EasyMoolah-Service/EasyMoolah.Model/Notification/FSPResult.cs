@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -9,13 +7,15 @@ namespace EasyMoolah.Model.Notification
 {
     public class FSPResult
     {
-        [Required]
+        [JsonRequired]
         [JsonProperty(PropertyName = "Name")]
         public string Name { get; set; }
-        [Required]
+
+        [JsonRequired]
         [JsonProperty(PropertyName = "Date")]
         public string Date { get; set; }
-        [Required]
+
+        [JsonRequired]
         [JsonProperty(PropertyName = "IsSuccessful")]
         public bool IsSuccessful { get; set; }
     }

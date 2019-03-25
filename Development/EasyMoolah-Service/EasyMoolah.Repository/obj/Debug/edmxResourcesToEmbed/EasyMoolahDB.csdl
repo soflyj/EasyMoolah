@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Borrowers" EntityType="EasyMoolahModel.Borrower" />
+    <EntitySet Name="ApiLogs" EntityType="EasyMoolahModel.ApiLog" />
+  </EntityContainer>
+  <EntityType Name="Borrower">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LandlineNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LoanAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsUnderDebtReview" Type="Boolean" />
+    <Property Name="IsDeclaredInsolvent" Type="Boolean" />
+    <Property Name="PermissionToDoCreditCheck" Type="Boolean" />
+    <Property Name="EmploymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GrossMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NettMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalMonthlyExpense" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BankAccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfDependants" Type="Int32" />
+    <Property Name="ResidenceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SuburbName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ApiLog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SessionId" Type="Int32" />
+    <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Http" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StartTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="EndTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>
