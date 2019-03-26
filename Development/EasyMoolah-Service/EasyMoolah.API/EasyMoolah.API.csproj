@@ -242,6 +242,20 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\activate_account.html" />
+    <Content Include="Templates\activation_confirmation.html" />
+    <Content Include="Templates\call-me.html" />
+    <Content Include="Templates\fsp_results-successful.html" />
+    <Content Include="Templates\fsp_results-unsuccessful.html" />
+    <Content Include="Templates\images\account-box.png" />
+    <Content Include="Templates\images\check-decagram.png" />
+    <Content Include="Templates\images\close-octagon-outline.png" />
+    <Content Include="Templates\images\format-list-checkbox.png" />
+    <Content Include="Templates\images\lock-question.png" />
+    <Content Include="Templates\images\login.png" />
+    <Content Include="Templates\images\web.png" />
+    <Content Include="Templates\processing-results.html" />
+    <Content Include="Templates\retrieve_password.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -256,6 +270,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Templates\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

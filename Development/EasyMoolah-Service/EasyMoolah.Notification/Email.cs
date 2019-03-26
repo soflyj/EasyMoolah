@@ -19,21 +19,21 @@ namespace EasyMoolah.Notification
         private static string emailType = "";
         private static string templateHTML = "";
 
-        private readonly ConfirmationOfApplication confirmationOfApplication;
-        private FSPResult FSPResult;
-       
+        private readonly ProcessingResults processingResults;
+        private AcceptOffer FSPResult;
+
         public static Result SendEmail()
         {
             Result result = new Result();
             try
             {
                 using (var mailMessage = new MailMessage())
-                using (var client = new SmtpClient("mail.easymoolah.co.za", 465))
+                using (var client = new SmtpClient("mail.easymoolah.co.za", 26))
                 {
                     // configure the client and send the message
                     client.UseDefaultCredentials = false;
                     client.Credentials = new NetworkCredential("info@easymoolah.co.za", "EasyMoolah@101");
-                    client.EnableSsl = true;                                     
+                    //client.EnableSsl = true;
 
                     // configure the mail message
                     mailMessage.From = new MailAddress(fromAddress);
@@ -59,73 +59,90 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public static Result ConfirmationOfApplication(ConfirmationOfApplication _request)
+        public static Result ProcessingResults(ProcessingResults _request)
         {
             Result result = new Result();
-         fromAddress = _request.FromAddress;
-         toAddress = _request.ToAddress;
-         subject = _request.Subject;         
+            fromAddress = _request.fromAddress;
+            toAddress = _request.toAddress;
+            subject = _request.subject;
 
-        string firstName = "Jarrod";
-            string lastName = "Ramsaroop";
-            string templateHTML = "";
-
+            string firstName = "Jarrod";
+            string loanAmount = "10000";
+            string templateHTML = AppDomain.CurrentDomain.BaseDirectory + "Templates\\processing-results.html";
 
             try
             {
-                var builder = new StringBuilder();
-
-                //What template to use
-                if (_request.isSuccessful)
-                {
-                    templateHTML ="fsp_results-successful.html";
-                }
-                else
-                {
-                    templateHTML = "fsp_results-unsuccessful.html";
-                }
+                var builder = new StringBuilder();               
 
                 using (var reader = File.OpenText(templateHTML))
                 {
                     builder.Append(reader.ReadToEnd());
                 }
                 //Completing the place holders
-                builder.Replace("{{name}}", firstName + ' ' + lastName);
+                builder.Replace("{{name}}", firstName);
                 builder.Replace("{{date}}", System.DateTime.Now.ToShortDateString());
+                builder.Replace("{{loan-amount}}", loanAmount);
+
+                body = builder.ToString();
 
                 result = SendEmail();
 
                 result.resultCode = 0;
                 result.output = "";
-                result.result = "Email Successfully Sent - " + _request.Template.ToString();
+                result.result = "Email Successfully Sent - ProcessingResults";
             }
             catch (Exception ex)
             {
                 result.resultCode = 101;
                 result.error = ex.InnerException.ToString();
-                result.errorFriendly = "Email Unsuccessfully Sent - " + _request.Template.ToString() + "_SendNotificationConfirmationOfApplication";
+                result.errorFriendly = "Email Unsuccessfully Sent - ProcessingResults";
             }
-            
+
             return result;
         }
 
-        //public Result SendFSPResults(FSPResult request)
-        //{
-        //    Result result = new Result();
-        //    FSPResult = request.FspResult;
+        public static Result AcceptOffer(AcceptOffer _request)
+        {
+            Result result = new Result();
+            fromAddress = _request.fromAddress;
+            toAddress = _request.toAddress;
+            subject = _request.subject;
 
-        //    try
-        //    {
-        //        result = SendEmail(request.Request);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        result.resultCode = 401;
-        //        result.error = ex.InnerException.ToString();
-        //        result.errorFriendly = "Email Unsuccessfully Sent - " + request.Request.Template.ToString() + "_SendFSPResults";
-        //    }
+            string firstName = "Jarrod";
+            string companyName = "African Bank";
+            string logo = "https://engine.fincheck.co.za/storage/images/partners/112/logo/jCo6CCi61ruBxNs4iDGuduxcpuKwllN1SIknda8i.jpeg";
+            string templateHTML = AppDomain.CurrentDomain.BaseDirectory + "Templates\\call-me.html";
 
-        //    return result;
-        //}
+            try
+            {
+                var builder = new StringBuilder();
+
+                using (var reader = File.OpenText(templateHTML))
+                {
+                    builder.Append(reader.ReadToEnd());
+                }
+                //Completing the place holders
+                builder.Replace("{{name}}", firstName);
+                builder.Replace("{{date}}", System.DateTime.Now.ToShortDateString());
+                builder.Replace("{{company-name}}", companyName);
+                builder.Replace("{{company-logo}}", logo);
+
+                body = builder.ToString();
+
+                result = SendEmail();
+
+                result.resultCode = 0;
+                result.output = "";
+                result.result = "Email Successfully Sent - AcceptOffer";
+            }
+            catch (Exception ex)
+            {
+                result.resultCode = 101;
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Email Unsuccessfully Sent - AcceptOffer";
+            }
+
+            return result;
+        }
     }
 }

@@ -5,24 +5,40 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+    <None Remove="Templates\activate_account.html" />
+    <None Remove="Templates\activation_confirmation.html" />
+    <None Remove="Templates\call-me.html" />
+    <None Remove="Templates\fsp_results-successful.html" />
+    <None Remove="Templates\fsp_results-unsuccessful.html" />
+    <None Remove="Templates\processing-results.html" />
+    <None Remove="Templates\retrieve_password.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Templates\activate_account.html">
+    <Content Include="Templates\activate_account.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\activation_confirmation.html">
+    </Content>
+    <Content Include="Templates\activation_confirmation.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\fsp_results-successful.html">
+    </Content>
+    <Content Include="Templates\call-me.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\fsp_results-unsuccessful.html">
+    </Content>
+    <Content Include="Templates\fsp_results-successful.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\retrieve_password.html">
+    </Content>
+    <Content Include="Templates\fsp_results-unsuccessful.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Templates\processing-results.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\retrieve_password.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
   </ItemGroup>
 </Project>

@@ -32,3 +32,5 @@ C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csproj.CopyComplete
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.dll
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\call-me.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\processing-results.html

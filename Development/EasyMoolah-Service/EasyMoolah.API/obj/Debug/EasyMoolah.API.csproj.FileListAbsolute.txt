@@ -235,3 +235,5 @@ C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\retrieve_password.html
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb

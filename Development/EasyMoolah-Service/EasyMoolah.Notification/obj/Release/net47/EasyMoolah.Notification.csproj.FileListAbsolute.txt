@@ -15,3 +15,5 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Rel
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Templates\call-me.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Templates\processing-results.html
