@@ -228,3 +228,10 @@ C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\Eas
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.dll
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.pdb
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\activate_account.html
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\activation_confirmation.html
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\fsp_results-successful.html
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\fsp_results-unsuccessful.html
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\retrieve_password.html
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb
