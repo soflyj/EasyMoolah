@@ -13,35 +13,48 @@ import { Fincheck } from "src/app/model/fincheck.model";
   styleUrls: ['../../../assets/css/em_site_theme.css'],
 })
 export class FinancialresultComponent implements OnInit {
-  
+
   financeResult: FinanceResult;
   matches: matches;
   result: Result;
   personalDetails: PersonalDetails;
 
-
   constructor(private headerService: HeaderService,
     private borrowerService: BorrowerService,
     private fincheck: Fincheck,
-    private http: HttpClient) { 
-    }
+    private http: HttpClient) {
+  }
 
-    ngOnInit() {
-      this.headerService.mode.next('determinate');
-      this.headerService.progress.next(0);
-  
-      // this.personalDetails = this.borrowerService.getToPersonalDetails();
-
-    ////////////////////////////////
+  ngOnInit() {
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(0);
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
         // tslint:disable-next-line:max-line-length
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM1MDY5ODgsImV4cCI6MTU1NDExMTc4OCwiaWF0IjoxNTUzNTA2OTg4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.pyTWLv0ImzrfQuINo_q1eDSo3jhKhkNZwwN59aRjInM',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM2MTExNjksImV4cCI6MTU1NDIxNTk2OSwiaWF0IjoxNTUzNjExMTY5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.Ow461m1MkOn9SCd-7qWfFCkfnJfp4GGLGtIh4HTCmvQ',
         'X-Requested-With': 'XMLHttpRequest'
       })
     };
+
+    this.fincheck.first_name = 'Jarrod';
+    this.fincheck.last_name = 'Ramsaroop';
+    this.fincheck.cell_phone_number = '0823216547';
+    this.fincheck.email = 'jr@gmail.com';
+    this.fincheck.id_number = 8508155062080;
+    this.fincheck.gross_income = 50000;
+    this.fincheck.net_income = 40000;
+    this.fincheck.repayment_period = 12
+    this.fincheck.expenses = 5000;
+    this.fincheck.street_address = '123';
+    this.fincheck.suburb = '123';
+    this.fincheck.city = '123';
+    this.fincheck.province = '123';
+    this.fincheck.post_code = 0;
+    this.fincheck.payday = 15;
+    this.fincheck.employed = 'true';
+    this.fincheck.bank_name = 'Nedbank';
 
     const formData = new URLSearchParams();
     formData.set('first_name', this.fincheck.first_name);
@@ -64,7 +77,7 @@ export class FinancialresultComponent implements OnInit {
     formData.set('city', this.fincheck.city);
     formData.set('province', this.fincheck.province);
     formData.set('post_code', this.fincheck.post_code.toString());
-    formData.set('payday', '15');
+    formData.set('payday', this.fincheck.payday.toString());
     formData.set('employed', this.fincheck.employed);
     formData.set('company_name', 'KPMG');
     formData.set('employment_period', '5 years');
@@ -75,21 +88,16 @@ export class FinancialresultComponent implements OnInit {
 
     console.log(formData);
 
-    
 
-    this.http.post('http://localhost:58007/api/fincheck/offer', formData.toString(), httpOptions)
+
+    this.http.post('https://application.jarrod.a2hosted.com/api/fincheck/offer', formData.toString(), httpOptions)
       .subscribe(
-        (res) => {          
-          //this.result = JSON.parse(res.toString()).result.toString();
-          //this.financeResult = JSON.parse(this.result);
-          console.log(res.result);
-          this.matches = JSON.parse(res.result).matches;
-           //this.result = JSON.parse(res.toString());          
-          // console.log(this.matches.matches);
-        },  
+        (res) => {
+          this.result = JSON.parse(JSON.stringify(res));
+          this.matches = JSON.parse(this.result.result).matches;
+          //console.log(this.matches);
+        },
         err => console.log(err)
       );
-
-    ////////////////////////////////
   }
 }
