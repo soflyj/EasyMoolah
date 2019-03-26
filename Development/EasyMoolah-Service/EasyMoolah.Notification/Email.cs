@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyMoolah.Model;
 using EasyMoolah.Model.Notification;
+using EasyMoolah.Repository;
 using Newtonsoft.Json;
 
 namespace EasyMoolah.Notification
@@ -14,15 +15,19 @@ namespace EasyMoolah.Notification
     {
         private static string fromAddress = "";
         private static string toAddress = "";
+        private static string toAddressTitle = "";
+        private static string toAddressName = "";
         private static string subject = "";
         private static string body = "";
         private static string emailType = "";
         private static string templateHTML = "";
 
+        public static AuditEmail auditEmail = new AuditEmail();
+
         private readonly ProcessingResults processingResults;
         private AcceptOffer FSPResult;
 
-        public static Result SendEmail()
+        public async static Task<Result> SendEmail()
         {
             Result result = new Result();
             try
@@ -47,6 +52,18 @@ namespace EasyMoolah.Notification
                     result.resultCode = 0;
                     result.output = "";
                     result.result = "Email Successfully Sent - " + emailType;
+
+                    await EasyMoolah.Repository.CRUD.defaultRepo.InsertEmailAudit(new AuditEmail()
+                    {
+                        Body = body,
+                        EmailType = "processingResults",
+                        FromAddress = fromAddress,
+                        SentDate = System.DateTime.Now,
+                        Subject = subject,
+                        ToAddress = toAddress,
+                        ToAddressTitle = toAddressTitle,
+                        ToAddressName = toAddressName
+                    });
                 }
             }
             catch (Exception ex)
@@ -59,7 +76,7 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public static Result ProcessingResults(ProcessingResults _request)
+        public async static Task<Result> ProcessingResults(ProcessingResults _request)
         {
             Result result = new Result();
             fromAddress = _request.fromAddress;
@@ -85,11 +102,12 @@ namespace EasyMoolah.Notification
 
                 body = builder.ToString();
 
-                result = SendEmail();
+                result = await SendEmail();
 
                 result.resultCode = 0;
                 result.output = "";
                 result.result = "Email Successfully Sent - ProcessingResults";
+
             }
             catch (Exception ex)
             {
@@ -101,7 +119,7 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public static Result AcceptOffer(AcceptOffer _request)
+        public async static Task<Result> AcceptOffer(AcceptOffer _request)
         {
             Result result = new Result();
             fromAddress = _request.fromAddress;
@@ -129,11 +147,12 @@ namespace EasyMoolah.Notification
 
                 body = builder.ToString();
 
-                result = SendEmail();
+                result = await SendEmail();
 
                 result.resultCode = 0;
                 result.output = "";
                 result.result = "Email Successfully Sent - AcceptOffer";
+                                
             }
             catch (Exception ex)
             {

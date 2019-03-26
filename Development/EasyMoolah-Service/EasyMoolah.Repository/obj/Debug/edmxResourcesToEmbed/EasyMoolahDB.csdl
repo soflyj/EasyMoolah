@@ -2,7 +2,8 @@
 <Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Borrowers" EntityType="EasyMoolahModel.Borrower" />
-    <EntitySet Name="ApiLogs" EntityType="EasyMoolahModel.ApiLog" />
+    <EntitySet Name="AuditEmails" EntityType="EasyMoolahModel.AuditEmail" />
+    <EntitySet Name="APILogs" EntityType="EasyMoolahModel.APILog" />
   </EntityContainer>
   <EntityType Name="Borrower">
     <Key>
@@ -32,7 +33,21 @@
     <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="ApiLog">
+  <EntityType Name="AuditEmail">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailType" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ToAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ToAddressTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ToAddressName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FromAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SentDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="APILog">
     <Key>
       <PropertyRef Name="Key" />
     </Key>

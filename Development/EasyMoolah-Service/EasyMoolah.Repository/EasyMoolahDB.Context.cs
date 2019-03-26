@@ -26,6 +26,7 @@ namespace EasyMoolah.Repository
         }
     
         public virtual DbSet<Borrower> Borrowers { get; set; }
-        public virtual DbSet<ApiLog> ApiLogs { get; set; }
+        public virtual DbSet<AuditEmail> AuditEmails { get; set; }
+        public virtual DbSet<APILog> APILogs { get; set; }
     }
 }

@@ -10,18 +10,18 @@ namespace EasyMoolah.Domain.Integration
 {
     public class Offer
     {
-        public static Result GetOffer(OfferRequest _offerRequest)
+        public async static Task<Result> GetOffer(OfferRequest _offerRequest)
         {
             var response = Fincheck.Integration.Offer.GetOffer(_offerRequest);
-            ApiLog.Insert(Fincheck.Integration.Offer.apiLog);
+            await ApiLog.Insert(Fincheck.Integration.Offer.apiLog);
 
             return response;
         }
 
-        public static Result AcceptOffer(AcceptRequest _acceptRequest)
+        public async static Task<Result> AcceptOffer(AcceptRequest _acceptRequest)
         {
             var response = Fincheck.Integration.Offer.AcceptOffer(_acceptRequest);
-            ApiLog.Insert(Fincheck.Integration.Offer.apiLog);
+            await ApiLog.Insert(Fincheck.Integration.Offer.apiLog);
 
             return response;
         }

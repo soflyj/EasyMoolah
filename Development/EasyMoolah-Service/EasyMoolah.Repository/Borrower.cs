@@ -12,7 +12,7 @@ namespace EasyMoolah.Repository
     using System;
     using System.Collections.Generic;
     
-    public class Borrower
+    public partial class Borrower
     {
         public int Key { get; set; }
         public string IdNumber { get; set; }

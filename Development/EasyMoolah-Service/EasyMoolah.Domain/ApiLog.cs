@@ -10,10 +10,10 @@ namespace EasyMoolah.Domain
 {
     public class ApiLog
     {
-        public static int Insert(Repository.ApiLog _apiLog)
+        public async static Task<int> Insert(Repository.APILog _apiLog)
         {
-            var id = Repository.CRUD.ApiLogRepo.Insert(_apiLog);
-            return id;
+            var key = await Repository.CRUD.fincheckRepo.InsertApiLog(_apiLog);
+            return key;
         }
 
     }

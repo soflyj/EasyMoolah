@@ -51,14 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiLog.cs">
+    <Compile Include="APILog.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuditEmail.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Borrower.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRUD\BorrowerRepo.cs" />
-    <Compile Include="CRUD\ApiLogRepo.cs" />
+    <Compile Include="CRUD\defaultRepo.cs" />
+    <Compile Include="CRUD\fincheckRepo.cs" />
     <Compile Include="EasyMoolahDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

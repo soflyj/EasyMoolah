@@ -34,3 +34,8 @@ C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\
 C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\call-me.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\processing-results.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Repository.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EntityFramework.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Repository.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Repository.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EntityFramework.xml

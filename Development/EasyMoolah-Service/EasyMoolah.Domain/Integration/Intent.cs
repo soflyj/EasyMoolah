@@ -10,10 +10,10 @@ namespace EasyMoolah.Domain.Integration
 {
     public class Intent
     {
-        public static Result GetIntentById(IntentRequest _intentRequest)
+        public async static Task<Result> GetIntentById(IntentRequest _intentRequest)
         {
             var response = Fincheck.Integration.Intent.GetIntentById(_intentRequest);
-            ApiLog.Insert(Fincheck.Integration.Lead.apiLog);
+            await ApiLog.Insert(Fincheck.Integration.Lead.apiLog);
 
             return response;
         }

@@ -55,7 +55,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "EasyMoolah.Model": "1.0.0"
+          "EasyMoolah.Model": "1.0.0",
+          "EasyMoolah.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/EasyMoolah.Notification.dll": {}

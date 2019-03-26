@@ -30,9 +30,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ApiLogs">
-      <EntityTypeMapping TypeName="EasyMoolahModel.ApiLog">
-        <MappingFragment StoreEntitySet="ApiLog">
+    <EntitySetMapping Name="AuditEmails">
+      <EntityTypeMapping TypeName="EasyMoolahModel.AuditEmail">
+        <MappingFragment StoreEntitySet="AuditEmail">
+          <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="FromAddress" ColumnName="FromAddress" />
+          <ScalarProperty Name="ToAddressName" ColumnName="ToAddressName" />
+          <ScalarProperty Name="ToAddressTitle" ColumnName="ToAddressTitle" />
+          <ScalarProperty Name="ToAddress" ColumnName="ToAddress" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APILogs">
+      <EntityTypeMapping TypeName="EasyMoolahModel.APILog">
+        <MappingFragment StoreEntitySet="APILog">
           <ScalarProperty Name="EndTimeStamp" ColumnName="EndTimeStamp" />
           <ScalarProperty Name="StartTimeStamp" ColumnName="StartTimeStamp" />
           <ScalarProperty Name="Response" ColumnName="Response" />

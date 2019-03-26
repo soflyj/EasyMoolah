@@ -23,6 +23,15 @@
         "runtime": {
           "bin/placeholder/EasyMoolah.Model.dll": {}
         }
+      },
+      "EasyMoolah.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/EasyMoolah.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Repository.dll": {}
+        }
       }
     }
   },
@@ -70,11 +79,17 @@
       "type": "project",
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
       "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
+    },
+    "EasyMoolah.Repository/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
+      "msbuildProject": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "EasyMoolah.Model >= 1.0.0"
+      "EasyMoolah.Model >= 1.0.0",
+      "EasyMoolah.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -109,6 +124,9 @@
           "projectReferences": {
             "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
               "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            },
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             }
           }
         }

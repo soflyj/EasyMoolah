@@ -13,7 +13,7 @@ namespace Fincheck.Integration
     public class Offer: Base
     {
         private static Result result = new Result();
-        public static ApiLog apiLog = new ApiLog();
+        public static APILog apiLog = new APILog();
         private static string JsonBody = "";
         private static string fincheckAPI = "";
         private static string apiUrl = "";
