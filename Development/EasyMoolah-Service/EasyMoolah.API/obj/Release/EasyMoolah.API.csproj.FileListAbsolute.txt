@@ -113,3 +113,5 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.H
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.Http.Cors.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EntityFramework.SqlServer.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EntityFramework.SqlServer.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb

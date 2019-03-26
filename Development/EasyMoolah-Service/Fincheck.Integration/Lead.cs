@@ -12,11 +12,11 @@ namespace Fincheck.Integration
 {
     public class Lead : Base
     {
-        private Result result = new Result();
-        private ApiLog apiLog = new ApiLog();
-        private string JsonBody = "";
-        private string fincheckAPI = "";
-        private string apiUrl = "";
+        private static Result result = new Result();
+        public static ApiLog apiLog = new ApiLog();
+        private static string JsonBody = "";
+        private static string fincheckAPI = "";
+        private static string apiUrl = "";
 
         /// <summary>
         /// POST
@@ -24,9 +24,9 @@ namespace Fincheck.Integration
         /// https://engine.fincheck.co.za/api/docs
         /// 2019/03/25
         /// </summary>
-        /// <param name="leadRequest"></param>
+        /// <param name="_leadRequest"></param>
         /// <returns></returns>
-        public Result CreateLead(LeadRequest leadRequest)
+        public static Result CreateLead(LeadRequest _leadRequest)
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "lead";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -34,7 +34,7 @@ namespace Fincheck.Integration
             //result
             result.input = "";
             //apiLog
-            apiLog.SessionId = leadRequest.sessionId;
+            apiLog.SessionId = _leadRequest.sessionId;
             apiLog.Token = fincheckAPI;
             apiLog.Method = "lead";
             apiLog.Http = "Post";
@@ -42,7 +42,7 @@ namespace Fincheck.Integration
             apiLog.Request = "";
             apiLog.StartTimeStamp = DateTime.Now;
 
-            if (leadRequest != null)
+            if (_leadRequest != null)
             {
                 try
                 {
@@ -57,7 +57,7 @@ namespace Fincheck.Integration
                             new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
-                        JsonBody = JsonConvert.SerializeObject(leadRequest);
+                        JsonBody = JsonConvert.SerializeObject(_leadRequest);
                         var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonBody);
                         var content = new FormUrlEncodedContent(dictionary);
 
@@ -70,7 +70,6 @@ namespace Fincheck.Integration
                         //apiLog
                         apiLog.Response = result.output;
                         apiLog.EndTimeStamp = DateTime.Now;
-                        AddApiLog(apiLog);
                     }
                 }
                 catch (Exception ex)

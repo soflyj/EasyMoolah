@@ -20,7 +20,7 @@ namespace EasyMoolah.Model.Fincheck
         public bool citizen { get; set; } // true / false
         public string debt_review { get; set; } // yes / no
         public bool debt_review_opt { get; set; } // true / false
-        public bool popi { get; set; } // true / false
+        public bool popi { get; set; } // true / false //default
         public decimal loan_amount_required { get; set; }
         public int repayment_period { get; set; } // in months
         public int expenses { get; set; }

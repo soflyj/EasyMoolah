@@ -21,5 +21,6 @@ namespace EasyMoolah.Model.Notification
 
         public int BorrowerId { get; set; }
 
+        public bool isSuccessful { get; set; }        
     }
 }

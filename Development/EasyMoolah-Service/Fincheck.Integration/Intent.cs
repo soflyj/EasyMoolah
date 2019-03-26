@@ -13,25 +13,29 @@ namespace Fincheck.Integration
     public class Intent : Base
     {
 
-        private Result result = new Result();
-        private ApiLog apiLog = new ApiLog();
+        private static Result result = new Result();
+        public static ApiLog apiLog = new ApiLog();
+        private static string JsonBody = "";
+        private static string fincheckAPI = "";
+        private static string apiUrl = "";
 
-        public Result GetIntentById(IntentRequest intentRequest)
-        {            
-            var apiUrl = "https://engine.fincheck.co.za/api/v1/intent/" + intentRequest.id;
+        public static Result GetIntentById(IntentRequest _intentRequest)
+        {
+            apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "intent";
+            fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
             //result
-            result.input = intentRequest.id.ToString();
+            result.input = _intentRequest.id.ToString();
             //apiLog
-            apiLog.SessionId = intentRequest.sessionId;
-            apiLog.Token = "6aezFnDAcPO5vKoma8eW";
+            apiLog.SessionId = _intentRequest.sessionId;
+            apiLog.Token = fincheckAPI;
             apiLog.Method = "intent";
             apiLog.Http = "Get";
             apiLog.Endpoint = apiUrl;
-            apiLog.Request = intentRequest.id.ToString();
+            apiLog.Request = _intentRequest.id.ToString();
             apiLog.StartTimeStamp = DateTime.Now;
 
-            if (intentRequest.id != 0 && intentRequest.id != null)
+            if (_intentRequest.id != 0 && _intentRequest.id != null)
             {
                 try
                 {
@@ -42,7 +46,7 @@ namespace Fincheck.Integration
                         httpClient.DefaultRequestHeaders.Accept.Add(
                             new MediaTypeWithQualityHeaderValue("application/json"));
                         httpClient.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                            new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
                         var asyncResult = httpClient.GetAsync(apiUrl).Result;
@@ -53,29 +57,30 @@ namespace Fincheck.Integration
                         //apiLog
                         apiLog.Response = result.output;
                         apiLog.EndTimeStamp = DateTime.Now;
-                        AddApiLog(apiLog);
                     }
                 }
                 catch (Exception ex)
                 {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + intentRequest.id;
+                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + _intentRequest.id;
                 }
             }
             else
             {
                 result.resultCode = 201;
                 result.error = "parameter is null";
-                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/intent/" + intentRequest.id;
+                result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/intent/" + _intentRequest.id;
             }
 
             return result;
         }
 
-        public Result GetIntent()
+        public static Result GetIntent()
         {
-            var apiUrl = "https://dev.engine.fincheck.co.za/api/v1/intent";
+            apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "intent";
+            fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
+
             result.input = "";
 
             try
@@ -87,7 +92,7 @@ namespace Fincheck.Integration
                     httpClient.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));
                     httpClient.DefaultRequestHeaders.Authorization =
-                        new AuthenticationHeaderValue("Bearer", "6aezFnDAcPO5vKoma8eW");
+                        new AuthenticationHeaderValue("Bearer", fincheckAPI);
                     httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
                     var asyncResult = httpClient.GetAsync(apiUrl).Result;

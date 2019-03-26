@@ -29,6 +29,7 @@ export class FinancialresultComponent implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(0);
 
+    //Fincheck/ Offer
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -38,46 +39,46 @@ export class FinancialresultComponent implements OnInit {
       })
     };
 
-    this.fincheck.first_name = 'Jarrod';
-    this.fincheck.last_name = 'Ramsaroop';
-    this.fincheck.cell_phone_number = '0823216547';
-    this.fincheck.email = 'jr@gmail.com';
-    this.fincheck.id_number = 8508155062080;
-    this.fincheck.gross_income = 50000;
-    this.fincheck.net_income = 40000;
-    this.fincheck.repayment_period = 12
-    this.fincheck.expenses = 5000;
-    this.fincheck.street_address = '123';
-    this.fincheck.suburb = '123';
-    this.fincheck.city = '123';
-    this.fincheck.province = '123';
-    this.fincheck.post_code = 0;
-    this.fincheck.payday = 15;
-    this.fincheck.employed = 'true';
-    this.fincheck.bank_name = 'Nedbank';
+    // this.fincheck.first_name = 'Jarrod';
+    // this.fincheck.last_name = 'Ramsaroop';
+    // this.fincheck.cell_phone_number = '0823216547';
+    // this.fincheck.email = 'jr@gmail.com';
+    this.fincheck.id_number = '8508155062080';
+    // this.fincheck.gross_income = 50000;
+    // this.fincheck.net_income = 40000;
+    // this.fincheck.repayment_period = 12
+    // this.fincheck.expenses = 5000;
+    // this.fincheck.street_address = '123';
+    // this.fincheck.suburb = '123';
+    // this.fincheck.city = '123';
+    // this.fincheck.province = '123';
+    // this.fincheck.post_code = 0;
+    // this.fincheck.payday = 15;
+    // this.fincheck.employed = 'true';
+    // this.fincheck.bank_name = 'Nedbank';
 
     const formData = new URLSearchParams();
     formData.set('first_name', this.fincheck.first_name);
     formData.set('last_name', this.fincheck.last_name);
     formData.set('cell_phone_number', this.fincheck.cell_phone_number);
     formData.set('email', this.fincheck.email);
-    formData.set('id_number', this.fincheck.id_number.toString());
+    formData.set('id_number', this.fincheck.id_number);
     formData.set('intent_id', '2');
-    formData.set('gross_income', this.fincheck.gross_income.toString());
-    formData.set('net_income', this.fincheck.net_income.toString());
+    formData.set('gross_income', this.fincheck.gross_income);
+    formData.set('net_income', this.fincheck.net_income);
     formData.set('citizen', 'true');
     formData.set('debt_review', 'no');
     formData.set('popi', 'true');
     formData.set('debt_review_opt', 'false');
-    formData.set('repayment_period', this.fincheck.repayment_period.toString());
-    formData.set('expenses', this.fincheck.expenses.toString());
+    formData.set('repayment_period', this.fincheck.repayment_period);
+    formData.set('expenses', this.fincheck.expenses);
     formData.set('education', 'University');
     formData.set('street_address', this.fincheck.street_address);
     formData.set('suburb', this.fincheck.suburb);
     formData.set('city', this.fincheck.city);
     formData.set('province', this.fincheck.province);
-    formData.set('post_code', this.fincheck.post_code.toString());
-    formData.set('payday', this.fincheck.payday.toString());
+    formData.set('post_code', this.fincheck.post_code);
+    formData.set('payday', this.fincheck.payday);
     formData.set('employed', this.fincheck.employed);
     formData.set('company_name', 'KPMG');
     formData.set('employment_period', '5 years');

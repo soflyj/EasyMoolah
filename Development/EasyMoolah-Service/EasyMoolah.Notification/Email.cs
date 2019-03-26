@@ -6,122 +6,40 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyMoolah.Model;
 using EasyMoolah.Model.Notification;
-using EasyMoolah.Model.Notification.ViewModel;
 using Newtonsoft.Json;
 
 namespace EasyMoolah.Notification
 {
     public class Email
     {
+        private static string fromAddress = "";
+        private static string toAddress = "";
+        private static string subject = "";
+        private static string body = "";
+        private static string emailType = "";
+        private static string templateHTML = "";
+
         private readonly ConfirmationOfApplication confirmationOfApplication;
         private FSPResult FSPResult;
-
-        /// <summary>
-        /// Send email method that actually does the outcoming
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public Result SendEmail(Request request)
-        {
-            Result result = new Result
-            {
-                input = JsonConvert.SerializeObject(request).ToString()
-            };
-
-            string templateLocation = "./Templates/";
-            string templateHTML = "";
-
-            try
-            {
-                using (var mailMessage = new MailMessage())
-                using (var client = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    // configure the client and send the message
-                    client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential("jar.ninja.nas@gmail.com", "hOnda123");
-                    client.EnableSsl = true;
-
-                    var builder = new StringBuilder();
-                    
-                    if (request.Template == "FSPResults")
-                    {
-                        if (FSPResult.IsSuccessful)
-                        {
-                            templateHTML = templateLocation + "fsp_results-successful.html";
-                        }
-                        else
-                        {
-                            templateHTML = templateLocation + "fsp_results-unsuccessful.html";
-                        }
-
-                        using (var reader = File.OpenText(templateHTML))
-                        {
-                            builder.Append(reader.ReadToEnd());
-                        }
-
-                        builder.Replace("{{name}}", FSPResult.Name);
-                        builder.Replace("{{date}}", FSPResult.Date);
-
-                    }
-
-                    // configure the mail message
-                    mailMessage.From = new MailAddress(request.FromAddress);
-                    mailMessage.To.Insert(0, new MailAddress(request.ToAddress));
-                    mailMessage.Subject = request.Subject;
-                    mailMessage.Body = builder.ToString();
-                    mailMessage.IsBodyHtml = true;
-
-                    client.Send(mailMessage);
-
-                    result.resultCode = 0;                    
-                    result.output = "";
-                    result.result = "Email Successfully Sent - " + request.Template.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                result.resultCode = 401;                
-                result.error = ex.InnerException.ToString();
-                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendEmail";
-            }
-
-            return result;
-        }
-
-        public string fromAddress = "";
-        public string toAddress = "";
-        public string subject = "";
-        public string body = "";
-        public string emailType = "";
-        public string templateHTML = "";
-
-        public Result SendEmail()
+       
+        public static Result SendEmail()
         {
             Result result = new Result();
             try
             {
                 using (var mailMessage = new MailMessage())
-                using (var client = new SmtpClient("smtp.gmail.com", 587))
+                using (var client = new SmtpClient("mail.easymoolah.co.za", 465))
                 {
                     // configure the client and send the message
                     client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential("jar.ninja.nas@gmail.com", "hOnda123");
-                    client.EnableSsl = true;
-
-                    
-                    using (var reader = File.OpenText(templateHTML))
-                    {
-                        builder.Append(reader.ReadToEnd());
-                    }
-
-                    builder.Replace("{{name}}", FSPResult.Name);
-                    builder.Replace("{{date}}", FSPResult.Date);
+                    client.Credentials = new NetworkCredential("info@easymoolah.co.za", "EasyMoolah@101");
+                    client.EnableSsl = true;                                     
 
                     // configure the mail message
                     mailMessage.From = new MailAddress(fromAddress);
                     mailMessage.To.Insert(0, new MailAddress(toAddress));
                     mailMessage.Subject = subject;
-                    mailMessage.Body =body;
+                    mailMessage.Body = body;
                     mailMessage.IsBodyHtml = true;
 
                     client.Send(mailMessage);
@@ -141,15 +59,24 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public Result SendConfirmationOfApplication(ConfirmationOfApplication request)
+        public static Result ConfirmationOfApplication(ConfirmationOfApplication _request)
         {
             Result result = new Result();
+         fromAddress = _request.FromAddress;
+         toAddress = _request.ToAddress;
+         subject = _request.Subject;         
+
+        string firstName = "Jarrod";
+            string lastName = "Ramsaroop";
+            string templateHTML = "";
+
 
             try
             {
                 var builder = new StringBuilder();
 
-                if (FSPResult.Successful)
+                //What template to use
+                if (_request.isSuccessful)
                 {
                     templateHTML ="fsp_results-successful.html";
                 }
@@ -157,39 +84,48 @@ namespace EasyMoolah.Notification
                 {
                     templateHTML = "fsp_results-unsuccessful.html";
                 }
+
+                using (var reader = File.OpenText(templateHTML))
+                {
+                    builder.Append(reader.ReadToEnd());
+                }
+                //Completing the place holders
+                builder.Replace("{{name}}", firstName + ' ' + lastName);
+                builder.Replace("{{date}}", System.DateTime.Now.ToShortDateString());
+
                 result = SendEmail();
 
                 result.resultCode = 0;
                 result.output = "";
-                result.result = "Email Successfully Sent - " + request.Template.ToString();
+                result.result = "Email Successfully Sent - " + _request.Template.ToString();
             }
             catch (Exception ex)
             {
                 result.resultCode = 101;
                 result.error = ex.InnerException.ToString();
-                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Template.ToString() + "_SendNotificationConfirmationOfApplication";
+                result.errorFriendly = "Email Unsuccessfully Sent - " + _request.Template.ToString() + "_SendNotificationConfirmationOfApplication";
             }
             
             return result;
         }
 
-        public Result SendFSPResults(FSPResult request)
-        {
-            Result result = new Result();
-            FSPResult = request.FspResult;
+        //public Result SendFSPResults(FSPResult request)
+        //{
+        //    Result result = new Result();
+        //    FSPResult = request.FspResult;
 
-            try
-            {
-                result = SendEmail(request.Request);
-            }
-            catch (Exception ex)
-            {
-                result.resultCode = 401;
-                result.error = ex.InnerException.ToString();
-                result.errorFriendly = "Email Unsuccessfully Sent - " + request.Request.Template.ToString() + "_SendFSPResults";
-            }
+        //    try
+        //    {
+        //        result = SendEmail(request.Request);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        result.resultCode = 401;
+        //        result.error = ex.InnerException.ToString();
+        //        result.errorFriendly = "Email Unsuccessfully Sent - " + request.Request.Template.ToString() + "_SendFSPResults";
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
     }
 }

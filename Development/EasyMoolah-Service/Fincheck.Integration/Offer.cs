@@ -12,11 +12,11 @@ namespace Fincheck.Integration
 {
     public class Offer: Base
     {
-        private Result result = new Result();
-        private ApiLog apiLog = new ApiLog();
-        private string JsonBody = "";
-        private string fincheckAPI = "";
-        private string apiUrl = "";
+        private static Result result = new Result();
+        public static ApiLog apiLog = new ApiLog();
+        private static string JsonBody = "";
+        private static string fincheckAPI = "";
+        private static string apiUrl = "";
 
         /// <summary>
         /// POST
@@ -26,7 +26,7 @@ namespace Fincheck.Integration
         /// </summary>
         /// <param name="offerRequest"></param>
         /// <returns></returns>
-        public Result GetOffer(OfferRequest _offerRequest)
+        public static Result GetOffer(OfferRequest _offerRequest)
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "offer";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -77,7 +77,6 @@ namespace Fincheck.Integration
                         //apiLog
                         apiLog.Response = result.output;
                         apiLog.EndTimeStamp = DateTime.Now;
-                        AddApiLog(apiLog);
                     }
                 }
                 catch (Exception ex)
@@ -105,7 +104,7 @@ namespace Fincheck.Integration
         /// </summary>
         /// <param name="acceptRequest"></param>
         /// <returns></returns>
-        public Result AcceptOffer(AcceptRequest _acceptRequest)
+        public static Result AcceptOffer(AcceptRequest _acceptRequest)
         {
             var apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "accept";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -146,7 +145,6 @@ namespace Fincheck.Integration
                         //apiLog
                         apiLog.Response = result.output;
                         apiLog.EndTimeStamp = DateTime.Now;
-                        AddApiLog(apiLog);
                     }
                 }
                 catch (Exception ex)

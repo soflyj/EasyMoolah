@@ -302,10 +302,6 @@
       <Project>{5ABDF0EB-6389-47C8-A210-61F67B78CFFB}</Project>
       <Name>EasyMoolah.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj">
-      <Project>{936ac402-5433-4087-bb47-40a83076df8c}</Project>
-      <Name>EasyMoolah.Notification</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj">
       <Project>{d8f15e8e-dc39-409e-853b-b6cae99ac74f}</Project>
       <Name>EasyMoolah.Repository</Name>

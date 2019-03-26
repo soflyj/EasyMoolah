@@ -2,21 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "AutoMapper/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "lib/net461/AutoMapper.dll": {}
-        },
-        "runtime": {
-          "lib/net461/AutoMapper.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.1": {
         "type": "package",
         "compile": {
@@ -24,34 +9,6 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
-        },
-        "runtime": {
-          "lib/net47/System.ValueTuple.dll": {}
-        }
-      },
-      "EasyMoolah.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "AutoMapper": "8.0.0",
-          "EasyMoolah.Model": "1.0.0",
-          "EasyMoolah.Notification": "1.0.0",
-          "EasyMoolah.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EasyMoolah.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Domain.dll": {}
         }
       },
       "EasyMoolah.Model/1.0.0": {
@@ -67,19 +24,6 @@
           "bin/placeholder/EasyMoolah.Model.dll": {}
         }
       },
-      "EasyMoolah.Notification/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EasyMoolah.Model": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EasyMoolah.Notification.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Notification.dll": {}
-        }
-      },
       "EasyMoolah.Repository/1.0.0": {
         "type": "project",
         "compile": {
@@ -92,25 +36,8 @@
     }
   },
   "libraries": {
-    "AutoMapper/8.0.0": {
-      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
-      "type": "package",
-      "path": "automapper/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "automapper.8.0.0.nupkg.sha512",
-        "automapper.nuspec",
-        "lib/net461/AutoMapper.dll",
-        "lib/net461/AutoMapper.pdb",
-        "lib/net461/AutoMapper.xml",
-        "lib/netstandard2.0/AutoMapper.dll",
-        "lib/netstandard2.0/AutoMapper.pdb",
-        "lib/netstandard2.0/AutoMapper.xml"
-      ]
-    },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -148,64 +75,10 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "EasyMoolah.Domain/1.0.0": {
-      "type": "project",
-      "path": "../EasyMoolah.Domain/EasyMoolah.Domain.csproj",
-      "msbuildProject": "../EasyMoolah.Domain/EasyMoolah.Domain.csproj"
-    },
     "EasyMoolah.Model/1.0.0": {
       "type": "project",
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
       "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
-    },
-    "EasyMoolah.Notification/1.0.0": {
-      "type": "project",
-      "path": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj",
-      "msbuildProject": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj"
     },
     "EasyMoolah.Repository/1.0.0": {
       "type": "project",
@@ -215,29 +88,29 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "EasyMoolah.Domain >= 1.0.0",
       "EasyMoolah.Model >= 1.0.0",
+      "EasyMoolah.Repository >= 1.0.0",
       "Newtonsoft.Json >= 12.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jramsaroop\\.nuget\\packages\\": {},
+    "C:\\Users\\Jarro\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj",
+      "projectUniqueName": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj",
       "projectName": "Fincheck.Integration",
-      "projectPath": "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj",
-      "packagesPath": "C:\\Users\\jramsaroop\\.nuget\\packages\\",
-      "outputPath": "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\obj\\",
+      "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj",
+      "packagesPath": "C:\\Users\\Jarro\\.nuget\\packages\\",
+      "outputPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jramsaroop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -250,11 +123,11 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
             },
-            "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
-              "projectPath": "C:\\Jarrod\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             }
           }
         }

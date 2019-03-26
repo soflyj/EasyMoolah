@@ -88,7 +88,7 @@ export class Q14Component implements OnInit {
         this.fincheck.street_address = this.Street;
         this.fincheck.suburb = this.Suburb;
         this.fincheck.city = this.City;
-        this.fincheck.post_code = Number(this.PostalCode);
+        this.fincheck.post_code = this.PostalCode;
 
         this.router.navigateByUrl('/q15', { skipLocationChange: true });
     }

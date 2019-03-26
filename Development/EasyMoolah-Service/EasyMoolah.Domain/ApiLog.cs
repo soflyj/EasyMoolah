@@ -10,12 +10,10 @@ namespace EasyMoolah.Domain
 {
     public class ApiLog
     {
-
-        public int Insert(Repository.ApiLog _apiLog)
+        public static int Insert(Repository.ApiLog _apiLog)
         {
-            EasyMoolah.Repository.CRUD.ApiLogRepo apiLog = new EasyMoolah.Repository.CRUD.ApiLogRepo();
-
-            return apiLog.Insert(_apiLog);
+            var id = Repository.CRUD.ApiLogRepo.Insert(_apiLog);
+            return id;
         }
 
     }

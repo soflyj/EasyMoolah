@@ -9,7 +9,7 @@ namespace EasyMoolah.Repository.CRUD
     public class ApiLogRepo
     {
 
-        public int Insert(EasyMoolah.Repository.ApiLog apiLog)
+        public static int Insert(EasyMoolah.Repository.ApiLog apiLog)
         {
             int Id = 0;
             using (var context = new EasyMoolahEntities())

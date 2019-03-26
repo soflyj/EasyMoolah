@@ -86,6 +86,6 @@ export class BorrowerService {
     }
 
     debugMode() {
-        return true;
+        return false;
     }
 }

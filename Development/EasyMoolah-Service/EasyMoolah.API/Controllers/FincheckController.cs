@@ -1,12 +1,4 @@
-﻿using EasyMoolah.API.Models;
-using EasyMoolah.Model;
-using EasyMoolah.Model.Fincheck;
-using EasyMoolah.Domain;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net;
-using System.Net.Http;
-using System.Security.Claims;
+﻿using EasyMoolah.Model.Fincheck;
 using System.Web.Http;
 
 namespace WEBAPI_JWT_Authentication.API.Controllers
@@ -19,51 +11,43 @@ namespace WEBAPI_JWT_Authentication.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult GetIntent()
         {
-            Fincheck.Integration.Intent intent = new Fincheck.Integration.Intent();
-            var response = intent.GetIntent();
+            var response = EasyMoolah.Domain.Integration.Intent.GetIntent();            
             return Ok(response);
         }
 
         [Route("api/fincheck/intentById")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult GetIntentById(IntentRequest intentRequest)
+        public IHttpActionResult GetIntentById(IntentRequest _intentRequest)
         {
-            Fincheck.Integration.Intent intent = new Fincheck.Integration.Intent();
-            var response = intent.GetIntentById(intentRequest);
+            var response = EasyMoolah.Domain.Integration.Intent.GetIntentById(_intentRequest);
             return Ok(response);
         }
 
         [Route("api/fincheck/lead")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult CreateLead(LeadRequest leadRequest)
+        public IHttpActionResult CreateLead(LeadRequest _leadRequest)
         {
-            Fincheck.Integration.Lead lead = new Fincheck.Integration.Lead();
-            var response = lead.CreateLead(leadRequest);
+            var response = EasyMoolah.Domain.Integration.Lead.CreateLead(_leadRequest);
             return Ok(response);
         }
 
         [Route("api/fincheck/offer")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult GetOffer(OfferRequest offerRequest)
+        public IHttpActionResult GetOffer(OfferRequest _offerRequest)
         {
-            //EasyMoolah.Domain.Integration.Fincheck offer = new EasyMoolah.Domain.Integration.Fincheck();
-            //var response = offer.GetOffer(offerRequest);
-            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
-            var response = offer.GetOffer(offerRequest);
-
+            var response = EasyMoolah.Domain.Integration.Offer.GetOffer(_offerRequest);
             return Ok(response);
         }
 
         [Route("api/fincheck/accept")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult AcceptOffer(AcceptRequest acceptrequest)
+        public IHttpActionResult AcceptOffer(AcceptRequest _acceptrequest)
         {
-            Fincheck.Integration.Offer offer = new Fincheck.Integration.Offer();
-            var response = offer.AcceptOffer(acceptrequest);
+            var response = EasyMoolah.Domain.Integration.Offer.AcceptOffer(_acceptrequest);
             return Ok(response);
         }
     }

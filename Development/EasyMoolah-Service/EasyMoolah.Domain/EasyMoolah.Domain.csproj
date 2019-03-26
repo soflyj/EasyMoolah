@@ -12,9 +12,6 @@
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
     <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj" />
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Integration\" />
+    <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj" />
   </ItemGroup>
 </Project>

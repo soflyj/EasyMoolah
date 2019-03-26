@@ -65,8 +65,8 @@ export class Q3Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q3', 'Question', 'How much do you want to borrow? Over how many months', this.Q3.get('borrowamount_slider').value + '|' + this.Q3.get('borrowmonths_slider').value, this.StartTime.toString(), (new Date).toString()));
-    this.fincheck.loan_amount_required = this.Q3.get('borrowamount_slider').value;
-    this.fincheck.repayment_period = this.Q3.get('borrowmonths_slider').value;
+    this.fincheck.loan_amount_required = this.Q3.get('borrowamount_slider').value.toString();
+    this.fincheck.repayment_period = this.Q3.get('borrowmonths_slider').value.toString();
 
     this.router.navigateByUrl('/q4', { skipLocationChange: true });
   }
