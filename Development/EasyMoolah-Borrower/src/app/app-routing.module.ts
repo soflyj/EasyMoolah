@@ -30,7 +30,7 @@ import { ProcessingComponent } from './application/processing/processing.compone
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
-  { path: 'application', component: Q1Component, data: {state: 'application'}},
+  { path: 'application', component: Q2Component, data: {state: 'application'}},
   // Next
   { path: 'q1', component: Q1Component, data: {state: 'q1'}},
   { path: 'q2', component: Q2Component, data: {state: 'q2'}},
