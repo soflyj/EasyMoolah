@@ -7,16 +7,18 @@ namespace EasyMoolah.Model.Notification
 {
     public class FSPResult
     {
-        [JsonRequired]
-        [JsonProperty(PropertyName = "Name")]
-        public string Name { get; set; }
+        public string ToAddress { get; set; }
 
-        [JsonRequired]
-        [JsonProperty(PropertyName = "Date")]
-        public string Date { get; set; }
+        public string ToAddressTitle { get; set; }
 
-        [JsonRequired]
-        [JsonProperty(PropertyName = "IsSuccessful")]
-        public bool IsSuccessful { get; set; }
+        public string ToAddressName { get; set; }
+
+        public string FromAddress { get; set; }
+
+        public string Subject { get; set; }
+
+        public bool Successful { get; set; }
+
+        public int BorrowerId { get; set; }
     }
 }

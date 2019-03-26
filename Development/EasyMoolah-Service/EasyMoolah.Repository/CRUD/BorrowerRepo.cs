@@ -9,14 +9,16 @@ namespace EasyMoolah.Repository.CRUD
     public class BorrowerRepo
     {
 
-        public int Insert(Borrower _borrower)
+        public async Task<int> Insert(Borrower _borrower)
         {
-            int Key = 0;
+            var Key = 0;
             using (var context = new EasyMoolahEntities())
             {
                 context.Borrowers.Add(_borrower);
 
-                Key = context.SaveChanges();
+                await context.SaveChangesAsync();
+
+                Key = _borrower.Key;
             }
 
             return Key;
