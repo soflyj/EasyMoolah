@@ -88,13 +88,76 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public Result SendNotificationConfirmationOfApplication(Request request)
+        public string fromAddress = "";
+        public string toAddress = "";
+        public string subject = "";
+        public string body = "";
+        public string emailType = "";
+        public string templateHTML = "";
+
+        public Result SendEmail()
+        {
+            Result result = new Result();
+            try
+            {
+                using (var mailMessage = new MailMessage())
+                using (var client = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    // configure the client and send the message
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential("jar.ninja.nas@gmail.com", "hOnda123");
+                    client.EnableSsl = true;
+
+                    
+                    using (var reader = File.OpenText(templateHTML))
+                    {
+                        builder.Append(reader.ReadToEnd());
+                    }
+
+                    builder.Replace("{{name}}", FSPResult.Name);
+                    builder.Replace("{{date}}", FSPResult.Date);
+
+                    // configure the mail message
+                    mailMessage.From = new MailAddress(fromAddress);
+                    mailMessage.To.Insert(0, new MailAddress(toAddress));
+                    mailMessage.Subject = subject;
+                    mailMessage.Body =body;
+                    mailMessage.IsBodyHtml = true;
+
+                    client.Send(mailMessage);
+
+                    result.resultCode = 0;
+                    result.output = "";
+                    result.result = "Email Successfully Sent - " + emailType;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.resultCode = 401;
+                result.error = ex.InnerException.ToString();
+                result.errorFriendly = "Email Unsuccessfully Sent - " + emailType;
+            }
+
+            return result;
+        }
+
+        public Result SendConfirmationOfApplication(ConfirmationOfApplication request)
         {
             Result result = new Result();
 
             try
             {
-                result = SendEmail(request);
+                var builder = new StringBuilder();
+
+                if (FSPResult.Successful)
+                {
+                    templateHTML ="fsp_results-successful.html";
+                }
+                else
+                {
+                    templateHTML = "fsp_results-unsuccessful.html";
+                }
+                result = SendEmail();
 
                 result.resultCode = 0;
                 result.output = "";
@@ -110,7 +173,7 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public Result SendFSPResults(FSPResultViewModel request)
+        public Result SendFSPResults(FSPResult request)
         {
             Result result = new Result();
             FSPResult = request.FspResult;
