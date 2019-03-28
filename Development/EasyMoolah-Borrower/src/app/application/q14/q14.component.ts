@@ -5,8 +5,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import 'linq4js';
 import { HeaderService } from 'src/app/service/header.service';
-import { Question } from 'src/app/model/question.model';
+import { Question } from 'src/app/model/Question.model';
 import { Fincheck } from "src/app/model/fincheck.model";
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
     selector: 'app-q14',
@@ -33,7 +34,9 @@ export class Q14Component implements OnInit {
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
         private fincheck: Fincheck,
-        private headerService: HeaderService) { }
+        private headerService: HeaderService,
+        private borrower: Borrower) { }
+
 
     ngOnInit() {
         this.StartTime = new Date();
@@ -85,10 +88,11 @@ export class Q14Component implements OnInit {
     Next() {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addToQuestionLog(new Question('q14', 'Question', 'Address?', this.Q14.value, this.StartTime.toString(), (new Date).toString()));
-        this.fincheck.street_address = this.Street;
-        this.fincheck.suburb = this.Suburb;
-        this.fincheck.city = this.City;
-        this.fincheck.post_code = this.PostalCode;
+        this.borrower.FullAddress = this.Street + ' ' + this.Suburb + ' ' + this.City + ' ' + this.PostalCode;
+        this.borrower.StreetName = this.Street;
+        this.borrower.SuburbName = this.Suburb;
+        this.borrower.CityName = this.City;        
+        this.borrower.PostCode = this.PostalCode;
 
         this.router.navigateByUrl('/q15', { skipLocationChange: true });
     }

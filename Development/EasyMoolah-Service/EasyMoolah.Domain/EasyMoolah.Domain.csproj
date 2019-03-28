@@ -14,4 +14,8 @@
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
     <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
 </Project>

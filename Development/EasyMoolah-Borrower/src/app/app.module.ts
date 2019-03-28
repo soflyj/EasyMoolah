@@ -25,6 +25,7 @@ import { HeaderService } from './service/header.service';
 import { GoogleMaps } from './common/googlemaps.service';
 
 import { Fincheck } from './model/fincheck.model';
+import { Borrower } from './model/borrower.model';
 
 // Components
 import { AppComponent } from './app.component';
@@ -96,7 +97,7 @@ import { ProcessingComponent } from './application/processing/processing.compone
     HttpModule,
     HttpClientModule
   ],
-  providers: [BorrowerService, GoogleMaps, HeaderService, FincheckService, Fincheck],
+  providers: [BorrowerService, GoogleMaps, HeaderService, FincheckService, Fincheck, Borrower],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

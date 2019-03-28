@@ -23,6 +23,6 @@ namespace EasyMoolah.Model.Notification
 
         public string probability { get; set; }
 
-        public int borrowerId { get; set; }
+        public int applicationKey { get; set; }
     }
 }

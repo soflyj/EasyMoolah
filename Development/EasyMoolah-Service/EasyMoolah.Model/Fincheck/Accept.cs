@@ -7,7 +7,7 @@ namespace EasyMoolah.Model.Fincheck
 {
     public class AcceptRequest
     {
-        public int sessionId { get; set; }
+        public int applicationKey { get; set; }
         public string hasid { get; set; }
         public int partner_id { get; set; }
     }

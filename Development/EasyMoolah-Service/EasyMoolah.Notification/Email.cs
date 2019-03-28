@@ -22,14 +22,14 @@ namespace EasyMoolah.Notification
         private static string emailType = "";
         private static string templateHTML = "";
 
-        public static AuditEmail auditEmail = new AuditEmail();
+        public static NotificationLog notificationLog = new NotificationLog();
 
         private readonly ProcessingResults processingResults;
         private AcceptOffer FSPResult;
 
-        public async static Task<Result> SendEmail()
+        public async static Task<Model.Result> SendEmail()
         {
-            Result result = new Result();
+            Model.Result result = new Model.Result();
             try
             {
                 using (var mailMessage = new MailMessage())
@@ -41,7 +41,7 @@ namespace EasyMoolah.Notification
                     //client.EnableSsl = true;
 
                     // configure the mail message
-                    mailMessage.From = new MailAddress(fromAddress);
+                    mailMessage.From = new MailAddress("info@easymoolah.co.za");
                     mailMessage.To.Insert(0, new MailAddress(toAddress));
                     mailMessage.Subject = subject;
                     mailMessage.Body = body;
@@ -52,18 +52,6 @@ namespace EasyMoolah.Notification
                     result.resultCode = 0;
                     result.output = "";
                     result.result = "Email Successfully Sent - " + emailType;
-
-                    await EasyMoolah.Repository.CRUD.defaultRepo.InsertEmailAudit(new AuditEmail()
-                    {
-                        Body = body,
-                        EmailType = "processingResults",
-                        FromAddress = fromAddress,
-                        SentDate = System.DateTime.Now,
-                        Subject = subject,
-                        ToAddress = toAddress,
-                        ToAddressTitle = toAddressTitle,
-                        ToAddressName = toAddressName
-                    });
                 }
             }
             catch (Exception ex)
@@ -76,20 +64,24 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public async static Task<Result> ProcessingResults(ProcessingResults _request)
+        public async static Task<Model.Result> ProcessingResults(ProcessingResults _request)
         {
-            Result result = new Result();
+            Model.Result result = new Model.Result();
+
+            var borrower = EasyMoolah.Repository.CRUD.commonRepo.GetBorrowerByApplicationKey(_request.applicationKey);
+
             fromAddress = _request.fromAddress;
             toAddress = _request.toAddress;
             subject = _request.subject;
 
-            string firstName = "Jarrod";
-            string loanAmount = "10000";
+            //Populate email
+            string firstName = borrower.FirstName + ' ' + borrower.LastName;
+            string loanAmount = borrower.RequiredLoanAmount.ToString();
             string templateHTML = AppDomain.CurrentDomain.BaseDirectory + "Templates\\processing-results.html";
 
             try
             {
-                var builder = new StringBuilder();               
+                var builder = new StringBuilder();
 
                 using (var reader = File.OpenText(templateHTML))
                 {
@@ -103,6 +95,22 @@ namespace EasyMoolah.Notification
                 body = builder.ToString();
 
                 result = await SendEmail();
+                if (result.resultCode == 0)
+                {
+                    EasyMoolah.Repository.CRUD.logRepo.InsertNotification(new NotificationLog()
+                    {
+                        ApplicationKey = _request.applicationKey,
+                        NotificationType = "email",
+                        Reason = "Application was successful",
+                        SentDateTime = DateTime.Now,
+                        FromAddress = fromAddress,
+                        ToAddress = toAddress,
+                        ToName = toAddressName,
+                        ToTitle = toAddressTitle,
+                        Body = body,
+                        Subject = subject
+                    });
+                }
 
                 result.resultCode = 0;
                 result.output = "";
@@ -119,9 +127,9 @@ namespace EasyMoolah.Notification
             return result;
         }
 
-        public async static Task<Result> AcceptOffer(AcceptOffer _request)
+        public async static Task<Model.Result> AcceptOffer(AcceptOffer _request)
         {
-            Result result = new Result();
+            Model.Result result = new Model.Result();
             fromAddress = _request.fromAddress;
             toAddress = _request.toAddress;
             subject = _request.subject;
@@ -152,7 +160,7 @@ namespace EasyMoolah.Notification
                 result.resultCode = 0;
                 result.output = "";
                 result.result = "Email Successfully Sent - AcceptOffer";
-                                
+
             }
             catch (Exception ex)
             {

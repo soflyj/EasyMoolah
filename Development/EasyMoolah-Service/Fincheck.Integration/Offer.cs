@@ -12,11 +12,12 @@ namespace Fincheck.Integration
 {
     public class Offer: Base
     {
-        private static Result result = new Result();
+        private static EasyMoolah.Model.Result result = new EasyMoolah.Model.Result();
         public static APILog apiLog = new APILog();
         private static string JsonBody = "";
         private static string fincheckAPI = "";
         private static string apiUrl = "";
+        private static string referId = "";
 
         /// <summary>
         /// POST
@@ -26,21 +27,21 @@ namespace Fincheck.Integration
         /// </summary>
         /// <param name="offerRequest"></param>
         /// <returns></returns>
-        public static Result GetOffer(OfferRequest _offerRequest)
+        public static EasyMoolah.Model.Result GetOffer(OfferRequest _offerRequest)
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "offer";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
+            referId = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
-            //result
-            result.input = "";
             //apiLog
-            apiLog.SessionId = _offerRequest.sessionId;
-            apiLog.Token = fincheckAPI;
+            apiLog.ApplicationKey = _offerRequest.applicationKey;
+            apiLog.ApiToken = fincheckAPI;
+            apiLog.Reference = referId;
             apiLog.Method = "offer";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = "";
-            apiLog.StartTimeStamp = DateTime.Now;
+            apiLog.StartDateTime = DateTime.Now;
 
             if (_offerRequest != null)
             {
@@ -56,7 +57,7 @@ namespace Fincheck.Integration
                             new AuthenticationHeaderValue("Bearer", fincheckAPI);
                         httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
                         //Reference for Fincheck to know EasyMoolah to calling
-                        _offerRequest.referee_id = System.Configuration.ConfigurationSettings.AppSettings["referee_id"].ToString();
+                        _offerRequest.referee_id = referId;
 
 
                         JsonBody = JsonConvert.SerializeObject(_offerRequest);
@@ -67,16 +68,18 @@ namespace Fincheck.Integration
 
                         //result
                         result.resultCode = 0;
-                        result.output = asyncResult.Content.ReadAsStringAsync().Result;
+                        result.result = asyncResult.Content.ReadAsStringAsync().Result;
+                        result.input = JsonBody;
+                        result.output = result.result;
 
                         OfferResponse offerResponse = JsonConvert.DeserializeObject<OfferResponse>(result.output);
 
                         var response = JsonConvert.SerializeObject(offerResponse.matches);
 
-                        result.result = result.output;
                         //apiLog
+                        apiLog.Request = JsonBody;
                         apiLog.Response = result.output;
-                        apiLog.EndTimeStamp = DateTime.Now;
+                        apiLog.EndDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)
@@ -104,7 +107,7 @@ namespace Fincheck.Integration
         /// </summary>
         /// <param name="acceptRequest"></param>
         /// <returns></returns>
-        public static Result AcceptOffer(AcceptRequest _acceptRequest)
+        public static EasyMoolah.Model.Result AcceptOffer(AcceptRequest _acceptRequest)
         {
             var apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "accept";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -112,13 +115,13 @@ namespace Fincheck.Integration
             //result
             result.input = "";
             //apiLog
-            apiLog.SessionId = _acceptRequest.sessionId;
-            apiLog.Token = fincheckAPI;
+            apiLog.ApplicationKey = _acceptRequest.applicationKey;
+            apiLog.ApiToken = fincheckAPI;
             apiLog.Method = "accept";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = "";
-            apiLog.StartTimeStamp = DateTime.Now;
+            apiLog.StartDateTime = DateTime.Now;
 
             if (_acceptRequest != null)
             {
@@ -140,11 +143,12 @@ namespace Fincheck.Integration
 
                         //result
                         result.resultCode = 0;
-                        result.output = asyncResult.Content.ReadAsStringAsync().Result;
-                        result.result = result.output;
+                        result.result = asyncResult.Content.ReadAsStringAsync().Result;
+                        result.output = 
+                        
                         //apiLog
                         apiLog.Response = result.output;
-                        apiLog.EndTimeStamp = DateTime.Now;
+                        apiLog.EndDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)

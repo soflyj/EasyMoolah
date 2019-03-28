@@ -13,13 +13,13 @@ namespace Fincheck.Integration
     public class Intent : Base
     {
 
-        private static Result result = new Result();
+        private static EasyMoolah.Model.Result result = new EasyMoolah.Model.Result();
         public static APILog apiLog = new APILog();
         private static string JsonBody = "";
         private static string fincheckAPI = "";
         private static string apiUrl = "";
 
-        public static Result GetIntentById(IntentRequest _intentRequest)
+        public static EasyMoolah.Model.Result GetIntentById(IntentRequest _intentRequest)
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "intent";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -27,13 +27,13 @@ namespace Fincheck.Integration
             //result
             result.input = _intentRequest.id.ToString();
             //apiLog
-            apiLog.SessionId = _intentRequest.sessionId;
-            apiLog.Token = fincheckAPI;
+            apiLog.ApplicationKey = _intentRequest.applicationKey;
+            apiLog.ApiToken = fincheckAPI; 
             apiLog.Method = "intent";
             apiLog.Http = "Get";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = _intentRequest.id.ToString();
-            apiLog.StartTimeStamp = DateTime.Now;
+            apiLog.StartDateTime = DateTime.Now;
 
             if (_intentRequest.id != 0 && _intentRequest.id != null)
             {
@@ -56,7 +56,7 @@ namespace Fincheck.Integration
                         result.result = result.output;
                         //apiLog
                         apiLog.Response = result.output;
-                        apiLog.EndTimeStamp = DateTime.Now;
+                        apiLog.EndDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)
@@ -76,7 +76,7 @@ namespace Fincheck.Integration
             return result;
         }
 
-        public static Result GetIntent()
+        public static EasyMoolah.Model.Result GetIntent()
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "intent";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();

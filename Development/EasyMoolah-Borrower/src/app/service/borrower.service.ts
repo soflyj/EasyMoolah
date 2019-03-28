@@ -3,7 +3,6 @@ import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angul
 import { BorrowerApplicationLog } from '../model/borrowerapplicationLog.model';
 import { Question } from '../model/question.model';
 import { AuditLog } from '../model/auditlog.model';
-import { PersonalDetails } from '../model/personalDetails.model';
 import { isNull } from 'util';
 
 @Injectable()
@@ -16,7 +15,6 @@ export class BorrowerService {
     public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
     public Question: Question[];
     public auditlog: AuditLog = null;
-    public personaldetails: PersonalDetails = null;
     public Answer;
 
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
@@ -47,14 +45,6 @@ export class BorrowerService {
             }
         }
         console.log(this.Question);
-    }
-
-    addToPersonalDetails(persondetails: PersonalDetails) {
-        this.personaldetails = persondetails;
-    }
-
-    getToPersonalDetails() {
-        return this.personaldetails;
     }
 
     addAuditLog(auditlog: AuditLog) {
