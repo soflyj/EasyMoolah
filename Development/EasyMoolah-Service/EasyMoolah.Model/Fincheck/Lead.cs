@@ -10,7 +10,7 @@ namespace EasyMoolah.Model.Fincheck
 
     public class LeadRequest
     {
-        public int sessionId { get; set; }
+        public int applicationKey { get; set; }
         public string id_number { get; set; } // Mandatory
         public string first_name { get; set; } // Mandatory
         public string last_name { get; set; } // Mandatory
@@ -18,13 +18,13 @@ namespace EasyMoolah.Model.Fincheck
         public string email { get; set; } // Mandatory
         public string intent { get; set; } // Mandatory
         public int intent_id { get; set; } // Mandatory
-        public decimal gross_income { get; set; }
-        public decimal net_income { get; set; }
+        public int gross_income { get; set; }
+        public int net_income { get; set; }
         public bool citizen { get; set; }
         public string debt_review { get; set; }
         public bool debt_review_opt { get; set; }
         public bool popi { get; set; }
-        public decimal loan_amount_required { get; set; }
+        public int loan_amount_required { get; set; }
         public int repayment_period { get; set; }
         public int expenses { get; set; }
         public string education { get; set; }

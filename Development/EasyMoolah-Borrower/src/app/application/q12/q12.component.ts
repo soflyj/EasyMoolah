@@ -4,7 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
-import { Question } from 'src/app/model/question.model';
+import { Question } from 'src/app/model/Question.model';
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
     selector: 'app-q12',
@@ -23,7 +24,8 @@ export class Q12Component implements OnInit {
     constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
-        private headerService: HeaderService) { }
+        private headerService: HeaderService,
+        private borrower: Borrower) { }
 
     ngOnInit() {
         this.StartTime = new Date();
@@ -51,6 +53,7 @@ export class Q12Component implements OnInit {
     Next() {
         // tslint:disable-next-line:max-line-length
         this.borrowerService.addToQuestionLog(new Question('q12', 'Question', 'How many dependants do you have?', this.Q12.get('dependants').value, this.StartTime.toString(), (new Date).toString()));
+        this.borrower.NumberOfDependants = this.Q12.get('dependants').value;
 
         this.router.navigateByUrl('/q13', { skipLocationChange: true });
     }

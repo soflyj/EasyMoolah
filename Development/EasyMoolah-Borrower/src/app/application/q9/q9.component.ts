@@ -4,8 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
-import { Question } from 'src/app/model/question.model';
+import { Question } from 'src/app/model/Question.model';
 import { Fincheck } from "src/app/model/fincheck.model";
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
   selector: 'app-q9',
@@ -26,7 +27,8 @@ export class Q9Component implements OnInit {
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
     private fincheck: Fincheck,
-    private headerService: HeaderService) { }
+    private headerService: HeaderService,
+    private borrower: Borrower) { }
 
   ngOnInit() {
     this.StartTime = new Date();
@@ -59,7 +61,7 @@ export class Q9Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q9', 'Question', 'What\'s your nett monthly income?', this.Q9.get('nettincome_slider').value, this.StartTime.toString(), (new Date).toString()));
-    this.fincheck.net_income = this.Q9.get('nettincome_slider').value;
+    this.borrower.NettMonthlyIncome = this.Q9.get('nettincome_slider').value;
 
     this.router.navigateByUrl('/q10', { skipLocationChange: true });
   }

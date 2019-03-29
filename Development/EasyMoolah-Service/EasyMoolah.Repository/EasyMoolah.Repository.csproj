@@ -54,13 +54,14 @@
     <Compile Include="APILog.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="AuditEmail.cs">
+    <Compile Include="Application.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Borrower.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRUD\defaultRepo.cs" />
+    <Compile Include="CRUD\logRepo.cs" />
+    <Compile Include="CRUD\commonRepo.cs" />
     <Compile Include="CRUD\fincheckRepo.cs" />
     <Compile Include="EasyMoolahDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -77,7 +78,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyMoolahDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ErrorLog.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationLog.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Result.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EasyMoolahDB.edmx">

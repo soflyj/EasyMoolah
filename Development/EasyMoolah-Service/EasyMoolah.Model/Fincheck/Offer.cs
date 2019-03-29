@@ -7,7 +7,7 @@ namespace EasyMoolah.Model.Fincheck
 {
     public class OfferRequest
     {
-        public int sessionId { get; set; }        
+        public int applicationKey { get; set; }        
         public string id_number { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }

@@ -4,7 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
-import { Question } from 'src/app/model/question.model';
+import { Question } from 'src/app/model/Question.model';
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
     selector: 'app-q13',
@@ -23,13 +24,15 @@ export class Q13Component implements OnInit {
     constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
-        private headerService: HeaderService) { }
+        private headerService: HeaderService,
+        private borrower: Borrower) { }
+
 
     ngOnInit() {
         this.StartTime = new Date();
         this.headerService.mode.next('determinate');
         this.headerService.progress.next(72);
-        
+
         this.Answer = this.borrowerService.getPreviousAnswer('q13');
 
         // Not allowed to navigate directly to component
@@ -50,7 +53,8 @@ export class Q13Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('q13', 'Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));        
+        this.borrowerService.addToQuestionLog(new Question('q13', 'Question', 'Are you a homeowner?', this.Q13.get('homeowner').value, this.StartTime.toString(), (new Date).toString()));
+        this.borrower.ResidenceType = this.Q13.get('homeowner').value;
 
         this.router.navigateByUrl('/q14', { skipLocationChange: true });
     }

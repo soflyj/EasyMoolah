@@ -10,7 +10,7 @@ namespace EasyMoolah.Model.Fincheck
 
     public class IntentRequest
     {
-        public int sessionId { get; set; }
+        public int applicationKey { get; set; }
         public int? id { get; set; }
     }
 

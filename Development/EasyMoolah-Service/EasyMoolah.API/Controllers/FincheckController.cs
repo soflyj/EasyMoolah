@@ -11,7 +11,7 @@ namespace WEBAPI_JWT_Authentication.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult GetIntent()
         {
-            var response = EasyMoolah.Domain.Integration.Intent.GetIntent();            
+            var response = EasyMoolah.Domain.Integration.Intent.GetIntentAsync();            
             return Ok(response);
         }
 

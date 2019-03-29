@@ -13,7 +13,7 @@ namespace EasyMoolah.Domain.Integration
         public static Result CreateLead(LeadRequest leadRequest)
         {
             var response = Fincheck.Integration.Lead.CreateLead(leadRequest);
-            ApiLog.Insert(Fincheck.Integration.Lead.apiLog);
+            fincheck.InsertApiLog(Fincheck.Integration.Lead.apiLog);
 
             return response;
         }
