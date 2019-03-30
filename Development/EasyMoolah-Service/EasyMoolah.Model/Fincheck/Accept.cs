@@ -8,6 +8,10 @@ namespace EasyMoolah.Model.Fincheck
     public class AcceptRequest
     {
         public int applicationKey { get; set; }
+        public string probability { get; set; }
+        public string providerLogo { get; set; }
+        public string providerName { get; set; }
+        public string providerWebsite { get; set; }
         public string hasid { get; set; }
         public int partner_id { get; set; }
     }

@@ -76,11 +76,43 @@ export class FinancialresultComponent implements OnInit {
         (res) => {
           this.result = JSON.parse(JSON.stringify(res));
           this.matches = JSON.parse(this.result.result).matches;
-          //console.log(this.matches);
+          console.log(this.matches);
         },
         err => console.log(err)
       );
     //Fincheck/ Offer
 
   }
+
+  callme(financeResult: FinanceResult) {
+    //Fincheck/ Offer
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        // tslint:disable-next-line:max-line-length
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM2MTExNjksImV4cCI6MTU1NDIxNTk2OSwiaWF0IjoxNTUzNjExMTY5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.Ow461m1MkOn9SCd-7qWfFCkfnJfp4GGLGtIh4HTCmvQ',
+        'X-Requested-With': 'XMLHttpRequest'
+      })
+    };
+
+    const formData = new URLSearchParams();
+    formData.set('applicationKey', this.borrower.ApplicationKey.toString());
+    formData.set('probability', financeResult.probability.toString());
+    formData.set('providerLogo', financeResult.company_logo_path.toString());
+    formData.set('providerName', financeResult.company_name.toString());
+    formData.set('providerWebsite', financeResult.company_website_url.toString());
+    formData.set('hasid', this.borrower.IdNumber.toString());
+
+    console.log(formData);
+
+    this.http.post('http://localhost:58007/api/fincheck/accept', formData.toString(), httpOptions)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        },
+        err => console.log(err)
+      );
+    //Fincheck/ Offer
+  }
+
 }

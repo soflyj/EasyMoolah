@@ -129,14 +129,17 @@ namespace EasyMoolah.Notification
 
         public async static Task<Model.Result> AcceptOffer(AcceptOffer _request)
         {
+            var borrower = EasyMoolah.Repository.CRUD.commonRepo.GetBorrowerByApplicationKey(_request.applicationKey);
+
             Model.Result result = new Model.Result();
             fromAddress = _request.fromAddress;
             toAddress = _request.toAddress;
             subject = _request.subject;
 
-            string firstName = "Jarrod";
-            string companyName = "African Bank";
-            string logo = "https://engine.fincheck.co.za/storage/images/partners/112/logo/jCo6CCi61ruBxNs4iDGuduxcpuKwllN1SIknda8i.jpeg";
+            string firstName = borrower.FirstName + ' ' + borrower.LastName;
+            string companyName = _request.providerName;
+            string logo = _request.providerLogo;
+            string website = _request.providerWebsite;
             string templateHTML = AppDomain.CurrentDomain.BaseDirectory + "Templates\\call-me.html";
 
             try
@@ -152,10 +155,27 @@ namespace EasyMoolah.Notification
                 builder.Replace("{{date}}", System.DateTime.Now.ToShortDateString());
                 builder.Replace("{{company-name}}", companyName);
                 builder.Replace("{{company-logo}}", logo);
+                builder.Replace("{{company-website}}", website);
 
                 body = builder.ToString();
 
                 result = await SendEmail();
+                if (result.resultCode == 0)
+                {
+                    EasyMoolah.Repository.CRUD.logRepo.InsertNotification(new NotificationLog()
+                    {
+                        ApplicationKey = _request.applicationKey,
+                        NotificationType = "email",
+                        Reason = "Accepted an Offer",
+                        SentDateTime = DateTime.Now,
+                        FromAddress = fromAddress,
+                        ToAddress = toAddress,
+                        ToName = toAddressName,
+                        ToTitle = toAddressTitle,
+                        Body = body,
+                        Subject = subject
+                    });
+                }
 
                 result.resultCode = 0;
                 result.output = "";

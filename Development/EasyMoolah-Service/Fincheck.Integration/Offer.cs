@@ -31,7 +31,7 @@ namespace Fincheck.Integration
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "offer";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
-            referId = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
+            referId = System.Configuration.ConfigurationSettings.AppSettings["referee_id"].ToString();
 
             //apiLog
             apiLog.ApplicationKey = _offerRequest.applicationKey;
@@ -144,9 +144,10 @@ namespace Fincheck.Integration
                         //result
                         result.resultCode = 0;
                         result.result = asyncResult.Content.ReadAsStringAsync().Result;
-                        result.output = 
-                        
+                        result.output =
+
                         //apiLog
+                        apiLog.Request = JsonBody;
                         apiLog.Response = result.output;
                         apiLog.EndDateTime = DateTime.Now;
                     }
