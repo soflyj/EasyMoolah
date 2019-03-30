@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Applications" EntityType="EasyMoolahModel.Application" />
+    <EntitySet Name="ErrorLogs" EntityType="EasyMoolahModel.ErrorLog" />
+    <EntitySet Name="NotificationLogs" EntityType="EasyMoolahModel.NotificationLog" />
+    <EntitySet Name="Questions" EntityType="EasyMoolahModel.Question" />
+    <EntitySet Name="APILogs" EntityType="EasyMoolahModel.APILog" />
+    <EntitySet Name="Results" EntityType="EasyMoolahModel.Result" />
+    <EntitySet Name="Borrowers" EntityType="EasyMoolahModel.Borrower" />
+  </EntityContainer>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Guid" Type="Guid" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Browser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" />
+    <Property Name="Method" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Input" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Output" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="NotificationLog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" />
+    <Property Name="NotificationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ToTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ToName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FromAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SentDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
+    <Property Name="QuestionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="APILog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
+    <Property Name="ApiToken" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Method" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Http" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" />
+    <Property Name="Company_Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Company_Logo_Path" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Company_Logo_URL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Probability" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="RequestDateTime" Type="DateTime" Precision="3" />
+    <Property Name="FincheckLeadReference" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Callback" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Borrower">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
+    <Property Name="IdNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LandlineNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RequiredLoanAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="RepaymentPeriod" Type="Int32" Nullable="false" />
+    <Property Name="IsUnderDebtReview" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeclaredInsolvent" Type="Boolean" Nullable="false" />
+    <Property Name="PermissionToDoCreditCheck" Type="Boolean" Nullable="false" />
+    <Property Name="IsPopicompliant" Type="Boolean" Nullable="false" />
+    <Property Name="EmploymentStatus" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GrossMonthlyIncome" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="NettMonthlyIncome" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalMonthlyExpense" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BankName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfDependants" Type="Int32" Nullable="false" />
+    <Property Name="ResidenceType" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FullAddress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StreetName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SuburbName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PostCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ChangeDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

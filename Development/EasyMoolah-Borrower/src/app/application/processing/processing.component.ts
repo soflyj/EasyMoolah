@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HeaderService } from 'src/app/service/header.service';
 import { Borrower } from 'src/app/model/borrower.model';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment'; 
 
 @Component({
   selector: 'app-processing',
@@ -10,6 +11,9 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   styleUrls: ['../../../assets/css/em_site_theme.css'],
 })
 export class ProcessingComponent implements OnInit {
+
+  apiUrl: string = environment.apiUrl;
+  localToken: string = environment.localToken;
 
   constructor(private router: Router,
     private headerService: HeaderService,
@@ -24,7 +28,7 @@ export class ProcessingComponent implements OnInit {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
         // tslint:disable-next-line:max-line-length
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM2MTExNjksImV4cCI6MTU1NDIxNTk2OSwiaWF0IjoxNTUzNjExMTY5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.Ow461m1MkOn9SCd-7qWfFCkfnJfp4GGLGtIh4HTCmvQ',
+        'Authorization': 'Bearer ' + this.localToken,
         'X-Requested-With': 'XMLHttpRequest'
       })
     };
@@ -56,9 +60,9 @@ export class ProcessingComponent implements OnInit {
     formData.set('CityName', this.borrower.CityName);
     formData.set('PostCode', this.borrower.PostCode);
 
-    console.log(formData);
+    console.log(this.apiUrl);
 
-    this.http.post('http://localhost:58007/api/borrower/insert', formData.toString(), httpOptions)
+    this.http.post(this.apiUrl + 'borrower/insert', formData.toString(), httpOptions)
       .subscribe(
         (res) => {
           if (res != -1) {

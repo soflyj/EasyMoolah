@@ -6,7 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Fincheck } from "src/app/model/fincheck.model";
 import { Borrower } from "src/app/model/borrower.model";
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-financialresult',
@@ -18,15 +18,17 @@ export class FinancialresultComponent implements OnInit {
   financeResult: FinanceResult;
   matches: matches;
   result: Result;
+  apiUrl: string = environment.apiUrl;
+  localToken: string = environment.localToken;
 
   constructor(private headerService: HeaderService,
     private borrowerService: BorrowerService,
     private fincheck: Fincheck,
     private http: HttpClient,
-    private borrower: Borrower) { }  
+    private borrower: Borrower) { }
 
   ngOnInit() {
-    this.headerService.mode.next('determinate');
+    this.headerService.mode.next('query');
     this.headerService.progress.next(0);
 
     //Fincheck/ Offer
@@ -34,7 +36,7 @@ export class FinancialresultComponent implements OnInit {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
         // tslint:disable-next-line:max-line-length
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM2MTExNjksImV4cCI6MTU1NDIxNTk2OSwiaWF0IjoxNTUzNjExMTY5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.Ow461m1MkOn9SCd-7qWfFCkfnJfp4GGLGtIh4HTCmvQ',
+        'Authorization': 'Bearer ' + this.localToken,
         'X-Requested-With': 'XMLHttpRequest'
       })
     };
@@ -71,12 +73,14 @@ export class FinancialresultComponent implements OnInit {
     console.log(formData);
 
 
-    this.http.post('http://localhost:58007/api/fincheck/offer', formData.toString(), httpOptions)
+    this.http.post(this.apiUrl + 'fincheck/offer', formData.toString(), httpOptions)
       .subscribe(
         (res) => {
           this.result = JSON.parse(JSON.stringify(res));
           this.matches = JSON.parse(this.result.result).matches;
           console.log(this.matches);
+          this.headerService.mode.next('determinateng serve');
+          this.headerService.progress.next(0);
         },
         err => console.log(err)
       );
@@ -90,22 +94,24 @@ export class FinancialresultComponent implements OnInit {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
         // tslint:disable-next-line:max-line-length
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1NTM2MTExNjksImV4cCI6MTU1NDIxNTk2OSwiaWF0IjoxNTUzNjExMTY5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.Ow461m1MkOn9SCd-7qWfFCkfnJfp4GGLGtIh4HTCmvQ',
+        'Authorization': 'Bearer ' + this.localToken,
         'X-Requested-With': 'XMLHttpRequest'
       })
     };
-
+    console.log(financeResult);
+    console.log(this.borrower.ApplicationKey);
+    console.log(this.borrower.IdNumber);
     const formData = new URLSearchParams();
-    formData.set('applicationKey', this.borrower.ApplicationKey.toString());
-    formData.set('probability', financeResult.probability.toString());
-    formData.set('providerLogo', financeResult.company_logo_path.toString());
-    formData.set('providerName', financeResult.company_name.toString());
-    formData.set('providerWebsite', financeResult.company_website_url.toString());
+    formData.set('applicationKey', '1');
+    formData.set('probability', financeResult.probability === null ? '': financeResult.probability.toString());
+    formData.set('providerLogo', financeResult.company_logo_url === null ? '': financeResult.probability.toString());
+    formData.set('providerName', financeResult.company_name === null ? '': financeResult.probability.toString());
+    formData.set('providerWebsite', financeResult.company_website_url === null ? '': financeResult.probability.toString());
     formData.set('hasid', this.borrower.IdNumber.toString());
 
     console.log(formData);
 
-    this.http.post('http://localhost:58007/api/fincheck/accept', formData.toString(), httpOptions)
+    this.http.post(this.apiUrl + 'fincheck/accept', formData.toString(), httpOptions)
       .subscribe(
         (res) => {
           console.log(res);

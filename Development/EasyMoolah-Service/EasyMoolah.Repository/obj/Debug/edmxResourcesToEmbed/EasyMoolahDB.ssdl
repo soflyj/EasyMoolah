@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Browser" Type="varchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Borrower">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="IdNumber" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="LandlineNumber" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="RequiredLoanAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="RepaymentPeriod" Type="int" Nullable="false" />
+    <Property Name="IsUnderDebtReview" Type="bit" Nullable="false" />
+    <Property Name="IsDeclaredInsolvent" Type="bit" Nullable="false" />
+    <Property Name="PermissionToDoCreditCheck" Type="bit" Nullable="false" />
+    <Property Name="IsPopicompliant" Type="bit" Nullable="false" />
+    <Property Name="EmploymentStatus" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="GrossMonthlyIncome" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="NettMonthlyIncome" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalMonthlyExpense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BankName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="NumberOfDependants" Type="int" Nullable="false" />
+    <Property Name="ResidenceType" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="FullAddress" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="StreetName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="SuburbName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PostCode" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="isActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="Method" Type="varchar(max)" />
+    <Property Name="Input" Type="varchar(max)" />
+    <Property Name="Output" Type="varchar(max)" />
+    <Property Name="Error" Type="varchar(max)" />
+    <Property Name="ErrorDescription" Type="varchar(max)" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NotificationLog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="NotificationType" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+    <Property Name="ToAddress" Type="varchar" MaxLength="250" />
+    <Property Name="ToTitle" Type="varchar" MaxLength="250" />
+    <Property Name="ToName" Type="varchar" MaxLength="250" />
+    <Property Name="FromAddress" Type="varchar" MaxLength="250" />
+    <Property Name="Subject" Type="varchar" MaxLength="250" />
+    <Property Name="Body" Type="varchar(max)" />
+    <Property Name="SentDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="QuestionAnswer" Type="varchar(max)" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="APILog">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="ApiToken" Type="varchar" MaxLength="250" />
+    <Property Name="Method" Type="varchar" MaxLength="250" />
+    <Property Name="Http" Type="varchar" MaxLength="25" />
+    <Property Name="Endpoint" Type="varchar" MaxLength="250" />
+    <Property Name="Reference" Type="varchar(max)" />
+    <Property Name="Request" Type="varchar(max)" />
+    <Property Name="Response" Type="varchar(max)" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Company_Logo_Path" Type="varchar" MaxLength="250" />
+    <Property Name="Company_Logo_URL" Type="varchar" MaxLength="250" />
+    <Property Name="Website" Type="varchar" MaxLength="250" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Probability" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RequestDateTime" Type="datetime" />
+    <Property Name="FincheckLeadReference" Type="varchar" MaxLength="250" />
+    <Property Name="Callback" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="EasyMoolahModelStoreContainer">
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Borrower" EntityType="Self.Borrower" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APILog" EntityType="Self.APILog" Schema="fincheck" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="fincheck" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
