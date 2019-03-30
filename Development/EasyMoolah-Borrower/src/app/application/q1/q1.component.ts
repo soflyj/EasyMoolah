@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
-import { Question } from 'src/app/model/Question.model';
+import { Question } from 'src/app/model/question.model';
 import { Borrower } from 'src/app/model/borrower.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 

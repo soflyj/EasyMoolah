@@ -3,7 +3,7 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { Question } from 'src/app/model/Question.model';
+import { Question } from 'src/app/model/question.model';
 import { HeaderService } from 'src/app/service/header.service';
 import { Fincheck } from "src/app/model/fincheck.model";
 import { HttpClient, HttpHeaders } from '@angular/common/http';

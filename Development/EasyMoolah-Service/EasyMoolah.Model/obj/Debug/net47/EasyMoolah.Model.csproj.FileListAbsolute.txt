@@ -18,3 +18,12 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net4
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\net47\EasyMoolah.Model.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\net47\EasyMoolah.Model.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\bin\Debug\net47\Newtonsoft.Json.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.csproj.CoreCompileInputs.cache
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.AssemblyInfoInputs.cache
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.AssemblyInfo.cs
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.csproj.CopyComplete
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.pdb
