@@ -53,9 +53,35 @@ export class Q8Component implements OnInit {
     this.Q8 = new FormGroup({
       'grossincome_slider': new FormControl(
         this.grossincome_slider,
-        [Validators.required])
+        [Validators.required,
+          this.isGrossValidate.bind(this)])
     });
 
+  }
+
+  // Only allows numeric values
+  isNumeric(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
+  // Text of amount changes slider
+  changeGross(event) {
+    this.grossincome_slider = event.target.value;
+  }
+
+  //Amount cannot be less than R5000
+  isGrossValidate(control: FormControl): { [s: string]: boolean } {
+    const value = control.value;
+    if (value >= 5000) {
+      return null; // failed    
+    }
+    else {
+      return { 'GrossValid': true };
+    }
   }
 
   Next() {

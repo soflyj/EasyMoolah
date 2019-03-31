@@ -53,9 +53,35 @@ export class Q9Component implements OnInit {
     this.Q9 = new FormGroup({
       'nettincome_slider': new FormControl(
         this.nettincome_slider,
-        [Validators.required])
+        [Validators.required,
+        this.isNettValidate.bind(this)])
     });
 
+  }
+
+  // Only allows numeric values
+  isNumeric(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
+  // Text of amount changes slider
+  changeNett(event) {
+    this.nettincome_slider = event.target.value;
+  }
+
+  //Amount cannot be less than R5000
+  isNettValidate(control: FormControl): { [s: string]: boolean } {
+    const value = control.value;
+    if (value >= 5000) {
+      return null; // failed    
+    }
+    else {
+      return { 'GrossValid': true };
+    }
   }
 
   Next() {

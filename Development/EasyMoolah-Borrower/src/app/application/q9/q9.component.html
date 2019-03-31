@@ -5,12 +5,11 @@
 				<div class="input-field">
 					<p class="center-align">What's your net monthly income?</p>
 					<p class="range-field">
-						<input [(ngModel)]="nettincome_slider" type="range" id="nettincome_slider" min="5000" max="100000" step="100"
-						formControlName="nettincome_slider" alue="50000" />
-						<span class="amount_output">
-							<p>R {{nettincome_slider}}</p>
-						</span>
+						<input [(ngModel)]="nettincome_slider" type="range" id="nettincome_slider" min="5000"
+							max="100000" step="100" formControlName="nettincome_slider" value="50000" />
 					</p>
+					<input type="text" style="border: 0px; font-size: 40px; font-weight: 700; text-align: center"
+						value="{{nettincome_slider}}" (input)="changeNett($event)" (keypress)="isNumeric($event)">
 				</div>
 			</div>
 		</div>
@@ -20,17 +19,19 @@
 		<div class="row pagination-btns">
 			<div class="col s12 m6 offset-m3">
 				<div class="col s5 m4">
-					<button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
+					<button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i
+							class="material-icons left">chevron_left</i>Prev</button>
 				</div>
 				<div class="col s2 m4">
 				</div>
 				<div class="col s5 m4">
-					<button type="button" class="waves-effect waves-light btn-small next-btn" (click)="Next()"><i class="material-icons right">chevron_right</i>Next</button>
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q9.valid"><i
+							class="material-icons right">chevron_right</i>Next</button>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </form>

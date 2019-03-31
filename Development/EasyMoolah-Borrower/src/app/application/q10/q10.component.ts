@@ -53,9 +53,35 @@ export class Q10Component implements OnInit {
     this.Q10 = new FormGroup({
       'monthlyexpense_slider': new FormControl(
         this.monthlyexpense_slider,
-        [Validators.required])
+        [Validators.required,
+          this.isExpenseValidate.bind(this)])
     });
   }
+
+// Only allows numeric values
+isNumeric(event): boolean {
+  const charCode = (event.which) ? event.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    return false;
+  }
+  return true;
+}
+
+// Text of amount changes slider
+changeExpense(event) {
+  this.monthlyexpense_slider = event.target.value;
+}
+
+//Amount cannot be less than R5000
+isExpenseValidate(control: FormControl): { [s: string]: boolean } {
+  const value = control.value;
+  if (value >= 5000) {
+    return null; // failed    
+  }
+  else {
+    return { 'GrossValid': true };
+  }
+}
 
   Next() {
     // tslint:disable-next-line:max-line-length

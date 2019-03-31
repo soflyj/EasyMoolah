@@ -7,6 +7,7 @@ import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { Fincheck } from "src/app/model/fincheck.model";
 import { Borrower } from "src/app/model/borrower.model";
+import { ConstantPool } from '@angular/compiler';
 
 @Component({
   selector: 'app-q3',
@@ -22,11 +23,11 @@ export class Q3Component implements OnInit {
   URL = false;
   Debug = false;
   StartTime: Date;
-  Answer;  
+  Answer;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private borrowerService: BorrowerService,    
+    private borrowerService: BorrowerService,
     private fincheck: Fincheck,
     private headerService: HeaderService,
     private borrower: Borrower) { }
@@ -56,10 +57,10 @@ export class Q3Component implements OnInit {
     this.Q3 = new FormGroup({
       'borrowamount_slider': new FormControl(
         this.borrowamount_slider,
-        [Validators.required]),
+        [Validators.required, this.isAmountValidate.bind(this)]),
       'borrowmonths_slider': new FormControl(
         this.borrowmonths_slider,
-        [Validators.required]),
+        [Validators.required, this.isMonthsValidate.bind(this)]),
     });
 
   }
@@ -75,5 +76,46 @@ export class Q3Component implements OnInit {
 
   Back() {
     this.router.navigateByUrl('/bq2', { skipLocationChange: true });
+  }
+
+  // Only allows numeric values
+  isNumeric(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
+  // Text of amount changes slider
+  changeAmount(event) {
+    this.borrowamount_slider = event.target.value;
+  }
+
+  //Amount cannot be less than R5000
+  isAmountValidate(control: FormControl): { [s: string]: boolean } {
+    const value = control.value;
+    if (value >= 5000) {
+      return null; // failed    
+    }
+    else {
+      return { 'AmountValid': true };
+    }
+  }
+
+  // Text of months changes slider
+  changeMonths(event) {
+    this.borrowmonths_slider = event.target.value;
+  }
+
+  //Months cannot be less than R5000
+  isMonthsValidate(control: FormControl): { [s: string]: boolean } {
+    const value = control.value;
+    if (value >= 6) {
+      return null; // failed    
+    }
+    else {
+      return { 'PeriodValid': true };
+    }
   }
 }

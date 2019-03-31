@@ -27,3 +27,23 @@
 ::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
     background-color: #ffe066;
 }
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color:#ff99ff !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color:#ff99ff !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #ff99ff !important;;
+  }
+  
+  .floattextarea {
+    resize: none;
+    height: 20px;
+  }
