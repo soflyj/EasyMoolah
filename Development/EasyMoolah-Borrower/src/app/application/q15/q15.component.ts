@@ -6,6 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { Fincheck } from "src/app/model/fincheck.model";
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
     selector: 'app-q15',
@@ -32,7 +33,8 @@ export class Q15Component implements OnInit {
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,
         private fincheck: Fincheck,
-        private headerService: HeaderService) { }
+        private headerService: HeaderService,
+        private borrower: Borrower) { }
 
     ngOnInit() {
         this.StartTime = new Date();
@@ -89,12 +91,12 @@ export class Q15Component implements OnInit {
 
     Next() {
         // tslint:disable-next-line:max-line-length
-        this.borrowerService.addToQuestionLog(new Question('q15', 'Question', 'Personal Information', this.Q15.value, this.StartTime.toString(), (new Date).toString()));
-        this.borrowerService.addToPersonalDetails(this.Q15.value);
-        this.fincheck.first_name = this.Q15.value.firstname;
-        this.fincheck.last_name = this.Q15.value.lastname;
-        this.fincheck.cell_phone_number = this.Q15.value.mobilenumber;
-        this.fincheck.email = this.Q15.value.email;
+        this.borrowerService.addToQuestionLog(new Question('q15', 'Question', 'Personal Information', this.Q15.value, this.StartTime.toString(), (new Date).toString()));        
+        this.borrower.FirstName = this.Q15.value.firstname;
+        this.borrower.LastName = this.Q15.value.lastname;
+        this.borrower.MobileNumber = this.Q15.value.mobilenumber;
+        this.borrower.LandlineNumber = this.Q15.value.landlinenumber == '' ? 'NA' : this.Q15.value.landlinenumber;
+        this.borrower.Email = this.Q15.value.email;
 
         this.router.navigateByUrl('/q16', { skipLocationChange: true });
     }

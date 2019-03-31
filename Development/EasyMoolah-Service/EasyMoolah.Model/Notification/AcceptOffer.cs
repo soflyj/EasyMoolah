@@ -11,7 +11,7 @@ namespace EasyMoolah.Model.Notification
 
         public string toAddressTitle { get; set; }
 
-        public string ToAddressName { get; set; }
+        public string toAddressName { get; set; }
 
         public string fromAddress { get; set; }
 
@@ -21,8 +21,10 @@ namespace EasyMoolah.Model.Notification
 
         public string providerLogo { get; set; }
 
+        public string providerWebsite { get; set; }
+
         public string probability { get; set; }
 
-        public int borrowerId { get; set; }
+        public int applicationKey { get; set; }
     }
 }

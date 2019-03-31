@@ -3,9 +3,9 @@ import { routerTransition } from '../../common/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
-import { BorrowerApplicationLog } from 'src/app/model/borrowerapplicationLog.model';
 import { Question } from 'src/app/model/question.model';
 import { HeaderService } from 'src/app/service/header.service';
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
   selector: 'app-q6',
@@ -25,13 +25,15 @@ export class Q6Component implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
-    private headerService: HeaderService) { }
+    private headerService: HeaderService,
+    private borrower: Borrower) { }
+
   ngOnInit() {
     this.StartTime = new Date();
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(30);
 
-    this.Answer = this.borrowerService.getPreviousAnswer('q6') != null ? JSON.parse(this.borrowerService.getPreviousAnswer('q6')) : false;    
+    this.Answer = this.borrowerService.getPreviousAnswer('q6') != null ? JSON.parse(this.borrowerService.getPreviousAnswer('q6')) : false;
 
     // Not allowed to navigate directly to component
     this.Debug = this.borrowerService.debugMode();
@@ -53,6 +55,7 @@ export class Q6Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q6', 'Question', 'I give permission for EasyMoolah to do a credit check.', this.credit_check + '', this.StartTime.toString(), (new Date).toString()));
+    this.borrower.PermissionToDoCreditCheck = this.credit_check + '';
 
     this.router.navigateByUrl('/q7', { skipLocationChange: true });
   }

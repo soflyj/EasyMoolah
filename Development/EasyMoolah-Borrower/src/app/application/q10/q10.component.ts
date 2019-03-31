@@ -6,6 +6,7 @@ import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
 import { Fincheck } from "src/app/model/fincheck.model";
+import { Borrower } from "src/app/model/borrower.model";
 
 @Component({
   selector: 'app-q10',
@@ -26,7 +27,8 @@ export class Q10Component implements OnInit {
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
     private fincheck: Fincheck,
-    private headerService: HeaderService) { }
+    private headerService: HeaderService,
+    private borrower: Borrower) { }
 
   ngOnInit() {
     this.StartTime = new Date();
@@ -58,7 +60,7 @@ export class Q10Component implements OnInit {
   Next() {
     // tslint:disable-next-line:max-line-length
     this.borrowerService.addToQuestionLog(new Question('q10', 'Question', 'What\'s your total monthly expense?', this.Q10.get('monthlyexpense_slider').value, this.StartTime.toString(), (new Date).toString()));
-    this.fincheck.expenses = this.Q10.get('monthlyexpense_slider').value;
+    this.borrower.TotalMonthlyExpenses = this.Q10.get('monthlyexpense_slider').value;
 
     this.router.navigateByUrl('/q11', { skipLocationChange: true });
   }

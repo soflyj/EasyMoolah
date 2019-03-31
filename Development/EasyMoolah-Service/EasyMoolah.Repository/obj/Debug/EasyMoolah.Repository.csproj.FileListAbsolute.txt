@@ -10,6 +10,17 @@ C:\Users\Jarro\Documents\Visual Studio 2017\Projects\EasyMoolah.Repository\EasyM
 C:\Users\Jarro\Documents\Visual Studio 2017\Projects\EasyMoolah.Repository\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
 C:\Users\Jarro\Documents\Visual Studio 2017\Projects\EasyMoolah.Repository\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb
 C:\Users\Jarro\Documents\Visual Studio 2017\Projects\EasyMoolah.Repository\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csprojAssemblyReference.cache
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll.config
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.pdb
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.dll
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.xml
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CopyComplete
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
+C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.pdb
@@ -22,14 +33,3 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll.config
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.dll
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EasyMoolah.Repository.pdb
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.dll
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.dll
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.xml
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Debug\EntityFramework.SqlServer.xml
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CopyComplete
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
-C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb

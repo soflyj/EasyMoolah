@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { BorrowerApplicationLog } from '../model/borrowerapplicationLog.model';
 import { Question } from '../model/question.model';
 import { AuditLog } from '../model/auditlog.model';
-import { PersonalDetails } from '../model/personalDetails.model';
-import { isNull } from 'util';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class BorrowerService {
@@ -16,8 +14,8 @@ export class BorrowerService {
     public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
     public Question: Question[];
     public auditlog: AuditLog = null;
-    public personaldetails: PersonalDetails = null;
     public Answer;
+    private debug: boolean = environment.debug;
 
     addBorrowerApplicationLog(borrowerapplicationlog: BorrowerApplicationLog) {
 
@@ -49,14 +47,6 @@ export class BorrowerService {
         console.log(this.Question);
     }
 
-    addToPersonalDetails(persondetails: PersonalDetails) {
-        this.personaldetails = persondetails;
-    }
-
-    getToPersonalDetails() {
-        return this.personaldetails;
-    }
-
     addAuditLog(auditlog: AuditLog) {
         this.auditlog = auditlog;
     }
@@ -86,6 +76,6 @@ export class BorrowerService {
     }
 
     debugMode() {
-        return false;
+        return this.debug;
     }
 }

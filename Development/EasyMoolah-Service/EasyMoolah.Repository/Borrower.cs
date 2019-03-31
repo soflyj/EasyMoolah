@@ -12,30 +12,36 @@ namespace EasyMoolah.Repository
     using System;
     using System.Collections.Generic;
     
-    public class Borrower
+    public partial class Borrower
     {
         public int Key { get; set; }
+        public int ApplicationKey { get; set; }
         public string IdNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string MobileNumber { get; set; }
         public string LandlineNumber { get; set; }
-        public Nullable<decimal> LoanAmount { get; set; }
-        public Nullable<bool> IsUnderDebtReview { get; set; }
-        public Nullable<bool> IsDeclaredInsolvent { get; set; }
-        public Nullable<bool> PermissionToDoCreditCheck { get; set; }
+        public decimal RequiredLoanAmount { get; set; }
+        public int RepaymentPeriod { get; set; }
+        public bool IsUnderDebtReview { get; set; }
+        public bool IsDeclaredInsolvent { get; set; }
+        public bool PermissionToDoCreditCheck { get; set; }
+        public bool IsPopicompliant { get; set; }
         public string EmploymentStatus { get; set; }
-        public Nullable<decimal> GrossMonthlyIncome { get; set; }
-        public Nullable<decimal> NettMonthlyIncome { get; set; }
-        public Nullable<decimal> TotalMonthlyExpense { get; set; }
-        public string BankAccountName { get; set; }
-        public Nullable<int> NumberOfDependants { get; set; }
+        public decimal GrossMonthlyIncome { get; set; }
+        public decimal NettMonthlyIncome { get; set; }
+        public decimal TotalMonthlyExpense { get; set; }
+        public string BankName { get; set; }
+        public int NumberOfDependants { get; set; }
         public string ResidenceType { get; set; }
         public string FullAddress { get; set; }
         public string StreetName { get; set; }
         public string SuburbName { get; set; }
         public string CityName { get; set; }
-        public string PostalCode { get; set; }
+        public string PostCode { get; set; }
+        public System.DateTime CreateDate { get; set; }
+        public System.DateTime ChangeDate { get; set; }
+        public bool isActive { get; set; }
     }
 }

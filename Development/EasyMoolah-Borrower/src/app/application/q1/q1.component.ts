@@ -5,10 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HeaderService } from 'src/app/service/header.service';
 import { Question } from 'src/app/model/question.model';
+import { Borrower } from 'src/app/model/borrower.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ResponseContentType, RequestOptions } from '@angular/http';
-import { isNull } from 'util';
-
 
 @Component({
   selector: 'app-q1',
@@ -29,7 +27,7 @@ export class Q1Component implements OnInit {
     private route: ActivatedRoute,
     private borrowerService: BorrowerService,
     private headerService: HeaderService,
-    private http: HttpClient) { }
+    private borrower: Borrower) { }
 
   ngOnInit() {
     this.StartTime = new Date();
@@ -37,26 +35,6 @@ export class Q1Component implements OnInit {
     this.headerService.progress.next(0);
 
     this.Answer = this.borrowerService.getPreviousAnswer('q1');
-    
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //     // tslint:disable-next-line:max-line-length
-    // tslint:disable-next-line:max-line-length
-    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDY5Mzk4ODIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.NAJBEJ0xtz_cABUuGm9xCLLZH8R6V_E27Qz26CrjRyQ'
-    //   })
-    // };
-    // const body: any = '';
-
-    // const req = this.http.get('http://localhost:58007/api/books', httpOptions)
-    //   .subscribe(
-    //     res => {
-    //       console.log(res);
-    //     },
-    //     err => {
-    //       console.log('Error occured');
-    //     }
-    //   );
 
     this.StartTime = new Date();
 

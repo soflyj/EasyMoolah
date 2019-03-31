@@ -12,8 +12,8 @@ namespace Fincheck.Integration
 {
     public class Lead : Base
     {
-        private static Result result = new Result();
-        public static ApiLog apiLog = new ApiLog();
+        private static EasyMoolah.Model.Result result = new EasyMoolah.Model.Result();
+        public static APILog apiLog = new APILog();
         private static string JsonBody = "";
         private static string fincheckAPI = "";
         private static string apiUrl = "";
@@ -26,7 +26,7 @@ namespace Fincheck.Integration
         /// </summary>
         /// <param name="_leadRequest"></param>
         /// <returns></returns>
-        public static Result CreateLead(LeadRequest _leadRequest)
+        public static EasyMoolah.Model.Result CreateLead(LeadRequest _leadRequest)
         {
             apiUrl = System.Configuration.ConfigurationSettings.AppSettings["Fincheck"].ToString() + "lead";
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
@@ -34,13 +34,13 @@ namespace Fincheck.Integration
             //result
             result.input = "";
             //apiLog
-            apiLog.SessionId = _leadRequest.sessionId;
-            apiLog.Token = fincheckAPI;
+            apiLog.ApplicationKey = _leadRequest.applicationKey;
+            apiLog.ApiToken = fincheckAPI;
             apiLog.Method = "lead";
             apiLog.Http = "Post";
             apiLog.Endpoint = apiUrl;
             apiLog.Request = "";
-            apiLog.StartTimeStamp = DateTime.Now;
+            apiLog.StartDateTime = DateTime.Now;
 
             if (_leadRequest != null)
             {
@@ -69,7 +69,7 @@ namespace Fincheck.Integration
                         result.result = result.output;
                         //apiLog
                         apiLog.Response = result.output;
-                        apiLog.EndTimeStamp = DateTime.Now;
+                        apiLog.EndDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)

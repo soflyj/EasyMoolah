@@ -5,8 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="de50ca48015e4c0e95e3da1df7d1de9a" Name="Diagram1">
-        <EntityTypeShape EntityType="EasyMoolahModel.Borrower" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="EasyMoolahModel.ApiLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Application" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.ErrorLog" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.NotificationLog" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Question" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.APILog" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Result" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Borrower" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

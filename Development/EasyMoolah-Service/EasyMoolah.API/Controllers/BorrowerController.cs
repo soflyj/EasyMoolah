@@ -10,10 +10,9 @@ namespace EasyMoolah.API.Controllers
         [Route("api/borrower/insert")]
         //[System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public async Task<IHttpActionResult> InsertBorrower([FromBody] Borrower _borrower)
-        {
-            EasyMoolah.Domain.Borrower borrower = new Domain.Borrower();
-            var response = await borrower.Insert(_borrower);
+        public IHttpActionResult InsertBorrower([FromBody] Borrower _borrower)
+        {            
+            var response = Domain.Borrower.InsertBorrower(_borrower);
             return Ok(response);
         }
 
@@ -21,9 +20,8 @@ namespace EasyMoolah.API.Controllers
         //[System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
         public IHttpActionResult GetBorrower([FromBody] Borrower _borrower)
-        {
-            EasyMoolah.Domain.Borrower borrower = new Domain.Borrower();
-            var response = borrower.Insert(_borrower);
+        {            
+            var response = Domain.Borrower.GetBorrower(_borrower.Key);
             return Ok(response);
         }
     }

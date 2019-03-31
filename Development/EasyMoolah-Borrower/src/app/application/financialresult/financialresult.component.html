@@ -26,7 +26,7 @@
                       <h3>{{fsp.probability === undefined ? 'unknown': fsp.probability + '%'}}</h3>
                     </td>
                     <td><a class="waves-effect waves-light btn-large call-btn"
-                        style="margin:0 auto; line-height: 40px"><i class="material-icons"
+                        style="margin:0 auto; line-height: 40px" (click)="callme(fsp)"><i class="material-icons"
                           style="transform:translateY(5px)">call</i>Call Me</a></td>
                   </tr>
                 </tbody>
