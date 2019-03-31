@@ -26,6 +26,14 @@ export class Q16Component implements OnInit {
     maxLength = 13;
     pattern: any;
 
+    public captchaResponse: string = '';
+    public resolved(captchaResponse: string) {
+        const newResponse = captchaResponse
+          ? `${captchaResponse.substr(0, 7)}...${captchaResponse.substr(-7)}`
+          : captchaResponse;
+        this.captchaResponse += `${JSON.stringify(newResponse)}\n`;
+      }
+      
     constructor(private router: Router,
         private route: ActivatedRoute,
         private borrowerService: BorrowerService,

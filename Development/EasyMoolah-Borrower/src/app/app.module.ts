@@ -8,6 +8,7 @@ import { AutocompleteComponent } from './google-places.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+// Materials
 import {
   MatButtonModule,
   MatInputModule,
@@ -23,10 +24,14 @@ import {
 import { BorrowerService } from './service/borrower.service';
 import { FincheckService } from './service/fincheck.service';
 import { HeaderService } from './service/header.service';
-import { GoogleMaps } from './common/googlemaps.service';
 
+// Models
 import { Fincheck } from './model/fincheck.model';
 import { Borrower } from './model/borrower.model';
+
+//3rd Party
+import { GoogleMaps } from './common/googlemaps.service';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 // Components
 import { AppComponent } from './app.component';
@@ -97,7 +102,8 @@ import { ProcessingComponent } from './application/processing/processing.compone
     MatExpansionModule,
     MatListModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule
   ],
   providers: [BorrowerService, GoogleMaps, HeaderService, FincheckService, Fincheck, Borrower],
   bootstrap: [AppComponent]
