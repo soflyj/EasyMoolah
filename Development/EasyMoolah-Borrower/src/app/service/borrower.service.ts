@@ -44,7 +44,9 @@ export class BorrowerService {
                 this.Question.push(question);
             }
         }
-        console.log(this.Question);
+        if (this.debug) {
+            console.log(this.Question);
+        }
     }
 
     addAuditLog(auditlog: AuditLog) {
@@ -64,11 +66,13 @@ export class BorrowerService {
                 else {
                     this.Answer = this.Question.Where(q => q.Id === id).Select(s => s.Answer);
                 }
-                console.log('Answer to ' + id + ': ');
-                console.log(this.Answer);
+                if (this.debug) {
+                    console.log('Answer to ' + id + ': ');
+                    console.log(this.Answer);
+                }
             }
             else {
-                this.Answer = null; 
+                this.Answer = null;
             }
         }
 

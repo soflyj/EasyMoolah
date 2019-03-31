@@ -5,4 +5,5 @@ import { Subject } from 'rxjs';
 export class HeaderService {
     progress = new Subject();
     mode = new Subject();
+    // progressbar = new Subject();
 }

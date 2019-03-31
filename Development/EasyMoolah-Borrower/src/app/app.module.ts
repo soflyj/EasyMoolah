@@ -14,7 +14,8 @@ import {
   MatProgressBarModule,
   MatRippleModule,
   MatFormFieldModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatListModule
 
 } from '@angular/material';
 
@@ -94,6 +95,7 @@ import { ProcessingComponent } from './application/processing/processing.compone
     MatRippleModule,
     MatProgressBarModule,
     MatExpansionModule,
+    MatListModule,
     HttpModule,
     HttpClientModule
   ],
