@@ -104,9 +104,9 @@ export class FinancialresultComponent implements OnInit {
     const formData = new URLSearchParams();
     formData.set('applicationKey', '1');
     formData.set('probability', financeResult.probability === null ? '': financeResult.probability.toString());
-    formData.set('providerLogo', financeResult.company_logo_url === null ? '': financeResult.probability.toString());
-    formData.set('providerName', financeResult.company_name === null ? '': financeResult.probability.toString());
-    formData.set('providerWebsite', financeResult.company_website_url === null ? '': financeResult.probability.toString());
+    formData.set('providerLogo', financeResult.company_logo_url === null ? '': financeResult.company_logo_url.toString());
+    formData.set('providerName', financeResult.company_name === null ? '': financeResult.company_name.toString());
+    formData.set('providerWebsite', financeResult.company_website_url === null ? '': financeResult.company_website_url.toString());
     formData.set('hasid', this.borrower.IdNumber.toString());
 
     console.log(formData);
