@@ -62,15 +62,17 @@ export class ProcessingComponent implements OnInit {
 
     console.log(this.apiUrl);
 
-    this.http.post(this.apiUrl + 'borrower/insert', formData.toString(), httpOptions)
-      .subscribe(
-        (res) => {
-          if (res != -1) {
-            this.router.navigateByUrl('/financialresult', { skipLocationChange: true });
-          }
-        },
-        err => console.log(err)
-      );
+    this.router.navigateByUrl('/financialresult', { skipLocationChange: true });
+
+    // this.http.post(this.apiUrl + 'borrower/insert', formData.toString(), httpOptions)
+    //   .subscribe(
+    //     (res) => {
+    //       if (res != -1) {
+    //         this.router.navigateByUrl('/financialresult', { skipLocationChange: true });
+    //       }
+    //     },
+    //     err => console.log(err)
+    //   );
     //Fincheck/ Offer
 
 

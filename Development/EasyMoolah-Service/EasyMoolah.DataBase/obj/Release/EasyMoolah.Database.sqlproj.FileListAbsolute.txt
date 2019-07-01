@@ -1,0 +1,7 @@
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\bin\Release\EasyMoolah.Database.dacpac
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\Model.xml
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\refactor.xml
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\postdeploy.sql
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\predeploy.sql
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\EasyMoolah.Database.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Database\obj\Release\EasyMoolah.Database.pdb

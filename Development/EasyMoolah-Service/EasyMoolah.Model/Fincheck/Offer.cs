@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace EasyMoolah.Model.Fincheck
@@ -41,22 +42,9 @@ namespace EasyMoolah.Model.Fincheck
         public string partner_type { get; set; }
     }
 
-    public class All
-    {
-        public int id { get; set; }
-        public string company_name { get; set; }
-        public string company_logo_path { get; set; }
-        public string company_logo_url { get; set; }
-        public string company_website_url { get; set; }
-        public int probability { get; set; }
-        public int rank { get; set; }
-        public Userable userable { get; set; }
-    }
-
     public class OfferResponse
     {
         public List<matches> matches { get; set; }
-        public List<All> all { get; set; }
         public string id { get; set; }
     }
 
@@ -70,5 +58,35 @@ namespace EasyMoolah.Model.Fincheck
         public int probability { get; set; }
         public string rank { get; set; }
         public Userable userable { get; set; }
+        public live_score live_score { get; set; }
+        public bool hasOffers { get; set; }
+    }
+
+    public class live_score
+    {
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public offers[] offers { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string type { get; set; } //multipleOffers or null if single
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string url { get; set; }
+    }
+
+    public class offers
+    {
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string type { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int QuoteId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int OfferId { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int ProductCode { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int TermAllowed { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal LoanAmount { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal InterestRate { get; set; }
     }
 }

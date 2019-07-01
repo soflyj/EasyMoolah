@@ -45,3 +45,4 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
