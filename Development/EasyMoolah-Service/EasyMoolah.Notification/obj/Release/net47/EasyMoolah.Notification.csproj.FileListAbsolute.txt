@@ -39,10 +39,10 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EasyMoolah.Repository.pdb
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EasyMoolah.Repository.dll.config
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EntityFramework.xml
-D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csproj.CoreCompileInputs.cache
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.AssemblyInfoInputs.cache
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.AssemblyInfo.cs
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csprojAssemblyReference.cache

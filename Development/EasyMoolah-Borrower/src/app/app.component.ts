@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { routerTransition } from './common/router.animations';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,14 @@ export class AppComponent {
 
   getState(outlet) {
     return outlet.activatedRouteData.state;
+  }
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        (<any>window).ga('set', 'page', event.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
+      }
+    });
   }
 }

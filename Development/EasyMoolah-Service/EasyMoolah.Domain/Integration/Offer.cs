@@ -13,7 +13,7 @@ namespace EasyMoolah.Domain.Integration
         public static Result GetOffer(OfferRequest _offerRequest)
         {
             var response = Fincheck.Integration.Offer.GetOffer(_offerRequest);
-            fincheck.InsertApiLog(Fincheck.Integration.Offer.apiLog);
+            // fincheck.InsertApiLog(Fincheck.Integration.Offer.apiLog);
 
             return response;
         }

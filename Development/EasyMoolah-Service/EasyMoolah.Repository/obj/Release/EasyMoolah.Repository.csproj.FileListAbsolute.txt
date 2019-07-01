@@ -17,8 +17,8 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bi
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\EntityFramework.SqlServer.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\EntityFramework.xml
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\bin\Release\EntityFramework.SqlServer.xml
-D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.csprojAssemblyReference.cache
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.csproj.CoreCompileInputs.cache
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Release\EasyMoolah.Repository.csprojAssemblyReference.cache

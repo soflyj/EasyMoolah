@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace Fincheck.Integration
 {
-    public class Offer: Base
+    public class Offer : Base
     {
         private static EasyMoolah.Model.Result result = new EasyMoolah.Model.Result();
         public static APILog apiLog = new APILog();
@@ -69,12 +69,30 @@ namespace Fincheck.Integration
                         //result
                         result.resultCode = 0;
                         result.result = asyncResult.Content.ReadAsStringAsync().Result;
-                        result.input = JsonBody;
                         result.output = result.result;
+                        result.result = result.result.Replace("\"live_score\":-2,", "").Replace("\"live_score\":-1,", "");
+                        result.input = JsonBody;       
 
-                        OfferResponse offerResponse = JsonConvert.DeserializeObject<OfferResponse>(result.output);
+                        OfferResponse offerResponse = JsonConvert.DeserializeObject<OfferResponse>(result.result);
+
+                        foreach (var offer in offerResponse.matches)
+                        {
+                            try
+                            {
+                                if (offer.live_score.offers != null)
+                                {
+                                    offer.hasOffers = true;
+                                }
+                            }
+                            catch(Exception ex)
+                            {
+                                
+                            }
+                            
+                        }
 
                         var response = JsonConvert.SerializeObject(offerResponse.matches);
+                        result.result = response;
 
                         //apiLog
                         apiLog.Request = JsonBody;
@@ -83,7 +101,7 @@ namespace Fincheck.Integration
                     }
                 }
                 catch (Exception ex)
-                { 
+                {
                     result.resultCode = 101;
                     result.error = ex.InnerException.ToString();
                     result.errorFriendly = "Error 101 occurred in Fincheck API - /offer/";
