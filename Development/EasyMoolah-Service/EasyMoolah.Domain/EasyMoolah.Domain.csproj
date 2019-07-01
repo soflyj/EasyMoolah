@@ -13,6 +13,7 @@
     <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj" />
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
     <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj" />
+    <ProjectReference Include="..\Nedbank.Integration\Nedbank.Integration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

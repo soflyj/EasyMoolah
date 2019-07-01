@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Repository", "Ea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.API", "EasyMoolah.API\EasyMoolah.API.csproj", "{3F7EF5FD-25B0-4671-A0C0-B1FF3BE3E972}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nedbank.Integration", "Nedbank.Integration\Nedbank.Integration.csproj", "{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,12 +66,17 @@ Global
 		{3F7EF5FD-25B0-4671-A0C0-B1FF3BE3E972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7EF5FD-25B0-4671-A0C0-B1FF3BE3E972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7EF5FD-25B0-4671-A0C0-B1FF3BE3E972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B} = {C42892C7-E1EE-498C-8370-9766FE5B79AC}
+		{45BD63AD-77C1-46EC-AD01-FA5AAE4EB4EA} = {C42892C7-E1EE-498C-8370-9766FE5B79AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5525E91D-A1AE-4DFC-BCDA-FC1BF5F1E411}
