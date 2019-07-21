@@ -5,7 +5,7 @@ import { HeaderService } from 'src/app/service/header.service';
 import { BorrowerService } from 'src/app/service/borrower.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Fincheck } from "src/app/model/fincheck.model";
-import { Borrower } from "src/app/model/borrower.model";
+import { Fincheck } from "src/app/model/finchec";
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -40,6 +40,10 @@ export class FinancialresultComponent implements OnInit {
         'X-Requested-With': 'XMLHttpRequest'
       })
     };
+
+const temp = new Borrower(){
+  BankName = ''
+}
 
     const formData = new URLSearchParams();
     formData.append('first_name', this.borrower.FirstName.toString());
