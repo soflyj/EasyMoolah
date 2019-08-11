@@ -54,6 +54,10 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\De
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.AssemblyInfoInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.AssemblyInfo.cs
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\AutoMapper.dll
@@ -69,10 +73,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Repository.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Nedbank.Integration.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Nedbank.Integration.dll.config
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csprojAssemblyReference.cache
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csproj.CoreCompileInputs.cache
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.AssemblyInfoInputs.cache
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.AssemblyInfo.cs
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.pdb

@@ -1,3 +1,5 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -21,8 +23,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microso
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Repository.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Repository.dll.config
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csprojAssemblyReference.cache
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.pdb
