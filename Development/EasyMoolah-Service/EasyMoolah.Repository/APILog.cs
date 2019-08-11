@@ -12,7 +12,7 @@ namespace EasyMoolah.Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class APILog
+    public partial class ApiLog
     {
         public int Key { get; set; }
         public int ApplicationKey { get; set; }
@@ -25,5 +25,8 @@ namespace EasyMoolah.Repository
         public string Response { get; set; }
         public Nullable<System.DateTime> StartDateTime { get; set; }
         public Nullable<System.DateTime> EndDateTime { get; set; }
+        public bool IsActive { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ChangedDate { get; set; }
     }
 }

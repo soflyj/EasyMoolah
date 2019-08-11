@@ -25,5 +25,8 @@ namespace EasyMoolah.Repository
         public string Subject { get; set; }
         public string Body { get; set; }
         public Nullable<System.DateTime> SentDateTime { get; set; }
+        public bool IsActive { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ChangedDate { get; set; }
     }
 }

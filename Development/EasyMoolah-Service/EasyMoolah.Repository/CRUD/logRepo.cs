@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyMoolah.Repository.CRUD
 {
-    public class logRepo
+    public class LogRepo
     {
         //Notification
         public static int InsertNotification(NotificationLog _notificationLog)

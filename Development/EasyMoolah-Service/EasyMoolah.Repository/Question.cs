@@ -19,5 +19,8 @@ namespace EasyMoolah.Repository
         public string QuestionAnswer { get; set; }
         public Nullable<System.DateTime> StartDateTime { get; set; }
         public Nullable<System.DateTime> EndDateTime { get; set; }
+        public bool IsActive { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ChangedDate { get; set; }
     }
 }

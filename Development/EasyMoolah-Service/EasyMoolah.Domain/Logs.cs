@@ -1,4 +1,6 @@
-﻿using EasyMoolah.Model;
+﻿using AutoMapper;
+using EasyMoolah.Model;
+using EasyMoolah.Repository;
 using System;
 using System.Threading.Tasks;
 
@@ -6,14 +8,32 @@ namespace EasyMoolah.Domain
 {
     public class Logs
     {
-        public static void InsertNotification(Repository.NotificationLog _notificationLog)
+        public async Task<int> InsertErrorLog(Model.Logs.ErrorLog _errorLog)
         {
-            Repository.CRUD.logRepo.InsertNotification(_notificationLog);
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.ErrorLog>(_errorLog);
+
+                context.ErrorLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity.Key;
+            }
         }
 
-        public static void InsertError(Repository.ErrorLog _errorLog)
+
+        public async Task<int> InsertApiLog(Model.Logs.ApiLog _apiLog)
         {
-            Repository.CRUD.logRepo.InsertError(_errorLog);
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.ApiLog>(_apiLog);
+
+                context.ApiLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity.Key;
+            }
         }
+
     }
 }
