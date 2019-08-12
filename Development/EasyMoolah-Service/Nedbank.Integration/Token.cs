@@ -37,7 +37,7 @@ namespace Nedbank.Integration
                     httpClient.DefaultRequestHeaders.Accept.Clear();
                     httpClient.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));
-                    // httpClient.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded");
 
                     var body = new List<KeyValuePair<string, string>>();
                     body.Add(new KeyValuePair<string, string>("client_id", client_id));
@@ -61,7 +61,65 @@ namespace Nedbank.Integration
             {
                 result.result = ResultEnum.API;
                 result.Error = ex.InnerException.ToString();
-                result.Error = "Error occurred in Nedbank API - /nboauth/oauth20/token/";
+                result.Error = "Error occurred in Nedbank API - " + apiLog.Method;
+            }
+
+            return result;
+        }
+
+        public Result GetHeavyToken(string code)
+        {
+            Result result = new EasyMoolah.Model.Result();
+            EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
+            string client_id = "123349a9-fb0a-443d-8227-9f05b212e81d";
+            string client_secret = "oX5oH1eI2qT7aC8lG7cE6nI6dS7tM2eH7pC1kQ3nP0iX0jE8eP";
+            string apiUrl = $"https://api.nedbank.co.za/apimarket/sandbox/nboauth/oauth20/token";
+            string redirect = $"https://easymoolah.co.za";
+
+            result.Input = "";
+
+            apiLog.ApplicationKey = 0; // From FE
+            apiLog.ApiToken = ""; // If a token is used
+            apiLog.Method = "nboauth/oauth20/token";
+            apiLog.Http = "Post";
+            apiLog.Endpoint = apiUrl;
+            apiLog.Request = "";
+            apiLog.StartDateTime = DateTime.Now;
+
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    httpClient.BaseAddress = new Uri(apiUrl);
+                    httpClient.DefaultRequestHeaders.Accept.Clear();
+                    httpClient.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded");
+
+                    var body = new List<KeyValuePair<string, string>>();
+                    body.Add(new KeyValuePair<string, string>("client_id", client_id));
+                    body.Add(new KeyValuePair<string, string>("client_secret", client_secret));
+                    body.Add(new KeyValuePair<string, string>("grant_type", "authorization_code"));
+                    body.Add(new KeyValuePair<string, string>("redirect_uri", redirect));
+                    body.Add(new KeyValuePair<string, string>("code", code));
+
+                    var asyncResult = httpClient.PostAsync(apiUrl, new FormUrlEncodedContent(body)).Result;
+
+                    //result
+                    result.result = ResultEnum.OK;
+                    result.Output = asyncResult.Content.ReadAsStringAsync().Result;
+
+                    //apiLog
+                    apiLog.Request = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+                    apiLog.Response = asyncResult.Content.ReadAsStringAsync().Result;
+                    apiLog.EndDateTime = DateTime.Now;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.result = ResultEnum.API;
+                result.Error = ex.InnerException.ToString();
+                result.Error = "Error occurred in Nedbank API - " + apiLog.Method;
             }
 
             return result;

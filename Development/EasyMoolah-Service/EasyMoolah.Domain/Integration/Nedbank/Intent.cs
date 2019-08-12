@@ -15,13 +15,11 @@ namespace EasyMoolah.Domain.Integration
         EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.Intent intent = new Nedbank.Integration.Intent();
 
-        public async Task<Model.Nedbank.IntentRequest.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken)
+        public async Task<Model.Nedbank.IntentResponse.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken)
         {
-
             var result = intent.CreateIntent(intentRequest, lightToken);
             
-
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.IntentRequest.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.Nedbank.IntentResponse.RootObject>(result.Output);
 
             return response;
         }

@@ -14,10 +14,18 @@ namespace EasyMoolah.Domain.Integration
         EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.Token token = new Nedbank.Integration.Token();
 
-        public async Task<Model.Nedbank.TokenLightResponse> GetLightToken()
+        public async Task<Model.Nedbank.Token.TokenLightResponse> GetLightToken()
         {
             var result = token.GetLightToken();
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.TokenLightResponse> (result.Output);            
+            var response = JsonConvert.DeserializeObject<Model.Nedbank.Token.TokenLightResponse> (result.Output);            
+
+            return response;
+        }
+
+        public async Task<Model.Nedbank.Token.TokenHeavyResponse> GetHeavyToken(string code)
+        {
+            var result = token.GetHeavyToken(code);
+            var response = JsonConvert.DeserializeObject<Model.Nedbank.Token.TokenHeavyResponse>(result.Output);
 
             return response;
         }

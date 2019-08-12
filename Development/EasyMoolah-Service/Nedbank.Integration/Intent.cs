@@ -40,24 +40,24 @@ namespace Nedbank.Integration
                             new AuthenticationHeaderValue("Bearer", lightToken);
                     httpClient.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));
-                    httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
-                    httpClient.DefaultRequestHeaders.Add("x-fapi-financial-id", "OB/2017/001");
-                    httpClient.DefaultRequestHeaders.Add("x-ibm-client-id", client_id);
-                    httpClient.DefaultRequestHeaders.Add("x-ibm-client-secret", client_secret);
 
-                    var JsonBody = JsonConvert.SerializeObject(intentRequest);
-                    var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonBody);
-                    var body = new FormUrlEncodedContent(dictionary);
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("x-fapi-financial-id", "OB/2017/001");
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("x-ibm-client-id", client_id);
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("x-ibm-client-secret", client_secret);
 
+                    var JsonBody = JsonConvert.SerializeObject(intentRequest);                    
+                    var content = new StringContent(JsonBody.ToString(), Encoding.UTF8, "application/json");
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                    var asyncResult = httpClient.PostAsync(apiUrl, body).Result;
+                    var asyncResult = httpClient.PostAsync(apiUrl, content).Result;
 
                     //result
                     result.result = ResultEnum.OK;
                     result.Output = asyncResult.Content.ReadAsStringAsync().Result;
 
                     //apiLog
-                    apiLog.Request = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+                    apiLog.Request = Newtonsoft.Json.JsonConvert.SerializeObject(JsonBody);
                     apiLog.Response = asyncResult.Content.ReadAsStringAsync().Result;
                     apiLog.EndDateTime = DateTime.Now;
                 }
@@ -66,7 +66,7 @@ namespace Nedbank.Integration
             {
                 result.result = ResultEnum.API;
                 result.Error = ex.InnerException.ToString();
-                result.Error = "Error occurred in Nedbank API - /nboauth/oauth20/token/";
+                result.Error = "Error occurred in Nedbank API - " + apiLog.Method;
             }
 
             return result;

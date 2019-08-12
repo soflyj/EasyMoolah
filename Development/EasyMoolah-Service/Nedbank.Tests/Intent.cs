@@ -28,7 +28,7 @@ namespace Nedbank.Tests
                 Data = data
             };
 
-            var lightToken = "V1LklcPTbwjYSCjsIJ2z";
+            var lightToken = "qiODsg8l2ecYJb5VD0Jo";
 
             var result = intent.CreateIntent(intentRequest, lightToken);
         
