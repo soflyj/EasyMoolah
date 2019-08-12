@@ -57,6 +57,8 @@
     <EntitySetMapping Name="ErrorLogs">
       <EntityTypeMapping TypeName="EasyMoolahModel.ErrorLog">
         <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
           <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />

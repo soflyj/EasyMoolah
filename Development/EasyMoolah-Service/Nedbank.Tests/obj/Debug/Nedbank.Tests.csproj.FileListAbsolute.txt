@@ -26,3 +26,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoo
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Nedbank.Tests.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Domain.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.SqlServer.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.SqlServer.xml

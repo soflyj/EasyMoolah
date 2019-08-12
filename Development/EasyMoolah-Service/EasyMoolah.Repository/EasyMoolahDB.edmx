@@ -60,6 +60,8 @@
             <PropertyRef Name="Key" />
           </Key>
           <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemType" Type="varchar" MaxLength="50" />
+          <Property Name="ItemKey" Type="int" />
           <Property Name="ApplicationKey" Type="int" />
           <Property Name="Method" Type="varchar(max)" />
           <Property Name="Input" Type="varchar(max)" />
@@ -202,6 +204,8 @@
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemKey" Type="Int32" />
         </EntityType>
         <EntityType Name="NotificationLog">
           <Key>
@@ -307,6 +311,8 @@
           <EntitySetMapping Name="ErrorLogs">
             <EntityTypeMapping TypeName="EasyMoolahModel.ErrorLog">
               <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
                 <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />

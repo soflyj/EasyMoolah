@@ -11,6 +11,7 @@ namespace EasyMoolah.Model
         public string Output { get; set; }
         public string Error { get; set; }
         public string ErrorFriendly { get; set; }
+        public Logs.ApiLog ApiLog { get; set; }
         public DateTime CapturedDate { get; set; }
     }
 }

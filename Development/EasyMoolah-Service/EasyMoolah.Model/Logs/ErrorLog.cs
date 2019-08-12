@@ -8,6 +8,8 @@ namespace EasyMoolah.Model.Logs
 {
     public class ErrorLog: Base
     {
+        public string ItemType { get; set; }
+        public Nullable<int> ItemKey { get; set; }
         public Nullable<int> ApplicationKey { get; set; }
         public string Method { get; set; }
         public string Input { get; set; }

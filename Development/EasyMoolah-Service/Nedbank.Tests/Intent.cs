@@ -6,34 +6,57 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Nedbank.Tests
 {
     [TestClass]
-    public class Intent
+    public class CRUD
     {
         [TestMethod]
-        public async Task CreateIntent()
+        public async Task InsertErrorLog()
         {
-            EasyMoolah.Domain.Integration.Intent intent = new EasyMoolah.Domain.Integration.Intent();
+            EasyMoolah.Domain.Logs logs = new EasyMoolah.Domain.Logs();
 
-            var data = new EasyMoolah.Model.Nedbank.IntentRequest.Data()
+            var result = await logs.InsertErrorLog(new EasyMoolah.Model.Logs.ErrorLog()
             {
-                LoanAmount = "5000",
-                ExpirationDateTime = System.DateTime.Now,
-                Permissions = new List<string>()
-                {   { "ReadPersonalLoanOffers" },
-                    { "ReadSalaryInformation" },
-                    { "SubmitPersonalLoanAcceptance" }
-                }
-            };
-            var intentRequest = new EasyMoolah.Model.Nedbank.IntentRequest.RootObject()
-            {
-                Data = data
-            };
+                ApplicationKey = 1,
+                ChangedDate = System.DateTime.Now,
+                CreatedDate = System.DateTime.Now,
+                EndDate = System.DateTime.Now,
+                Error = "Test Error",
+                ErrorDescription = "Test Error",
+                Input = "Test Input",
+                IsActive = true,
+                ItemKey = 1,
+                ItemType = "Test Item Type",
+                Method = "Test Method",
+                Output = "Test Input",
+                StartDate = System.DateTime.Now
+            });
 
-            var lightToken = "qiODsg8l2ecYJb5VD0Jo";
-
-            var result = intent.CreateIntent(intentRequest, lightToken);
-        
             Assert.IsTrue(result != null);
         }
-}
+
+        [TestMethod]
+        public async Task InsertApiLog()
+        {
+            EasyMoolah.Domain.Logs logs = new EasyMoolah.Domain.Logs();
+
+            var result = await logs.InsertApiLog(new EasyMoolah.Model.Logs.ApiLog()
+            {
+                ApplicationKey = 0,
+                ChangedDate = System.DateTime.Now,
+                CreatedDate = System.DateTime.Now,
+                EndDateTime = System.DateTime.Now,
+                Request = "Test Input",
+                IsActive = true,
+                Method = "Test Method",
+                Response = "Test Input",
+                StartDateTime = System.DateTime.Now,
+                ApiToken = "Test Token",
+                Endpoint = "Test Endpoint",
+                Http = "Test HTTP",
+                Reference = "Test Reference"
+            });
+
+            Assert.IsTrue(result != null);
+        }
+    }
 }
 

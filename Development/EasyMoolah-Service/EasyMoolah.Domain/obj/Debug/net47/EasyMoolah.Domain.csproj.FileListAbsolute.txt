@@ -76,3 +76,4 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Domain.dll.config

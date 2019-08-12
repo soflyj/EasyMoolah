@@ -16,7 +16,7 @@ namespace EasyMoolah.Model.Logs
         public string Reference { get; set; }
         public string Request { get; set; }
         public string Response { get; set; }
-        public System.DateTime? StartDateTime { get; set; }
-        public System.DateTime? EndDateTime { get; set; }
+        public Nullable<System.DateTime> StartDateTime { get; set; }
+        public Nullable<System.DateTime> EndDateTime { get; set; }
     }
 }

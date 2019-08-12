@@ -21,7 +21,7 @@ namespace Nedbank.Integration
             string apiUrl = $"https://api.nedbank.co.za/apimarket/sandbox/nboauth/oauth20/authorize?";
             string redirect = $"https://easymoolah.co.za";
 
-            result.Input = "";
+            result.Input = intentId + " | " + lightToken;
 
             apiLog.ApplicationKey = 0; // From FE
             apiLog.ApiToken = lightToken;

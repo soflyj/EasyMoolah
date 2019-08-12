@@ -45,16 +45,17 @@ namespace Nedbank.Integration
                     body.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
                     body.Add(new KeyValuePair<string, string>("scope", "tpp_client_credential"));
 
-                    var asyncResult = httpClient.PostAsync(apiUrl, new FormUrlEncodedContent(body)).Result;
-
-                    //result
-                    result.result = ResultEnum.OK;
-                    result.Output = asyncResult.Content.ReadAsStringAsync().Result;
+                    var asyncResult = httpClient.PostAsync(apiUrl, new FormUrlEncodedContent(body)).Result;                    
 
                     //apiLog
                     apiLog.Request = Newtonsoft.Json.JsonConvert.SerializeObject(body);
                     apiLog.Response = asyncResult.Content.ReadAsStringAsync().Result;
                     apiLog.EndDateTime = DateTime.Now;
+
+                    //result
+                    result.result = ResultEnum.OK;
+                    result.Output = asyncResult.Content.ReadAsStringAsync().Result;
+                    result.ApiLog = apiLog;
                 }
             }
             catch (Exception ex)
@@ -76,7 +77,7 @@ namespace Nedbank.Integration
             string apiUrl = $"https://api.nedbank.co.za/apimarket/sandbox/nboauth/oauth20/token";
             string redirect = $"https://easymoolah.co.za";
 
-            result.Input = "";
+            result.Input = code;
 
             apiLog.ApplicationKey = 0; // From FE
             apiLog.ApiToken = ""; // If a token is used
