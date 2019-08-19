@@ -18,9 +18,9 @@ namespace Nedbank.Tests
             var lightToken = "qiODsg8l2ecYJb5VD0Jo";
 
             var result = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken);
-        
+
             Assert.IsTrue(result != null);
         }
-}
+    }
 }
 

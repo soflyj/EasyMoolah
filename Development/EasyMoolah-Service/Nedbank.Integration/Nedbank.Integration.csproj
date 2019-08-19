@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Intent.cs" />
+    <Compile Include="PersonalLoanRequests.cs" />
+    <Compile Include="PersonalLoanOffers.cs" />
     <Compile Include="PersonalLoanAuthorisation.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

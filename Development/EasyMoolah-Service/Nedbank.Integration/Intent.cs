@@ -52,14 +52,15 @@ namespace Nedbank.Integration
 
                     var asyncResult = httpClient.PostAsync(apiUrl, content).Result;
 
-                    //result
-                    result.result = ResultEnum.OK;
-                    result.Output = asyncResult.Content.ReadAsStringAsync().Result;
-
                     //apiLog
                     apiLog.Request = Newtonsoft.Json.JsonConvert.SerializeObject(JsonBody);
                     apiLog.Response = asyncResult.Content.ReadAsStringAsync().Result;
                     apiLog.EndDateTime = DateTime.Now;
+
+                    //result
+                    result.result = ResultEnum.OK;
+                    result.Output = asyncResult.Content.ReadAsStringAsync().Result;
+                    result.ApiLog = apiLog;
                 }
             }
             catch (Exception ex)

@@ -54,14 +54,15 @@ namespace Nedbank.Integration
 
                     var asyncResult = httpClient.GetAsync(apiUrl + queryString).Result;
 
-                    //result
-                    result.result = ResultEnum.OK;
-                    result.Output = apiUrl + queryString;
-
                     //apiLog
                     apiLog.Request = queryString;
                     apiLog.Response = apiUrl + queryString;
                     apiLog.EndDateTime = DateTime.Now;
+
+                    //result
+                    result.result = ResultEnum.OK;
+                    result.Output = apiUrl + queryString;
+                    result.ApiLog = apiLog;
                 }
             }
             catch (Exception ex)
