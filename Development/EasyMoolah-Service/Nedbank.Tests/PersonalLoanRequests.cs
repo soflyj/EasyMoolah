@@ -13,9 +13,9 @@ namespace Nedbank.Tests
         {
             EasyMoolah.Domain.Integration.PersonalLoanRequests personalLoanRequests = new EasyMoolah.Domain.Integration.PersonalLoanRequests();
 
-            var intentId  = "cc4f9f1f-fad2-41e3-b965-76127d750f87";
+            var intentId  = "a3b544d7-c146-4292-b980-9ef7737e5274";
             var offerId = "605350";
-            var lightToken = "n81Sf0wp2CXdSNtSvOqT";
+            var lightToken = "LgNmRt0rB5pVZ1PvfR1g";
 
             var result = personalLoanRequests.RegisterPersonalLoanOffer(intentId, offerId, lightToken);
 

@@ -23,7 +23,7 @@ namespace EasyMoolah.Domain.Integration
         /// <returns></returns>
         public async Task<Model.Nedbank.PersonalLoanRequestsResponse.RootObject> RegisterPersonalLoanOffer(string intentId, string offerId, string lightToken)
         {
-            var result = personalLoaRequests.RegisterPersonalLoanOffer(intentId, offerId,  lightToken);
+            var result = personalLoaRequests.RegisterPersonalLoanOfferAsync(intentId, offerId,  lightToken);
             // await logs.LogIntegration(result); Why doesn't this work
 
             var response = JsonConvert.DeserializeObject<Model.Nedbank.PersonalLoanRequestsResponse.RootObject>(result.Output);

@@ -13,7 +13,7 @@ namespace Nedbank.Integration
 {
     public class PersonalLoanRequests
     {
-        public Result RegisterPersonalLoanOffer(string intentId, string offerId, string lightToken)
+        public Result RegisterPersonalLoanOfferAsync(string intentId, string offerId, string lightToken)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
@@ -48,25 +48,28 @@ namespace Nedbank.Integration
                     httpClient.DefaultRequestHeaders.TryAddWithoutValidation("x-ibm-client-id", client_id);
                     httpClient.DefaultRequestHeaders.TryAddWithoutValidation("x-ibm-client-secret", client_secret);
 
-                    var body = new List<KeyValuePair<string, string>>();
-                    body.Add(new KeyValuePair<string, string>("SelectedOffer", offerId));                  
 
-                    var asyncResult = httpClient.PostAsync(apiUrl, new FormUrlEncodedContent(body)).Result;
+                    var method = new HttpMethod("PATCH");
+                    string jsonbody = "{\"SelectedOffer\":\"605350\"}";
+                    var request = new HttpRequestMessage(method, string.Format(apiUrl))
+                    {
+                        Content = new StringContent(jsonbody, Encoding.Default, "application/json")
+                    };
+                    request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
 
+                    var asyncResult = httpClient.SendAsync(request).Result;
 
 
-
-                    var asyncResult = httpClient.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), apiUrl) { Content = JsonConvert.SerializeObject(body).ToString()});
 
                     //apiLog
                     apiLog.Request = "";
-                    apiLog.Response = asyncResult.Result.Content.ReadAsStringAsync().Result;
+                    apiLog.Response = asyncResult.Content.ReadAsStringAsync().Result;
                     apiLog.EndDateTime = DateTime.Now;
 
                     //result
                     result.result = ResultEnum.OK;
-                    result.Output = asyncResult.Result.Content.ReadAsStringAsync().Result;
+                    result.Output = asyncResult.Content.ReadAsStringAsync().Result; ;
                     result.ApiLog = apiLog;
                 }
             }
