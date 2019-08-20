@@ -9,7 +9,6 @@
     <Compile Remove="Borrower.cs" />
     <Compile Remove="Integration\Intent.cs" />
     <Compile Remove="Integration\Lead.cs" />
-    <Compile Remove="Integration\Nedbank\PersonalLoanOffers - Copy.cs" />
     <Compile Remove="Integration\Offer.cs" />
     <Compile Remove="Notification.cs" />
   </ItemGroup>

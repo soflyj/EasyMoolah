@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD.cs" />
+    <Compile Include="PersonalLoan.cs" />
     <Compile Include="PersonalLoanRequests.cs" />
     <Compile Include="PersonalLoanOffers.cs" />
     <Compile Include="PersonalLoanAuthorisation.cs" />
-    <Compile Include="Intent.cs" />
+    <Compile Include="Logs.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

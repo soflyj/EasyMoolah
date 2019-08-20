@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PersonalLoan.cs" />
     <Compile Include="Intent.cs" />
     <Compile Include="PersonalLoanRequests.cs" />
     <Compile Include="PersonalLoanOffers.cs" />
