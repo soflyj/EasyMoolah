@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -131,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "EasyMoolah-UI"
+  "defaultProject": "EasyMoolah-Web-Shell"
 }

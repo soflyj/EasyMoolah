@@ -1,17 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-
 import { Routes, RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './application/not-found/not-found.component';
-import { StartPageComponent } from './application/start-page/start-page.component';
+import { LandingScreenComponent } from './application/landing-screen/landing-screen.component';
 import { Step1Component } from './application/data-points/step1/step1.component';
-import { DataPointsStepperComponent } from './application/data-points/data-points-stepper/data-points-stepper.component';
+import { Step2Component } from './application/data-points/step2/step2.component'
+
 
 
 const appRoutes: Routes = [
-  { path: 'dps', component: DataPointsStepperComponent},
+  { path: '', component: LandingScreenComponent, pathMatch: 'full' },
+  //Forward
+  { path: 'step/1', component: Step1Component },
+  { path: 'step/2', component: Step2Component },
+  //Back
+  { path: 'step/-1', component: Step1Component },
+  { path: 'step/-2', component: Step2Component },
   { path: '**', component: NotFoundComponent },
   { path: 'notfound', component: NotFoundComponent }
 ];
