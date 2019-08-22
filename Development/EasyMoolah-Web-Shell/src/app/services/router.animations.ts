@@ -2,7 +2,7 @@ import { trigger, animate, style, group, query, transition } from '@angular/anim
 
 export const routerTransition = trigger('routerTransition', [
   // Forward
-  transition('* => step/1', [
+  transition('* => step-1', [
     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
       , { optional: true }),
     group([
@@ -16,7 +16,7 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-  transition('* => step/2', [
+  transition('* => step-2', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
         , { optional: true }),
@@ -30,7 +30,21 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-  // transition('* => step3', [
+  transition('* => step-3', [
+    group([
+      query(':enter, :leave', style({ position: 'fixed', width: '100%' })
+        , { optional: true }),
+      query(':enter', [
+        style({ transform: 'translateX(100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+      ], { optional: true }),
+      query(':leave', [
+        style({ transform: 'translateX(0%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
+      ], { optional: true }),
+    ])
+  ]),
+  // transition('* => step-4', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -44,7 +58,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step4', [
+  // transition('* => step-5', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -58,7 +72,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step5', [
+  // transition('* => step-6', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -72,7 +86,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step6', [
+  // transition('* => step-7', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -86,7 +100,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step7', [
+  // transition('* => step-8', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -100,7 +114,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step8', [
+  // transition('* => step-9', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -114,7 +128,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step9', [
+  // transition('* => step-10', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -128,7 +142,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step10', [
+  // transition('* => step-11', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -142,7 +156,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step11', [
+  // transition('* => step-12', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -156,7 +170,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step12', [
+  // transition('* => step-13', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -170,7 +184,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step13', [
+  // transition('* => step-14', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -184,7 +198,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step14', [
+  // transition('* => step-15', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -198,7 +212,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step15', [
+  // transition('* => step-16', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -212,22 +226,8 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => step16', [
-  //   group([
-  //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-  //       , { optional: true }),
-  //     query(':enter', [
-  //       style({ transform: 'translateX(100%)' }),
-  //       animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-  //     ], { optional: true }),
-  //     query(':leave', [
-  //       style({ transform: 'translateX(0%)' }),
-  //       animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
-  //     ], { optional: true }),
-  //   ])
-  // ]),
-  //   Back
-  transition('* => step/-1', [
+  //  Back
+  transition('* => stepped-1', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
         , { optional: true }),
@@ -241,7 +241,7 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-  transition('* => step/-2', [
+  transition('* => stepped-2', [
     group([
       query(':enter, :leave', style({ position: 'fixed', width: '100%' })
         , { optional: true }),
@@ -255,7 +255,21 @@ export const routerTransition = trigger('routerTransition', [
       ], { optional: true }),
     ])
   ]),
-  // transition('* => bstep3', [
+  transition('* => stepped-3', [
+    group([
+      query(':enter, :leave', style({ position: 'fixed', width: '100%' })
+        , { optional: true }),
+      query(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+      ], { optional: true }),
+      query(':leave', [
+        style({ transform: 'translateX(0%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
+      ], { optional: true }),
+    ])
+  ]),
+  // transition('* => step/-4', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -269,7 +283,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep4', [
+  // transition('* => step/-5', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -283,7 +297,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep5', [
+  // transition('* => step/-6', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -297,7 +311,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep6', [
+  // transition('* => step/-7', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -311,7 +325,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep7', [
+  // transition('* => step/-8', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -325,7 +339,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep8', [
+  // transition('* => step/-9', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -339,7 +353,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep9', [
+  // transition('* => step/-10', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -353,7 +367,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep10', [
+  // transition('* => step/-11', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -367,7 +381,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep11', [
+  // transition('* => step/-12', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -381,7 +395,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep12', [
+  // transition('* => step/-13', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -395,7 +409,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep13', [
+  // transition('* => step/-14', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -409,7 +423,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep14', [
+  // transition('* => step/-15', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),
@@ -423,21 +437,7 @@ export const routerTransition = trigger('routerTransition', [
   //     ], { optional: true }),
   //   ])
   // ]),
-  // transition('* => bstep15', [
-  //   group([
-  //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
-  //       , { optional: true }),
-  //     query(':enter', [
-  //       style({ transform: 'translateX(-100%)' }),
-  //       animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-  //     ], { optional: true }),
-  //     query(':leave', [
-  //       style({ transform: 'translateX(0%)' }),
-  //       animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
-  //     ], { optional: true }),
-  //   ])
-  // ]),
-  // transition('* => bstep16', [
+  // transition('* => step/-16', [
   //   group([
   //     query(':enter, :leave', style({ position: 'fixed', width: '100%' })
   //       , { optional: true }),

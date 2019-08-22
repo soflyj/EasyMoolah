@@ -1,3 +1,5 @@
+import { ApplicationModel } from 'src/app/models/application.model';
+
 // import { Injectable } from '@angular/core';
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable } from 'rxjs';
@@ -7,7 +9,22 @@
 // @Injectable({
 //   providedIn: 'root'
 // })
-// export class CommonService {
+export class CommonService {
+    public guid: string;
+    public application: ApplicationModel;
+
+    GetGUID(): string {
+        this.application = JSON.parse(window.localStorage.getItem('application'))
+        return this.application.guid;
+    }
+
+    SetApplication(application: ApplicationModel) {
+        this.application = application;
+        this.guid = application.guid;
+        window.localStorage.setItem('application', JSON.stringify(application));
+    }
+
+}
 //   private baseUrl = '';
 
 //   constructor(
@@ -140,7 +157,7 @@
 
 //     return this.http.post<T>(apiUrl, JSON.stringify(item), headers);
 //   }
- 
+
 //   addReturnsModel<T>(item: T, apiUrl: string): Observable<T> {
 //     apiUrl = `${this.baseUrl}/${apiUrl}`;
 //     const headers = this.getApiRequestOptions();
