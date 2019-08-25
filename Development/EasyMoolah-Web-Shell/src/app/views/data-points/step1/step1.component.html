@@ -1,0 +1,71 @@
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3 s12">
+        <div class="image-radio-buttons service-options">
+          <p class="center-align">{{question}}</p>
+          <div class="radio-group">
+            <input type="radio" name="service" id="home-improvement" value="home-improvement" class="input-hidden"
+              formControlName="service" />
+            <label for="home-improvement" class="col s6 m3">
+              <span class="tli-homes_11"></span>
+              <br><strong>Home Improvement</strong>
+            </label>
+
+            <input type="radio" name="service" id="life-events" value="life-events" placeholder="service" class="input-hidden"
+              formControlName="service" />
+            <label for="life-events" class="col s6 m3">
+              <span class="tli-wedding_16"></span>
+              <br><strong>Life Events</strong>
+            </label>
+
+            <input type="radio" name="service" id="veterinary" value="veterinary" class="input-hidden" formControlName="service" />
+            <label for="veterinary" class="col s6 m3">
+              <span class="tli-animal_19"></span>
+              <br><strong>Veterinary</strong>
+            </label>
+
+            <input type="radio" name="service" id="health-care" value="health-care" class="input-hidden"
+              formControlName="service" />
+            <label for="health-care" class="col s6 m3">
+              <span class="tli-healthcare_19"></span>
+              <br><strong>Health-Care</strong>
+            </label>
+
+            <input type="radio" name="service" id="funeral" value="funeral" class="input-hidden" formControlName="service" />
+            <label for="funeral" class="col s6 m3">
+              <span class="tli-halloween_03"></span>
+              <br><strong>Funeral</strong>
+            </label>
+
+            <input type="radio" name="service" id="travel" value="travel" class="input-hidden" formControlName="service" />
+            <label for="travel" class="col s6 m3">
+              <span class="tli-travel_01"></span>
+              <br><strong>Travel</strong>
+            </label>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--row-->
+  </div>
+  <footer class="container">
+    <div class="row pagination-btns">
+      <div class="col s12 m6 offset-m3">
+        <div class="col s5 m4">
+          <!-- <a class="waves-effect waves-light btn-small disabled" (click)=""><i class="material-icons left">chevron_left</i>Prev</a> -->
+        </div>
+        <div class="col s2 m4">
+        </div>
+        <div class="col s5 m4">
+          <!-- <a class="waves-effect waves-light btn-small" (click)="next()"><i class="material-icons right">chevron_right</i>Next</a> -->
+          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>

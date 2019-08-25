@@ -1,0 +1,226 @@
+/*==========================
+General
+============================*/
+html, body {font-family: 'Montserrat', sans-serif;}
+h1 {font-size:28px; font-weight: 700}
+h2 {
+    font-size: 22px;
+    font-weight: 700
+}
+h3 {font-size:21px; font-weight: 700}
+h4 {font-size: 18px; font-weight: 700}
+p {font-size:16px;}
+.amount_output p {font-size:1.5em; margin-top:0}
+.btn, .btn-small, .btn-large {
+    background-color: #55c4d1;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+.btn:hover, .btn-large:hover, .btn-small:hover {background-color:#0393a0}
+.progress {background-color:rgba(160,222,229,0.5)}
+.progress .determinate {background-color: #55c4d1}
+.center-align-btn {display: block; margin:0 auto}
+.page-progress {margin: 30px 0 50px}
+input[type=text]:not(.browser-default):focus:not([readonly]) {border-bottom-color: #55c4d1}
+input[type=range]+.thumb {display:none}
+.input-hidden {
+	position: absolute;
+	left: -9999px;
+}
+/*form .mat-form-field-appearance-legacy.mat-form-field-invalid:not(.mat-focused) .mat-form-field-ripple {height:0}*/
+.service-options input[type="radio"]:checked + label > span {}
+.service-options strong {text-align: center; display: block}
+/* Stuff after this is only to make things more pretty */
+.sub-service-buttons input[type="radio"] + label {
+    display: block;
+    background-color: #eee;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    height: 80px;
+    margin-right: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 80%;
+}
+.sub-service-buttons input[type="radio"]:checked + label {background-color:#2a2e76};
+.sub-service-buttons input[type="radio"]:checked + label:hover {color:#fff}
+.image-radio-buttons input[type="radio"] + label {display:block;text-align: center; padding: 10px}
+.service-options input[type="radio"] + label > span {font-size:40px; display: block; text-align: center; margin:10px 0 0}
+.service-options.image-radio-buttons input[type="radio"] + label:hover {color:#2e9eab; cursor: pointer;}
+.service-options.image-radio-buttons input[type="radio"] + label:hover > span {}
+.image-radio-buttons.bank-options input[type="radio"] + label:hover {background-color:transparent; cursor: pointer;}
+.image-radio-buttons input[type="radio"] + label:hover
+.service-options input[type="radio"] + label:last-child > span {}
+.service-options input[type="radio"] + label:hover {color:#fff}
+.service-options input[type="radio"]:checked + label > span {color:#fff}
+.service-options input[type="radio"]:checked + label {background-color:#2a2e76; color:#fff}
+.service-options input[type="radio"]:checked + label strong {color:#fff}
+.bank-options input[type="radio"] + label > span {width: 110px; height:110px; display:block; background-image: url(../images/bank-logos-sprite-sheet.png); opacity: 0.5;}
+.bank-options input[type="radio"] + label:hover > span, .bank-options input[type="radio"]:checked + label > span {opacity:1; background-color:transparent}
+.absa-logo {background-position:-140px -10px}
+.bank-options input[type="radio"] + label:hover .absa-logo, .bank-options input[type="radio"]:checked + label .absa-logo {background-position:-10px -10px}
+.capitec-logo {background-position:-140px -140px}
+.bank-options input[type="radio"] + label:hover .capitec-logo, .bank-options input[type="radio"]:checked + label .capitec-logo {background-position:-10px -140px}
+.fnb-logo {background-position:-270px -140px}
+.bank-options input[type="radio"] + label:hover .fnb-logo, .bank-options input[type="radio"]:checked + label .fnb-logo {background-position:-270px -10px}
+.nedbank-logo {background-position:-140px -270px}
+.bank-options input[type="radio"] + label:hover .nedbank-logo, .bank-options input[type="radio"]:checked + label .nedbank-logo {background-position:-10px -270px}
+.sb-logo {background-position:-400px -10px}
+.bank-options input[type="radio"] + label:hover .sb-logo, .bank-options input[type="radio"]:checked + label .sb-logo {background-position:-270px -270px}
+
+/*Begin styling for range slider */
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3f48cc;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #55c4d1;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3f48cc;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #3f48cc;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #3f48cc;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3f48cc;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #3f48cc;
+}
+/*End styling for range slider*/
+
+/*==========================
+Header
+============================*/
+header {margin-bottom: 30px}
+.logo {display: block; margin: 0 auto}
+/*==========================
+Body/Content
+============================*/
+.pagination-btns .material-icons.left {margin-right:5px}
+.pagination-btns .btn-small .material-icons.right {margin-left:5px}
+.amount_output {
+    display: block;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;	
+}
+form mat-form-field .mat-form-field-underline {height:0}
+.next-btn {float:right}
+[type="radio"]:checked+span {color:#2e9eab}
+.address-input-field input, .address-input input {max-width:100%}
+
+/*==========================
+Footer
+============================*/
+.footer_menu_bottom a {color:#55c4d1}
+.footer_menu_bottom a:hover {color:#2e9eab; text-decoration: underline}
+ul.footer_menu_bottom {
+	display:block; width:160px; margin:150px auto 0;
+	margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 50%;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+.footer_menu_bottom li {float:left}
+.footer_menu_bottom li::after {content:'|'; padding: 0 10px; display:inline-block}
+.footer_menu_bottom li:last-child::after {content: ''; padding: 0}
+input.no-double-underline-input, input.no-double-underline-input:not([type]):focus:not([readonly]) {border-bottom:0; margin: 0; box-shadow:none}
+.no-double-underline .mat-form-field-appearance-legacy .mat-form-field-infix {padding-bottom: 0}
+form .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-empty {color:#2e9eab}
+.fsp-result-table label {display:block}
+.fsp-result-table tr {border-bottom:none}
+.fsp_logo {width:90px; height: 90px;}
+/*==========================
+Media Queries
+============================*/
+@media only screen and (max-width:600px) {
+    .mat-progress-bar {height: 6px}
+    .image-radio-buttons input[type="radio"] + label {min-height: 140px}
+    .fsp-result-table .call-btn {
+        padding: 15px 10px;
+        font-size: 12px;
+        line-height: 20px!important;
+    }
+    .fsp-result-table .call-btn i {display:block; margin-bottom:5px}
+}
+@media only screen and (min-width:601px) {
+    .service-options input[type="radio"] + label {height:120px; margin-bottom:20px}
+    .btn, .btn-small, .btn-large {padding: 0px 9px;}
+    .service-options input[type="radio"] + label > span {margin:10px 0}
+    .fsp_logo {width:160px; height:160px}
+}

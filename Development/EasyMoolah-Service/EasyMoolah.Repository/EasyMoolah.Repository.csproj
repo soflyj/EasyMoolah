@@ -51,18 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APILog.cs">
+    <Compile Include="ApiLog.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Application.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Borrower.cs">
+    <Compile Include="Configuration.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRUD\logRepo.cs" />
-    <Compile Include="CRUD\commonRepo.cs" />
-    <Compile Include="CRUD\fincheckRepo.cs" />
     <Compile Include="EasyMoolahDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,7 +85,7 @@
     <Compile Include="Question.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Result.cs">
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>

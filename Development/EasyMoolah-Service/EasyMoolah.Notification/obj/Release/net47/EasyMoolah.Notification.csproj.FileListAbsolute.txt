@@ -8,7 +8,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Rel
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Newtonsoft.Json.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EasyMoolah.Model.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.AssemblyInfoInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.AssemblyInfo.cs

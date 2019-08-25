@@ -1,0 +1,79 @@
+import { Component, OnInit } from '@angular/core';
+import { routerTransition } from '../../../services/router.animations';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HeaderService } from '../../../services/header.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
+
+@Component({
+  selector: 'app-step6',
+  templateUrl: './step6.component.html',
+  styleUrls: ['../../../../assets/css/em_site_theme.css'],
+  animations: [routerTransition]
+})
+export class Step6Component implements OnInit {
+
+  private stepForm: FormGroup;
+  private dataPoint: DataPointModel = new DataPointModel();
+  private question: string;
+  private answer: boolean;
+  private jar: any;
+  private startTime
+  private credit_check: boolean;
+
+  constructor(private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private headerService: HeaderService,
+    private dataPointService: DataPointService,
+    private commonService: CommonService) {
+    this.question = 'I give permission for EasyMoolah to do a credit check.';
+  }
+
+  ngOnInit() {
+
+    this.activatedRoute.params.subscribe((params: any) => {
+      this.jar = params.jar;
+    });
+    this.startTime = new Date();
+    this.headerService.mode.next('determinate');
+    this.headerService.progress.next(30);
+
+    if (this.dataPointService.getPreviousDataPointState(6) != null) {
+      this.answer = Boolean(this.dataPointService.getPreviousDataPointState(6)[0]);
+    }
+
+    if (this.jar != this.commonService.GetGUID()) {
+      this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+    }
+
+    // Reactive validation
+    this.stepForm = new FormGroup({
+      'credit_check': new FormControl(
+        '',
+        [Validators.required]),
+    });
+
+    this.credit_check = this.answer;
+  }
+
+  Next() {
+    this.dataPoint.Question = [];
+    this.dataPoint.Answer = [];
+    
+    this.dataPoint.Id = 6;
+    this.dataPoint.Question.push(this.question);
+    this.dataPoint.Answer.push(this.stepForm.get('credit_check').value);
+    this.dataPoint.StartTime = this.startTime;
+    this.dataPoint.EndTime = new Date();
+    this.dataPointService.addDataPoint(this.dataPoint);
+
+    this.router.navigateByUrl('/step-7/' + this.commonService.GetGUID());
+  }
+
+  Back() {
+    this.router.navigateByUrl('/stepped-5/' + this.commonService.GetGUID());
+  }
+}

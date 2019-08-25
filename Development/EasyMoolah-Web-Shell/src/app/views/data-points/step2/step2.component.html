@@ -1,0 +1,113 @@
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+				<div class="image-radio-buttons service-options">
+					<p class="center-align">{{question}}</p>
+					<div class="radio-group">
+						<input type="radio" name="sub-service" id="plumbing-service" class="input-hidden" formControlName="sub-service"
+						value="plumbing-service" />
+						<label for="plumbing-service" class="col s6 m4">
+							<span class="tli-handtools_05"></span>
+							<br><strong>Plumbing</strong>
+						</label>
+						<input type="radio" name="sub-service" id="roofing-service" class="input-hidden" formControlName="sub-service"
+						 value="roofing-service" />
+						<label for="roofing-service" class="col s6 m4">
+							<span class="tli-homes_06"></span>
+							<br><strong>Roofing</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="general-maintenance" class="input-hidden" formControlName="sub-service"
+						 value="general-maintenance" />
+						<label for="general-maintenance" class="col s6 m4">
+							<span class="tli-ecology_13"></span>
+							<br><strong>Solar</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="accidental-damage" class="input-hidden" formControlName="sub-service"
+						 value="accidental-damage" />
+						<label for="accidental-damage" class="col s6 m4">
+							<span class="tli-handtools_18"></span>
+							<br><strong>Remodel</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="aesthetic-maintenance" class="input-hidden" formControlName="sub-service"
+						 value="aesthetic-maintenance" />
+						<label for="aesthetic-maintenance" class="col s6 m4">
+							<span class="tli-realestate_18"></span>
+							<br><strong>Housing Addition</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="pool-spa" class="input-hidden" formControlName="sub-service"
+						 value="pool-spa" />
+						<label for="pool-spa" class="col s6 m4">
+							<span class="tli-realestate_12"></span>
+							<br><strong>Pool / Spa</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="hvac" class="input-hidden" formControlName="sub-service"
+						 value="hvac" />
+						<label for="hvac" class="col s6 m4">
+							<span class="tli-industry_05"></span>
+							<br><strong>HVAC</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="windows-sliding" class="input-hidden" formControlName="sub-service"
+						 value="windows-sliding" />
+						<label for="windows-sliding" class="col s6 m4">
+							<span class="tli-law_04"></span>
+							<br><strong>Windows / Sliding</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="pest-control" class="input-hidden" formControlName="sub-service"
+						 value="pest-control" />
+						<label for="pest-control" class="col s6 m4">
+							<span class="tli-ecology_13"></span>
+							<br><strong>Pest Control</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="furniture-redecorating" class="input-hidden" formControlName="sub-service"
+						 value="furniture-redecorating" />
+						<label for="furniture-redecorating" class="col s6 m4">
+							<span class="tli-furniture_10"></span>
+							<br><strong>Furniture / Redecorating</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="landscaping" class="input-hidden" formControlName="sub-service"
+						 value="landscaping" />
+						<label for="landscaping" class="col s6 m4">
+							<span class="tli-leaf_07"></span>
+							<br><strong>Landscaping</strong>
+						</label>
+
+						<input type="radio" name="sub-service" id="other-home-improvement" class="input-hidden" formControlName="sub-service"
+						value="other-home-improvement" />
+					   <label for="other-home-improvement" class="col s6 m4">
+						   <span class="tli-realestate_20"></span>
+						   <br><strong>Other Home Improvement</strong>
+					   </label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--row-->
+	</div>
+	<footer class="container">
+		<div class="row pagination-btns">
+			<div class="col s12 m6 offset-m3">
+				<div class="col s5 m4">
+					<button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
+				</div>
+				<div class="col s2 m4">
+				</div>
+				<div class="col s5 m4">
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>

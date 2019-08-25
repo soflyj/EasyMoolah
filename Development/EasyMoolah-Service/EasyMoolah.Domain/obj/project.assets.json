@@ -17,6 +17,20 @@
           "lib/net461/AutoMapper.dll": {}
         }
       },
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.1": {
         "type": "package",
         "compile": {
@@ -51,20 +65,6 @@
           "bin/placeholder/EasyMoolah.Model.dll": {}
         }
       },
-      "EasyMoolah.Notification/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EasyMoolah.Model": "1.0.0",
-          "EasyMoolah.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EasyMoolah.Notification.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EasyMoolah.Notification.dll": {}
-        }
-      },
       "EasyMoolah.Repository/1.0.0": {
         "type": "project",
         "compile": {
@@ -74,26 +74,23 @@
           "bin/placeholder/EasyMoolah.Repository.dll": {}
         }
       },
-      "Fincheck.Integration/1.0.0": {
+      "Nedbank.Integration/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "EasyMoolah.Model": "1.0.0",
-          "EasyMoolah.Repository": "1.0.0",
-          "Newtonsoft.Json": "12.0.1"
+          "EasyMoolah.Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fincheck.Integration.dll": {}
+          "bin/placeholder/Nedbank.Integration.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fincheck.Integration.dll": {}
+          "bin/placeholder/Nedbank.Integration.dll": {}
         }
       }
     }
   },
   "libraries": {
     "AutoMapper/8.0.0": {
-      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
       "type": "package",
       "path": "automapper/8.0.0",
       "files": [
@@ -109,8 +106,38 @@
         "lib/netstandard2.0/AutoMapper.xml"
       ]
     },
+    "EntityFramework/6.2.0": {
+      "sha512": "+aB/cnEAr9KqVMjmZwu+Fzy3EOPjCIzNsPAUyn19WbB2u3LFHd2OB3X56ohAj7EBf2hppl9M27nlRnkQxOhoAA==",
+      "type": "package",
+      "path": "entityframework/6.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -197,49 +224,44 @@
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
       "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
     },
-    "EasyMoolah.Notification/1.0.0": {
-      "type": "project",
-      "path": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj",
-      "msbuildProject": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj"
-    },
     "EasyMoolah.Repository/1.0.0": {
       "type": "project",
       "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
       "msbuildProject": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj"
     },
-    "Fincheck.Integration/1.0.0": {
+    "Nedbank.Integration/1.0.0": {
       "type": "project",
-      "path": "../Fincheck.Integration/Fincheck.Integration.csproj",
-      "msbuildProject": "../Fincheck.Integration/Fincheck.Integration.csproj"
+      "path": "../Nedbank.Integration/Nedbank.Integration.csproj",
+      "msbuildProject": "../Nedbank.Integration/Nedbank.Integration.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
       "AutoMapper >= 8.0.0",
       "EasyMoolah.Model >= 1.0.0",
-      "EasyMoolah.Notification >= 1.0.0",
       "EasyMoolah.Repository >= 1.0.0",
-      "Fincheck.Integration >= 1.0.0"
+      "EntityFramework >= 6.2.0",
+      "Nedbank.Integration >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jarrod\\.nuget\\packages\\": {},
+    "C:\\Users\\Jarro\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
+      "projectUniqueName": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
       "projectName": "EasyMoolah.Domain",
-      "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
-      "packagesPath": "C:\\Users\\Jarrod\\.nuget\\packages\\",
-      "outputPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\obj\\",
+      "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\EasyMoolah.Domain.csproj",
+      "packagesPath": "C:\\Users\\Jarro\\.nuget\\packages\\",
+      "outputPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jarrod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -252,17 +274,14 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
-              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
             },
-            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
-              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             },
-            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
-              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
-            },
-            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj": {
-              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\Fincheck.Integration\\Fincheck.Integration.csproj"
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Nedbank.Integration\\Nedbank.Integration.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\Nedbank.Integration\\Nedbank.Integration.csproj"
             }
           }
         }
@@ -279,6 +298,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.2.0, )"
           }
         }
       }

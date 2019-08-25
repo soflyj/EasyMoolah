@@ -5,14 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Application.cs" />
+    <Compile Remove="Borrower.cs" />
+    <Compile Remove="Integration\Intent.cs" />
+    <Compile Remove="Integration\Lead.cs" />
+    <Compile Remove="Integration\Offer.cs" />
+    <Compile Remove="Notification.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
-    <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj" />
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
-    <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj" />
+    <ProjectReference Include="..\Nedbank.Integration\Nedbank.Integration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

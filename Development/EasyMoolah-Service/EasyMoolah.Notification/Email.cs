@@ -97,7 +97,7 @@ namespace EasyMoolah.Notification
                 result = await SendEmail();
                 if (result.resultCode == 0)
                 {
-                    EasyMoolah.Repository.CRUD.logRepo.InsertNotification(new NotificationLog()
+                    EasyMoolah.Repository.CRUD.LogRepo.InsertNotification(new NotificationLog()
                     {
                         ApplicationKey = _request.applicationKey,
                         NotificationType = "email",
@@ -162,7 +162,7 @@ namespace EasyMoolah.Notification
                 result = await SendEmail();
                 if (result.resultCode == 0)
                 {
-                    EasyMoolah.Repository.CRUD.logRepo.InsertNotification(new NotificationLog()
+                    EasyMoolah.Repository.CRUD.LogRepo.InsertNotification(new NotificationLog()
                     {
                         ApplicationKey = _request.applicationKey,
                         NotificationType = "email",

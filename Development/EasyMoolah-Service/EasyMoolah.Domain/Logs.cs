@@ -1,4 +1,6 @@
-﻿using EasyMoolah.Model;
+﻿using AutoMapper;
+using EasyMoolah.Model;
+using EasyMoolah.Repository;
 using System;
 using System.Threading.Tasks;
 
@@ -6,14 +8,90 @@ namespace EasyMoolah.Domain
 {
     public class Logs
     {
-        public static void InsertNotification(Repository.NotificationLog _notificationLog)
+        public async Task<int> InsertErrorLog(Model.Logs.ErrorLog _errorLog)
         {
-            Repository.CRUD.logRepo.InsertNotification(_notificationLog);
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Model.Logs.ErrorLog, Repository.ErrorLog>();
+            });
+
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.ErrorLog>(_errorLog);
+
+                context.ErrorLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity.Key;
+            }
         }
 
-        public static void InsertError(Repository.ErrorLog _errorLog)
+
+        public async Task<Repository.ApiLog> InsertApiLog(Model.Logs.ApiLog _apiLog)
         {
-            Repository.CRUD.logRepo.InsertError(_errorLog);
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Model.Logs.ApiLog, Repository.ApiLog>();
+            });
+
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.ApiLog>(_apiLog);
+
+                context.ApiLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity;
+            }
+        }
+
+        public async Task LogIntegration(Result _result)
+        {
+            // Default
+            _result.ApiLog.IsActive = true;
+            _result.ApiLog.CreatedDate = DateTime.Now;
+            _result.ApiLog.ChangedDate = DateTime.Now;
+            _result.ApiLog.Reference = "";
+
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Model.Logs.ApiLog, Repository.ApiLog>();
+                cfg.CreateMap<Model.Logs.ErrorLog, Repository.ErrorLog>();
+            });
+
+            using (var context = new EasyMoolahEntities())
+            {
+                // ApiLog
+                var apiLogEntity = Mapper.Map<Repository.ApiLog>(_result.ApiLog);
+                context.ApiLogs.Add(apiLogEntity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+
+                if (_result.result != ResultEnum.OK)
+                {
+                    // Error Log
+                    var entity = Mapper.Map<Repository.ErrorLog>(new Model.Logs.ErrorLog()
+                    {
+                        ItemType = "ApiLog",
+                        ItemKey = apiLogEntity.Key,
+                        ApplicationKey = _result.ApiLog.ApplicationKey,
+                        StartDate = apiLogEntity.StartDateTime,
+                        EndDate = apiLogEntity.EndDateTime,
+                        Error = _result.Error,
+                        ErrorDescription = _result.ErrorFriendly,
+                        Method = apiLogEntity.Method,
+                        Input = _result.Input,
+                        Output = _result.Output,
+                        IsActive = true,
+                        ChangedDate = System.DateTime.Now,
+                        CreatedDate = System.DateTime.Now,
+                    }); ;
+
+                    context.ErrorLogs.Add(entity);
+                    await context.SaveChangesAsync()
+                        .ConfigureAwait(false);
+                }
+            }
         }
     }
 }

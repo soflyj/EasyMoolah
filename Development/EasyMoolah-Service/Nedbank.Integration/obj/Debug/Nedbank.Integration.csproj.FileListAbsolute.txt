@@ -1,0 +1,12 @@
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\EasyMoolah.Model.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Newtonsoft.Json.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Newtonsoft.Json.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csproj.CoreCompileInputs.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csproj.CopyComplete
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.pdb

@@ -5,6 +5,25 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="EasyMoolahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApiLog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationKey" Type="int" Nullable="false" />
+          <Property Name="ApiToken" Type="varchar" MaxLength="250" />
+          <Property Name="Method" Type="varchar" MaxLength="250" />
+          <Property Name="Http" Type="varchar" MaxLength="25" />
+          <Property Name="Endpoint" Type="varchar" MaxLength="250" />
+          <Property Name="Reference" Type="varchar(max)" />
+          <Property Name="Request" Type="varchar(max)" />
+          <Property Name="Response" Type="varchar(max)" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Application">
           <Key>
             <PropertyRef Name="Key" />
@@ -13,49 +32,36 @@
           <Property Name="Guid" Type="uniqueidentifier" />
           <Property Name="IPAddress" Type="varchar" MaxLength="50" />
           <Property Name="Browser" Type="varchar" MaxLength="100" />
+          <Property Name="FormData" Type="varchar(max)" />
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ChangedDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="Borrower">
+        <EntityType Name="Configuration">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
           <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ApplicationKey" Type="int" Nullable="false" />
-          <Property Name="IdNumber" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="MobileNumber" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="LandlineNumber" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="RequiredLoanAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="RepaymentPeriod" Type="int" Nullable="false" />
-          <Property Name="IsUnderDebtReview" Type="bit" Nullable="false" />
-          <Property Name="IsDeclaredInsolvent" Type="bit" Nullable="false" />
-          <Property Name="PermissionToDoCreditCheck" Type="bit" Nullable="false" />
-          <Property Name="IsPopicompliant" Type="bit" Nullable="false" />
-          <Property Name="EmploymentStatus" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="GrossMonthlyIncome" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="NettMonthlyIncome" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="TotalMonthlyExpense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="BankName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="NumberOfDependants" Type="int" Nullable="false" />
-          <Property Name="ResidenceType" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="FullAddress" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="StreetName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="SuburbName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="CityName" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="PostCode" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="ChangeDate" Type="datetime" Nullable="false" />
-          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="varchar" MaxLength="100" />
+          <Property Name="Value" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ChangedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
           <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemType" Type="varchar" MaxLength="50" />
+          <Property Name="ItemKey" Type="int" />
           <Property Name="ApplicationKey" Type="int" />
           <Property Name="Method" Type="varchar(max)" />
           <Property Name="Input" Type="varchar(max)" />
@@ -64,6 +70,9 @@
           <Property Name="ErrorDescription" Type="varchar(max)" />
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ChangedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="NotificationLog">
           <Key>
@@ -80,6 +89,9 @@
           <Property Name="Subject" Type="varchar" MaxLength="250" />
           <Property Name="Body" Type="varchar(max)" />
           <Property Name="SentDateTime" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ChangedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -90,61 +102,61 @@
           <Property Name="QuestionAnswer" Type="varchar(max)" />
           <Property Name="StartDateTime" Type="datetime" />
           <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ChangedDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="APILog">
+        <EntityType Name="sysdiagrams">
           <Key>
-            <PropertyRef Name="Key" />
+            <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ApplicationKey" Type="int" Nullable="false" />
-          <Property Name="ApiToken" Type="varchar" MaxLength="250" />
-          <Property Name="Method" Type="varchar" MaxLength="250" />
-          <Property Name="Http" Type="varchar" MaxLength="25" />
-          <Property Name="Endpoint" Type="varchar" MaxLength="250" />
-          <Property Name="Reference" Type="varchar(max)" />
-          <Property Name="Request" Type="varchar(max)" />
-          <Property Name="Response" Type="varchar(max)" />
-          <Property Name="StartDateTime" Type="datetime" />
-          <Property Name="EndDateTime" Type="datetime" />
-        </EntityType>
-        <EntityType Name="Results">
-          <Key>
-            <PropertyRef Name="Key" />
-          </Key>
-          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ApplicationKey" Type="int" />
-          <Property Name="Company_Name" Type="varchar" MaxLength="250" Nullable="false" />
-          <Property Name="Company_Logo_Path" Type="varchar" MaxLength="250" />
-          <Property Name="Company_Logo_URL" Type="varchar" MaxLength="250" />
-          <Property Name="Website" Type="varchar" MaxLength="250" />
-          <Property Name="Rank" Type="int" />
-          <Property Name="Probability" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="RequestDateTime" Type="datetime" />
-          <Property Name="FincheckLeadReference" Type="varchar" MaxLength="250" />
-          <Property Name="Callback" Type="bit" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityContainer Name="EasyMoolahModelStoreContainer">
+          <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Borrower" EntityType="Self.Borrower" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="APILog" EntityType="Self.APILog" Schema="fincheck" store:Type="Tables" />
-          <EntitySet Name="Results" EntityType="Self.Results" Schema="fincheck" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApiLogs" EntityType="EasyMoolahModel.ApiLog" />
           <EntitySet Name="Applications" EntityType="EasyMoolahModel.Application" />
+          <EntitySet Name="Configurations" EntityType="EasyMoolahModel.Configuration" />
           <EntitySet Name="ErrorLogs" EntityType="EasyMoolahModel.ErrorLog" />
           <EntitySet Name="NotificationLogs" EntityType="EasyMoolahModel.NotificationLog" />
           <EntitySet Name="Questions" EntityType="EasyMoolahModel.Question" />
-          <EntitySet Name="APILogs" EntityType="EasyMoolahModel.APILog" />
-          <EntitySet Name="Results" EntityType="EasyMoolahModel.Result" />
-          <EntitySet Name="Borrowers" EntityType="EasyMoolahModel.Borrower" />
+          <EntitySet Name="sysdiagrams" EntityType="EasyMoolahModel.sysdiagram" />
         </EntityContainer>
+        <EntityType Name="ApiLog">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
+          <Property Name="ApiToken" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Method" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Http" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="Application">
           <Key>
             <PropertyRef Name="Key" />
@@ -153,9 +165,28 @@
           <Property Name="Guid" Type="Guid" />
           <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Browser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FormData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Configuration">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="ErrorLog">
           <Key>
@@ -170,6 +201,11 @@
           <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemKey" Type="Int32" />
         </EntityType>
         <EntityType Name="NotificationLog">
           <Key>
@@ -186,6 +222,9 @@
           <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="SentDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -196,72 +235,19 @@
           <Property Name="QuestionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="StartDateTime" Type="DateTime" Precision="3" />
           <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="APILog">
+        <EntityType Name="sysdiagram">
           <Key>
-            <PropertyRef Name="Key" />
+            <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
-          <Property Name="ApiToken" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Method" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Http" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="Endpoint" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="StartDateTime" Type="DateTime" Precision="3" />
-          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="Result">
-          <Key>
-            <PropertyRef Name="Key" />
-          </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ApplicationKey" Type="Int32" />
-          <Property Name="Company_Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Company_Logo_Path" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Company_Logo_URL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Rank" Type="Int32" />
-          <Property Name="Probability" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="RequestDateTime" Type="DateTime" Precision="3" />
-          <Property Name="FincheckLeadReference" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Callback" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Borrower">
-          <Key>
-            <PropertyRef Name="Key" />
-          </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
-          <Property Name="IdNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="LandlineNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="RequiredLoanAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="RepaymentPeriod" Type="Int32" Nullable="false" />
-          <Property Name="IsUnderDebtReview" Type="Boolean" Nullable="false" />
-          <Property Name="IsDeclaredInsolvent" Type="Boolean" Nullable="false" />
-          <Property Name="PermissionToDoCreditCheck" Type="Boolean" Nullable="false" />
-          <Property Name="IsPopicompliant" Type="Boolean" Nullable="false" />
-          <Property Name="EmploymentStatus" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="GrossMonthlyIncome" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="NettMonthlyIncome" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="TotalMonthlyExpense" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="BankName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="NumberOfDependants" Type="Int32" Nullable="false" />
-          <Property Name="ResidenceType" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="FullAddress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="StreetName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="SuburbName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="CityName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="PostCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ChangeDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -269,12 +255,36 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EasyMoolahModelStoreContainer" CdmEntityContainer="EasyMoolahEntities">
+          <EntitySetMapping Name="ApiLogs">
+            <EntityTypeMapping TypeName="EasyMoolahModel.ApiLog">
+              <MappingFragment StoreEntitySet="ApiLog">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
+                <ScalarProperty Name="Http" ColumnName="Http" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="ApiToken" ColumnName="ApiToken" />
+                <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Applications">
             <EntityTypeMapping TypeName="EasyMoolahModel.Application">
               <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Version" ColumnName="Version" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FormData" ColumnName="FormData" />
                 <ScalarProperty Name="Browser" ColumnName="Browser" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
@@ -282,9 +292,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Configurations">
+            <EntityTypeMapping TypeName="EasyMoolahModel.Configuration">
+              <MappingFragment StoreEntitySet="Configuration">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ErrorLogs">
             <EntityTypeMapping TypeName="EasyMoolahModel.ErrorLog">
               <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="ErrorDescription" ColumnName="ErrorDescription" />
@@ -300,6 +331,9 @@
           <EntitySetMapping Name="NotificationLogs">
             <EntityTypeMapping TypeName="EasyMoolahModel.NotificationLog">
               <MappingFragment StoreEntitySet="NotificationLog">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="SentDateTime" ColumnName="SentDateTime" />
                 <ScalarProperty Name="Body" ColumnName="Body" />
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
@@ -317,6 +351,9 @@
           <EntitySetMapping Name="Questions">
             <EntityTypeMapping TypeName="EasyMoolahModel.Question">
               <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
                 <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
                 <ScalarProperty Name="QuestionAnswer" ColumnName="QuestionAnswer" />
@@ -325,72 +362,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="APILogs">
-            <EntityTypeMapping TypeName="EasyMoolahModel.APILog">
-              <MappingFragment StoreEntitySet="APILog">
-                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
-                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
-                <ScalarProperty Name="Response" ColumnName="Response" />
-                <ScalarProperty Name="Request" ColumnName="Request" />
-                <ScalarProperty Name="Reference" ColumnName="Reference" />
-                <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
-                <ScalarProperty Name="Http" ColumnName="Http" />
-                <ScalarProperty Name="Method" ColumnName="Method" />
-                <ScalarProperty Name="ApiToken" ColumnName="ApiToken" />
-                <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Results">
-            <EntityTypeMapping TypeName="EasyMoolahModel.Result">
-              <MappingFragment StoreEntitySet="Results">
-                <ScalarProperty Name="Callback" ColumnName="Callback" />
-                <ScalarProperty Name="FincheckLeadReference" ColumnName="FincheckLeadReference" />
-                <ScalarProperty Name="RequestDateTime" ColumnName="RequestDateTime" />
-                <ScalarProperty Name="Probability" ColumnName="Probability" />
-                <ScalarProperty Name="Rank" ColumnName="Rank" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="Company_Logo_URL" ColumnName="Company_Logo_URL" />
-                <ScalarProperty Name="Company_Logo_Path" ColumnName="Company_Logo_Path" />
-                <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
-                <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Borrowers">
-            <EntityTypeMapping TypeName="EasyMoolahModel.Borrower">
-              <MappingFragment StoreEntitySet="Borrower">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
-                <ScalarProperty Name="CityName" ColumnName="CityName" />
-                <ScalarProperty Name="SuburbName" ColumnName="SuburbName" />
-                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
-                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
-                <ScalarProperty Name="ResidenceType" ColumnName="ResidenceType" />
-                <ScalarProperty Name="NumberOfDependants" ColumnName="NumberOfDependants" />
-                <ScalarProperty Name="BankName" ColumnName="BankName" />
-                <ScalarProperty Name="TotalMonthlyExpense" ColumnName="TotalMonthlyExpense" />
-                <ScalarProperty Name="NettMonthlyIncome" ColumnName="NettMonthlyIncome" />
-                <ScalarProperty Name="GrossMonthlyIncome" ColumnName="GrossMonthlyIncome" />
-                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
-                <ScalarProperty Name="IsPopicompliant" ColumnName="IsPopicompliant" />
-                <ScalarProperty Name="PermissionToDoCreditCheck" ColumnName="PermissionToDoCreditCheck" />
-                <ScalarProperty Name="IsDeclaredInsolvent" ColumnName="IsDeclaredInsolvent" />
-                <ScalarProperty Name="IsUnderDebtReview" ColumnName="IsUnderDebtReview" />
-                <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
-                <ScalarProperty Name="RequiredLoanAmount" ColumnName="RequiredLoanAmount" />
-                <ScalarProperty Name="LandlineNumber" ColumnName="LandlineNumber" />
-                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
-                <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EasyMoolahModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

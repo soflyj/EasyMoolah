@@ -23,5 +23,10 @@ namespace EasyMoolah.Repository
         public string ErrorDescription { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public bool IsActive { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ChangedDate { get; set; }
+        public string ItemType { get; set; }
+        public Nullable<int> ItemKey { get; set; }
     }
 }
