@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
-import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
+import 'linq4js';
 
 @Component({
     selector: 'app-step14',
@@ -14,74 +17,92 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class Step14Component implements OnInit {
 
-    Q14: FormGroup;
-    URL = false;
-    Debug = false;
-    StartTime: Date;
-    Answer;
+    private stepForm: FormGroup;
+    private dataPoint: DataPointModel = new DataPointModel();
+    private question: string;
+    private answer: string[] = null;
+    private jar: any;
+    private startTime
 
-    formattedAddress: string;
-    Street: string;
-    Suburb: string;
-    City: string;
-    PostalCode: string;
+    private formattedAddress: string;
+    private street: string;
+    private suburb: string;
+    private city: string;
+    private postalCode: string;
 
     constructor(private router: Router,
-        private route: ActivatedRoute,
-        private headerService: HeaderService) { }
+        private activatedRoute: ActivatedRoute,
+        private headerService: HeaderService,
+        private dataPointService: DataPointService,
+        private commonService: CommonService,
+        private zone: NgZone) {
+        this.question = 'What\'s your home address?';
+      }
 
     ngOnInit() {
-        // this.StartTime = new Date();
-        // this.headerService.mode.next('determinate');
-        // this.headerService.progress.next(78);
+        this.activatedRoute.params.subscribe((params: any) => {
+            this.jar = params.jar;
+          });
+          this.startTime = new Date();
+          this.headerService.mode.next('determinate');
+          this.headerService.progress.next(78);
+      
+          if (this.dataPointService.getPreviousDataPointState(14) != null) {
+            this.answer = this.dataPointService.getPreviousDataPointState(14);
 
-        // this.Answer = this.borrowerService.getPreviousAnswer('q14');
-
-        // this.Debug = this.borrowerService.debugMode();
-        // this.URL = (window.location.href).includes('/application');
-        // if (!this.URL && !this.Debug) {
-        //     this.router.navigate(['notfound'], { relativeTo: this.route });
-        // }
-
-        // if (this.Answer != null) {
-        //     this.Street = this.Answer[0].street;
-        //     this.Suburb = this.Answer[0].suburb;
-        //     this.City = this.Answer[0].city;
-        //     this.PostalCode = this.Answer[0].postalcode;
-        // }
+            this.street = this.answer[0];
+            this.suburb = this.answer[1];
+            this.city = this.answer[2];
+            this.postalCode = this.answer[3];
+          }
+      
+          if (this.jar != this.commonService.GetGUID()) {
+            this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+          }        
+        
 
         // Reactive validation
-        this.Q14 = new FormGroup({
+        this.stepForm = new FormGroup({
             'street': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].street),
+                (this.answer == null ? '' : this.street),
                 [Validators.required]),
             'suburb': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].suburb),
+                (this.answer == null ? '' : this.suburb),
                 [Validators.required]),
             'city': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].city),
+                (this.answer == null ? '' : this.city),
                 [Validators.required]),
             'postalcode': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].postalcode),
+                (this.answer == null ? '' : this.postalCode),
                 [Validators.required])
         });
     }
     getAddress(place: object) {
-        // this.formattedAddress = place['formatted_address'];
-        // console.log(place['formatted_address']);
-        // // tslint:disable-next-line:max-line-length
-        // this.Street = place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0] + ' ' + place['address_components'][1].long_name;
-        // this.Suburb = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_2').Select(s => s.long_name)[0];
-        // this.City = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_1').Select(s => s.long_name)[0];
-        // this.PostalCode = place['address_components'].Where(w => w.types[0] === 'postal_code').Select(s => s.long_name)[0];
-        // this.zone.run(() => this.formattedAddress = place['formatted_address']);
+        this.formattedAddress = place['formatted_address'];
+        console.log(place['formatted_address']);
+        // tslint:disable-next-line:max-line-length
+        this.street = place['address_components'].Where(w => w.types[0] === 'street_number').Select(s => s.long_name)[0] + ' ' + place['address_components'][1].long_name;
+        this.suburb = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_2').Select(s => s.long_name)[0];
+        this.city = place['address_components'].Where(w => w.types[0] === 'administrative_area_level_1').Select(s => s.long_name)[0];
+        this.postalCode = place['address_components'].Where(w => w.types[0] === 'postal_code').Select(s => s.long_name)[0];
+        this.zone.run(() => this.formattedAddress = place['formatted_address']);
     }
 
     Next() {
-        this.router.navigateByUrl('/q15', { skipLocationChange: true });
-    }
-
-    Back() {
-        this.router.navigateByUrl('/bq13', { skipLocationChange: true });
-    }
+        this.dataPoint.Question = [];
+        this.dataPoint.Answer = [];
+        
+        this.dataPoint.Id = 14;
+        this.dataPoint.Question.push('StreetName', 'SuburbName', 'CityName', 'PostCode');
+        this.dataPoint.Answer.push(this.street, this.suburb, this.city, this.postalCode);
+        this.dataPoint.StartTime = this.startTime;
+        this.dataPoint.EndTime = new Date();
+        this.dataPointService.addDataPoint(this.dataPoint);
+    
+        this.router.navigateByUrl('/step-15/' + this.commonService.GetGUID());
+      }
+    
+      Back() {
+        this.router.navigateByUrl('/stepped-13/' + this.commonService.GetGUID());
+      }
 }

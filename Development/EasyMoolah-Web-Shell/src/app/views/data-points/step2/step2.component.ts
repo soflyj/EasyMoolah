@@ -19,7 +19,7 @@ export class Step2Component implements OnInit {
   private stepForm: FormGroup;
   private dataPoint: DataPointModel = new DataPointModel();
   private question: string;
-  private answer: string;
+  private answer: string = null;
   private jar: any;
   private startTime
 
@@ -40,7 +40,9 @@ export class Step2Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(6);
 
-    this.answer = this.dataPointService.getPreviousDataPointState(2);
+    if (this.dataPointService.getPreviousDataPointState(2) != null) {
+      this.answer = this.dataPointService.getPreviousDataPointState(2)[0];
+    }
 
     if (this.jar != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
@@ -55,9 +57,12 @@ export class Step2Component implements OnInit {
   }
 
   Next() {
+    this.dataPoint.Question = [];
+    this.dataPoint.Answer = [];
+    
     this.dataPoint.Id = 2;
-    this.dataPoint.Question = this.question;
-    this.dataPoint.Answer = this.stepForm.get('sub-service').value;
+    this.dataPoint.Question.push(this.question);
+    this.dataPoint.Answer.push(this.stepForm.get('sub-service').value);
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);

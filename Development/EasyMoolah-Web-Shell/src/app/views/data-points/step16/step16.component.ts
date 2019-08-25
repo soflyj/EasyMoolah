@@ -3,8 +3,10 @@ import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
-import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
     selector: 'app-step16',
@@ -14,32 +16,43 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class Step16Component implements OnInit {
 
-    Q16: FormGroup;
-    URL = false;
-    Debug = false;
-    StartTime: Date;
+    private stepForm: FormGroup;
+    private dataPoint: DataPointModel = new DataPointModel();
+    private question: string;
+    private answer: string = null;
+    private jar: any;
+    private startTime
 
     idnumber: string;
     maxLength = 13;
     pattern: any;
 
     constructor(private router: Router,
-        private route: ActivatedRoute,
-        private headerService: HeaderService) { }
+        private activatedRoute: ActivatedRoute,
+        private headerService: HeaderService,
+        private dataPointService: DataPointService,
+        private commonService: CommonService) {
+        this.question = 'Personal Identification Number';
+      }
 
     ngOnInit() {
-        // this.StartTime = new Date();
-        // this.headerService.mode.next('determinate');
-        // this.headerService.progress.next(100);
-
-        // this.Debug = this.borrowerService.debugMode();
-        // this.URL = (window.location.href).includes('/application');
-        // if (!this.URL && !this.Debug) {
-        //     this.router.navigate(['notfound'], { relativeTo: this.route });
-        // }
+        this.activatedRoute.params.subscribe((params: any) => {
+            this.jar = params.jar;
+          });
+          this.startTime = new Date();
+          this.headerService.mode.next('determinate');
+          this.headerService.progress.next(100);
+      
+        //   if (this.dataPointService.getPreviousDataPointState(2) != null) {
+        //     this.answer = this.dataPointService.getPreviousDataPointState(2)[0];
+        //   }
+      
+          if (this.jar != this.commonService.GetGUID()) {
+            this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+          }
 
         // Reactive validation
-        this.Q16 = new FormGroup({
+        this.stepForm = new FormGroup({
             'idnumber': new FormControl(
                 '',
                 [Validators.required, this.CheckSAIdNumber.bind(this)]
@@ -59,10 +72,20 @@ export class Step16Component implements OnInit {
     }
 
     Next() {
-        this.router.navigateByUrl('/processing', { skipLocationChange: true });
-    }
-
-    Back() {
-        this.router.navigateByUrl('/bq15', { skipLocationChange: true });
-    }
+        this.dataPoint.Question = [];
+        this.dataPoint.Answer = [];
+        
+        this.dataPoint.Id = 16;
+        this.dataPoint.Question.push(this.question);
+        this.dataPoint.Answer.push(this.stepForm.get('idnumber').value);
+        this.dataPoint.StartTime = this.startTime;
+        this.dataPoint.EndTime = new Date();
+        this.dataPointService.addDataPoint(this.dataPoint);
+    
+        //this.router.navigateByUrl('/step-3/' + this.commonService.GetGUID());
+      }
+    
+      Back() {
+        this.router.navigateByUrl('/stepped-15/' + this.commonService.GetGUID());
+      }
 }

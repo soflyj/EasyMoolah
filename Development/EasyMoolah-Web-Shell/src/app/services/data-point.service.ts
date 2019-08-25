@@ -5,13 +5,13 @@ import { DataPointModel } from '../models/data-point.model';
 @Injectable()
 export class DataPointService {
     public dataPoints: Array<DataPointModel>;
-    public Answer: any;
+    public Answer: string[] = null;
     // constructor() {
 
     // }
 
     // public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
-     
+
     // public auditlog: AuditLog = null;
     // private debug: boolean = environment.debug;
 
@@ -30,7 +30,7 @@ export class DataPointService {
         if (this.dataPoints == null) {
             this.dataPoints = new Array<DataPointModel>();
             //First question to Add, datapoint 1
-            this.dataPoints.push(dataPoint);            
+            this.dataPoints.push(dataPoint);
         }
         else {
             if (this.dataPoints.filter(x => x.Id == dataPoint.Id)[0] != null) {
@@ -41,21 +41,23 @@ export class DataPointService {
                 //Add
                 this.dataPoints.push(dataPoint);
             }
-        }        
+        }
+
+        console.log(this.dataPoints);
     }
 
-    getPreviousDataPointState(id: number) {
+    getPreviousDataPointState(id: number): string[] {
         if (this.dataPoints != undefined) {
             if (this.dataPoints.filter(q => q.Id == id)[0] != null) {
-                if (id != 14 && id != 15) {
-                    this.Answer = this.dataPoints.filter(q => q.Id === id)[0].Answer.toString();
-                }
-                else {
-                    this.Answer = this.dataPoints.filter(q => q.Id === id)[0].Answer.toString();
-                }
+                // if (id != 14 && id != 15) {
+                //     this.Answer = this.dataPoints.filter(q => q.Id === id)[0].Answer.toString();
+                // }
+                // else {
+                this.Answer = this.dataPoints.filter(q => q.Id === id)[0].Answer;
+                // }
             }
             else {
-                this.Answer = null; 
+                this.Answer = null;
             }
         }
         return this.Answer;

@@ -1,8 +1,8 @@
 
 export class DataPointModel {
     Id: number
-    Question: string;
-    Answer: string;
+    Question: Array<string>;
+    Answer: Array<string>;
     StartTime: Date;
     EndTime: Date;
   }

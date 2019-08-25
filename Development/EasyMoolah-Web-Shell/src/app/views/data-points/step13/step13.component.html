@@ -1,27 +1,27 @@
-<form [formGroup]="Q13" (ngSubmit)="Next()">
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
   <div class="container">
     <div class="row">
       <div class="col s12 m6 offset-m3">
         <div class="input-field">
-          <p>Are you a homeowner?</p>
+          <p>{{question}}</p>
           <p>
             <label>
-              <input name="homeowner" type="radio" class="with-gap" formControlName="homeowner" value="yes" />
+              <input name="home-owner" type="radio" class="with-gap" formControlName="home-owner" value="yes" />
               <span>Yes</span> </label>
           </p>
           <p>
             <label>
-              <input name="homeowner" type="radio" class="with-gap" formControlName="homeowner" value="renting" />
+              <input name="home-owner" type="radio" class="with-gap" formControlName="home-owner" value="renting" />
               <span>Renting</span> </label>
           </p>
           <p>
             <label>
-              <input name="homeowner" type="radio" class="with-gap" formControlName="homeowner" value="living-with-family" />
+              <input name="home-owner" type="radio" class="with-gap" formControlName="home-owner" value="living-with-family" />
               <span>Living with family</span> </label>
           </p>
           <p>
             <label>
-              <input name="homeowner" type="radio" class="with-gap" formControlName="homeowner" value="other" />
+              <input name="home-owner" type="radio" class="with-gap" formControlName="home-owner" value="other" />
               <span>Other</span> </label>
           </p>
         </div>
@@ -38,7 +38,7 @@
         <div class="col s2 m4">
         </div>
         <div class="col s5 m4">
-          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q13.valid"><i class="material-icons right">chevron_right</i>Next</button>
+          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>
     </div>

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   appUrl: 'http://localhost:52358/api',
-  version: 1.1
+  version: 1.1,
+  googleapi: ''
 };
 
 /*

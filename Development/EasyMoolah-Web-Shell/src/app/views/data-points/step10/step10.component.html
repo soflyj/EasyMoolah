@@ -1,9 +1,9 @@
-<form [formGroup]="Q10" (ngSubmit)="Next()">
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<div class="input-field">
-					<p class="center-align">What is your total monthly expense?</p>
+					<p class="center-align">{{question}}</p>
 					<p class="range-field">
 						<input [(ngModel)]="monthlyexpense_slider" type="range" id="monthlyexpense_slider" min="5000" max="100000" step="100"
 						 formControlName="monthlyexpense_slider" value="50000" />

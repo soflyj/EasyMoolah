@@ -1,9 +1,9 @@
-<form [formGroup]="Q7" (ngSubmit)="Next()">
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<div class="input-field">
-					<p>What's your employment status?</p>
+					<p>{{question}}</p>
 					<p>
 						<label>
 							<input name="employment-status" type="radio" class="with-gap" formControlName="employment-status" value="Unemployed" />
@@ -42,7 +42,7 @@
 				<div class="col s2 m4">
 				</div>
 				<div class="col s5 m4">
-					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q7.valid"><i class="material-icons right">chevron_right</i>Next</button>
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
 				</div>
 			</div>
 		</div>

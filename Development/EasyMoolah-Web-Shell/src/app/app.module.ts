@@ -14,6 +14,8 @@ import {
   MatExpansionModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutocompleteComponent } from './views/common/google-places.component';
+import { GoogleMaps } from './services/googlemaps.service';
 
 import { HeaderService } from './services/header.service'
 import { DataPointService } from './services/data-point.service'
@@ -63,6 +65,7 @@ import { HeaderComponent } from './views/header/header.component'
     Step15Component,
     Step16Component,
     HeaderComponent,
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,8 @@ import { HeaderComponent } from './views/header/header.component'
   providers: [
     HeaderService,
     DataPointService,
-    CommonService],
+    CommonService,
+    GoogleMaps],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

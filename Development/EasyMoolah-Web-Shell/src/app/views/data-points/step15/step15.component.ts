@@ -3,8 +3,10 @@ import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
-import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
     selector: 'app-step15',
@@ -14,80 +16,102 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class Step15Component implements OnInit {
 
-    Q15: FormGroup;
-    URL = false;
-    StartTime: Date;
-    Debug = false;
-    Answer;
+    private stepForm: FormGroup;
+    private dataPoint: DataPointModel = new DataPointModel();
+    private question: string;
+    private answer: string[] = null;
+    private jar: any;
+    private startTime
 
-    MobileNumber: string;
-    MobileNumberLength: number;
-    LandlineNumber: string;
-    LandlineNumberLength: number;
-    mask: any;
+    private mobileNumber: string = '';
+    private mobileNumberLength: number;
+    private landlineNumber: string = '';
+    private landlineNumberLength: number;
+    private mask: any;
 
     constructor(private router: Router,
-        private route: ActivatedRoute,
-        private headerService: HeaderService) { }
+        private activatedRoute: ActivatedRoute,
+        private headerService: HeaderService,
+        private dataPointService: DataPointService,
+        private commonService: CommonService) {
+        this.question = 'Personal Information';
+    }
 
     ngOnInit() {
-        // this.StartTime = new Date();
-        // this.headerService.mode.next('determinate');
-        // this.headerService.progress.next(84);
+        this.activatedRoute.params.subscribe((params: any) => {
+            this.jar = params.jar;
+        });
+        this.startTime = new Date();
+        this.headerService.mode.next('determinate');
+        this.headerService.progress.next(84);
 
-        // this.Answer = this.borrowerService.getPreviousAnswer('q15');
+        if (this.dataPointService.getPreviousDataPointState(15) != null) {
+            this.answer = this.dataPointService.getPreviousDataPointState(15);
+        }
 
-        // this.Debug = this.borrowerService.debugMode();
-        // this.URL = (window.location.href).includes('/application');
-        // if (!this.URL && !this.Debug) {
-        //     this.router.navigate(['notfound'], { relativeTo: this.route });
-        // }
+        if (this.jar != this.commonService.GetGUID()) {
+            this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+        }
 
         // Reactive validation
         this.mask = ['(', /[0-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-        this.Q15 = new FormGroup({
+        this.stepForm = new FormGroup({
             'firstname': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].firstname),
+                (this.answer == null ? '' : this.answer[0]),
                 Validators.required),
             'lastname': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].lastname),
+                (this.answer == null ? '' : this.answer[1]),
                 Validators.required),
             'email': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].email),
+                (this.answer == null ? '' : this.answer[2]),
                 [Validators.required, Validators.email]),
             'mobilenumber': new FormControl(
-                (this.Answer == null ? '' : this.Answer[0].mobilenumber),
+                (this.answer == null ? '' : this.answer[3]),
                 [Validators.required, this.CheckMobileNumber.bind(this)]),
-            'landlinenumber': new FormControl((this.Answer == null ? '' : this.Answer[0].landlinenumber),
+            'landlinenumber': new FormControl((this.answer == null ? '' : this.answer[4]),
                 [this.CheckLandlineNumber.bind(this)])
         });
     }
 
     CheckMobileNumber(control: FormControl): { [s: string]: boolean } {
-        this.MobileNumber = control.value;
-        this.MobileNumberLength = this.MobileNumber.replace(/[-_() ]/g, '').length;
-        if (this.MobileNumberLength !== 10 || this.MobileNumber.substring(1, 2) !== '0') {
-            return { 'MobileValid': true };
-        } else {
-            return null;
+        if (control.value == 'undefined') {
+            this.mobileNumber = control.value;
+            this.mobileNumberLength = this.mobileNumber.replace(/[-_() ]/g, '').length;
+            if (this.mobileNumberLength !== 10 || this.mobileNumber.substring(1, 2) !== '0') {
+                return { 'MobileValid': true };
+            } else {
+                return null;
+            }
         }
     }
 
     CheckLandlineNumber(control: FormControl): { [s: string]: boolean } {
-        this.LandlineNumber = control.value;
-        this.LandlineNumberLength = this.LandlineNumber.replace(/[-_() ]/g, '').length;
-        if ((this.LandlineNumberLength !== 10 || this.LandlineNumber.substring(1, 2) !== '0') && this.LandlineNumberLength !== 0) {
-            return { 'LandlineValid': true };
-        } else {
-            return null;
+        if (control.value == 'undefined') {
+            this.landlineNumber = control.value;
+            this.landlineNumberLength = this.landlineNumber.replace(/[-_() ]/g, '').length;
+            if ((this.landlineNumberLength !== 10 || this.landlineNumber.substring(1, 2) !== '0') && this.landlineNumberLength !== 0) {
+                return { 'LandlineValid': true };
+            } else {
+                return null;
+            }
         }
     }
 
     Next() {
-        this.router.navigateByUrl('/q16', { skipLocationChange: true });
+        this.dataPoint.Question = [];
+        this.dataPoint.Answer = [];
+
+        this.dataPoint.Id = 15;
+        this.dataPoint.Question.push('FirstName', 'LastName', 'Email', 'MobileNumber', 'LandlineNumber');
+        this.dataPoint.Answer.push(this.stepForm.value.firstname, this.stepForm.value.lastname, this.stepForm.value.email, this.stepForm.value.mobileNumber, this.stepForm.value.landlineNumber);
+        this.dataPoint.StartTime = this.startTime;
+        this.dataPoint.EndTime = new Date();
+        this.dataPointService.addDataPoint(this.dataPoint);
+
+        this.router.navigateByUrl('/step-16/' + this.commonService.GetGUID());
     }
 
     Back() {
-        this.router.navigateByUrl('/bq14', { skipLocationChange: true });
+        this.router.navigateByUrl('/stepped-14/' + this.commonService.GetGUID());
     }
 }

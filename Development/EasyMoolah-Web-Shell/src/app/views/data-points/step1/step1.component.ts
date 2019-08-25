@@ -19,7 +19,7 @@ export class Step1Component implements OnInit {
   private stepForm: FormGroup;
   private dataPoint: DataPointModel = new DataPointModel();
   private question: string;
-  private answer: string;
+  private answer: string = null;
   private jar: any;
   private startTime
 
@@ -40,7 +40,9 @@ export class Step1Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(0);
 
-    this.answer = this.dataPointService.getPreviousDataPointState(1);
+    if (this.dataPointService.getPreviousDataPointState(1) != null) {
+      this.answer = this.dataPointService.getPreviousDataPointState(1)[0];
+    }
 
     if (this.jar != this.commonService.GetGUID()) {
       this.router.navigateByUrl('/not-found');
@@ -55,9 +57,12 @@ export class Step1Component implements OnInit {
   }
 
   Next() {
+    this.dataPoint.Question = [];
+    this.dataPoint.Answer = [];
+    
     this.dataPoint.Id = 1;
-    this.dataPoint.Question = this.question;
-    this.dataPoint.Answer = this.stepForm.get('service').value;
+    this.dataPoint.Question.push(this.question);
+    this.dataPoint.Answer.push(this.stepForm.get('service').value);
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);

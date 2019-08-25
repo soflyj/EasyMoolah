@@ -1,4 +1,4 @@
-<form [formGroup]="Q11" (ngSubmit)="Next()">
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <div class="container">
@@ -6,7 +6,7 @@
       <div class="col s12 m6 offset-m3">
         <div class="input-field">
           <div class="image-radio-buttons bank-options">
-            <p class="center-align">With which bank do you have an account?</p>
+            <p class="center-align">{{question}}</p>
             <div class="radio-group">
                 <input type="radio" name="bank" id="absa-bank-option" formControlName="bank" value="ABSA" />
                 <label for="absa-bank-option" class="col s6 m4">
@@ -50,7 +50,7 @@
         <div class="col s2 m4">
         </div>
         <div class="col s5 m4">
-          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q11.valid"><i class="material-icons right">chevron_right</i>Next</button>
+          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
         </div>
       </div>
     </div>

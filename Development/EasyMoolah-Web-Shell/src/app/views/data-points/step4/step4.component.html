@@ -1,9 +1,9 @@
-<form [formGroup]="Q4" (ngSubmit)="Next()">
+<form [formGroup]="stepForm" (ngSubmit)="Next()">
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<div class="input-field">
-					<p>Have you applied for or are you under formal debt review?</p>
+					<p>{{question}}</p>
 					<p>
 						<label>
 							<input name="formal-debt-review" type="radio" class="with-gap" formControlName="formal-debt-review" value="true" />
@@ -30,7 +30,7 @@
 				<div class="col s2 m4">
 				</div>
 				<div class="col s5 m4">
-					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!Q4.valid"><i class="material-icons right">chevron_right</i>Next</button>
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
 				</div>
 			</div>
 		</div>

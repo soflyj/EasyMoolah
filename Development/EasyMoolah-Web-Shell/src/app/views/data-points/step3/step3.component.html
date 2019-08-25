@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<div class="input-field">
-					<p class="center-align">{{question}}</p>
+					<p class="center-align">{{question_1}}</p>
 					<p class="range-field">
 						<input [(ngModel)]="borrowamount_slider" type="range" id="borrowamount_slider" min="5000" max="100000" step="100"
 						 formControlName="borrowamount_slider" value="50000" />
@@ -13,7 +13,7 @@
 					</p>
 				</div>
 				<div class="input-field">
-					<p class="center-align">Over how long?</p>
+					<p class="center-align">{{question_2}}</p>
 					<p class="range-field">
 						<input [(ngModel)]="borrowmonths_slider" type="range" id="borrowmonths_slider" min="6" max="72" step="6"
 						 formControlName="borrowmonths_slider" value="24" />

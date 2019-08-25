@@ -18,8 +18,9 @@ export class Step3Component implements OnInit {
 
   private stepForm: FormGroup;
   private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string;
+  private question_1: string;
+  private question_2: string;
+  private answer: string[];
   private jar: any;
   private startTime
   private borrowamount_slider: string;
@@ -30,7 +31,8 @@ export class Step3Component implements OnInit {
     private headerService: HeaderService,
     private dataPointService: DataPointService,
     private commonService: CommonService) {
-    this.question = 'How much do you want to borrow?';
+    this.question_1 = 'How much do you want to borrow?';
+    this.question_1 = 'Over how long?';
   }
 
   ngOnInit() {
@@ -41,13 +43,12 @@ export class Step3Component implements OnInit {
     this.headerService.mode.next('determinate');
     this.headerService.progress.next(12);
 
-    this.answer = this.dataPointService.getPreviousDataPointState(3);
     this.borrowamount_slider = '5000';
     this.borrowmonths_slider = '24';
 
-    if (this.answer != undefined) {
-      this.borrowamount_slider = this.answer.toString().split('|', 3)[0];
-      this.borrowmonths_slider = this.answer.toString().split('|', 3)[1];
+    if (this.dataPointService.getPreviousDataPointState(3) != null) {
+      this.borrowamount_slider = this.dataPointService.getPreviousDataPointState(3)[0];
+      this.borrowmonths_slider = this.dataPointService.getPreviousDataPointState(3)[1];
     }
 
     if (this.jar != this.commonService.GetGUID()) {
@@ -67,9 +68,14 @@ export class Step3Component implements OnInit {
   }
 
   Next() {
+    this.dataPoint.Question = [];
+    this.dataPoint.Answer = [];
+
     this.dataPoint.Id = 3;
-    this.dataPoint.Question = this.question;
-    this.dataPoint.Answer = this.stepForm.get('borrowamount_slider').value + '|' + this.stepForm.get('borrowmonths_slider').value;
+    this.dataPoint.Question.push(this.question_1);
+    this.dataPoint.Answer.push(this.stepForm.get('borrowamount_slider').value);
+    this.dataPoint.Question.push(this.question_2);
+    this.dataPoint.Answer.push(this.stepForm.get('borrowmonths_slider').value);
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);

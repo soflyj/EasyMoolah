@@ -3,8 +3,10 @@ import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
-import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-step7',
@@ -13,45 +15,63 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   animations: [routerTransition]
 })
 export class Step7Component implements OnInit {
+  
+    private stepForm: FormGroup;
+    private dataPoint: DataPointModel = new DataPointModel();
+    private question: string;
+    private answer: string = null;
+    private jar: any;
+    private startTime
+  
+    constructor(private router: Router,
+      private activatedRoute: ActivatedRoute,
+      private headerService: HeaderService,
+      private dataPointService: DataPointService,
+      private commonService: CommonService) {
+      this.question = 'What\'s your employment status?';
+    }
 
-  Q7: FormGroup;
-  URL = false;
-  Debug = false;
-  StartTime: Date;
-  Answer;
 
-  constructor(private router: Router,
-    private route: ActivatedRoute,
-    private headerService: HeaderService) { }
+    ngOnInit() {
 
-
-  ngOnInit() {
-    // this.StartTime = new Date();
-    // this.headerService.mode.next('determinate');
-    // this.headerService.progress.next(36);
-
-    // this.Answer = this.borrowerService.getPreviousAnswer('q7');
-
-    // // Not allowed to navigate directly to component
-    // this.Debug = this.borrowerService.debugMode();
-    // this.URL = (window.location.href).includes('/application');
-    // if (!this.URL && !this.Debug) {
-    //   this.router.navigate(['notfound'], { relativeTo: this.route });
-    // }
+      this.activatedRoute.params.subscribe((params: any) => {
+        this.jar = params.jar;
+      });
+      this.startTime = new Date();
+      this.headerService.mode.next('determinate');
+      this.headerService.progress.next(36);
+  
+      if (this.dataPointService.getPreviousDataPointState(7) != null) {
+        this.answer = this.dataPointService.getPreviousDataPointState(7)[0];
+      }
+  
+      if (this.jar != this.commonService.GetGUID()) {
+        this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+      }
 
     // Reactive validation
-    this.Q7 = new FormGroup({
+    this.stepForm = new FormGroup({
       'employment-status': new FormControl(
-        this.Answer,
+        this.answer,
         [Validators.required]),
     });
   }
 
   Next() {
-    this.router.navigateByUrl('/q8', { skipLocationChange: true });
+    this.dataPoint.Question = [];
+    this.dataPoint.Answer = [];
+    
+    this.dataPoint.Id = 7;
+    this.dataPoint.Question.push(this.question);
+    this.dataPoint.Answer.push(this.stepForm.get('employment-status').value);
+    this.dataPoint.StartTime = this.startTime;
+    this.dataPoint.EndTime = new Date();
+    this.dataPointService.addDataPoint(this.dataPoint);
+
+    this.router.navigateByUrl('/step-8/' + this.commonService.GetGUID());
   }
 
   Back() {
-    this.router.navigateByUrl('/bq6', { skipLocationChange: true });
+    this.router.navigateByUrl('/stepped-6/' + this.commonService.GetGUID());
   }
 }

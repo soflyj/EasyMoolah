@@ -3,8 +3,10 @@ import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
-import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataPointModel } from 'src/app/models/data-point.model';
+import { DataPointService } from 'src/app/services/data-point.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
     selector: 'app-step12',
@@ -14,44 +16,62 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class Step12Component implements OnInit {
 
-    Q12: FormGroup;
-    URL = false;
-    StartTime: Date;
-    Debug = false;
-    Answer;
-
+    private stepForm: FormGroup;
+    private dataPoint: DataPointModel = new DataPointModel();
+    private question: string;
+    private answer: string = null;
+    private jar: any;
+    private startTime
+  
     constructor(private router: Router,
-        private route: ActivatedRoute,
-        private headerService: HeaderService) { }
+      private activatedRoute: ActivatedRoute,
+      private headerService: HeaderService,
+      private dataPointService: DataPointService,
+      private commonService: CommonService) {
+      this.question = 'How many dependants do you have?';
+    }
 
     ngOnInit() {
-        // this.StartTime = new Date();
-        // this.headerService.mode.next('determinate');
-        // this.headerService.progress.next(66);
 
-        // this.Answer = this.borrowerService.getPreviousAnswer('q12');
-
-        // // Not allowed to navigate directly to component
-        // this.Debug = this.borrowerService.debugMode();
-        // this.URL = (window.location.href).includes('/application');
-        // if (!this.URL && !this.Debug) {
-        //     this.router.navigate(['notfound'], { relativeTo: this.route });
-        // }
+        this.activatedRoute.params.subscribe((params: any) => {
+          this.jar = params.jar;
+        });
+        this.startTime = new Date();
+        this.headerService.mode.next('determinate');
+        this.headerService.progress.next(66);
+    
+        if (this.dataPointService.getPreviousDataPointState(12) != null) {
+          this.answer = this.dataPointService.getPreviousDataPointState(12)[0];
+        }
+    
+        if (this.jar != this.commonService.GetGUID()) {
+          this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
+        }
 
         // Reactive validation
-        this.Q12 = new FormGroup({
+        this.stepForm = new FormGroup({
             'dependants': new FormControl(
-                this.Answer,
+                this.answer,
                 [Validators.required]
             ),
         });
     }
 
     Next() {
-        this.router.navigateByUrl('/q13', { skipLocationChange: true });
-    }
-
-    Back() {
-        this.router.navigateByUrl('/bq11', { skipLocationChange: true });
-    }
+        this.dataPoint.Question = [];
+        this.dataPoint.Answer = [];
+        
+        this.dataPoint.Id = 12;
+        this.dataPoint.Question.push(this.question);
+        this.dataPoint.Answer.push(this.stepForm.get('dependants').value);
+        this.dataPoint.StartTime = this.startTime;
+        this.dataPoint.EndTime = new Date();
+        this.dataPointService.addDataPoint(this.dataPoint);
+    
+        this.router.navigateByUrl('/step-13/' + this.commonService.GetGUID());
+      }
+    
+      Back() {
+        this.router.navigateByUrl('/stepped-11/' + this.commonService.GetGUID());
+      }
 }
