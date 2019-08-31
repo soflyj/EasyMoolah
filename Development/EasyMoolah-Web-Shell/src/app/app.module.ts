@@ -20,6 +20,7 @@ import { GoogleMaps } from './services/googlemaps.service';
 import { HeaderService } from './services/header.service'
 import { DataPointService } from './services/data-point.service'
 import { CommonService } from './services/common.service'
+import { FormService } from './views/data-points/application/form.service'
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './views/not-found/not-found.component'
@@ -40,7 +41,8 @@ import { Step13Component } from './views/data-points/step13/step13.component'
 import { Step14Component } from './views/data-points/step14/step14.component'
 import { Step15Component } from './views/data-points/step15/step15.component'
 import { Step16Component } from './views/data-points/step16/step16.component';
-import { HeaderComponent } from './views/header/header.component'
+import { HeaderComponent } from './views/header/header.component';
+import { ApplicationComponent } from './views/data-points/application/application.component'
 
 
 @NgModule({
@@ -65,7 +67,8 @@ import { HeaderComponent } from './views/header/header.component'
     Step15Component,
     Step16Component,
     HeaderComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { HeaderComponent } from './views/header/header.component'
     MatRippleModule,
     MatProgressBarModule,
     MatExpansionModule,
+    MatStepperModule,
     //   HttpModule,
     HttpClientModule
   ],
@@ -87,6 +91,7 @@ import { HeaderComponent } from './views/header/header.component'
     HeaderService,
     DataPointService,
     CommonService,
+    FormService,
     GoogleMaps],
   bootstrap: [AppComponent]
 })

@@ -14,17 +14,19 @@
   </div>
   <footer class="container">
     <div class="row pagination-btns">
-      <div class="col s12 m6 offset-m3">
-        <div class="col s5 m4">
-          <button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
-        </div>
-        <div class="col s2 m4">
-        </div>
-        <div class="col s5 m4">
-          <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
-        </div>
-      </div>  
-    </div>
+			<div class="col s12 m6 offset-m3">
+				<div class="col s5 m4">
+					<button type="button" class="waves-effect waves-light btn-small prev-btn" matStepperPrevious (click)="Back()"><i
+						 class="material-icons left">chevron_left</i>Prev</button>
+				</div>
+				<div class="col s2 m4">
+				</div>
+				<div class="col s5 m4">
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" matStepperNext [disabled]="!stepForm.valid"><i
+						 class="material-icons right">chevron_right</i>Next</button>
+				</div>
+			</div>
+		</div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './views/not-found/not-found.component'
 import { LandingScreenComponent } from './views/landing-screen/landing-screen.component'
+import { ApplicationComponent } from './views/data-points/application/application.component'
 import { Step1Component } from './views/data-points/step1/step1.component'
 import { Step2Component } from './views/data-points/step2/step2.component'
 import { Step3Component } from './views/data-points/step3/step3.component'
@@ -25,6 +26,7 @@ import { Step16Component } from './views/data-points/step16/step16.component'
 const appRoutes: Routes = [
   { path: '', component: LandingScreenComponent, pathMatch: 'full' },
   //Forward
+  { path: 'application/:jar', component: ApplicationComponent, data: {state: 'application'} },
   { path: 'step-1/:jar', component: Step1Component, data: {state: 'step-1'} },
   { path: 'step-2/:jar', component: Step2Component, data: {state: 'step-2'} },
   { path: 'step-3/:jar', component: Step3Component, data: {state: 'step-3'}  },
@@ -41,24 +43,6 @@ const appRoutes: Routes = [
   { path: 'step-14/:jar', component: Step14Component , data: {state: 'step-14'}},
   { path: 'step-15/:jar', component: Step15Component , data: {state: 'step-15'}},
   { path: 'step-16/:jar', component: Step16Component , data: {state: 'step-16'}},
-
-  //Back
-  { path: 'stepped-1/:jar', component: Step1Component, data: {state: 'stepped-1'} },
-  { path: 'stepped-2/:jar', component: Step2Component , data: {state: 'stepped-2'}},
-  { path: 'stepped-3/:jar', component: Step3Component , data: {state: 'stepped-3'}},
-  { path: 'stepped-4/:jar', component: Step4Component , data: {state: 'stepped-4'} },
-  { path: 'stepped-5/:jar', component: Step5Component , data: {state: 'stepped-5'} },
-  { path: 'stepped-6/:jar', component: Step6Component , data: {state: 'stepped-6'} },
-  { path: 'stepped-7/:jar', component: Step7Component , data: {state: 'stepped-7'} },
-  { path: 'stepped-8/:jar', component: Step8Component , data: {state: 'stepped-8'} },
-  { path: 'stepped-9/:jar', component: Step9Component , data: {state: 'stepped-9'} },
-  { path: 'stepped-10/:jar', component: Step10Component , data: {state: 'stepped-10'} },
-  { path: 'stepped-11/:jar', component: Step11Component , data: {state: 'stepped-11'} },
-  { path: 'stepped-12/:jar', component: Step12Component , data: {state: 'stepped-12'} },
-  { path: 'stepped-13/:jar', component: Step13Component , data: {state: 'stepped-13'} },
-  { path: 'stepped-14/:jar', component: Step14Component , data: {state: 'stepped-14'} },
-  { path: 'stepped-15/:jar', component: Step15Component , data: {state: 'stepped-15'} },
-  { path: 'stepped-16/:jar', component: Step16Component , data: {state: 'stepped-16'} },
 
   { path: '**', component: NotFoundComponent },
   { path: 'not-found', component: NotFoundComponent }

@@ -1,0 +1,63 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step [stepControl]="step1">
+        <app-step1></app-step1>
+    </mat-step>
+    <mat-step [stepControl]="step2">
+        <app-step2></app-step2>
+    </mat-step>
+    <mat-step [stepControl]="step3">
+        <app-step3></app-step3>
+    </mat-step>
+    <mat-step [stepControl]="step4">
+        <app-step4></app-step4>
+    </mat-step>
+    <mat-step [stepControl]="step5">
+        <app-step5></app-step5>
+    </mat-step>
+    <mat-step [stepControl]="step6">
+        <app-step6></app-step6>
+    </mat-step>
+    <mat-step [stepControl]="step7">
+        <app-step7></app-step7>
+    </mat-step>
+    <mat-step [stepControl]="step8">
+        <app-step8></app-step8>
+    </mat-step>
+    <mat-step [stepControl]="step9">
+        <app-step9></app-step9>
+    </mat-step>
+    <mat-step [stepControl]="step10">
+        <app-step10></app-step10>
+    </mat-step>
+    <mat-step [stepControl]="step11">
+        <app-step11></app-step11>
+    </mat-step>
+    <mat-step [stepControl]="step12">
+        <app-step12></app-step12>
+    </mat-step>
+    <mat-step [stepControl]="step13">
+        <app-step13></app-step13>
+    </mat-step>
+    <mat-step [stepControl]="step14">
+        <app-step14></app-step14>
+    </mat-step>
+    <mat-step [stepControl]="step15">
+        <app-step15></app-step15>
+    </mat-step>
+    <mat-step [stepControl]="step16">
+        <app-step16></app-step16>
+    </mat-step>
+    <mat-step>
+        <!-- <ng-template matStepLabel>Done</ng-template> -->
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license -->

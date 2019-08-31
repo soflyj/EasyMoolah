@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
@@ -7,12 +6,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { FormService } from 'src/app/views/data-points/application/form.service';
 
 @Component({
   selector: 'app-step3',
   templateUrl: './step3.component.html',
-  styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
+  styleUrls: ['../../../../assets/css/em_site_theme.css']
 })
 export class Step3Component implements OnInit {
 
@@ -30,7 +29,8 @@ export class Step3Component implements OnInit {
     private activatedRoute: ActivatedRoute,
     private headerService: HeaderService,
     private dataPointService: DataPointService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private formService: FormService) {
     this.question_1 = 'How much do you want to borrow?';
     this.question_1 = 'Over how long?';
   }
@@ -64,7 +64,7 @@ export class Step3Component implements OnInit {
         this.borrowmonths_slider,
         [Validators.required]),
     });
-
+    // this.formService.stepReady(this.stepForm, 'three')
   }
 
   Next() {
@@ -80,10 +80,10 @@ export class Step3Component implements OnInit {
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
 
-    this.router.navigateByUrl('/step-4/' + this.commonService.GetGUID());
+    // this.router.navigateByUrl('/step-4/' + this.commonService.GetGUID());
   }
 
   Back() {
-    this.router.navigateByUrl('/stepped-2/' + this.commonService.GetGUID());
+    // this.router.navigateByUrl('/stepped-2/' + this.commonService.GetGUID());
   }
 }

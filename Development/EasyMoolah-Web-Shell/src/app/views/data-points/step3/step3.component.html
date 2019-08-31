@@ -17,7 +17,7 @@
 					<p class="range-field">
 						<input [(ngModel)]="borrowmonths_slider" type="range" id="borrowmonths_slider" min="6" max="72" step="6"
 						 formControlName="borrowmonths_slider" value="24" />
-						<span class="amount_output">								
+						<span class="amount_output">
 							<p>{{borrowmonths_slider}} months</p>
 						</span>
 					</p>
@@ -29,12 +29,14 @@
 		<div class="row pagination-btns">
 			<div class="col s12 m6 offset-m3">
 				<div class="col s5 m4">
-					<button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
+					<button type="button" class="waves-effect waves-light btn-small prev-btn" matStepperPrevious (click)="Back()"><i
+						 class="material-icons left">chevron_left</i>Prev</button>
 				</div>
 				<div class="col s2 m4">
 				</div>
 				<div class="col s5 m4">
-					<button type="button" class="waves-effect waves-light btn-small next-btn" (click)="Next()"><i class="material-icons right">chevron_right</i>Next</button>
+					<button type="submit" class="waves-effect waves-light btn-small next-btn" matStepperNext [disabled]="!stepForm.valid"><i
+						 class="material-icons right">chevron_right</i>Next</button>
 				</div>
 			</div>
 		</div>

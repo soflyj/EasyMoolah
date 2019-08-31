@@ -37,11 +37,11 @@ export class LandingScreenComponent implements OnInit {
     this.application.changedDate = new Date();
 
     this.commonService.SetApplication(this.application);
-
+    console.log(this.application);
     // TODO: Insert to the Application table    
   }
 
   Begin() {
-    this.router.navigateByUrl('/step-1/' + this.commonService.GetGUID());
+    this.router.navigateByUrl('/application/' + this.commonService.GetGUID());
   }
 }

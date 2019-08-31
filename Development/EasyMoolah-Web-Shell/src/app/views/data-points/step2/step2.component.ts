@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
+import { FormService } from 'src/app/views/data-points/application/form.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
@@ -11,8 +11,7 @@ import { CommonService } from 'src/app/services/common.service';
 @Component({
   selector: 'app-step2',
   templateUrl: './step2.component.html',
-  styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
+  styleUrls: ['../../../../assets/css/em_site_theme.css']
 })
 export class Step2Component implements OnInit {
 
@@ -27,7 +26,8 @@ export class Step2Component implements OnInit {
     private activatedRoute: ActivatedRoute,
     private headerService: HeaderService,
     private dataPointService: DataPointService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private formService: FormService) {
     this.question = 'What type of home renovation?';
   }
 
@@ -50,10 +50,12 @@ export class Step2Component implements OnInit {
 
     // Reactive validation
     this.stepForm = new FormGroup({
-      'sub-service': new FormControl(
+      'subService': new FormControl(
         this.answer,
         [Validators.required]),
     });
+
+    // this.formService.stepReady(this.stepForm, 'two')
   }
 
   Next() {
@@ -62,15 +64,15 @@ export class Step2Component implements OnInit {
     
     this.dataPoint.Id = 2;
     this.dataPoint.Question.push(this.question);
-    this.dataPoint.Answer.push(this.stepForm.get('sub-service').value);
+    this.dataPoint.Answer.push(this.stepForm.get('subService').value);
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
 
-    this.router.navigateByUrl('/step-3/' + this.commonService.GetGUID());
+    // this.router.navigateByUrl('/step-3/' + this.commonService.GetGUID());
   }
 
   Back() {
-    this.router.navigateByUrl('/stepped-1/' + this.commonService.GetGUID());
+    // this.router.navigateByUrl('/stepped-1/' + this.commonService.GetGUID());
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
@@ -11,8 +10,7 @@ import { CommonService } from 'src/app/services/common.service';
 @Component({
     selector: 'app-step15',
     templateUrl: './step15.component.html',
-    styleUrls: ['../../../../assets/css/em_site_theme.css', './step15.component.css'],
-    animations: [routerTransition]
+    styleUrls: ['../../../../assets/css/em_site_theme.css', './step15.component.css']
 })
 export class Step15Component implements OnInit {
 
@@ -107,11 +105,9 @@ export class Step15Component implements OnInit {
         this.dataPoint.StartTime = this.startTime;
         this.dataPoint.EndTime = new Date();
         this.dataPointService.addDataPoint(this.dataPoint);
-
-        this.router.navigateByUrl('/step-16/' + this.commonService.GetGUID());
     }
 
     Back() {
-        this.router.navigateByUrl('/stepped-14/' + this.commonService.GetGUID());
+
     }
 }

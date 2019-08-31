@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
 import { DataPointService } from '../../../services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { FormService } from 'src/app/views/data-points/application/form.service';
 import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
   styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
 })
 export class Step1Component implements OnInit {
 
@@ -22,12 +22,14 @@ export class Step1Component implements OnInit {
   private answer: string = null;
   private jar: any;
   private startTime
+  private stepOneSource: Subject<FormGroup> = new Subject();
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private headerService: HeaderService,
     private dataPointService: DataPointService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private formService: FormService) {
     this.question = 'Which service would you like a loan for?';
   }
 
@@ -54,6 +56,7 @@ export class Step1Component implements OnInit {
         this.answer,
         [Validators.required]),
     });
+    // this.formService.stepReady(this.stepForm, 'one')
   }
 
   Next() {
@@ -67,6 +70,8 @@ export class Step1Component implements OnInit {
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
 
-    this.router.navigateByUrl('/step-2/' + this.commonService.GetGUID());
+
+ //   this.stepForm.next(form)
+//    this.router.navigateByUrl('/step-2/' + this.commonService.GetGUID());
   }
 }
