@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Application.cs" />
     <Compile Remove="Borrower.cs" />
     <Compile Remove="Integration\Intent.cs" />
     <Compile Remove="Integration\Lead.cs" />

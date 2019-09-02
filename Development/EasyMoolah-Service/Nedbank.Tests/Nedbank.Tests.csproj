@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="CRUD.cs" />
     <Compile Include="PersonalLoan.cs" />
+    <Compile Include="NedbankIntegration.cs" />
     <Compile Include="PersonalLoanRequests.cs" />
     <Compile Include="PersonalLoanOffers.cs" />
     <Compile Include="PersonalLoanAuthorisation.cs" />

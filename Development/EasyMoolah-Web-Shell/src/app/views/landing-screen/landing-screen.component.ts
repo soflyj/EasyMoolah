@@ -31,7 +31,7 @@ export class LandingScreenComponent implements OnInit {
     this.application.browser = ''; // npm install ngx-device-detector --save
     this.application.startDate = new Date();
     this.application.version = environment.version.toString();
-    this.application.iPAddress = window.location.origin.toString();
+    this.application.ipAddress = window.location.origin.toString();
     this.application.formData = '';
     this.application.createdDate = new Date();
     this.application.changedDate = new Date();

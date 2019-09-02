@@ -25,7 +25,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.Nedbank.IntentResponse.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken)
         {
             var result = intent.CreateIntent(intentRequest, lightToken);
-            await logs.LogIntegration(result);
+            // await logs.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.Nedbank.IntentResponse.RootObject>(result.Output);
 

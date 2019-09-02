@@ -24,7 +24,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<string> GetPersonalLoanAuthorisationURL(string intentId, string lightToken)
         {
             var result = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken);
-            await logs.LogIntegration(result);
+            // await logs.LogIntegration(result);
 
             var response = result.Output.ToString();
 

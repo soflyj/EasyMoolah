@@ -1,7 +1,7 @@
 export class ApplicationModel {
     key: number;
     guid: string;
-    iPAddress: string;
+    ipAddress: string;
     browser: string;
     formData: string;
     startDate: Date;

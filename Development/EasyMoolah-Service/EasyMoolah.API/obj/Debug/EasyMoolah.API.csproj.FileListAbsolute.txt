@@ -198,7 +198,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.W
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.WebPages.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Web.WebPages.Razor.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\WebGrease.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Model.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Repository.pdb
@@ -231,7 +230,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Antlr3.Runti
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Diagnostics.DiagnosticSource.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
@@ -354,3 +352,9 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Debug\EasyMoolah.API.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\AutoMapper.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.ValueTuple.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll.config

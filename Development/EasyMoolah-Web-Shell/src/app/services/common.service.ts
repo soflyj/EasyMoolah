@@ -1,17 +1,30 @@
 import { ApplicationModel } from 'src/app/models/application.model';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
 
 // import { Injectable } from '@angular/core';
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment';
+
 
 // /** @description Common functions for angular services. */
 // @Injectable({
 //   providedIn: 'root'
 // })
+
+@Injectable({
+    providedIn: 'root',
+  })
 export class CommonService {
     public guid: string;
     public application: ApplicationModel;
+    public apiUrl: string = environment.appUrl;
+    public apiToken: string = environment.apiToken;
+    public version: number = environment.version;
+    // public http: HttpClient;
+
+    constructor(private http: HttpClient) {}
 
     GetGUID(): string {
         this.application = JSON.parse(window.localStorage.getItem('application'))
@@ -22,8 +35,24 @@ export class CommonService {
         this.application = application;
         this.guid = application.guid;
         window.localStorage.setItem('application', JSON.stringify(application));
-    }
 
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // tslint:disable-next-line:max-line-length
+                'Authorization': 'Bearer ' + this.apiToken,
+                'X-Requested-With': 'XMLHttpRequest'
+            })
+        };
+
+        this.http.post(this.apiUrl + '/application/save', JSON.stringify(application), httpOptions)
+            .subscribe(
+                (res) => {
+                    console.log(res);
+                },
+                err => console.log(err)
+            );
+    }
 }
 //   private baseUrl = '';
 

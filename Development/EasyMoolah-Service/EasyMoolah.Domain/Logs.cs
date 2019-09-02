@@ -53,6 +53,7 @@ namespace EasyMoolah.Domain
             _result.ApiLog.ChangedDate = DateTime.Now;
             _result.ApiLog.Reference = "";
 
+            AutoMapper.Mapper.Reset();
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Model.Logs.ApiLog, Repository.ApiLog>();

@@ -11,7 +11,7 @@ namespace EasyMoolah.Domain.Integration
 {
     public class Token
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
+        EasyMoolah.Domain.Logs logs = new Logs();        
         Nedbank.Integration.Token token = new Nedbank.Integration.Token();
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.Nedbank.Token.TokenLightResponse> GetLightToken()
         {
             var result = token.GetLightToken();
-            await logs.LogIntegration(result);
+            // await logs.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.Nedbank.Token.TokenLightResponse> (result.Output);            
 
