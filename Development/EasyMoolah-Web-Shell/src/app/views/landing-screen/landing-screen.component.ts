@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ApplicationModel } from 'src/app/models/application.model';
 import { CommonService } from 'src/app/services/common.service';
 import { environment } from 'src/environments/environment';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-landing-screen',
@@ -17,10 +18,12 @@ export class LandingScreenComponent implements OnInit {
   private ip: string;
   private startTime: Date;
   private application: ApplicationModel = new ApplicationModel();
+  deviceInfo = null;
 
   constructor(private router: Router,
     private headerService: HeaderService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private deviceService: DeviceDetectorService) {
     //super();
   }
 
@@ -28,7 +31,7 @@ export class LandingScreenComponent implements OnInit {
     this.headerService.mode.next('determinate');
 
     this.application.guid = UUID.UUID(); // Generate GUID
-    this.application.browser = ''; // npm install ngx-device-detector --save
+    this.application.device = this.deviceService.getDeviceInfo().toString(); // npm install ngx-device-detector --save
     this.application.startDate = new Date();
     this.application.version = environment.version.toString();
     this.application.iPAddress = window.location.origin.toString();

@@ -16,6 +16,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AutocompleteComponent } from './views/common/google-places.component';
 import { GoogleMaps } from './services/googlemaps.service';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { HeaderService } from './services/header.service'
 import { DataPointService } from './services/data-point.service'
@@ -85,7 +86,8 @@ import { ApplicationComponent } from './views/data-points/application/applicatio
     MatExpansionModule,
     MatStepperModule,
     //   HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [
     HeaderService,

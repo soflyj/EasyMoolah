@@ -2,7 +2,7 @@ export class ApplicationModel {
     key: number;
     guid: string;
     iPAddress: string;
-    browser: string;
+    device: string;
     formData: string;
     startDate: Date;
     endDate: Date;
