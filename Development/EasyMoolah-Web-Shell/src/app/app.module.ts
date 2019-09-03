@@ -21,6 +21,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
 import { HeaderService } from './services/header.service'
 import { DataPointService } from './services/data-point.service'
 import { CommonService } from './services/common.service'
+import { NedbankService } from './services/nedbank.service'
 import { FormService } from './views/data-points/application/form.service'
 
 import { AppComponent } from './app.component';
@@ -93,6 +94,7 @@ import { ApplicationComponent } from './views/data-points/application/applicatio
     HeaderService,
     DataPointService,
     CommonService,
+    NedbankService,
     FormService,
     GoogleMaps],
   bootstrap: [AppComponent]

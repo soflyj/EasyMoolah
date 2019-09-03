@@ -8,7 +8,7 @@ using System.Web.Script.Serialization;
 namespace EasyMoolah.Domain
 {
     public class Application
-    {       
+    {
         public static async Task<Repository.Application> InsertApplication(Model.Application _application)
         {
             AutoMapper.Mapper.Reset();
@@ -26,6 +26,6 @@ namespace EasyMoolah.Domain
                     .ConfigureAwait(false);
                 return entity;
             }
-        } 
+        }
     }
 }

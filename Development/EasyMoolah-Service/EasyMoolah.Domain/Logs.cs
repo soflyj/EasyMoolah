@@ -45,7 +45,7 @@ namespace EasyMoolah.Domain
             }
         }
 
-        public async Task LogIntegration(Result _result)
+        public static async Task LogIntegration(Result _result)
         {
             // Default
             _result.ApiLog.IsActive = true;
@@ -65,8 +65,6 @@ namespace EasyMoolah.Domain
                 // ApiLog
                 var apiLogEntity = Mapper.Map<Repository.ApiLog>(_result.ApiLog);
                 context.ApiLogs.Add(apiLogEntity);
-                await context.SaveChangesAsync()
-                    .ConfigureAwait(false);
 
                 if (_result.result != ResultEnum.OK)
                 {
@@ -89,9 +87,10 @@ namespace EasyMoolah.Domain
                     }); ;
 
                     context.ErrorLogs.Add(entity);
-                    await context.SaveChangesAsync()
-                        .ConfigureAwait(false);
                 }
+
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
             }
         }
     }

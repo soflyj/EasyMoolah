@@ -11,7 +11,7 @@ namespace Nedbank.Integration
 {
     public class Token
     {
-        public Result GetLightToken()
+        public Result GetLightToken(int applicationKey)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
@@ -21,7 +21,7 @@ namespace Nedbank.Integration
 
             result.Input = "";
 
-            apiLog.ApplicationKey = 0; // From FE
+            apiLog.ApplicationKey = applicationKey;
             apiLog.ApiToken = ""; // If a token is used
             apiLog.Method = "nboauth/oauth20/token";
             apiLog.Http = "Post";

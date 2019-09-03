@@ -18,14 +18,14 @@ namespace EasyMoolah.Domain.Integration
         /// Step
         /// </summary>
         /// <returns></returns>
-        public async Task<string> GetAuthorisationLink(decimal loanAmount)
+        public async Task<string> GetAuthorisationLink(int applicationKey, decimal loanAmount)
         {
 
             EasyMoolah.Domain.Logs logs = new Logs();
             // Step 1
             EasyMoolah.Domain.Integration.Token token = new EasyMoolah.Domain.Integration.Token();
 
-            var lightTokenResult = token.GetLightToken();            
+            var lightTokenResult = token.GetLightToken(applicationKey);            
 
             var lightToken = lightTokenResult.Result.access_token.ToString();
 
@@ -43,14 +43,14 @@ namespace EasyMoolah.Domain.Integration
                 }
             };
             
-            var intentResult = intent.CreateIntent(intentRequest, lightToken);            
+            var intentResult = intent.CreateIntent(intentRequest, lightToken, applicationKey);            
 
             var intentId = intentResult.Result.PersonalLoanRequest.Data.LoanRequestId.ToString();
 
             //Step 3
             EasyMoolah.Domain.Integration.PersonalLoanAuthorisation personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisation();
             
-            var personalLoanAuthorisationResult = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken);
+            var personalLoanAuthorisationResult = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken, applicationKey);
 
             return personalLoanAuthorisationResult.Result.ToString();
         }

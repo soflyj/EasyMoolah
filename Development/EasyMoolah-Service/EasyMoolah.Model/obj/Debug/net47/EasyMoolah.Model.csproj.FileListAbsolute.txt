@@ -27,3 +27,4 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net4
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Model\obj\Debug\net47\EasyMoolah.Model.csprojAssemblyReference.cache

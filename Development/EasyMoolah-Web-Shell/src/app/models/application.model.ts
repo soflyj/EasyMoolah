@@ -1,3 +1,5 @@
+import 'rxjs';
+
 export class ApplicationModel {
     key: number;
     guid: string;

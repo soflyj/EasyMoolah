@@ -12,7 +12,6 @@ namespace EasyMoolah.Domain.Integration
 {
     public class Intent
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.Intent intent = new Nedbank.Integration.Intent();
 
         /// <summary>
@@ -22,10 +21,10 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="intentRequest"></param>
         /// <param name="lightToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.IntentResponse.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken)
+        public async Task<Model.Nedbank.IntentResponse.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
         {
-            var result = intent.CreateIntent(intentRequest, lightToken);
-            // await logs.LogIntegration(result);
+            var result = intent.CreateIntent(intentRequest, lightToken, applicationKey);
+            Logs.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.Nedbank.IntentResponse.RootObject>(result.Output);
 

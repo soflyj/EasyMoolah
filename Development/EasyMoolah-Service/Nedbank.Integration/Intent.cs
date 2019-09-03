@@ -12,7 +12,7 @@ namespace Nedbank.Integration
 {
     public class Intent
     {
-        public Result CreateIntent(EasyMoolah.Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken)
+        public Result CreateIntent(EasyMoolah.Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
@@ -22,7 +22,7 @@ namespace Nedbank.Integration
 
             result.Input = Newtonsoft.Json.JsonConvert.SerializeObject(intentRequest);
 
-            apiLog.ApplicationKey = 0; // From FE
+            apiLog.ApplicationKey = applicationKey;
             apiLog.ApiToken = lightToken; // If a token is used
             apiLog.Method = "open-banking/v1/personal-loan-requests";
             apiLog.Http = "Post";

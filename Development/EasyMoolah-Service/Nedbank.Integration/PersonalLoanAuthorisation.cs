@@ -12,7 +12,7 @@ namespace Nedbank.Integration
 {
     public class PersonalLoanAuthorisation
     {
-        public Result GetPersonalLoanAuthorisationURL(string intentId, string lightToken)
+        public Result GetPersonalLoanAuthorisationURL(string intentId, string lightToken, int applicationKey)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
@@ -23,7 +23,7 @@ namespace Nedbank.Integration
 
             result.Input = intentId + " | " + lightToken;
 
-            apiLog.ApplicationKey = 0; // From FE
+            apiLog.ApplicationKey = applicationKey;
             apiLog.ApiToken = lightToken;
             apiLog.Method = "nboauth/oauth20/authorize?";
             apiLog.Http = "Get";

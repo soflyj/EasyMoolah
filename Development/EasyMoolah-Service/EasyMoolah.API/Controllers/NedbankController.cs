@@ -5,25 +5,25 @@ namespace EasyMoolah.API.Controllers
     [Authorize]
     public class NedbankController : ApiController
     {
-        [Route("api/fincheck/intent")]
+        [Route("api/fincheck/intent/{applicationKey}")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpGet]
-        public IHttpActionResult GetIntent()
+        public IHttpActionResult GetIntent(int applicationKey)
         {
             EasyMoolah.Domain.Integration.Token requestToken = new EasyMoolah.Domain.Integration.Token();
 
-            var response = requestToken.GetLightToken();
+            var response = requestToken.GetLightToken(applicationKey);
             return Ok(response);
         }
 
         [Route("api/nedbank/authorisationlink")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult Authorisationlink([FromBody] decimal loanAmount)
+        public IHttpActionResult Authorisationlink([FromBody] Models.AuthorisationlinkRequest authorisationlinkRequest)
         {
             EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
 
-            var response = nedbankIntegration.GetAuthorisationLink(loanAmount);
+            var response = nedbankIntegration.GetAuthorisationLink(authorisationlinkRequest.ApplicationKey, authorisationlinkRequest.LoanAmount);
             return Ok(response);
         }
     }
