@@ -26,6 +26,23 @@ namespace EasyMoolah.Domain
             }
         }
 
+        public async Task<int> InsertNotificationLog(Model.Logs.NotificationLog _notificationLog)
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Model.Logs.NotificationLog, Repository.NotificationLog>();
+            });
+
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.NotificationLog>(_notificationLog);
+
+                context.NotificationLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity.Key;
+            }
+        }
 
         public async Task<Repository.ApiLog> InsertApiLog(Model.Logs.ApiLog _apiLog)
         {

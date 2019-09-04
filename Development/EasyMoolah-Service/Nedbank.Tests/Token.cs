@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         public async Task GetLightToken()
         {
             EasyMoolah.Domain.Integration.Token requestToken = new EasyMoolah.Domain.Integration.Token();
-            var result = await requestToken.GetLightToken();
+            var result = await requestToken.GetLightToken(1);
 
             Assert.IsTrue(result != null);
         }

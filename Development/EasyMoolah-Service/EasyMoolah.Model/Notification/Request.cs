@@ -5,26 +5,22 @@ using Newtonsoft.Json;
 
 namespace EasyMoolah.Model.Notification
 {
-    public class AcceptOffer
+    public class Request
     {
+        public int applicationKey { get; set; }
+
         public string toAddress { get; set; }
 
         public string toAddressTitle { get; set; }
 
-        public string toAddressName { get; set; }
+        public string toAddressFirstName { get; set; }
+
+        public string toAddressLastName { get; set; }
 
         public string fromAddress { get; set; }
 
         public string subject { get; set; }
 
-        public string providerName { get; set; }
-
-        public string providerLogo { get; set; }
-
-        public string providerWebsite { get; set; }
-
-        public string probability { get; set; }
-
-        public int applicationKey { get; set; }
+        public string body { get; set; }
     }
 }

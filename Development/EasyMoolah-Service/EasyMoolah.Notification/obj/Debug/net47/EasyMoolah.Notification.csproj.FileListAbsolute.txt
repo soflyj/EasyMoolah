@@ -18,7 +18,6 @@ C:\Jarrod\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\activate_account.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\activation_confirmation.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\call-me.html
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\fsp_results-successful.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\fsp_results-unsuccessful.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\processing-results.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\retrieve_password.html
@@ -31,7 +30,6 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Deb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Model.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Repository.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Repository.dll.config
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EntityFramework.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csproj.CoreCompileInputs.cache
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.AssemblyInfoInputs.cache
@@ -63,3 +61,7 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Debug\net47\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Templates\nedbank-authorisationurl.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\AutoMapper.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\System.ValueTuple.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EntityFramework.SqlServer.dll

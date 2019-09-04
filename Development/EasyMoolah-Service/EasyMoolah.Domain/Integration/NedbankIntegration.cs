@@ -13,7 +13,7 @@ namespace EasyMoolah.Domain.Integration
     public class NedbankIntegration
     {
         EasyMoolah.Domain.Logs logs = new Logs();
-        
+
         /// <summary>
         /// Step
         /// </summary>
@@ -25,7 +25,7 @@ namespace EasyMoolah.Domain.Integration
             // Step 1
             EasyMoolah.Domain.Integration.Token token = new EasyMoolah.Domain.Integration.Token();
 
-            var lightTokenResult = token.GetLightToken(applicationKey);            
+            var lightTokenResult = token.GetLightToken(applicationKey);
 
             var lightToken = lightTokenResult.Result.access_token.ToString();
 
@@ -42,17 +42,30 @@ namespace EasyMoolah.Domain.Integration
                     LoanAmount = loanAmount.ToString()
                 }
             };
-            
-            var intentResult = intent.CreateIntent(intentRequest, lightToken, applicationKey);            
+
+            var intentResult = intent.CreateIntent(intentRequest, lightToken, applicationKey);
 
             var intentId = intentResult.Result.PersonalLoanRequest.Data.LoanRequestId.ToString();
 
             //Step 3
             EasyMoolah.Domain.Integration.PersonalLoanAuthorisation personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisation();
-            
+
             var personalLoanAuthorisationResult = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken, applicationKey);
 
-            return personalLoanAuthorisationResult.Result.ToString();
+            var url = personalLoanAuthorisationResult.Result.ToString();
+
+            var request = new EasyMoolah.Model.Notification.Request()
+            {
+                applicationKey = 1,
+                toAddress = "soflyj@gmail.com",
+                toAddressFirstName = "Jarrod",
+                toAddressLastName = "Ramsaroop",
+                toAddressTitle = "Mr",
+            };
+
+            await EasyMoolah.Notification.Nedbank.Nedbank.SendAuthorisation(request, loanAmount, url);
+
+            return "";
         }
     }
 }

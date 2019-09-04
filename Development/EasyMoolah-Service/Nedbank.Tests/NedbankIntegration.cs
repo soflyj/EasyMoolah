@@ -15,7 +15,7 @@ namespace Nedbank.Tests
 
             EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
 
-            var result = nedbankIntegration.GetAuthorisationLink(loanAmount);
+            var result = nedbankIntegration.GetAuthorisationLink(1, loanAmount);
 
             Assert.IsTrue(result != null);
         }   

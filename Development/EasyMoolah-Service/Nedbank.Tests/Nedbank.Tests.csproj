@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD.cs" />
+    <Compile Include="NedbankNotification.cs" />
     <Compile Include="PersonalLoan.cs" />
     <Compile Include="NedbankIntegration.cs" />
     <Compile Include="PersonalLoanRequests.cs" />
@@ -69,6 +70,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Templates\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyMoolah.Domain\EasyMoolah.Domain.csproj">
@@ -79,6 +81,10 @@
       <Project>{5ABDF0EB-6389-47C8-A210-61F67B78CFFB}</Project>
       <Name>EasyMoolah.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj">
+      <Project>{936ac402-5433-4087-bb47-40a83076df8c}</Project>
+      <Name>EasyMoolah.Notification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj">
       <Project>{D8F15E8E-DC39-409E-853B-B6CAE99AC74F}</Project>
       <Name>EasyMoolah.Repository</Name>
@@ -87,6 +93,50 @@
       <Project>{e7bef9dd-2b24-4380-9f5c-f3c713ace06d}</Project>
       <Name>Nedbank.Integration</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\account-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\check-decagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\close-octagon-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\format-list-checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\lock-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\images\web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\activate_account.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\activation_confirmation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\call-me.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\fsp_results-unsuccessful.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\nedbank-authorisationurl.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\processing-results.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\retrieve_password.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

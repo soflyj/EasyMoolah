@@ -65,6 +65,22 @@
           "bin/placeholder/EasyMoolah.Model.dll": {}
         }
       },
+      "EasyMoolah.Notification/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "EasyMoolah.Model": "1.0.0",
+          "EasyMoolah.Repository": "1.0.0",
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Notification.dll": {}
+        }
+      },
       "EasyMoolah.Repository/1.0.0": {
         "type": "project",
         "compile": {
@@ -224,6 +240,11 @@
       "path": "../EasyMoolah.Model/EasyMoolah.Model.csproj",
       "msbuildProject": "../EasyMoolah.Model/EasyMoolah.Model.csproj"
     },
+    "EasyMoolah.Notification/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj",
+      "msbuildProject": "../EasyMoolah.Notification/EasyMoolah.Notification.csproj"
+    },
     "EasyMoolah.Repository/1.0.0": {
       "type": "project",
       "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
@@ -239,6 +260,7 @@
     ".NETFramework,Version=v4.7": [
       "AutoMapper >= 8.0.0",
       "EasyMoolah.Model >= 1.0.0",
+      "EasyMoolah.Notification >= 1.0.0",
       "EasyMoolah.Repository >= 1.0.0",
       "EntityFramework >= 6.2.0",
       "Nedbank.Integration >= 1.0.0"
@@ -276,6 +298,9 @@
           "projectReferences": {
             "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
               "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+            },
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
             },
             "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
               "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"

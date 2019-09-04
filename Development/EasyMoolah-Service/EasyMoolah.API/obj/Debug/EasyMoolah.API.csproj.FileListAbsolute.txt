@@ -358,3 +358,5 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.Value
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.pdb

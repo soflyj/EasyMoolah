@@ -31,3 +31,12 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoo
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.SqlServer.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.xml
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EntityFramework.SqlServer.xml
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\activate_account.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\activation_confirmation.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\call-me.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\nedbank-authorisationurl.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\fsp_results-unsuccessful.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\processing-results.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Templates\retrieve_password.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Notification.pdb

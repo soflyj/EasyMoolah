@@ -77,3 +77,12 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\obj\Debug\net47\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Domain.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\activate_account.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\activation_confirmation.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\call-me.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\nedbank-authorisationurl.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\fsp_results-unsuccessful.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\processing-results.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\retrieve_password.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Notification.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Notification.pdb

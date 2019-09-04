@@ -48,7 +48,7 @@ export class LandingScreenComponent implements OnInit {
         (res) => {
           this.application.key = JSON.parse(JSON.stringify(res)).Result.Key;
           window.localStorage.setItem('application', JSON.stringify(this.application));
-          const URL = this.nedbankSerivce.GetAuthorisationURL('5000');
+         // const URL = this.nedbankSerivce.GetAuthorisationURL('5000');
         },
         err => console.log(err)
       );
