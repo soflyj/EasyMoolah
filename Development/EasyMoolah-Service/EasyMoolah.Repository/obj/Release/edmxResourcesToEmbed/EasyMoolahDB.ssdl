@@ -55,6 +55,8 @@
       <PropertyRef Name="Key" />
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemType" Type="varchar" MaxLength="50" />
+    <Property Name="ItemKey" Type="int" />
     <Property Name="ApplicationKey" Type="int" />
     <Property Name="Method" Type="varchar(max)" />
     <Property Name="Input" Type="varchar(max)" />

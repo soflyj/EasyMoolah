@@ -61,6 +61,7 @@ namespace EasyMoolah.Domain.Integration
                 toAddressFirstName = "Jarrod",
                 toAddressLastName = "Ramsaroop",
                 toAddressTitle = "Mr",
+                fromAddress = "info@easymoolah.co.za"
             };
 
             await EasyMoolah.Notification.Nedbank.Nedbank.SendAuthorisation(request, loanAmount, url);

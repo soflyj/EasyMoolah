@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { NedbankService } from 'src/app/services/nedbank.service';
 
 @Component({
     selector: 'app-step16',
@@ -28,6 +29,7 @@ export class Step16Component implements OnInit {
     constructor(private router: Router,
         private activatedRoute: ActivatedRoute,
         private headerService: HeaderService,
+        private nedbankSerivce: NedbankService,
         private dataPointService: DataPointService,
         private commonService: CommonService) {
         this.question = 'Personal Identification Number';
@@ -79,6 +81,8 @@ export class Step16Component implements OnInit {
         this.dataPoint.StartTime = this.startTime;
         this.dataPoint.EndTime = new Date();
         this.dataPointService.addDataPoint(this.dataPoint);
+
+        const URL = this.nedbankSerivce.GetAuthorisationURL('5000')
       }
     
       Back() {

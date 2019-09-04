@@ -98,10 +98,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Release\Easy
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Release\EasyMoolah.API.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Model.dll
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Fincheck.Integration.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Model.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Fincheck.Integration.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Newtonsoft.Json.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EntityFramework.dll
@@ -232,3 +230,10 @@ D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Relea
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Release\EasyMoolah.API.csproj.CopyComplete
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Release\EasyMoolah.API.dll
 D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\obj\Release\EasyMoolah.API.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\AutoMapper.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\System.ValueTuple.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Domain.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\nedbank-authorisationurl.html

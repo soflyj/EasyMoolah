@@ -16,32 +16,49 @@ namespace EasyMoolah.Notification
     {
         public async static Task<Result> SendEmail(EasyMoolah.Model.Notification.Request _request, string type)
         {
+            var where = "";
+            var woop = "";
+
             Result result = new Result();
             try
             {
                 using (var mailMessage = new MailMessage())
-                using (var client = new SmtpClient("mail.easymoolah.co.za", 26))
+                using (var client = new SmtpClient("mail.easymoolah.co.za", 25))
                 {
+                    where += "1";
                     // configure the client and send the message
                     client.UseDefaultCredentials = false;
                     client.Credentials = new NetworkCredential("info@easymoolah.co.za", "EasyMoolah@101");
-                    //client.EnableSsl = true;
+                    client.EnableSsl = false;
 
+                    client.Host = "mail.easymoolah.co.za";
+                    client.Port = 25;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+
+
+                    where += "2";
                     // configure the mail message
-                    mailMessage.From = new MailAddress("info@easymoolah.co.za");
+                    mailMessage.From = new MailAddress(_request.fromAddress);
+                    where += "3";
                     mailMessage.To.Insert(0, new MailAddress(_request.toAddress));
+                    where += "4";
                     mailMessage.Subject = _request.subject;
+                    where += "5";
                     mailMessage.Body = _request.body;
+                    where += "6";
                     mailMessage.IsBodyHtml = true;
-
+                    where += "7";
                     client.Send(mailMessage);
-
+                    where += "8";
                     result.result = ResultEnum.OK;
-                    result.Output = "Email Successfully Sent - " + type;                    
+                    result.Output = "Email Successfully Sent - " + type;
+                    result.Error = "eish";
                 }
             }
             catch (Exception ex)
             {
+                woop = ex.Message.ToString();
                 result.result = ResultEnum.Notification;
                 result.Error = ex.InnerException.ToString();
                 result.Output = "Email Unsuccessfully Sent - " + type;
@@ -60,8 +77,8 @@ namespace EasyMoolah.Notification
                 IsActive = true,
                 CreatedDate = DateTime.Now,
                 ChangedDate = DateTime.Now,
-                NotificationType = type,
-                Reason = result.Output,
+                NotificationType = woop,
+                Reason = where,
             });
 
             return result;

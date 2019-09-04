@@ -21,7 +21,7 @@ export class NedbankService {
         return this.application;
     }
 
-    GetAuthorisationURL(loanAmount: string): string {
+    GetAuthorisationURL(loanAmount: string): void {
         this.GetApplication();
         this.guid = this.application.guid;
         this.applicationKey = this.application.key;

@@ -235,7 +235,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\FTP to service.easymoolah.pubxml" />
+    <None Include="Properties\PublishProfiles\uat.service.easymoolah.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -254,6 +254,9 @@
     <Content Include="Templates\images\lock-question.png" />
     <Content Include="Templates\images\login.png" />
     <Content Include="Templates\images\web.png" />
+    <Content Include="Templates\nedbank-authorisationurl.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templates\processing-results.html" />
     <Content Include="Templates\retrieve_password.html" />
     <Content Include="Web.config" />
@@ -322,10 +325,6 @@
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj">
       <Project>{d8f15e8e-dc39-409e-853b-b6cae99ac74f}</Project>
       <Name>EasyMoolah.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Fincheck.Integration\Fincheck.Integration.csproj">
-      <Project>{c32474e8-1be1-4ec8-9d91-8e6b959bd39b}</Project>
-      <Name>Fincheck.Integration</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
