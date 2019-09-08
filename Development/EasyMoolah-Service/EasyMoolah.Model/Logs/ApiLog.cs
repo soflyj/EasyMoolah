@@ -8,7 +8,7 @@ namespace EasyMoolah.Model.Logs
 {
     public class ApiLog: Base
     {
-        public int ApplicationKey { get; set; }
+        public Nullable<int> ApplicationKey { get; set; }
         public string ApiToken { get; set; }
         public string Method { get; set; }
         public string Http { get; set; }

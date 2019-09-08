@@ -14,12 +14,12 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step5Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  jar: any;
+  startTime
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -56,7 +56,7 @@ export class Step5Component implements OnInit {
   Next() {
     this.dataPoint.Question = [];
     this.dataPoint.Answer = [];
-    
+
     this.dataPoint.Id = 2;
     this.dataPoint.Question.push(this.question);
     this.dataPoint.Answer.push(this.stepForm.get('insolvent').value);

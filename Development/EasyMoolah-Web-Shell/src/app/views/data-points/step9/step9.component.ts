@@ -14,13 +14,13 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step9Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
-  private nettincome_slider: string;  
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  jar: any;
+  startTime
+  nettincome_slider: string;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -60,7 +60,7 @@ export class Step9Component implements OnInit {
   Next() {
     this.dataPoint.Question = [];
     this.dataPoint.Answer = [];
-    
+
     this.dataPoint.Id = 9;
     this.dataPoint.Question.push(this.question);
     this.dataPoint.Answer.push(this.stepForm.get('nettincome_slider').value);

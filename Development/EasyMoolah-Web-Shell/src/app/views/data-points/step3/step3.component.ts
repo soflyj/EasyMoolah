@@ -15,15 +15,15 @@ import { FormService } from 'src/app/views/data-points/application/form.service'
 })
 export class Step3Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question_1: string;
-  private question_2: string;
-  private answer: string[];
-  private jar: any;
-  private startTime
-  private borrowamount_slider: string;
-  private borrowmonths_slider: string;
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question_1: string;
+  question_2: string;
+  answer: string[];
+  jar: any;
+  startTime
+  borrowamount_slider: string;
+  borrowmonths_slider: string;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,

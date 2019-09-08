@@ -54,10 +54,16 @@
     <Compile Include="ApiLog.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Applicant.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Application.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ApplicationAccess.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationAudit.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Configuration.cs">
@@ -86,9 +92,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">
-      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>

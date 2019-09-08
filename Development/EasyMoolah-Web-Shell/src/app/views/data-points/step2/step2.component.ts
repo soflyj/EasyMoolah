@@ -15,12 +15,12 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step2Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  jar: any;
+  startTime
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,

@@ -16,13 +16,12 @@ import { Observable, Subject } from 'rxjs';
 })
 export class Step1Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
-  private stepOneSource: Subject<FormGroup> = new Subject();
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  jar: any;
+  startTime;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -69,9 +68,5 @@ export class Step1Component implements OnInit {
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
-
-
- //   this.stepForm.next(form)
-//    this.router.navigateByUrl('/step-2/' + this.commonService.GetGUID());
   }
 }

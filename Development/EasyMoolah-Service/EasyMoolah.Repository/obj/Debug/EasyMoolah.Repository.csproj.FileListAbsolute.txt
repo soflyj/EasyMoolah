@@ -44,4 +44,3 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.pdb
-F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Repository\obj\Debug\EasyMoolah.Repository.csprojAssemblyReference.cache

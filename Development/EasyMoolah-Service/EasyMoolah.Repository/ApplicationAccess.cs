@@ -15,15 +15,15 @@ namespace EasyMoolah.Repository
     public partial class ApplicationAccess
     {
         public int Key { get; set; }
-        public int ApplicationKey { get; set; }
+        public Nullable<int> ApplicationKey { get; set; }
         public string MiniApplicationReference { get; set; }
         public string IPAddress { get; set; }
         public string Browser { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ChangedDate { get; set; }
-        public Nullable<bool> IsActive { get; set; }
     
         public virtual Application Application { get; set; }
     }

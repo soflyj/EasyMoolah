@@ -18,7 +18,9 @@ namespace EasyMoolah.Repository
         public Application()
         {
             this.ApiLogs = new HashSet<ApiLog>();
+            this.Applicants = new HashSet<Applicant>();
             this.ApplicationAccesses = new HashSet<ApplicationAccess>();
+            this.ApplicationAudits = new HashSet<ApplicationAudit>();
             this.ErrorLogs = new HashSet<ErrorLog>();
             this.NotificationLogs = new HashSet<NotificationLog>();
         }
@@ -36,7 +38,11 @@ namespace EasyMoolah.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApiLog> ApiLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Applicant> Applicants { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApplicationAccess> ApplicationAccesses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApplicationAudit> ApplicationAudits { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ErrorLog> ErrorLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

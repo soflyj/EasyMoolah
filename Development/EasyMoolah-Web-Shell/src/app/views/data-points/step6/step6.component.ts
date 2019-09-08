@@ -14,13 +14,13 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step6Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: boolean;
-  private jar: any;
-  private startTime
-  private credit_check: boolean;
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: boolean;
+  jar: any;
+  startTime
+  credit_check: boolean;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -60,7 +60,7 @@ export class Step6Component implements OnInit {
   Next() {
     this.dataPoint.Question = [];
     this.dataPoint.Answer = [];
-    
+
     this.dataPoint.Id = 6;
     this.dataPoint.Question.push(this.question);
     this.dataPoint.Answer.push(this.stepForm.get('credit_check').value);
@@ -70,6 +70,6 @@ export class Step6Component implements OnInit {
   }
 
   Back() {
-   
+
   }
 }

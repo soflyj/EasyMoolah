@@ -14,18 +14,18 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step15Component implements OnInit {
 
-    private stepForm: FormGroup;
-    private dataPoint: DataPointModel = new DataPointModel();
-    private question: string;
-    private answer: string[] = null;
-    private jar: any;
-    private startTime
+    stepForm: FormGroup;
+    dataPoint: DataPointModel = new DataPointModel();
+    question: string;
+    answer: string[] = null;
+    jar: any;
+    startTime
 
-    private mobileNumber: string = '';
-    private mobileNumberLength: number;
-    private landlineNumber: string = '';
-    private landlineNumberLength: number;
-    private mask: any;
+    mobileNumber: string = '';
+    mobileNumberLength: number;
+    landlineNumber: string = '';
+    landlineNumberLength: number;
+    mask: any;
 
     constructor(private router: Router,
         private activatedRoute: ActivatedRoute,

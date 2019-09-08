@@ -54,6 +54,8 @@ namespace EasyMoolah.Domain.Integration
 
             var url = personalLoanAuthorisationResult.Result.ToString();
 
+            var application = Application.GetApplication(applicationKey);
+
             var request = new EasyMoolah.Model.Notification.Request()
             {
                 applicationKey = 1,

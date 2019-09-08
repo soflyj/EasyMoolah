@@ -14,13 +14,13 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class Step10Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime;
-  private monthlyexpense_slider: string;
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  jar: any;
+  startTime;
+  monthlyexpense_slider: string;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,

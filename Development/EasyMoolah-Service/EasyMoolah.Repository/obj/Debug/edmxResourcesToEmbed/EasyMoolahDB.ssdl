@@ -5,7 +5,7 @@
       <PropertyRef Name="Key" />
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
     <Property Name="ApiToken" Type="varchar" MaxLength="250" />
     <Property Name="Method" Type="varchar" MaxLength="250" />
     <Property Name="Http" Type="varchar" MaxLength="25" />
@@ -18,6 +18,30 @@
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="IdNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="250" />
+    <Property Name="LastName" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LandlineNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="250" />
+    <Property Name="Suburb" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="250" />
+    <Property Name="Province" Type="varchar" MaxLength="250" />
+    <Property Name="Country" Type="varchar" MaxLength="250" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+    <Property Name="Longitude" Type="varchar(max)" />
+    <Property Name="Latitude" Type="varchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ChangedDate" Type="datetime" />
   </EntityType>
   <EntityType Name="Application">
     <Key>
@@ -38,7 +62,7 @@
       <PropertyRef Name="Key" />
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
     <Property Name="MiniApplicationReference" Type="varchar" MaxLength="50" />
     <Property Name="IPAddress" Type="varchar" MaxLength="50" />
     <Property Name="Browser" Type="varchar(max)" />
@@ -47,6 +71,16 @@
     <Property Name="IsActive" Type="bit" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ChangedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ApplicationAudit">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="FormData" Type="varchar(max)" />
+    <Property Name="Action" Type="varchar" MaxLength="50" />
+    <Property Name="DateStamp" Type="datetime" />
   </EntityType>
   <EntityType Name="Configuration">
     <Key>
@@ -106,7 +140,7 @@
       <PropertyRef Name="Key" />
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
     <Property Name="QuestionAnswer" Type="varchar(max)" />
     <Property Name="StartDateTime" Type="datetime" />
     <Property Name="EndDateTime" Type="datetime" />
@@ -114,18 +148,8 @@
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ChangedDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <Association Name="FK_ApiLog_Application">
-    <End Role="Application" Type="Self.Application" Multiplicity="1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
     <End Role="ApiLog" Type="Self.ApiLog" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Application">
@@ -136,14 +160,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Applicant_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ApplicationAccess_Application">
-    <End Role="Application" Type="Self.Application" Multiplicity="1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
     <End Role="ApplicationAccess" Type="Self.ApplicationAccess" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Application">
         <PropertyRef Name="Key" />
       </Principal>
       <Dependent Role="ApplicationAccess">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationAudit_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="ApplicationAudit" Type="Self.ApplicationAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="ApplicationAudit">
         <PropertyRef Name="ApplicationKey" />
       </Dependent>
     </ReferentialConstraint>
@@ -174,20 +222,29 @@
   </Association>
   <EntityContainer Name="EasyMoolahModelStoreContainer">
     <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant" EntityType="Self.Applicant" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ApplicationAccess" EntityType="Self.ApplicationAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationAudit" EntityType="Self.ApplicationAudit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ApiLog_Application" Association="Self.FK_ApiLog_Application">
       <End Role="Application" EntitySet="Application" />
       <End Role="ApiLog" EntitySet="ApiLog" />
     </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Application" Association="Self.FK_Applicant_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
     <AssociationSet Name="FK_ApplicationAccess_Application" Association="Self.FK_ApplicationAccess_Application">
       <End Role="Application" EntitySet="Application" />
       <End Role="ApplicationAccess" EntitySet="ApplicationAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationAudit_Application" Association="Self.FK_ApplicationAudit_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="ApplicationAudit" EntitySet="ApplicationAudit" />
     </AssociationSet>
     <AssociationSet Name="FK_ErrorLog_Application" Association="Self.FK_ErrorLog_Application">
       <End Role="Application" EntitySet="Application" />
