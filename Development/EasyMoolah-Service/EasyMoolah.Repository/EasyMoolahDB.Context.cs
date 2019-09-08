@@ -26,11 +26,12 @@ namespace EasyMoolah.Repository
         }
     
         public virtual DbSet<ApiLog> ApiLogs { get; set; }
-        public virtual DbSet<Application> Applications { get; set; }
         public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<NotificationLog> NotificationLogs { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<ApplicationAccess> ApplicationAccesses { get; set; }
+        public virtual DbSet<Application> Applications { get; set; }
     }
 }

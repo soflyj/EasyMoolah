@@ -1,3 +1,4 @@
+import { ApplicationApplicationAccessModel } from 'src/app/models/shared/application-application-access.model';
 import { ApplicationModel } from 'src/app/models/application.model';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -19,7 +20,7 @@ import { Observable } from 'rxjs';
 })
 export class CommonService {
     public guid: string;
-    public application: ApplicationModel;
+    public applicationApplicationAccess: ApplicationApplicationAccessModel;
     public apiUrl: string = environment.appUrl;
     public apiToken: string = environment.apiToken;
     public version: number = environment.version;
@@ -28,13 +29,13 @@ export class CommonService {
     constructor(private http: HttpClient) { }
 
     GetGUID(): string {
-        this.application = JSON.parse(window.localStorage.getItem('application'))
-        return this.application.guid;
+        this.applicationApplicationAccess.application = JSON.parse(window.localStorage.getItem('application'))
+        return this.applicationApplicationAccess.application.guid;
     }
 
-    SetApplication(application: ApplicationModel): Observable<ApplicationModel> {
-        this.application = application;
-        this.guid = application.guid;
+    SetApplication(applicationApplicationAccess: ApplicationApplicationAccessModel): Observable<ApplicationModel> {
+        this.applicationApplicationAccess = applicationApplicationAccess;
+        this.guid = applicationApplicationAccess.application.guid;
 
         const httpOptions = {
             headers: new HttpHeaders({
@@ -45,7 +46,7 @@ export class CommonService {
             })
         };
 
-        return this.http.post<ApplicationModel>(this.apiUrl + '/application/save', JSON.stringify(application), httpOptions)
+        return this.http.post<ApplicationModel>(this.apiUrl + '/application/save', JSON.stringify(applicationApplicationAccess), httpOptions)
             // .subscribe(
             //     (res) => {
             //         application.key = res.Result.Key;

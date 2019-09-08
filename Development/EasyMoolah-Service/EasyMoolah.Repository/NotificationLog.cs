@@ -28,5 +28,7 @@ namespace EasyMoolah.Repository
         public bool IsActive { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public System.DateTime ChangedDate { get; set; }
+    
+        public virtual Application Application { get; set; }
     }
 }

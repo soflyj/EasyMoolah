@@ -28,5 +28,7 @@ namespace EasyMoolah.Repository
         public System.DateTime ChangedDate { get; set; }
         public string ItemType { get; set; }
         public Nullable<int> ItemKey { get; set; }
+    
+        public virtual Application Application { get; set; }
     }
 }

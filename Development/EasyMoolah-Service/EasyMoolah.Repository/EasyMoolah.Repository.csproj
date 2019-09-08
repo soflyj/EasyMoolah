@@ -57,6 +57,9 @@
     <Compile Include="Application.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationAccess.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Configuration.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>

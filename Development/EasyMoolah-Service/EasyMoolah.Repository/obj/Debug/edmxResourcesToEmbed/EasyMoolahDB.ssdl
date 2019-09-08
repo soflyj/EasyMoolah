@@ -25,12 +25,25 @@
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Guid" Type="uniqueidentifier" />
-    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
-    <Property Name="Browser" Type="varchar" MaxLength="100" />
     <Property Name="FormData" Type="varchar(max)" />
     <Property Name="StartDate" Type="datetime" />
     <Property Name="EndDate" Type="datetime" />
     <Property Name="Version" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ChangedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ApplicationAccess">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" Nullable="false" />
+    <Property Name="MiniApplicationReference" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Browser" Type="varchar(max)" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
     <Property Name="IsActive" Type="bit" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ChangedDate" Type="datetime" />
@@ -111,13 +124,78 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_ApiLog_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="1" />
+    <End Role="ApiLog" Type="Self.ApiLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="ApiLog">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationAccess_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="1" />
+    <End Role="ApplicationAccess" Type="Self.ApplicationAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="ApplicationAccess">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ErrorLog_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="ErrorLog" Type="Self.ErrorLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="ErrorLog">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotificationLog_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="NotificationLog" Type="Self.NotificationLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="NotificationLog">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="EasyMoolahModelStoreContainer">
     <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationAccess" EntityType="Self.ApplicationAccess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ApiLog_Application" Association="Self.FK_ApiLog_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="ApiLog" EntitySet="ApiLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationAccess_Application" Association="Self.FK_ApplicationAccess_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="ApplicationAccess" EntitySet="ApplicationAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ErrorLog_Application" Association="Self.FK_ErrorLog_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="ErrorLog" EntitySet="ErrorLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotificationLog_Application" Association="Self.FK_NotificationLog_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="NotificationLog" EntitySet="NotificationLog" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

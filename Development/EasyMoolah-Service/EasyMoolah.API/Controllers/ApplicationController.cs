@@ -9,7 +9,7 @@ namespace EasyMoolah.API.Controllers
         [Route("api/application/save")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult InsertApplication(EasyMoolah.Model.Application _application)
+        public IHttpActionResult InsertApplication(EasyMoolah.Model.Shared.ApplicationApplicationAccess _application)
         {
             var response = EasyMoolah.Domain.Application.InsertApplication(_application);
             return Ok(response);

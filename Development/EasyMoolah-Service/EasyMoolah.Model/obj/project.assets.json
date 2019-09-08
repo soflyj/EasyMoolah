@@ -10,6 +10,15 @@
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
         }
+      },
+      "EasyMoolah.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/EasyMoolah.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMoolah.Repository.dll": {}
+        }
       }
     }
   },
@@ -52,10 +61,16 @@
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
+    },
+    "EasyMoolah.Repository/1.0.0": {
+      "type": "project",
+      "path": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj",
+      "msbuildProject": "../EasyMoolah.Repository/EasyMoolah.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
+      "EasyMoolah.Repository >= 1.0.0",
       "Newtonsoft.Json >= 12.0.1"
     ]
   },
@@ -88,7 +103,11 @@
       },
       "frameworks": {
         "net47": {
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

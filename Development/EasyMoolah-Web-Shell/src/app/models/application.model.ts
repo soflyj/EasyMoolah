@@ -3,8 +3,6 @@ import 'rxjs';
 export class ApplicationModel {
     key: number;
     guid: string;
-    ipAddress: string;
-    browser: string;
     formData: string;
     startDate: Date;
     endDate: Date;

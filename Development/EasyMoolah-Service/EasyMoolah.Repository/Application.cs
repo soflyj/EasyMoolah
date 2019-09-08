@@ -14,10 +14,17 @@ namespace EasyMoolah.Repository
     
     public partial class Application
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Application()
+        {
+            this.ApiLogs = new HashSet<ApiLog>();
+            this.ApplicationAccesses = new HashSet<ApplicationAccess>();
+            this.ErrorLogs = new HashSet<ErrorLog>();
+            this.NotificationLogs = new HashSet<NotificationLog>();
+        }
+    
         public int Key { get; set; }
         public Nullable<System.Guid> Guid { get; set; }
-        public string IPAddress { get; set; }
-        public string Browser { get; set; }
         public string FormData { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
@@ -25,5 +32,14 @@ namespace EasyMoolah.Repository
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ChangedDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApiLog> ApiLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApplicationAccess> ApplicationAccesses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ErrorLog> ErrorLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NotificationLog> NotificationLogs { get; set; }
     }
 }

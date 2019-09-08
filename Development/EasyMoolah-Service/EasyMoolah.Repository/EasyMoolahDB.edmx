@@ -30,12 +30,25 @@
           </Key>
           <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Guid" Type="uniqueidentifier" />
-          <Property Name="IPAddress" Type="varchar" MaxLength="50" />
-          <Property Name="Browser" Type="varchar" MaxLength="100" />
           <Property Name="FormData" Type="varchar(max)" />
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ChangedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ApplicationAccess">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationKey" Type="int" Nullable="false" />
+          <Property Name="MiniApplicationReference" Type="varchar" MaxLength="50" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Browser" Type="varchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ChangedDate" Type="datetime" />
@@ -116,14 +129,79 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_ApiLog_Application">
+          <End Role="Application" Type="Self.Application" Multiplicity="1" />
+          <End Role="ApiLog" Type="Self.ApiLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ApiLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationAccess_Application">
+          <End Role="Application" Type="Self.Application" Multiplicity="1" />
+          <End Role="ApplicationAccess" Type="Self.ApplicationAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ApplicationAccess">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ErrorLog_Application">
+          <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+          <End Role="ErrorLog" Type="Self.ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationLog_Application">
+          <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+          <End Role="NotificationLog" Type="Self.NotificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="NotificationLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EasyMoolahModelStoreContainer">
           <EntitySet Name="ApiLog" EntityType="Self.ApiLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplicationAccess" EntityType="Self.ApplicationAccess" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ApiLog_Application" Association="Self.FK_ApiLog_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ApiLog" EntitySet="ApiLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationAccess_Application" Association="Self.FK_ApplicationAccess_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ApplicationAccess" EntitySet="ApplicationAccess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ErrorLog_Application" Association="Self.FK_ErrorLog_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ErrorLog" EntitySet="ErrorLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationLog_Application" Association="Self.FK_NotificationLog_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="NotificationLog" EntitySet="NotificationLog" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -131,13 +209,30 @@
       <Schema Namespace="EasyMoolahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EasyMoolahEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ApiLogs" EntityType="EasyMoolahModel.ApiLog" />
-          <EntitySet Name="Applications" EntityType="EasyMoolahModel.Application" />
           <EntitySet Name="Configurations" EntityType="EasyMoolahModel.Configuration" />
           <EntitySet Name="ErrorLogs" EntityType="EasyMoolahModel.ErrorLog" />
           <EntitySet Name="NotificationLogs" EntityType="EasyMoolahModel.NotificationLog" />
           <EntitySet Name="Questions" EntityType="EasyMoolahModel.Question" />
           <EntitySet Name="sysdiagrams" EntityType="EasyMoolahModel.sysdiagram" />
-        </EntityContainer>
+          <EntitySet Name="ApplicationAccesses" EntityType="EasyMoolahModel.ApplicationAccess" />
+          <EntitySet Name="Applications" EntityType="EasyMoolahModel.Application" />
+          <AssociationSet Name="FK_ApiLog_Application" Association="EasyMoolahModel.FK_ApiLog_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="ApiLog" EntitySet="ApiLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationAccess_Application" Association="EasyMoolahModel.FK_ApplicationAccess_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="ApplicationAccess" EntitySet="ApplicationAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ErrorLog_Application" Association="EasyMoolahModel.FK_ErrorLog_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="ErrorLog" EntitySet="ErrorLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationLog_Application" Association="EasyMoolahModel.FK_NotificationLog_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="NotificationLog" EntitySet="NotificationLogs" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="ApiLog">
           <Key>
             <PropertyRef Name="Key" />
@@ -156,22 +251,7 @@
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="Application">
-          <Key>
-            <PropertyRef Name="Key" />
-          </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Guid" Type="Guid" />
-          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Browser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FormData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="StartDate" Type="DateTime" Precision="3" />
-          <Property Name="EndDate" Type="DateTime" Precision="3" />
-          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_ApiLog_Application" FromRole="ApiLog" ToRole="Application" />
         </EntityType>
         <EntityType Name="Configuration">
           <Key>
@@ -206,6 +286,7 @@
           <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ItemKey" Type="Int32" />
+          <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_ErrorLog_Application" FromRole="ErrorLog" ToRole="Application" />
         </EntityType>
         <EntityType Name="NotificationLog">
           <Key>
@@ -225,6 +306,7 @@
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_NotificationLog_Application" FromRole="NotificationLog" ToRole="Application" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -249,6 +331,88 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="ApplicationAccess">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationKey" Type="Int32" Nullable="false" />
+          <Property Name="MiniApplicationReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Browser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_ApplicationAccess_Application" FromRole="ApplicationAccess" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Guid" Type="Guid" />
+          <Property Name="FormData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ApiLogs" Relationship="EasyMoolahModel.FK_ApiLog_Application" FromRole="Application" ToRole="ApiLog" />
+          <NavigationProperty Name="ApplicationAccesses" Relationship="EasyMoolahModel.FK_ApplicationAccess_Application" FromRole="Application" ToRole="ApplicationAccess" />
+          <NavigationProperty Name="ErrorLogs" Relationship="EasyMoolahModel.FK_ErrorLog_Application" FromRole="Application" ToRole="ErrorLog" />
+          <NavigationProperty Name="NotificationLogs" Relationship="EasyMoolahModel.FK_NotificationLog_Application" FromRole="Application" ToRole="NotificationLog" />
+        </EntityType>
+        <Association Name="FK_ApiLog_Application">
+          <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="EasyMoolahModel.ApiLog" Role="ApiLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ApiLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationAccess_Application">
+          <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="EasyMoolahModel.ApplicationAccess" Role="ApplicationAccess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ApplicationAccess">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ErrorLog_Application">
+          <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="EasyMoolahModel.ErrorLog" Role="ErrorLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ErrorLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationLog_Application">
+          <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="EasyMoolahModel.NotificationLog" Role="NotificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="NotificationLog">
+              <PropertyRef Name="ApplicationKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -271,23 +435,6 @@
                 <ScalarProperty Name="Method" ColumnName="Method" />
                 <ScalarProperty Name="ApiToken" ColumnName="ApiToken" />
                 <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Applications">
-            <EntityTypeMapping TypeName="EasyMoolahModel.Application">
-              <MappingFragment StoreEntitySet="Application">
-                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Version" ColumnName="Version" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="FormData" ColumnName="FormData" />
-                <ScalarProperty Name="Browser" ColumnName="Browser" />
-                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
-                <ScalarProperty Name="Guid" ColumnName="Guid" />
                 <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -370,6 +517,37 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationAccesses">
+            <EntityTypeMapping TypeName="EasyMoolahModel.ApplicationAccess">
+              <MappingFragment StoreEntitySet="ApplicationAccess">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Browser" ColumnName="Browser" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MiniApplicationReference" ColumnName="MiniApplicationReference" />
+                <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="EasyMoolahModel.Application">
+              <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FormData" ColumnName="FormData" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
