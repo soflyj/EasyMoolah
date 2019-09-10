@@ -20,7 +20,7 @@ export class Step3Component implements OnInit {
   question_1: string;
   question_2: string;
   answer: string[];
-  jar: any;
+  guid: any;
   startTime
   borrowamount_slider: string;
   borrowmonths_slider: string;
@@ -37,7 +37,7 @@ export class Step3Component implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -51,7 +51,7 @@ export class Step3Component implements OnInit {
       this.borrowmonths_slider = this.dataPointService.getPreviousDataPointState(3)[1];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 

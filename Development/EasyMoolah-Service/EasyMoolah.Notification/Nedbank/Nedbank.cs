@@ -11,7 +11,7 @@ namespace EasyMoolah.Notification.Nedbank
 {
     public class Nedbank: Email
     {
-        public async static Task<Model.Result> SendAuthorisation(EasyMoolah.Model.Notification.Request _request, decimal loanAmount, string url)
+        public async static Task<Model.Result> SendAuthorisation(EasyMoolah.Model.Notification.Request _request, decimal loanAmount, string url, string guid)
         {
             Model.Result result = new Model.Result();            
 

@@ -18,7 +18,7 @@ export class Step10Component implements OnInit {
   dataPoint: DataPointModel = new DataPointModel();
   question: string;
   answer: string = null;
-  jar: any;
+  guid: any;
   startTime;
   monthlyexpense_slider: string;
 
@@ -34,7 +34,7 @@ export class Step10Component implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -46,7 +46,7 @@ export class Step10Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(10)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 

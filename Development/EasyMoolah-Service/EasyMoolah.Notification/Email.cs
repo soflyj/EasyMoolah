@@ -25,7 +25,6 @@ namespace EasyMoolah.Notification
                 using (var mailMessage = new MailMessage())
                 using (var client = new SmtpClient("mail.easymoolah.co.za", 25))
                 {
-                    where += "1";
                     // configure the client and send the message
                     client.UseDefaultCredentials = false;
                     client.Credentials = new NetworkCredential("info@easymoolah.co.za", "EasyMoolah@101");
@@ -35,22 +34,13 @@ namespace EasyMoolah.Notification
                     client.Port = 25;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-
-
-                    where += "2";
                     // configure the mail message
                     mailMessage.From = new MailAddress(_request.fromAddress);
-                    where += "3";
                     mailMessage.To.Insert(0, new MailAddress(_request.toAddress));
-                    where += "4";
                     mailMessage.Subject = _request.subject;
-                    where += "5";
                     mailMessage.Body = _request.body;
-                    where += "6";
                     mailMessage.IsBodyHtml = true;
-                    where += "7";
                     client.Send(mailMessage);
-                    where += "8";
                     result.result = ResultEnum.OK;
                     result.Output = "Email Successfully Sent - " + type;
                     result.Error = "eish";
@@ -64,7 +54,7 @@ namespace EasyMoolah.Notification
                 result.Output = "Email Unsuccessfully Sent - " + type;
             }
 
-            InsertNotificationLog(new Model.Logs.NotificationLog()
+            await InsertNotificationLog(new Model.Logs.NotificationLog()
             {
                 ApplicationKey = _request.applicationKey,
                 Body = _request.body,

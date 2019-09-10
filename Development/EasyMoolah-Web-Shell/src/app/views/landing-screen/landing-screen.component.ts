@@ -10,6 +10,7 @@ import { NedbankService } from 'src/app/services/nedbank.service';
 import { environment } from 'src/environments/environment';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing-screen',
@@ -19,54 +20,59 @@ import 'rxjs/add/operator/map';
 export class LandingScreenComponent implements OnInit {
 
   private guid: string;
-  private ip: string;
-  private startTime: Date;
-  private applicationApplicationAccess: ApplicationApplicationAccessModel = new ApplicationApplicationAccessModel();
+  ip: string = '';
+  private startTime: Date;  
   deviceInfo = null;
 
   constructor(private router: Router,
     private headerService: HeaderService,
     private commonService: CommonService,
     private nedbankSerivce: NedbankService,
-    private deviceService: DeviceDetectorService) {
+    private deviceService: DeviceDetectorService,
+    private http: HttpClient) {
     //super();
   }
 
   ngOnInit() {
     this.headerService.mode.next('determinate');
-    // Application    
-    this.applicationApplicationAccess.application = new ApplicationModel();
-    this.applicationApplicationAccess.application.guid = UUID.UUID(); // Generate GUID    
-    this.applicationApplicationAccess.application.startDate = new Date();
-    this.applicationApplicationAccess.application.version = environment.version.toString();    
-    this.applicationApplicationAccess.application.formData = '';
-    this.applicationApplicationAccess.application.isActive = true;
-    this.applicationApplicationAccess.application.createdDate = new Date();
-    this.applicationApplicationAccess.application.changedDate = new Date();
-    // Application Access
-    this.applicationApplicationAccess.applicationAccess = new ApplicationAccessModel();
-    this.applicationApplicationAccess.applicationAccess.browser = ''; // JSON.stringify(this.deviceService.getDeviceInfo()).toString(); // npm install ngx-device-detector --save
-    this.applicationApplicationAccess.applicationAccess.ipAddress = window.location.origin.toString();
-    this.applicationApplicationAccess.applicationAccess.startDate = new Date();
-    this.applicationApplicationAccess.applicationAccess.isActive = true;
-    this.applicationApplicationAccess.applicationAccess.createdDate = new Date();
-    this.applicationApplicationAccess.applicationAccess.changedDate = new Date();
 
-    this.commonService.SetApplication(this.applicationApplicationAccess)
-      .subscribe(
-        (res) => {
-          this.applicationApplicationAccess.application.key = JSON.parse(JSON.stringify(res)).Result.Key;
-          window.localStorage.setItem('application', JSON.stringify(this.applicationApplicationAccess.application));
-         // const URL = this.nedbankSerivce.GetAuthorisationURL('5000');
-        },
-        err => console.log(err)
-      );
-    
-    console.log(this.applicationApplicationAccess.application);
-    // TODO: Insert to the Application table    
+  this.http.get<{ip:string}>('https://jsonip.com')
+    .subscribe( data => {
+      console.log('th data', data);
+      this.ip = data.ip
+    })   
   }
 
   Begin() {
-    this.router.navigateByUrl('/application/' + this.commonService.GetGUID());
+
+    const applicationApplicationAccess = new ApplicationApplicationAccessModel();
+    // Application    
+    applicationApplicationAccess.application = new ApplicationModel();
+    applicationApplicationAccess.application.guid = UUID.UUID(); // Generate GUID    
+    applicationApplicationAccess.application.startDate = new Date();
+    applicationApplicationAccess.application.version = environment.version.toString();    
+    applicationApplicationAccess.application.formData = '';
+    applicationApplicationAccess.application.isActive = true;
+    applicationApplicationAccess.application.createdDate = new Date();
+    applicationApplicationAccess.application.changedDate = new Date();
+    // Application Access
+    applicationApplicationAccess.applicationAccess = new ApplicationAccessModel();
+    applicationApplicationAccess.applicationAccess.browser = JSON.stringify(this.deviceService.getDeviceInfo()).toString(); // npm install ngx-device-detector --save
+    applicationApplicationAccess.applicationAccess.ipAddress = this.ip;
+    applicationApplicationAccess.applicationAccess.startDate = new Date();
+    applicationApplicationAccess.applicationAccess.isActive = true;
+    applicationApplicationAccess.applicationAccess.createdDate = new Date();
+    applicationApplicationAccess.applicationAccess.changedDate = new Date();
+
+    this.commonService.SaveApplication(applicationApplicationAccess)
+      .subscribe(
+        (res) => {
+          applicationApplicationAccess.application.key = JSON.parse(JSON.stringify(res)).Result.Key;
+          window.localStorage.setItem('application', JSON.stringify(applicationApplicationAccess.application));
+
+          this.router.navigateByUrl('/application/' + this.commonService.GetGUID());
+        },
+        err => console.log(err)
+      );    
   }
 }

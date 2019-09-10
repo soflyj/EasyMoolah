@@ -18,7 +18,7 @@ export class Step8Component implements OnInit {
   dataPoint: DataPointModel = new DataPointModel();
   question: string;
   answer: string = null;
-  jar: any;
+  guid: any;
   startTime;
   grossincome_slider: string;
 
@@ -33,7 +33,7 @@ export class Step8Component implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -45,7 +45,7 @@ export class Step8Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(8)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 

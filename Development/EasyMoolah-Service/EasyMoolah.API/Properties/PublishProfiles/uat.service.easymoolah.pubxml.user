@@ -83,31 +83,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/17/2018 10:14:56</publishTime>
     </File>
     <File Include="bin/EasyMoolah.API.dll">
-      <publishTime>09/08/2019 21:58:40</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.API.pdb">
-      <publishTime>09/08/2019 21:58:40</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Domain.dll">
-      <publishTime>09/08/2019 21:58:40</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Domain.dll.config">
       <publishTime>08/19/2019 23:04:23</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Domain.pdb">
-      <publishTime>09/08/2019 21:58:40</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Model.dll">
-      <publishTime>09/08/2019 21:58:36</publishTime>
+      <publishTime>09/10/2019 22:26:36</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Model.pdb">
-      <publishTime>09/08/2019 21:58:36</publishTime>
+      <publishTime>09/10/2019 22:26:36</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Notification.dll">
-      <publishTime>09/08/2019 21:58:39</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Notification.pdb">
-      <publishTime>09/08/2019 21:58:39</publishTime>
+      <publishTime>09/10/2019 22:26:38</publishTime>
     </File>
     <File Include="bin/EasyMoolah.Repository.dll">
       <publishTime>09/08/2019 21:58:35</publishTime>
@@ -158,13 +158,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2019 20:38:49</publishTime>
     </File>
     <File Include="bin/Nedbank.Integration.dll">
-      <publishTime>09/08/2019 21:58:37</publishTime>
+      <publishTime>09/10/2019 22:26:37</publishTime>
     </File>
     <File Include="bin/Nedbank.Integration.dll.config">
       <publishTime>08/11/2019 21:38:00</publishTime>
     </File>
     <File Include="bin/Nedbank.Integration.pdb">
-      <publishTime>09/08/2019 21:58:37</publishTime>
+      <publishTime>09/10/2019 22:26:37</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/11/2019 20:38:49</publishTime>
@@ -359,7 +359,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2019 20:38:48</publishTime>
     </File>
     <File Include="bin/Templates/nedbank-authorisationurl.html">
-      <publishTime>09/04/2019 22:41:02</publishTime>
+      <publishTime>09/10/2019 22:26:20</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/11/2019 20:38:49</publishTime>
@@ -479,7 +479,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2019 20:31:12</publishTime>
     </File>
     <File Include="Templates/nedbank-authorisationurl.html">
-      <publishTime>09/04/2019 22:41:02</publishTime>
+      <publishTime>09/10/2019 22:26:20</publishTime>
     </File>
     <File Include="Templates/processing-results.html">
       <publishTime>09/04/2019 20:31:12</publishTime>

@@ -7,6 +7,7 @@ import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
 import { NedbankService } from 'src/app/services/nedbank.service';
+import { ApplicantModel } from 'src/app/models/applicant.model';
 
 @Component({
   selector: 'app-step16',
@@ -19,7 +20,7 @@ export class Step16Component implements OnInit {
   dataPoint: DataPointModel = new DataPointModel();
   question: string;
   answer: string = null;
-  jar: any;
+  guid: any;
   startTime
 
   idnumber: string;
@@ -37,7 +38,7 @@ export class Step16Component implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -47,7 +48,7 @@ export class Step16Component implements OnInit {
     //     this.answer = this.dataPointService.getPreviousDataPointState(2)[0];
     //   }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 
@@ -82,10 +83,22 @@ export class Step16Component implements OnInit {
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
 
-    const URL = this.nedbankSerivce.GetAuthorisationURL('5000')
+    this.saveApplicant()
+
+    this.nedbankSerivce.GetAuthorisationURL('5000')
   }
 
   Back() {
 
+  }
+
+  saveApplicant() {
+    const applicant = new ApplicantModel();
+    applicant.idNumber = this.stepForm.get('idnumber').value;
+
+    this.commonService.SaveApplicant(applicant).subscribe(
+      (res) => console.log(res),
+      err => console.log(err)
+    );
   }
 }

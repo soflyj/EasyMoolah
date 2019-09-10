@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { ApplicantModel } from 'src/app/models/applicant.model';
 
 @Component({
     selector: 'app-step15',
@@ -18,7 +19,7 @@ export class Step15Component implements OnInit {
     dataPoint: DataPointModel = new DataPointModel();
     question: string;
     answer: string[] = null;
-    jar: any;
+    guid: any;
     startTime
 
     mobileNumber: string = '';
@@ -37,7 +38,7 @@ export class Step15Component implements OnInit {
 
     ngOnInit() {
         this.activatedRoute.params.subscribe((params: any) => {
-            this.jar = params.jar;
+            this.guid = params.guid;
         });
         this.startTime = new Date();
         this.headerService.mode.next('determinate');
@@ -47,7 +48,7 @@ export class Step15Component implements OnInit {
             this.answer = this.dataPointService.getPreviousDataPointState(15);
         }
 
-        if (this.jar != this.commonService.GetGUID()) {
+        if (this.guid != this.commonService.GetGUID()) {
             this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
         }
 
@@ -105,9 +106,25 @@ export class Step15Component implements OnInit {
         this.dataPoint.StartTime = this.startTime;
         this.dataPoint.EndTime = new Date();
         this.dataPointService.addDataPoint(this.dataPoint);
+
+        this.saveApplicant();
     }
 
     Back() {
 
+    }
+
+    saveApplicant() {
+        const applicant = new ApplicantModel();
+        applicant.firstName = this.stepForm.value.firstname;
+        applicant.lastName = this.stepForm.value.lastname;
+        applicant.email = this.stepForm.value.email;
+        applicant.mobileNumber = this.stepForm.value.email;
+        applicant.landlineNumber = this.stepForm.value.landlineNumber;
+
+        this.commonService.SaveApplicant(applicant).subscribe(
+            (res) => console.log(res),
+            err => console.log(err)
+        );
     }
 }

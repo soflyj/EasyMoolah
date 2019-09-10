@@ -19,7 +19,7 @@ export class Step2Component implements OnInit {
   dataPoint: DataPointModel = new DataPointModel();
   question: string;
   answer: string = null;
-  jar: any;
+  guid: any;
   startTime
 
   constructor(private router: Router,
@@ -34,7 +34,7 @@ export class Step2Component implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -44,7 +44,7 @@ export class Step2Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(2)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 

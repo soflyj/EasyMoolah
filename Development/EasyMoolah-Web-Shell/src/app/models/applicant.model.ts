@@ -2,10 +2,19 @@ import 'rxjs';
 import { BaseModel } from './base.model';
 
 export class ApplicantModel extends BaseModel {
-    applicationKey: number;
-    ipAddress: string;
-    MiniApplicationReference: string;
-    browser: string;    
-    startDate: Date;
-    endDate: Date;
+    applicationKey: number | null;
+    idNumber: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    mobileNumber: string;
+    landlineNumber: string;
+    street: string;
+    suburb: string;
+    city: string;
+    province: string;
+    country: string;
+    postalCode: string;
+    longitude: string;
+    latitude: string;
 }

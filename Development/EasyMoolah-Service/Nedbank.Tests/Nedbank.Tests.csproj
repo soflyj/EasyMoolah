@@ -56,15 +56,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
     <Compile Include="CRUD.cs" />
-    <Compile Include="NedbankNotification.cs" />
-    <Compile Include="PersonalLoan.cs" />
-    <Compile Include="NedbankIntegration.cs" />
-    <Compile Include="PersonalLoanRequests.cs" />
-    <Compile Include="PersonalLoanOffers.cs" />
-    <Compile Include="PersonalLoanAuthorisation.cs" />
+    <Compile Include="Nedbank\NedbankNotification.cs" />
+    <Compile Include="Nedbank\PersonalLoan.cs" />
+    <Compile Include="Nedbank\NedbankIntegration.cs" />
+    <Compile Include="Nedbank\PersonalLoanRequests.cs" />
+    <Compile Include="Nedbank\PersonalLoanOffers.cs" />
+    <Compile Include="Nedbank\PersonalLoanAuthorisation.cs" />
     <Compile Include="Logs.cs" />
-    <Compile Include="Token.cs" />
+    <Compile Include="Templates\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -44,7 +44,10 @@ import { Step14Component } from './views/data-points/step14/step14.component'
 import { Step15Component } from './views/data-points/step15/step15.component'
 import { Step16Component } from './views/data-points/step16/step16.component';
 import { HeaderComponent } from './views/header/header.component';
-import { ApplicationComponent } from './views/data-points/application/application.component'
+import { ApplicationComponent } from './views/data-points/application/application.component';
+import { AuthorisationRedirectComponent } from './views/nedbank/authorisation-redirect/authorisation-redirect.component';
+import { AccessAuthorisationComponent } from './views/nedbank/access-authorisation/access-authorisation.component';
+import { GenerateAuthorisationComponent } from './views/nedbank/generate-authorisation/generate-authorisation.component'
 
 
 @NgModule({
@@ -70,7 +73,10 @@ import { ApplicationComponent } from './views/data-points/application/applicatio
     Step16Component,
     HeaderComponent,
     AutocompleteComponent,
-    ApplicationComponent
+    ApplicationComponent,
+    AuthorisationRedirectComponent,
+    AccessAuthorisationComponent,
+    GenerateAuthorisationComponent
   ],
   imports: [
     BrowserModule,

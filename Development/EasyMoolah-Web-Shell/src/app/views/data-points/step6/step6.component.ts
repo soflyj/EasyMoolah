@@ -18,7 +18,7 @@ export class Step6Component implements OnInit {
   dataPoint: DataPointModel = new DataPointModel();
   question: string;
   answer: boolean;
-  jar: any;
+  guid: any;
   startTime
   credit_check: boolean;
 
@@ -33,7 +33,7 @@ export class Step6Component implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -43,7 +43,7 @@ export class Step6Component implements OnInit {
       this.answer = Boolean(this.dataPointService.getPreviousDataPointState(6)[0]);
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 
