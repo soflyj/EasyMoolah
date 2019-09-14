@@ -12,4 +12,8 @@ export class AuthorisationRedirectComponent implements OnInit {
   ngOnInit() {
   }
 
+  continue() {
+
+  }
+
 }

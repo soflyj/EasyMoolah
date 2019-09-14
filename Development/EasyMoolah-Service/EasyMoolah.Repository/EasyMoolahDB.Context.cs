@@ -18,7 +18,6 @@ namespace EasyMoolah.Repository
         public EasyMoolahEntities()
             : base("name=EasyMoolahEntities")
         {
-            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -34,6 +33,6 @@ namespace EasyMoolah.Repository
         public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<NotificationLog> NotificationLogs { get; set; }
-        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Nedbank> Nedbanks { get; set; }
     }
 }

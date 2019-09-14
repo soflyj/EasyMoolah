@@ -101,7 +101,21 @@ export class CommonService {
             })
         };
 
-        return this.http.get<ApplicationModel>(this.apiUrl + '/applicant/save/' + applicationKey.toString(), httpOptions)
+        return this.http.get<ApplicationModel>(this.apiUrl + '/applicant/get/' + applicationKey.toString(), httpOptions)
+    }
+
+    GetApplicationAdditionalDetailsByApplicationKey(applicationKey: number): Observable<ApplicationModel> {
+
+        const httpOptions = {
+            headers: new HttpHeaders({
+                // 'Content-Type': 'application/json',
+                // tslint:disable-next-line:max-line-length
+                'Authorization': 'Bearer ' + this.apiToken,
+                'X-Requested-With': 'XMLHttpRequest'
+            })
+        };
+
+        return this.http.get<ApplicationModel>(this.apiUrl + '/applicationadditionaldetails/get/' + applicationKey.toString(), httpOptions)
     }
 
     UpdateApplicationIP() {

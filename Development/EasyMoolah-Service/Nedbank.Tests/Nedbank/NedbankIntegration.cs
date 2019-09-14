@@ -9,13 +9,13 @@ namespace Nedbank.Tests
     public class NedbankIntegration
     {
         [TestMethod]
-        public async Task GetAuthorisationLink()
+        public async Task GenerateAuthorisationLink()
         {
             decimal loanAmount = 5000;
 
             EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
 
-            var result = nedbankIntegration.GetAuthorisationLink(1, loanAmount);
+            var result = nedbankIntegration.GenerateAuthorisationLink(1, loanAmount);
 
             Assert.IsTrue(result != null);
         }   

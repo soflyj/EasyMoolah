@@ -9,7 +9,6 @@
     <EntitySet Name="Configurations" EntityType="EasyMoolahModel.Configuration" />
     <EntitySet Name="ErrorLogs" EntityType="EasyMoolahModel.ErrorLog" />
     <EntitySet Name="NotificationLogs" EntityType="EasyMoolahModel.NotificationLog" />
-    <EntitySet Name="Questions" EntityType="EasyMoolahModel.Question" />
     <AssociationSet Name="FK_ApiLog_Application" Association="EasyMoolahModel.FK_ApiLog_Application">
       <End Role="Application" EntitySet="Applications" />
       <End Role="ApiLog" EntitySet="ApiLogs" />
@@ -33,6 +32,11 @@
     <AssociationSet Name="FK_NotificationLog_Application" Association="EasyMoolahModel.FK_NotificationLog_Application">
       <End Role="Application" EntitySet="Applications" />
       <End Role="NotificationLog" EntitySet="NotificationLogs" />
+    </AssociationSet>
+    <EntitySet Name="Nedbanks" EntityType="EasyMoolahModel.Nedbank" />
+    <AssociationSet Name="FK_ApplicationAdditionalDetails_Application1" Association="EasyMoolahModel.FK_ApplicationAdditionalDetails_Application1">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="Nedbank" EntitySet="Nedbanks" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ApiLog">
@@ -99,6 +103,8 @@
     <NavigationProperty Name="ApplicationAudits" Relationship="EasyMoolahModel.FK_ApplicationAudit_Application" FromRole="Application" ToRole="ApplicationAudit" />
     <NavigationProperty Name="ErrorLogs" Relationship="EasyMoolahModel.FK_ErrorLog_Application" FromRole="Application" ToRole="ErrorLog" />
     <NavigationProperty Name="NotificationLogs" Relationship="EasyMoolahModel.FK_NotificationLog_Application" FromRole="Application" ToRole="NotificationLog" />
+    <Property Name="Reference" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Nedbanks" Relationship="EasyMoolahModel.FK_ApplicationAdditionalDetails_Application1" FromRole="Application" ToRole="Nedbank" />
   </EntityType>
   <EntityType Name="ApplicationAccess">
     <Key>
@@ -106,7 +112,6 @@
     </Key>
     <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ApplicationKey" Type="Int32" />
-    <Property Name="MiniApplicationReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Browser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="StartDate" Type="DateTime" Precision="3" />
@@ -182,19 +187,6 @@
     <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_NotificationLog_Application" FromRole="NotificationLog" ToRole="Application" />
   </EntityType>
-  <EntityType Name="Question">
-    <Key>
-      <PropertyRef Name="Key" />
-    </Key>
-    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ApplicationKey" Type="Int32" />
-    <Property Name="QuestionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
-    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
-    <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
   <Association Name="FK_ApiLog_Application">
     <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="0..1" />
     <End Type="EasyMoolahModel.ApiLog" Role="ApiLog" Multiplicity="*" />
@@ -263,6 +255,35 @@
         <PropertyRef Name="Key" />
       </Principal>
       <Dependent Role="NotificationLog">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Nedbank">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationKey" Type="Int32" />
+    <Property Name="LightToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeavyToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IntentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NedbankAuthorisationURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfferId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Application" Relationship="EasyMoolahModel.FK_ApplicationAdditionalDetails_Application1" FromRole="Nedbank" ToRole="Application" />
+  </EntityType>
+  <Association Name="FK_ApplicationAdditionalDetails_Application1">
+    <End Type="EasyMoolahModel.Application" Role="Application" Multiplicity="0..1" />
+    <End Type="EasyMoolahModel.Nedbank" Role="Nedbank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="Nedbank">
         <PropertyRef Name="ApplicationKey" />
       </Dependent>
     </ReferentialConstraint>

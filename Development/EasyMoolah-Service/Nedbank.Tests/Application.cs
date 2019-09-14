@@ -9,14 +9,13 @@ namespace Tests
     public class Application
     {       
         [TestMethod]
-        public async Task InsertApplicationAccess()
+        public async Task SaveApplicationAccess()
         {
             //EasyMoolah.Domain.ApplicationAccess applicationAccess = new EasyMoolah.Domain.ApplicationAccess();
 
-            var result = await EasyMoolah.Domain.ApplicationAccess.InsertApplicationAccess(new EasyMoolah.Model.ApplicationAccess()
+            var result = await EasyMoolah.Domain.ApplicationAccess.SaveApplicationAccess(new EasyMoolah.Model.ApplicationAccess()
             {
-                ApplicationKey = 1050,
-                MiniApplicationReference = "new",
+                ApplicationKey = 1050,                
                 IPAddress = "192.168.1.1",
                 StartDate = DateTime.Now,
                 EndDate = null,

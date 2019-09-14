@@ -4,22 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="de50ca48015e4c0e95e3da1df7d1de9a" Name="Diagram1">
-        <EntityTypeShape EntityType="EasyMoolahModel.ApiLog" Width="1.5" PointX="3" PointY="14.375" />
-        <EntityTypeShape EntityType="EasyMoolahModel.Applicant" Width="1.5" PointX="3" PointY="19" />
-        <EntityTypeShape EntityType="EasyMoolahModel.Application" Width="1.5" PointX="0.75" PointY="13" />
-        <EntityTypeShape EntityType="EasyMoolahModel.ApplicationAccess" Width="1.5" PointX="3" PointY="24.625" />
-        <EntityTypeShape EntityType="EasyMoolahModel.ApplicationAudit" Width="1.5" PointX="3" PointY="6.75" />
-        <EntityTypeShape EntityType="EasyMoolahModel.Configuration" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EasyMoolahModel.ErrorLog" Width="1.5" PointX="3" PointY="2.125" />
-        <EntityTypeShape EntityType="EasyMoolahModel.NotificationLog" Width="1.5" PointX="3" PointY="9.625" />
-        <EntityTypeShape EntityType="EasyMoolahModel.Question" Width="1.5" PointX="5.75" PointY="4.75" />
+      <Diagram DiagramId="de50ca48015e4c0e95e3da1df7d1de9a" Name="Diagram1" ShowGrid="true">
+        <EntityTypeShape EntityType="EasyMoolahModel.ApiLog" Width="1.5" PointX="9.125" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Applicant" Width="1.5" PointX="10.625" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Application" Width="1.5" PointX="6.375" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.ApplicationAccess" Width="1.5" PointX="10.375" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.ApplicationAudit" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Configuration" Width="1.5" PointX="12.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.ErrorLog" Width="1.5" PointX="6.375" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyMoolahModel.NotificationLog" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
         <AssociationConnector Association="EasyMoolahModel.FK_ApiLog_Application" />
         <AssociationConnector Association="EasyMoolahModel.FK_Applicant_Application" />
         <AssociationConnector Association="EasyMoolahModel.FK_ApplicationAccess_Application" />
         <AssociationConnector Association="EasyMoolahModel.FK_ApplicationAudit_Application" />
         <AssociationConnector Association="EasyMoolahModel.FK_ErrorLog_Application" />
         <AssociationConnector Association="EasyMoolahModel.FK_NotificationLog_Application" />
+        <EntityTypeShape EntityType="EasyMoolahModel.Nedbank" Width="1.5" PointX="4.125" PointY="14.375" IsExpanded="true" />
+        <AssociationConnector Association="EasyMoolahModel.FK_ApplicationAdditionalDetails_Application1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

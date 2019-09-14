@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.Error
+namespace EasyMoolah.Model.NedbankAPI.Error
 {
     public class RootObject
     {

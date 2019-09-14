@@ -23,6 +23,7 @@ namespace EasyMoolah.Repository
             this.ApplicationAudits = new HashSet<ApplicationAudit>();
             this.ErrorLogs = new HashSet<ErrorLog>();
             this.NotificationLogs = new HashSet<NotificationLog>();
+            this.Nedbanks = new HashSet<Nedbank>();
         }
     
         public int Key { get; set; }
@@ -34,6 +35,7 @@ namespace EasyMoolah.Repository
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ChangedDate { get; set; }
+        public string Reference { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApiLog> ApiLogs { get; set; }
@@ -47,5 +49,7 @@ namespace EasyMoolah.Repository
         public virtual ICollection<ErrorLog> ErrorLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NotificationLog> NotificationLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Nedbank> Nedbanks { get; set; }
     }
 }

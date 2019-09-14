@@ -87,13 +87,13 @@
     <Compile Include="ErrorLog.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Nedbank.cs">
+      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="NotificationLog.cs">
       <DependentUpon>EasyMoolahDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs">
-      <DependentUpon>EasyMoolahDB.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EasyMoolahDB.edmx">

@@ -48,7 +48,7 @@ const appRoutes: Routes = [
   { path: 'step-16/:guid', component: Step16Component , data: {state: 'step-16'}},
 
   { path: 'authorise/:guid', component: AccessAuthorisationComponent , data: {state: 'authorise'}},
-  // { path: 'authorise/:guid', component: AuthorisationRedirectComponent , data: {state: 'authorise'}},
+  { path: 'access/:guid', component: AuthorisationRedirectComponent , data: {state: 'access'}},
   // { path: '/:guid', component: GenerateAuthorisationComponent , data: {state: 'authorise'}},
 
   { path: '**', component: NotFoundComponent },

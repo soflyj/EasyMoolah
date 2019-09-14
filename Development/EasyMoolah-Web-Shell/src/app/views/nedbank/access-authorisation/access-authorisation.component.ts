@@ -31,7 +31,6 @@ export class AccessAuthorisationComponent implements OnInit {
     this.commonService.UpdateApplicationIP();
   }
 
-
   Authorisation() {
     this.router.navigateByUrl('/application/' + this.commonService.GetGUID());
   }

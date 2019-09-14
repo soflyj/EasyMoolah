@@ -12,7 +12,7 @@ namespace Nedbank.Integration
 {
     public class PersonalLoan
     {
-        public Result AcceptPersonalLoan(EasyMoolah.Model.Nedbank.PersonLoanRequest.RootObject personalLoanRequest, string lightToken)
+        public Result AcceptPersonalLoan(EasyMoolah.Model.NedbankAPI.PersonLoanRequest.RootObject personalLoanRequest, string lightToken)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();

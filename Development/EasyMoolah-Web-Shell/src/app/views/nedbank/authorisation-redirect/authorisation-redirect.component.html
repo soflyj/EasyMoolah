@@ -1,3 +1,13 @@
 <p>
-  authorisation-redirect works!
+  Welcome back.
 </p>
+
+<form [formGroup]="simpleForm">
+  <mat-form-field class="example-full-width" style="width: 100%">
+    <input matInput [(ngModel)]="accessCode" placeholder="Access Code" formControlName="accessCode">
+  </mat-form-field>
+
+  <div class="col s12" (click)="Continue()">
+    <button class="waves-effect waves-light btn-large center-align-btn">Continue</button>
+</div>
+</form>

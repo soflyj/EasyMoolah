@@ -11,7 +11,7 @@ namespace EasyMoolah.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult SaveApplication(EasyMoolah.Model.Shared.ApplicationApplicationAccess _application)
         {
-           var response = EasyMoolah.Domain.Application.SaveApplication(_application);
+            var response = EasyMoolah.Domain.Application.SaveApplication(_application);
             return Ok(response);
         }
 
@@ -50,14 +50,5 @@ namespace EasyMoolah.API.Controllers
             var response = EasyMoolah.Domain.Application.GetApplicationByKey(id);
             return Ok(response);
         }
-
-        //[Route("api/application/save")]
-        //[System.Web.Http.AcceptVerbs("GET", "POST")]
-        //[System.Web.Http.HttpGet]
-        //public IHttpActionResult UpdateFormData(EasyMoolah.Model.ApplicationAudit _formData)
-        //{
-        //    var response = EasyMoolah.Domain.Application.UpdateFormData(_formData);
-        //    return Ok(response);
-        //}
     }
 }

@@ -13,7 +13,7 @@ namespace Nedbank.Tests
         {
             EasyMoolah.Domain.Integration.PersonalLoan personalLoan = new EasyMoolah.Domain.Integration.PersonalLoan();
 
-            var personalLoanRequest = new EasyMoolah.Model.Nedbank.PersonLoanRequest.RootObject() { };
+            var personalLoanRequest = new EasyMoolah.Model.NedbankAPI.PersonLoanRequest.RootObject() { };
 
             var lightToken = "D23vbp3L4RHLvLaqJXtM";
 

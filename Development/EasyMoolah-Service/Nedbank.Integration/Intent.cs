@@ -12,7 +12,7 @@ namespace Nedbank.Integration
 {
     public class Intent
     {
-        public Result CreateIntent(EasyMoolah.Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
+        public Result CreateIntent(EasyMoolah.Model.NedbankAPI.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();

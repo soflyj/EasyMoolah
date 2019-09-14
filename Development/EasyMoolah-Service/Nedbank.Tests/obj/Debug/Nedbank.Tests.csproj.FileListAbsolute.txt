@@ -40,3 +40,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microso
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\obj\Debug\Nedbank.Tests.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Twilio.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\Microsoft.IdentityModel.Logging.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Tests\bin\Debug\EasyMoolah.Notification.dll.config

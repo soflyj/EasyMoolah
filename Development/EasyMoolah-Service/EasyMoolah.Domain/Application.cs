@@ -65,6 +65,23 @@ namespace EasyMoolah.Domain
             return response;
         }
 
+        public static async Task<Model.Application> GetApplicationByGuid(string _guid)
+        {
+            Model.Application response = null;
+
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = context.Applications.Where(x => x.Guid == Guid.Parse(_guid)).SingleOrDefault();
+
+                if (entity != null)
+                {
+                    response = Mapper.Map<Model.Application>(entity);
+                }
+            }
+
+            return response;
+        }
+
         public static async Task<Repository.Applicant> SaveApplicant(Model.Applicant _applicant)
         {
             AutoMapper.Mapper.Reset();

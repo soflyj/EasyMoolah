@@ -41,6 +41,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Twilio" Version="5.32.0" />
   </ItemGroup>
 
   <ItemGroup>

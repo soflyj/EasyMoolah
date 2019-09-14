@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.Token
+namespace EasyMoolah.Model.NedbankAPI.Token
 {
     public class TokenLightResponse
     {

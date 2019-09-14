@@ -86,3 +86,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Templates\retrieve_password.html
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Notification.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Notification.pdb
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Microsoft.IdentityModel.Logging.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Microsoft.IdentityModel.Tokens.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\System.IdentityModel.Tokens.Jwt.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\Twilio.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Domain\bin\Debug\net47\EasyMoolah.Notification.dll.config

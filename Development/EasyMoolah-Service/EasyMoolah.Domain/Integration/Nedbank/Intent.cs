@@ -21,12 +21,12 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="intentRequest"></param>
         /// <param name="lightToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.IntentResponse.RootObject> CreateIntent(Model.Nedbank.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
+        public async Task<Model.NedbankAPI.IntentResponse.RootObject> CreateIntent(Model.NedbankAPI.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
         {
             var result = intent.CreateIntent(intentRequest, lightToken, applicationKey);
             Logs.LogIntegration(result);
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.IntentResponse.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.IntentResponse.RootObject>(result.Output);
 
             return response;
         }

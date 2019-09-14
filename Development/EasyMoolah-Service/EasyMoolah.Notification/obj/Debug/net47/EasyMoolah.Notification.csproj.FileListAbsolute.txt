@@ -65,3 +65,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Deb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\AutoMapper.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\System.ValueTuple.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EntityFramework.SqlServer.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Microsoft.IdentityModel.Logging.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Microsoft.IdentityModel.Tokens.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\System.IdentityModel.Tokens.Jwt.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\Twilio.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Debug\net47\EasyMoolah.Notification.dll.config

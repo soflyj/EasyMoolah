@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="CRUD.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="Nedbank\NedbankNotification.cs" />
     <Compile Include="Nedbank\PersonalLoan.cs" />
     <Compile Include="Nedbank\NedbankIntegration.cs" />
