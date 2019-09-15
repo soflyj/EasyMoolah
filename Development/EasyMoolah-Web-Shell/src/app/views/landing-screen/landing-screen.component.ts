@@ -49,20 +49,11 @@ export class LandingScreenComponent implements OnInit {
     // Application    
     applicationApplicationAccess.application = new ApplicationModel();
     applicationApplicationAccess.application.guid = UUID.UUID(); // Generate GUID    
-    applicationApplicationAccess.application.startDate = new Date();
     applicationApplicationAccess.application.version = environment.version.toString();    
     applicationApplicationAccess.application.formData = '';
-    applicationApplicationAccess.application.isActive = true;
-    applicationApplicationAccess.application.createdDate = new Date();
-    applicationApplicationAccess.application.changedDate = new Date();
     // Application Access
-    applicationApplicationAccess.applicationAccess = new ApplicationAccessModel();
-    applicationApplicationAccess.applicationAccess.browser = JSON.stringify(this.deviceService.getDeviceInfo()).toString(); // npm install ngx-device-detector --save
+    applicationApplicationAccess.applicationAccess = new ApplicationAccessModel();    
     applicationApplicationAccess.applicationAccess.ipAddress = this.ip;
-    applicationApplicationAccess.applicationAccess.startDate = new Date();
-    applicationApplicationAccess.applicationAccess.isActive = true;
-    applicationApplicationAccess.applicationAccess.createdDate = new Date();
-    applicationApplicationAccess.applicationAccess.changedDate = new Date();
 
     this.commonService.SaveApplication(applicationApplicationAccess)
       .subscribe(

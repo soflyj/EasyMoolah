@@ -237,3 +237,5 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.D
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.pdb
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Nedbank.Integration.dll.config
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Templates\nedbank-authorisationurl.html
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\Twilio.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.API\bin\EasyMoolah.Notification.dll.config

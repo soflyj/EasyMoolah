@@ -47,7 +47,10 @@ import { HeaderComponent } from './views/header/header.component';
 import { ApplicationComponent } from './views/data-points/application/application.component';
 import { AuthorisationRedirectComponent } from './views/nedbank/authorisation-redirect/authorisation-redirect.component';
 import { AccessAuthorisationComponent } from './views/nedbank/access-authorisation/access-authorisation.component';
-import { GenerateAuthorisationComponent } from './views/nedbank/generate-authorisation/generate-authorisation.component'
+import { GenerateAuthorisationComponent } from './views/nedbank/generate-authorisation/generate-authorisation.component';
+import { LoanOffersComponent } from './views/nedbank/loan-offers/loan-offers.component';
+import { CustomerFinancialInformationComponent } from './views/nedbank/customer-financial-information/customer-financial-information.component';
+import { NedbankStepperComponent } from './views/nedbank/nedbank-stepper/nedbank-stepper.component'
 
 
 @NgModule({
@@ -76,7 +79,10 @@ import { GenerateAuthorisationComponent } from './views/nedbank/generate-authori
     ApplicationComponent,
     AuthorisationRedirectComponent,
     AccessAuthorisationComponent,
-    GenerateAuthorisationComponent
+    GenerateAuthorisationComponent,
+    LoanOffersComponent,
+    CustomerFinancialInformationComponent,
+    NedbankStepperComponent
   ],
   imports: [
     BrowserModule,

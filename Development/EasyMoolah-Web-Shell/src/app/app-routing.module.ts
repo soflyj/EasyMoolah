@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+// Nedbank
 import { AccessAuthorisationComponent } from './views/nedbank/access-authorisation/access-authorisation.component'
 import { AuthorisationRedirectComponent } from './views/nedbank/authorisation-redirect/authorisation-redirect.component'
 import { GenerateAuthorisationComponent } from './views/nedbank/generate-authorisation/generate-authorisation.component'
+import { LoanOffersComponent } from './views/nedbank/loan-offers/loan-offers.component';
+import { CustomerFinancialInformationComponent } from './views/nedbank/customer-financial-information/customer-financial-information.component'
+import { NedbankStepperComponent } from './views/nedbank/nedbank-stepper/nedbank-stepper.component'
+
 import { NotFoundComponent } from './views/not-found/not-found.component'
 import { LandingScreenComponent } from './views/landing-screen/landing-screen.component'
 import { ApplicationComponent } from './views/data-points/application/application.component'
+// Data Points
 import { Step1Component } from './views/data-points/step1/step1.component'
 import { Step2Component } from './views/data-points/step2/step2.component'
 import { Step3Component } from './views/data-points/step3/step3.component'
@@ -47,9 +53,11 @@ const appRoutes: Routes = [
   { path: 'step-15/:guid', component: Step15Component , data: {state: 'step-15'}},
   { path: 'step-16/:guid', component: Step16Component , data: {state: 'step-16'}},
 
+  { path: 'nedbank/:guid', component: NedbankStepperComponent , data: {state: 'nedbank'}},
   { path: 'authorise/:guid', component: AccessAuthorisationComponent , data: {state: 'authorise'}},
-  { path: 'access/:guid', component: AuthorisationRedirectComponent , data: {state: 'access'}},
-  // { path: '/:guid', component: GenerateAuthorisationComponent , data: {state: 'authorise'}},
+  { path: 'redirect', component: AuthorisationRedirectComponent , data: {state: 'access'}},
+  { path: 'loans/:guid', component: LoanOffersComponent , data: {state: 'authorise'}},
+  { path: 'cusinfos/:guid', component: CustomerFinancialInformationComponent , data: {state: 'authorise'}},
 
   { path: '**', component: NotFoundComponent },
   { path: 'not-found', component: NotFoundComponent }

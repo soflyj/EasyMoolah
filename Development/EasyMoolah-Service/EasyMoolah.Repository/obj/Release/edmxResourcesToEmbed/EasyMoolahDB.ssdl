@@ -49,6 +49,7 @@
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Guid" Type="uniqueidentifier" />
+    <Property Name="Reference" Type="varchar" MaxLength="10" />
     <Property Name="FormData" Type="varchar(max)" />
     <Property Name="StartDate" Type="datetime" />
     <Property Name="EndDate" Type="datetime" />
@@ -63,7 +64,6 @@
     </Key>
     <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ApplicationKey" Type="int" />
-    <Property Name="MiniApplicationReference" Type="varchar" MaxLength="50" />
     <Property Name="IPAddress" Type="varchar" MaxLength="50" />
     <Property Name="Browser" Type="varchar(max)" />
     <Property Name="StartDate" Type="datetime" />
@@ -116,6 +116,22 @@
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ChangedDate" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="Nedbank">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationKey" Type="int" />
+    <Property Name="LightToken" Type="varchar" MaxLength="50" />
+    <Property Name="HeavyToken" Type="varchar" MaxLength="50" />
+    <Property Name="IntentId" Type="varchar" MaxLength="50" />
+    <Property Name="NedbankAuthorisationURL" Type="varchar(max)" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="OfferId" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ChangedDate" Type="datetime" />
+  </EntityType>
   <EntityType Name="NotificationLog">
     <Key>
       <PropertyRef Name="Key" />
@@ -131,19 +147,6 @@
     <Property Name="Subject" Type="varchar" MaxLength="250" />
     <Property Name="Body" Type="varchar(max)" />
     <Property Name="SentDateTime" Type="datetime" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
-    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Question">
-    <Key>
-      <PropertyRef Name="Key" />
-    </Key>
-    <Property Name="Key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ApplicationKey" Type="int" />
-    <Property Name="QuestionAnswer" Type="varchar(max)" />
-    <Property Name="StartDateTime" Type="datetime" />
-    <Property Name="EndDateTime" Type="datetime" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ChangedDate" Type="datetime" Nullable="false" />
@@ -180,6 +183,18 @@
         <PropertyRef Name="Key" />
       </Principal>
       <Dependent Role="ApplicationAccess">
+        <PropertyRef Name="ApplicationKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationAdditionalDetails_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="Nedbank" Type="Self.Nedbank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="Nedbank">
         <PropertyRef Name="ApplicationKey" />
       </Dependent>
     </ReferentialConstraint>
@@ -228,8 +243,8 @@
     <EntitySet Name="ApplicationAudit" EntityType="Self.ApplicationAudit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nedbank" EntityType="Self.Nedbank" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ApiLog_Application" Association="Self.FK_ApiLog_Application">
       <End Role="Application" EntitySet="Application" />
       <End Role="ApiLog" EntitySet="ApiLog" />
@@ -241,6 +256,10 @@
     <AssociationSet Name="FK_ApplicationAccess_Application" Association="Self.FK_ApplicationAccess_Application">
       <End Role="Application" EntitySet="Application" />
       <End Role="ApplicationAccess" EntitySet="ApplicationAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationAdditionalDetails_Application" Association="Self.FK_ApplicationAdditionalDetails_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="Nedbank" EntitySet="Nedbank" />
     </AssociationSet>
     <AssociationSet Name="FK_ApplicationAudit_Application" Association="Self.FK_ApplicationAudit_Application">
       <End Role="Application" EntitySet="Application" />

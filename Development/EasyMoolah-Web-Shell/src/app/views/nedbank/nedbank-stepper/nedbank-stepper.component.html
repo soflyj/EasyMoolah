@@ -1,0 +1,24 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="nedbank1">
+    <app-loan-offers></app-loan-offers>
+  </mat-step>
+  <mat-step [stepControl]="nedbank2">
+    <app-customer-financial-information></app-customer-financial-information>
+  </mat-step>
+  <!-- <mat-step [stepControl]="nedbank3">
+    <app-step3></app-step3>
+  </mat-step> -->
+  <mat-step>
+    <!-- <ng-template matStepLabel>Done</ng-template> -->
+    You gots that money now.
+    <!-- <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+      </div> -->
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license -->

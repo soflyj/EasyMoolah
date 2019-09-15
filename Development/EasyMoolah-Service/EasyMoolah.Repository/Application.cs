@@ -28,14 +28,14 @@ namespace EasyMoolah.Repository
     
         public int Key { get; set; }
         public Nullable<System.Guid> Guid { get; set; }
+        public string Reference { get; set; }
         public string FormData { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Version { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> ChangedDate { get; set; }
-        public string Reference { get; set; }
+        public Nullable<System.DateTime> ChangedDate { get; set; }        
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApiLog> ApiLogs { get; set; }

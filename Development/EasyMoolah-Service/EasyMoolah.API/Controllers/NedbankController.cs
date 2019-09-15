@@ -27,15 +27,15 @@ namespace EasyMoolah.API.Controllers
             return Ok(response);
         }
 
-        [Route("api/nedbank/authorisation/access/{guid}/{accesscode}")]
-        [System.Web.Http.AcceptVerbs("GET", "POST")]
-        [System.Web.Http.HttpGet]
-        public IHttpActionResult GetAuthorisationURL(string guid, string accesscode)
-        {
-            EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
+        //[Route("api/nedbank/authorisation/access/{guid}/{accesscode}")]
+        //[System.Web.Http.AcceptVerbs("GET", "POST")]
+        //[System.Web.Http.HttpGet]
+        //public IHttpActionResult GetAuthorisationURL(string guid, string accesscode)
+        //{
+        //    EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
 
-            var response = nedbankIntegration.GetAuthorisationURL(guid, accesscode);
-            return Ok(response);
-        }
+        //    var response = nedbankIntegration.(guid, accesscode);
+        //    return Ok(response);
+        //}
     }
 }

@@ -12,39 +12,46 @@ namespace EasyMoolah.Domain
     {
         public static async Task<Repository.Application> SaveApplication(Model.Shared.ApplicationApplicationAccess _applicationApplicationAccess)
         {
-            var application = _applicationApplicationAccess.Application;
-            application.StartDate = new DateTime();
-            application.IsActive = true;
-            application.CreatedDate = new DateTime();
-            application.ChangedDate = new DateTime();
-
-            var applicationAccess = _applicationApplicationAccess.ApplicationAccess;
-            applicationAccess.StartDate = new DateTime();
-            applicationAccess.IsActive = true;
-            applicationAccess.CreatedDate = new DateTime();
-            applicationAccess.ChangedDate = new DateTime();
-
-            AutoMapper.Mapper.Reset();
-            Mapper.Initialize(cfg =>
+            try
             {
-                cfg.CreateMap<Model.Application, Repository.Application>();
-                cfg.CreateMap<Model.ApplicationAccess, Repository.ApplicationAccess>();
-            });
+                var application = _applicationApplicationAccess.Application;
+                application.StartDate = DateTime.Now;
+                application.IsActive = true;
+                application.CreatedDate = DateTime.Now;
+                application.ChangedDate = DateTime.Now;
 
-            using (var context = new EasyMoolahEntities())
+                var applicationAccess = _applicationApplicationAccess.ApplicationAccess;
+                applicationAccess.StartDate = DateTime.Now;
+                applicationAccess.IsActive = true;
+                applicationAccess.CreatedDate = DateTime.Now;
+                applicationAccess.ChangedDate = DateTime.Now;
+
+                AutoMapper.Mapper.Reset();
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<Model.Application, Repository.Application>();
+                    cfg.CreateMap<Model.ApplicationAccess, Repository.ApplicationAccess>();
+                });
+
+                using (var context = new EasyMoolahEntities())
+                {
+                    var entityA = Mapper.Map<Repository.Application>(application);
+
+                    context.Applications.Add(entityA);
+
+                    applicationAccess.ApplicationKey = entityA.Key;
+
+                    var entityAA = Mapper.Map<Repository.ApplicationAccess>(applicationAccess);
+                    context.ApplicationAccesses.Add(entityAA);
+                    await context.SaveChangesAsync()
+                        .ConfigureAwait(false);
+
+                    return entityA;
+                }
+            }
+            catch(Exception ex)
             {
-                var entityA = Mapper.Map<Repository.Application>(application);
-
-                context.Applications.Add(entityA);
-
-                applicationAccess.ApplicationKey = entityA.Key;
-
-                var entityAA = Mapper.Map<Repository.ApplicationAccess>(applicationAccess);
-                context.ApplicationAccesses.Add(entityAA);
-                await context.SaveChangesAsync()
-                    .ConfigureAwait(false);
-
-                return entityA;
+                throw ex;
             }
         }
 

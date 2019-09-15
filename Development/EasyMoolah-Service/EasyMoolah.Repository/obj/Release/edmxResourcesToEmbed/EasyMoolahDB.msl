@@ -49,6 +49,7 @@
     <EntitySetMapping Name="Applications">
       <EntityTypeMapping TypeName="EasyMoolahModel.Application">
         <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
           <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
@@ -71,7 +72,6 @@
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="Browser" ColumnName="Browser" />
           <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
-          <ScalarProperty Name="MiniApplicationReference" ColumnName="MiniApplicationReference" />
           <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
           <ScalarProperty Name="Key" ColumnName="Key" />
         </MappingFragment>
@@ -144,15 +144,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Questions">
-      <EntityTypeMapping TypeName="EasyMoolahModel.Question">
-        <MappingFragment StoreEntitySet="Question">
+    <EntitySetMapping Name="Nedbanks">
+      <EntityTypeMapping TypeName="EasyMoolahModel.Nedbank">
+        <MappingFragment StoreEntitySet="Nedbank">
           <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
-          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
-          <ScalarProperty Name="QuestionAnswer" ColumnName="QuestionAnswer" />
+          <ScalarProperty Name="OfferId" ColumnName="OfferId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="NedbankAuthorisationURL" ColumnName="NedbankAuthorisationURL" />
+          <ScalarProperty Name="IntentId" ColumnName="IntentId" />
+          <ScalarProperty Name="HeavyToken" ColumnName="HeavyToken" />
+          <ScalarProperty Name="LightToken" ColumnName="LightToken" />
           <ScalarProperty Name="ApplicationKey" ColumnName="ApplicationKey" />
           <ScalarProperty Name="Key" ColumnName="Key" />
         </MappingFragment>

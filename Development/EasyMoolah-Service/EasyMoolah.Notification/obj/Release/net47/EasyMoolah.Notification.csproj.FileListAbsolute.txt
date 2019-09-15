@@ -48,3 +48,8 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Rel
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EntityFramework.SqlServer.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\System.ValueTuple.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\obj\Release\net47\EasyMoolah.Notification.csprojAssemblyReference.cache
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\EasyMoolah.Notification.dll.config
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Microsoft.IdentityModel.Logging.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Microsoft.IdentityModel.Tokens.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\System.IdentityModel.Tokens.Jwt.dll
+F:\GIT\EasyMoolah\Development\EasyMoolah-Service\EasyMoolah.Notification\bin\Release\net47\Twilio.dll
