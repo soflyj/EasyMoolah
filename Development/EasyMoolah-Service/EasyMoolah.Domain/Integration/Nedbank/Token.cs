@@ -11,7 +11,7 @@ namespace EasyMoolah.Domain.Integration
 {
     public class Token
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
+        // EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.Token token = new Nedbank.Integration.Token();
 
         /// <summary>
@@ -19,12 +19,12 @@ namespace EasyMoolah.Domain.Integration
         /// https://apim.nedbank.co.za/static/docs/personal-loans-token
         /// </summary>
         /// <returns></returns>
-        public async Task<Model.Nedbank.Token.TokenLightResponse> GetLightToken()
+        public async Task<Model.NedbankAPI.Token.TokenLightResponse> GetLightToken(int applicationKey)
         {
-            var result = token.GetLightToken();
-            await logs.LogIntegration(result);
+            var result = token.GetLightToken(applicationKey);
+            Logs.LogIntegration(result);
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.Token.TokenLightResponse> (result.Output);            
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.Token.TokenLightResponse>(result.Output);
 
             return response;
         }
@@ -35,12 +35,12 @@ namespace EasyMoolah.Domain.Integration
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.Token.TokenHeavyResponse> GetHeavyToken(string code)
+        public async Task<Model.NedbankAPI.Token.TokenHeavyResponse> GetHeavyToken(string code)
         {
             var result = token.GetHeavyToken(code);
-            await logs.LogIntegration(result);
+            Logs.LogIntegration(result);
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.Token.TokenHeavyResponse>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.Token.TokenHeavyResponse>(result.Output);
 
             return response;
         }

@@ -14,16 +14,42 @@ namespace EasyMoolah.Repository
     
     public partial class Application
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Application()
+        {
+            this.ApiLogs = new HashSet<ApiLog>();
+            this.Applicants = new HashSet<Applicant>();
+            this.ApplicationAccesses = new HashSet<ApplicationAccess>();
+            this.ApplicationAudits = new HashSet<ApplicationAudit>();
+            this.ErrorLogs = new HashSet<ErrorLog>();
+            this.NotificationLogs = new HashSet<NotificationLog>();
+            this.Nedbanks = new HashSet<Nedbank>();
+        }
+    
         public int Key { get; set; }
         public Nullable<System.Guid> Guid { get; set; }
-        public string IPAddress { get; set; }
-        public string Browser { get; set; }
+        public string Reference { get; set; }
         public string FormData { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Version { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> ChangedDate { get; set; }
+        public Nullable<System.DateTime> ChangedDate { get; set; }        
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApiLog> ApiLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Applicant> Applicants { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApplicationAccess> ApplicationAccesses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ApplicationAudit> ApplicationAudits { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ErrorLog> ErrorLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NotificationLog> NotificationLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Nedbank> Nedbanks { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace EasyMoolah.Repository
     public partial class ApiLog
     {
         public int Key { get; set; }
-        public int ApplicationKey { get; set; }
+        public Nullable<int> ApplicationKey { get; set; }
         public string ApiToken { get; set; }
         public string Method { get; set; }
         public string Http { get; set; }
@@ -28,5 +28,7 @@ namespace EasyMoolah.Repository
         public bool IsActive { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public System.DateTime ChangedDate { get; set; }
+    
+        public virtual Application Application { get; set; }
     }
 }

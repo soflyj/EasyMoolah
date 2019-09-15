@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.IntentResponse
+namespace EasyMoolah.Model.NedbankAPI.IntentResponse
 {
 
     public class Data
@@ -39,7 +39,7 @@ namespace EasyMoolah.Model.Nedbank.IntentResponse
     }
 }
 
-namespace EasyMoolah.Model.Nedbank.IntentRequest
+namespace EasyMoolah.Model.NedbankAPI.IntentRequest
 {
     public class Data
     {

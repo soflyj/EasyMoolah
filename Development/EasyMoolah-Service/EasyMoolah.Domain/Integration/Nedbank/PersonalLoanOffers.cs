@@ -21,12 +21,12 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="loanAmount"></param>
         /// <param name="heavyToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.PersonLoanOffersResponse.RootObject> GetPersonalLoanOffers(string loanAmount, string heavyToken)
+        public async Task<Model.NedbankAPI.PersonLoanOffersResponse.RootObject> GetPersonalLoanOffers(string loanAmount, string heavyToken)
         {
             var result = personalLoanOffers.GetPersonalLoanOffers(loanAmount, heavyToken);
             // await logs.LogIntegration(result); Why doesn't this work
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.PersonLoanOffersResponse.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.PersonLoanOffersResponse.RootObject>(result.Output);
 
             return response;
         }
@@ -39,12 +39,12 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="loanTerm"></param>
         /// <param name="heavyToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.PersonLoanOffersResponse.RootObject> GetPersonalLoanOfferDetails(string loanAmount, string loanTerm, string heavyToken)
+        public async Task<Model.NedbankAPI.PersonLoanOffersResponse.RootObject> GetPersonalLoanOfferDetails(string loanAmount, string loanTerm, string heavyToken)
         {
             var result = personalLoanOffers.GetPersonalLoanOfferDetails(loanAmount, loanTerm, heavyToken);
             // await logs.LogIntegration(result); Why doesn't this work
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.PersonLoanOffersResponse.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.PersonLoanOffersResponse.RootObject>(result.Output);
 
             return response;
         }
@@ -56,12 +56,12 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="offerId"></param>        
         /// <param name="heavyToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.CustomerFinancialInformation.RootObject> GetCustomerFinancialInformation(string offerId, string heavyToken)
+        public async Task<Model.NedbankAPI.CustomerFinancialInformation.RootObject> GetCustomerFinancialInformation(string offerId, string heavyToken)
         {
             var result = personalLoanOffers.GetCustomerFinancialInformation(offerId, heavyToken);
             // await logs.LogIntegration(result); Why doesn't this work
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.CustomerFinancialInformation.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.CustomerFinancialInformation.RootObject>(result.Output);
 
             return response;
         }

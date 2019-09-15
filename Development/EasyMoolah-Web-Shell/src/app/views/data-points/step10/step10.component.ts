@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
@@ -11,18 +10,17 @@ import { CommonService } from 'src/app/services/common.service';
 @Component({
   selector: 'app-step10',
   templateUrl: './step10.component.html',
-  styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
+  styleUrls: ['../../../../assets/css/em_site_theme.css']
 })
 export class Step10Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime;
-  private monthlyexpense_slider: string;
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  guid: any;
+  startTime;
+  monthlyexpense_slider: string;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -36,7 +34,7 @@ export class Step10Component implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -48,7 +46,7 @@ export class Step10Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(10)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 
@@ -70,11 +68,8 @@ export class Step10Component implements OnInit {
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
-
-    this.router.navigateByUrl('/step-11/' + this.commonService.GetGUID());
   }
 
   Back() {
-    this.router.navigateByUrl('/stepped-9/' + this.commonService.GetGUID());
   }
 }

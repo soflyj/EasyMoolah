@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="introduction center-align">
+        <!-- <h2>Welcome back to EasyMoolah</h2> -->
+        <p>Now that you have been authorised lets continue your journey.</p>
+        <p>Just one last step and you'll have your moolah.</p>
+      </div>
+    </div>
+  </div>
+  <!--row-->
+</div>
+
+
+
+<form [formGroup]="redirectForm" (ngSubmit)="Continue()">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="input-field">
+          <!-- <p>Personal Information</p> -->
+          <div class="group">
+            <!-- First Name -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="Reference" formControlName="reference">
+            </mat-form-field>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn-large center-align-btn" [disabled]="!redirectForm.valid">Continue</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</form>
+
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

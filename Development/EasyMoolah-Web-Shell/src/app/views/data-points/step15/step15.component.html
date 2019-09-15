@@ -1,57 +1,59 @@
 <form [formGroup]="stepForm" (ngSubmit)="Next()">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m6 offset-m3">
-          <div class="input-field">
-            <p>Personal Information</p>
-            <div class="group">
-              <!-- First Name -->
-              <mat-form-field class="example-full-width" style="width: 70%">
-                <input matInput placeholder="First Name" formControlName="firstname">
-              </mat-form-field>
-              <div class="clearfix"></div>
-              <!-- Last Name -->
-              <mat-form-field class="example-full-width" style="width: 70%">
-                <input matInput placeholder="Last Name" formControlName="lastname">
-              </mat-form-field>
-              <div class="clearfix"></div>
-              <!-- Email -->
-              <mat-form-field class="example-full-width" style="width: 70%">
-                <input matInput placeholder="Email" formControlName="email">
-              </mat-form-field>
-              <div class="clearfix"></div>
-              <!-- Mobile Number -->
-              <mat-form-field class="example-full-width" style="width: 70%">
-                <input matInput placeholder="MobileNumber" [(ngModel)]="MobileNumber" [textMask]="{mask: mask}"
-                  formControlName="mobilenumber">
-              </mat-form-field>
-              <div class="clearfix"></div>
-              <!-- Landline Number -->
-              <mat-form-field class="example-full-width" style="width: 70%">
-                <input matInput placeholder="Landline Number (Optional)" [(ngModel)]="LandlineNumber" [textMask]="{mask: mask}"
-                  formControlName="landlinenumber">
-              </mat-form-field>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="input-field">
+          <p>Personal Information</p>
+          <div class="group">
+            <!-- First Name -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="First Name" formControlName="firstname">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Last Name -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="Last Name" formControlName="lastname">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Email -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Mobile Number -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="MobileNumber" [(ngModel)]="mobileNumber" [textMask]="{mask: mask}"
+                formControlName="mobilenumber">
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <!-- Landline Number -->
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <input matInput placeholder="Landline Number (Optional)" [(ngModel)]="landlineNumber" [textMask]="{mask: mask}"
+                formControlName="landlinenumber">
+            </mat-form-field>
           </div>
         </div>
       </div>
     </div>
-    <!--row-->
-    <footer class="container">
-      <div class="row pagination-btns">
-        <div class="col s12 m6 offset-m3">
-          <div class="col s5 m4">
-            <button type="button" class="waves-effect waves-light btn-small prev-btn" (click)="Back()"><i class="material-icons left">chevron_left</i>Prev</button>
-          </div>
-          <div class="col s2 m4">
-          </div>
-          <div class="col s5 m4">
-            <button type="submit" class="waves-effect waves-light btn-small next-btn" [disabled]="!stepForm.valid"><i class="material-icons right">chevron_right</i>Next</button>
-          </div>
-        </div>  
+  </div>
+  <!--row-->
+  <footer class="container">
+    <div class="row pagination-btns">
+      <div class="col s12 m6 offset-m3">
+        <div class="col s5 m4">
+          <button type="button" class="waves-effect waves-light btn-small prev-btn" matStepperPrevious (click)="Back()"><i
+              class="material-icons left">chevron_left</i>Prev</button>
+        </div>
+        <div class="col s2 m4">
+        </div>
+        <div class="col s5 m4">
+          <button type="submit" class="waves-effect waves-light btn-small next-btn" matStepperNext [disabled]="!stepForm.valid"><i
+              class="material-icons right">chevron_right</i>Next</button>
+        </div>
       </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </form>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</form>

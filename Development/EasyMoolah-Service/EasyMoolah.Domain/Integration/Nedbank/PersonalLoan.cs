@@ -12,7 +12,7 @@ namespace EasyMoolah.Domain.Integration
 {
     public class PersonalLoan
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
+        // EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.PersonalLoan personalLoan = new Nedbank.Integration.PersonalLoan();
 
         /// <summary>
@@ -22,12 +22,12 @@ namespace EasyMoolah.Domain.Integration
         /// <param name="intentRequest"></param>
         /// <param name="lightToken"></param>
         /// <returns></returns>
-        public async Task<Model.Nedbank.PersonLoanResponse.RootObject> AcceptPersonalLoan(Model.Nedbank.PersonLoanRequest.RootObject personalLoanRequest, string lightToken)
+        public async Task<Model.NedbankAPI.PersonLoanResponse.RootObject> AcceptPersonalLoan(Model.NedbankAPI.PersonLoanRequest.RootObject personalLoanRequest, string lightToken)
         {
             var result = personalLoan.AcceptPersonalLoan(personalLoanRequest, lightToken);
-            await logs.LogIntegration(result);
+            await Logs.LogIntegration(result);
 
-            var response = JsonConvert.DeserializeObject<Model.Nedbank.PersonLoanResponse.RootObject>(result.Output);
+            var response = JsonConvert.DeserializeObject<Model.NedbankAPI.PersonLoanResponse.RootObject>(result.Output);
 
             return response;
         }

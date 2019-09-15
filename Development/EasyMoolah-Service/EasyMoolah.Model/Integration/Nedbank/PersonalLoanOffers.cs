@@ -1,10 +1,10 @@
-﻿using EasyMoolah.Model.Nedbank.PersonLoanOffersResponse;
+﻿using EasyMoolah.Model.NedbankAPI.PersonLoanOffersResponse;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.PersonLoanOffersResponse
+namespace EasyMoolah.Model.NedbankAPI.PersonLoanOffersResponse
 {
     public class MaxAmount
     {
@@ -60,7 +60,7 @@ namespace EasyMoolah.Model.Nedbank.PersonLoanOffersResponse
     }
 }
 
-namespace EasyMoolah.Model.Nedbank.CustomerFinancialInformation
+namespace EasyMoolah.Model.NedbankAPI.CustomerFinancialInformation
 {
     public class Amount
     {

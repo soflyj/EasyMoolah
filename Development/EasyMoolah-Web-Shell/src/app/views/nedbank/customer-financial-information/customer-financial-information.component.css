@@ -1,0 +1,22 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #2e9eab !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #2e9eab !important;
+    display:none;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #2e9eab !important;;
+  }
+  
+  .floattextarea {
+    resize: none;
+    height: 20px;
+  }
+  
+  input.ng-pristine {max-width: 100%!important;}

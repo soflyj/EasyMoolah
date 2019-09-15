@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  appUrl: 'http://localhost:52358/api',
+  appUrl: 'http://localhost:58007/api',
   version: 1.1,
-  googleapi: ''
+  googleapi: '',
+  apiToken:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVhc3ltb29sYWgiLCJuYmYiOjE1Njc5NDg0NzcsImV4cCI6MTU2ODU1MzI3NywiaWF0IjoxNTY3OTQ4NDc3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMTkxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDE5MSJ9.IedimAaynvFWHIN973pEnQ9dk-pZHKj7OIvq96H7vSQ'
 };
 
 /*

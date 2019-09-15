@@ -8,8 +8,8 @@
     <None Remove="Templates\activate_account.html" />
     <None Remove="Templates\activation_confirmation.html" />
     <None Remove="Templates\call-me.html" />
-    <None Remove="Templates\fsp_results-successful.html" />
     <None Remove="Templates\fsp_results-unsuccessful.html" />
+    <None Remove="Templates\nedbank-authorisationurl.html" />
     <None Remove="Templates\processing-results.html" />
     <None Remove="Templates\retrieve_password.html" />
   </ItemGroup>
@@ -24,7 +24,7 @@
     <Content Include="Templates\call-me.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\fsp_results-successful.html">
+    <Content Include="Templates\nedbank-authorisationurl.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Templates\fsp_results-unsuccessful.html">
@@ -36,6 +36,12 @@
     <Content Include="Templates\retrieve_password.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Twilio" Version="5.32.0" />
   </ItemGroup>
 
   <ItemGroup>

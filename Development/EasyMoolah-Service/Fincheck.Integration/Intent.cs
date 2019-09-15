@@ -14,7 +14,7 @@ namespace Fincheck.Integration
     {
 
         private static EasyMoolah.Model.Result result = new EasyMoolah.Model.Result();
-        public static APILog apiLog = new APILog();
+        public static ApiLog apiLog = new ApiLog();
         private static string JsonBody = "";
         private static string fincheckAPI = "";
         private static string apiUrl = "";
@@ -25,7 +25,7 @@ namespace Fincheck.Integration
             fincheckAPI = System.Configuration.ConfigurationSettings.AppSettings["FincheckAPI"].ToString();
 
             //result
-            result.input = _intentRequest.id.ToString();
+            result.Input = _intentRequest.id.ToString();
             //apiLog
             apiLog.ApplicationKey = _intentRequest.applicationKey;
             apiLog.ApiToken = fincheckAPI; 
@@ -51,9 +51,9 @@ namespace Fincheck.Integration
 
                         var asyncResult = httpClient.GetAsync(apiUrl).Result;
                         //result
-                        result.resultCode = 0;
-                        result.output = asyncResult.Content.ReadAsStringAsync().Result;
-                        result.result = result.output;
+                        result.result = ResultEnum.OK;
+                        result.Output = asyncResult.Content.ReadAsStringAsync().Result;
+                        result.result = result.Output;
                         //apiLog
                         apiLog.Response = result.output;
                         apiLog.EndDateTime = DateTime.Now;
@@ -61,14 +61,14 @@ namespace Fincheck.Integration
                 }
                 catch (Exception ex)
                 {
-                    result.resultCode = 101;
-                    result.error = ex.InnerException.ToString();
-                    result.errorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + _intentRequest.id;
+                    result.result = ResultEnum.API;
+                    result.Error = ex.InnerException.ToString();
+                    result.ErrorFriendly = "Error 101 occurred in Fincheck API - api/v1/intent/" + _intentRequest.id;
                 }
             }
             else
             {
-                result.resultCode = 201;
+                result.result = 201;
                 result.error = "parameter is null";
                 result.errorFriendly = "Error 201 occurred in Fincheck API - api/v1/intent/" + _intentRequest.id;
             }

@@ -1,10 +1,10 @@
-﻿using EasyMoolah.Model.Nedbank.PersonLoanOffersResponse;
+﻿using EasyMoolah.Model.NedbankAPI.PersonLoanOffersResponse;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.PersonLoanRequest
+namespace EasyMoolah.Model.NedbankAPI.PersonLoanRequest
 {
     public class InterestRate
     {
@@ -226,7 +226,7 @@ namespace EasyMoolah.Model.Nedbank.PersonLoanRequest
     }
 }
 
-namespace EasyMoolah.Model.Nedbank.PersonLoanResponse
+namespace EasyMoolah.Model.NedbankAPI.PersonLoanResponse
 {
     public class Links
     {

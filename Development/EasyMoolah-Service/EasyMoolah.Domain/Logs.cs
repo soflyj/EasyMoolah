@@ -26,6 +26,23 @@ namespace EasyMoolah.Domain
             }
         }
 
+        public async Task<int> InsertNotificationLog(Model.Logs.NotificationLog _notificationLog)
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Model.Logs.NotificationLog, Repository.NotificationLog>();
+            });
+
+            using (var context = new EasyMoolahEntities())
+            {
+                var entity = Mapper.Map<Repository.NotificationLog>(_notificationLog);
+
+                context.NotificationLogs.Add(entity);
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
+                return entity.Key;
+            }
+        }
 
         public async Task<Repository.ApiLog> InsertApiLog(Model.Logs.ApiLog _apiLog)
         {
@@ -45,7 +62,7 @@ namespace EasyMoolah.Domain
             }
         }
 
-        public async Task LogIntegration(Result _result)
+        public static async Task LogIntegration(Result _result)
         {
             // Default
             _result.ApiLog.IsActive = true;
@@ -53,6 +70,7 @@ namespace EasyMoolah.Domain
             _result.ApiLog.ChangedDate = DateTime.Now;
             _result.ApiLog.Reference = "";
 
+            AutoMapper.Mapper.Reset();
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Model.Logs.ApiLog, Repository.ApiLog>();
@@ -64,8 +82,6 @@ namespace EasyMoolah.Domain
                 // ApiLog
                 var apiLogEntity = Mapper.Map<Repository.ApiLog>(_result.ApiLog);
                 context.ApiLogs.Add(apiLogEntity);
-                await context.SaveChangesAsync()
-                    .ConfigureAwait(false);
 
                 if (_result.result != ResultEnum.OK)
                 {
@@ -88,9 +104,10 @@ namespace EasyMoolah.Domain
                     }); ;
 
                     context.ErrorLogs.Add(entity);
-                    await context.SaveChangesAsync()
-                        .ConfigureAwait(false);
                 }
+
+                await context.SaveChangesAsync()
+                    .ConfigureAwait(false);
             }
         }
     }

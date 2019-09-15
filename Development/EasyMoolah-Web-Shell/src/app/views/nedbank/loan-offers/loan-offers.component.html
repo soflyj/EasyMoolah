@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="introduction center-align">
+        <h2>Loan offers</h2>
+        <span>In collaboration with</span><br>
+        <img src="../../../../assets/images/nedbank-sample-banner.png" width="200" />
+      </div>
+    </div>
+  </div>
+  <!-- Expand grid -->
+  <div class="row">
+    <div class="col s12">
+      <div *ngFor="let term of terms">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header [collapsedHeight]="'160px'" [expandedHeight]="'220px'">
+              <mat-panel-title>
+                <p>Term of {{term.Term}} months</p>
+              </mat-panel-title>
+
+              <mat-panel-description>
+                <table class="fsp-result-table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>Maximum of
+                          <strong>{{term.MaxAmount.Amount | currency:'ZAR':'symbol-narrow':'4.2-2'}}</strong> and
+                          minimum of
+                          <strong>{{term.MinAmount.Amount | currency:'ZAR':'symbol-narrow':'4.2-2'}}</strong></p>
+                      </td>
+                      <td>
+                        <a class="waves-effect waves-light btn-large call-btn" style="margin:0 auto; line-height: 40px"
+                          (click)="want(term)"><i class="material-icons" style="transform:translateY(5px)"></i>Want
+                          this</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-panel-description>
+
+            </mat-expansion-panel-header>
+            <p>Interest of {{term.InterestRate.Rate}}%</p>
+            <p>{{term.InterestRate.Label}}</p>
+            <p>{{term.InterestRate.Description}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Expand grid -->
+<!--container-->
+<footer class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="col s12">
+        <p class="center-align">Congratulations on getting approval for your loan amount. Please click on the 'call
+          me'
+          button next to any of the service providers so that a consultant can call you back today!</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="col s12 m6 offset-m3">
+  <div class="col s2 m4">
+  </div>
+  <div class="col s5 m4">
+    <button class="waves-effect waves-light btn-small next-btn" matStepperNext><i
+        class="material-icons right">chevron_right</i>Next</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('select').formSelect();
+  });
+</script>

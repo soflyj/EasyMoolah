@@ -79,7 +79,11 @@
         },
         "frameworks": {
           "net47": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

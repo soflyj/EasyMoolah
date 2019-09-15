@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { DataPointModel } from '../models/data-point.model';
+import { CommonService } from '../services/common.service';
+import { ApplicationAuditModel } from 'src/app/models/application-audit.model'
 
 @Injectable()
 export class DataPointService {
     public dataPoints: Array<DataPointModel>;
     public Answer: string[] = null;
-    // constructor() {
+    private applicationAudit: ApplicationAuditModel = new ApplicationAuditModel();
 
-    // }
+    constructor(private commonService: CommonService) {
+
+    }
 
     // public borrowerapplicationlog: BorrowerApplicationLog[] = [null];
 
@@ -27,6 +31,8 @@ export class DataPointService {
     // }
 
     addDataPoint(dataPoint: DataPointModel) {
+        var action = '';
+
         if (this.dataPoints == null) {
             this.dataPoints = new Array<DataPointModel>();
             //First question to Add, datapoint 1
@@ -35,15 +41,23 @@ export class DataPointService {
         else {
             if (this.dataPoints.filter(x => x.Id == dataPoint.Id)[0] != null) {
                 //Update
-                this.dataPoints.filter(x => x.Id == dataPoint.Id)[0].Answer = dataPoint.Answer;
+                this.dataPoints.filter(x => x.Id == dataPoint.Id)[0].Answer = dataPoint.Answer;                
             }
             else {
                 //Add
                 this.dataPoints.push(dataPoint);
             }
-        }
+        }        
 
-        console.log(this.dataPoints);
+        this.applicationAudit.action = '';
+        this.applicationAudit.formData = JSON.stringify(this.dataPoints);
+        this.commonService.UpdateFormData(this.applicationAudit)
+            .subscribe(
+                (res) => {
+                    console.log(res);
+                },
+                err => console.log(err)
+            );
     }
 
     getPreviousDataPointState(id: number): string[] {

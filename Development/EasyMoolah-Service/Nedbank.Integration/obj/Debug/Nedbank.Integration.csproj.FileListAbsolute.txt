@@ -10,3 +10,15 @@ F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\N
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csproj.CopyComplete
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.dll
 F:\GIT\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.dll.config
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Nedbank.Integration.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\EasyMoolah.Model.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Newtonsoft.Json.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\EasyMoolah.Model.pdb
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\bin\Debug\Newtonsoft.Json.xml
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csprojAssemblyReference.cache
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csproj.CoreCompileInputs.cache
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.csproj.CopyComplete
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.dll
+D:\Easymoolah\EasyMoolah\Development\EasyMoolah-Service\Nedbank.Integration\obj\Debug\Nedbank.Integration.pdb

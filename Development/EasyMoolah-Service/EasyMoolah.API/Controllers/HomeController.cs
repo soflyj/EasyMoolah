@@ -10,7 +10,8 @@ namespace EasyMoolah.API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "EasyMoolah - Service";
+            ViewBag.PublishDate = DateTime.Now;            
 
             return View();
         }

@@ -1,11 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Application.cs" />
     <Compile Remove="Borrower.cs" />
     <Compile Remove="Integration\Intent.cs" />
     <Compile Remove="Integration\Lead.cs" />
@@ -20,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EasyMoolah.Model\EasyMoolah.Model.csproj" />
+    <ProjectReference Include="..\EasyMoolah.Notification\EasyMoolah.Notification.csproj" />
     <ProjectReference Include="..\EasyMoolah.Repository\EasyMoolah.Repository.csproj" />
     <ProjectReference Include="..\Nedbank.Integration\Nedbank.Integration.csproj" />
   </ItemGroup>

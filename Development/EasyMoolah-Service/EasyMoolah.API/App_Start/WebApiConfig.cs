@@ -20,6 +20,8 @@ namespace EasyMoolah.API
 
             config.MessageHandlers.Add(new TokenValidationHandler());
 
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

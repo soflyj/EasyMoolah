@@ -1,40 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
 import { DataPointService } from '../../../services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { FormService } from 'src/app/views/data-points/application/form.service';
 import { DataPointModel } from '../../../models/data-point.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
   styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
 })
 export class Step1Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  guid: any;
+  startTime;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private headerService: HeaderService,
     private dataPointService: DataPointService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private formService: FormService) {
     this.question = 'Which service would you like a loan for?';
   }
 
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -44,7 +45,7 @@ export class Step1Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(1)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigateByUrl('/not-found');
     }
 
@@ -54,6 +55,7 @@ export class Step1Component implements OnInit {
         this.answer,
         [Validators.required]),
     });
+    // this.formService.stepReady(this.stepForm, 'one')
   }
 
   Next() {
@@ -66,7 +68,5 @@ export class Step1Component implements OnInit {
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
-
-    this.router.navigateByUrl('/step-2/' + this.commonService.GetGUID());
   }
 }

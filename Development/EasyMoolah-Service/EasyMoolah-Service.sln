@@ -18,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fincheck.Integration", "Fincheck.Integration\Fincheck.Integration.csproj", "{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EasyMoolah.Database", "EasyMoolah.Database\EasyMoolah.Database.sqlproj", "{E485928B-8845-40F1-B9AC-4D9009791E1D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.Repository", "EasyMoolah.Repository\EasyMoolah.Repository.csproj", "{D8F15E8E-DC39-409E-853B-B6CAE99AC74F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMoolah.API", "EasyMoolah.API\EasyMoolah.API.csproj", "{3F7EF5FD-25B0-4671-A0C0-B1FF3BE3E972}"
@@ -54,12 +52,6 @@ Global
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32474E8-1BE1-4EC8-9D91-8E6B959BD39B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E485928B-8845-40F1-B9AC-4D9009791E1D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{D8F15E8E-DC39-409E-853B-B6CAE99AC74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8F15E8E-DC39-409E-853B-B6CAE99AC74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F15E8E-DC39-409E-853B-B6CAE99AC74F}.Release|Any CPU.ActiveCfg = Release|Any CPU

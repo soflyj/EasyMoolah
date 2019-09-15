@@ -1,10 +1,10 @@
-﻿using EasyMoolah.Model.Nedbank.PersonLoanOffersResponse;
+﻿using EasyMoolah.Model.NedbankAPI.PersonLoanOffersResponse;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyMoolah.Model.Nedbank.PersonalLoanRequestsResponse
+namespace EasyMoolah.Model.NedbankAPI.PersonalLoanRequestsResponse
 {
     public class Data
     {

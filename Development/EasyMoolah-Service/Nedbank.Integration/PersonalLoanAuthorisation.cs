@@ -12,18 +12,18 @@ namespace Nedbank.Integration
 {
     public class PersonalLoanAuthorisation
     {
-        public Result GetPersonalLoanAuthorisationURL(string intentId, string lightToken)
+        public Result GetPersonalLoanAuthorisationURL(string intentId, string lightToken, int applicationKey)
         {
             Result result = new EasyMoolah.Model.Result();
             EasyMoolah.Model.Logs.ApiLog apiLog = new EasyMoolah.Model.Logs.ApiLog();
-            string client_id = "123349a9-fb0a-443d-8227-9f05b212e81d";
-            string client_secret = "oX5oH1eI2qT7aC8lG7cE6nI6dS7tM2eH7pC1kQ3nP0iX0jE8eP";
+            string client_id = System.Configuration.ConfigurationSettings.AppSettings["client_id"];
+            // string client_secret = System.Configuration.ConfigurationSettings.AppSettings["client_secret"];
             string apiUrl = $"https://api.nedbank.co.za/apimarket/sandbox/nboauth/oauth20/authorize?";
-            string redirect = $"https://easymoolah.co.za";
+            string redirect = System.Configuration.ConfigurationSettings.AppSettings["redirect"];
 
             result.Input = intentId + " | " + lightToken;
 
-            apiLog.ApplicationKey = 0; // From FE
+            apiLog.ApplicationKey = applicationKey;
             apiLog.ApiToken = lightToken;
             apiLog.Method = "nboauth/oauth20/authorize?";
             apiLog.Http = "Get";
@@ -59,10 +59,20 @@ namespace Nedbank.Integration
                     apiLog.Response = apiUrl + queryString;
                     apiLog.EndDateTime = DateTime.Now;
 
-                    //result
-                    result.result = ResultEnum.OK;
-                    result.Output = apiUrl + queryString;
-                    result.ApiLog = apiLog;
+                    if (asyncResult.ReasonPhrase.ToUpper() != "BAD REQUEST")
+                    {
+                        //result
+                        result.result = ResultEnum.OK;
+                        result.Output = apiUrl + queryString;
+                        result.ApiLog = apiLog;
+                    }
+                    else
+                    {
+                        //failure
+                        result.result = ResultEnum.API;
+                        result.Output = "";
+                        result.ApiLog = apiLog;
+                    }
                 }
             }
             catch (Exception ex)

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
@@ -7,27 +6,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataPointModel } from 'src/app/models/data-point.model';
 import { DataPointService } from 'src/app/services/data-point.service';
 import { CommonService } from 'src/app/services/common.service';
+import { ApplicantModel } from 'src/app/models/applicant.model';
 
 @Component({
     selector: 'app-step15',
     templateUrl: './step15.component.html',
-    styleUrls: ['../../../../assets/css/em_site_theme.css', './step15.component.css'],
-    animations: [routerTransition]
+    styleUrls: ['../../../../assets/css/em_site_theme.css', './step15.component.css']
 })
 export class Step15Component implements OnInit {
 
-    private stepForm: FormGroup;
-    private dataPoint: DataPointModel = new DataPointModel();
-    private question: string;
-    private answer: string[] = null;
-    private jar: any;
-    private startTime
+    stepForm: FormGroup;
+    dataPoint: DataPointModel = new DataPointModel();
+    question: string;
+    answer: string[] = null;
+    guid: any;
+    startTime
 
-    private mobileNumber: string = '';
-    private mobileNumberLength: number;
-    private landlineNumber: string = '';
-    private landlineNumberLength: number;
-    private mask: any;
+    mobileNumber: string = '';
+    mobileNumberLength: number;
+    landlineNumber: string = '';
+    landlineNumberLength: number;
+    mask: any;
 
     constructor(private router: Router,
         private activatedRoute: ActivatedRoute,
@@ -39,7 +38,7 @@ export class Step15Component implements OnInit {
 
     ngOnInit() {
         this.activatedRoute.params.subscribe((params: any) => {
-            this.jar = params.jar;
+            this.guid = params.guid;
         });
         this.startTime = new Date();
         this.headerService.mode.next('determinate');
@@ -49,7 +48,7 @@ export class Step15Component implements OnInit {
             this.answer = this.dataPointService.getPreviousDataPointState(15);
         }
 
-        if (this.jar != this.commonService.GetGUID()) {
+        if (this.guid != this.commonService.GetGUID()) {
             this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
         }
 
@@ -108,10 +107,24 @@ export class Step15Component implements OnInit {
         this.dataPoint.EndTime = new Date();
         this.dataPointService.addDataPoint(this.dataPoint);
 
-        this.router.navigateByUrl('/step-16/' + this.commonService.GetGUID());
+        this.saveApplicant();
     }
 
     Back() {
-        this.router.navigateByUrl('/stepped-14/' + this.commonService.GetGUID());
+
+    }
+
+    saveApplicant() {
+        const applicant = new ApplicantModel();
+        applicant.firstName = this.stepForm.value.firstname;
+        applicant.lastName = this.stepForm.value.lastname;
+        applicant.email = this.stepForm.value.email;
+        applicant.mobileNumber = this.stepForm.value.email;
+        applicant.landlineNumber = this.stepForm.value.landlineNumber;
+
+        this.commonService.SaveApplicant(applicant).subscribe(
+            (res) => console.log(res),
+            err => console.log(err)
+        );
     }
 }

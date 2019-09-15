@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../services/router.animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HeaderService } from '../../../services/header.service';
@@ -11,18 +10,17 @@ import { CommonService } from 'src/app/services/common.service';
 @Component({
   selector: 'app-step9',
   templateUrl: './step9.component.html',
-  styleUrls: ['../../../../assets/css/em_site_theme.css'],
-  animations: [routerTransition]
+  styleUrls: ['../../../../assets/css/em_site_theme.css']
 })
 export class Step9Component implements OnInit {
 
-  private stepForm: FormGroup;
-  private dataPoint: DataPointModel = new DataPointModel();
-  private question: string;
-  private answer: string = null;
-  private jar: any;
-  private startTime
-  private nettincome_slider: string;  
+  stepForm: FormGroup;
+  dataPoint: DataPointModel = new DataPointModel();
+  question: string;
+  answer: string = null;
+  guid: any;
+  startTime
+  nettincome_slider: string;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -34,7 +32,7 @@ export class Step9Component implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.jar = params.jar;
+      this.guid= params.guid;
     });
     this.startTime = new Date();
     this.headerService.mode.next('determinate');
@@ -46,7 +44,7 @@ export class Step9Component implements OnInit {
       this.answer = this.dataPointService.getPreviousDataPointState(9)[0];
     }
 
-    if (this.jar != this.commonService.GetGUID()) {
+    if (this.guid != this.commonService.GetGUID()) {
       this.router.navigate(['not-found'], { relativeTo: this.activatedRoute })
     }
 
@@ -62,18 +60,16 @@ export class Step9Component implements OnInit {
   Next() {
     this.dataPoint.Question = [];
     this.dataPoint.Answer = [];
-    
+
     this.dataPoint.Id = 9;
     this.dataPoint.Question.push(this.question);
     this.dataPoint.Answer.push(this.stepForm.get('nettincome_slider').value);
     this.dataPoint.StartTime = this.startTime;
     this.dataPoint.EndTime = new Date();
     this.dataPointService.addDataPoint(this.dataPoint);
-
-    this.router.navigateByUrl('/step-10/' + this.commonService.GetGUID());
   }
 
   Back() {
-    this.router.navigateByUrl('/stepped-8/' + this.commonService.GetGUID());
+
   }
 }

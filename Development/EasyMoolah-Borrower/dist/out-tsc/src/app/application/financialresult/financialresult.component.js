@@ -53,12 +53,12 @@ var FinancialresultComponent = /** @class */ (function () {
         console.log(formData);
         this.http.post('http://localhost:58007/api/fincheck/offer', formData.toString(), httpOptions)
             .subscribe(function (res) {
-            _this.result = res.toString();
-            // this.financeResult = JSON.parse(this.result);
-            console.log(_this.result);
-            console.log('goodbye');
-            console.log(_this.financeResult);
-        }, function (err) { return console.log(err); });
+                _this.result = res.toString();
+                // this.financeResult = JSON.parse(this.result);
+                console.log(_this.result);
+                console.log('goodbye');
+                console.log(_this.financeResult);
+            }, function (err) { return console.log(err); });
         ////////////////////////////////
     };
     FinancialresultComponent = tslib_1.__decorate([

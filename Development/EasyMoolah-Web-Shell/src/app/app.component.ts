@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { routerTransition } from './services/router.animations';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [ routerTransition ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'EasyMoolah-UI';
