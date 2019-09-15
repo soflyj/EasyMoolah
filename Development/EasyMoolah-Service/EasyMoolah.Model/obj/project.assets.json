@@ -24,7 +24,7 @@
   },
   "libraries": {
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -75,23 +75,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jarro\\.nuget\\packages\\": {},
+    "C:\\Users\\Jarrod\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj",
+      "projectUniqueName": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj",
       "projectName": "EasyMoolah.Model",
-      "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj",
-      "packagesPath": "C:\\Users\\Jarro\\.nuget\\packages\\",
-      "outputPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\obj\\",
+      "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj",
+      "packagesPath": "C:\\Users\\Jarrod\\.nuget\\packages\\",
+      "outputPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jarrod\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -104,8 +104,8 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
-              "projectPath": "F:\\GIT\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+            "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+              "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
             }
           }
         }

@@ -33,6 +33,9 @@
               "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
                 "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
               },
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj"
+              },
               "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
                 "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
               },
@@ -88,7 +91,11 @@
         },
         "frameworks": {
           "net47": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -103,6 +110,66 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.1, )"
+            }
+          }
+        }
+      }
+    },
+    "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj",
+        "projectName": "EasyMoolah.Notification",
+        "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\EasyMoolah.Notification.csproj",
+        "packagesPath": "C:\\Users\\Jarrod\\.nuget\\packages\\",
+        "outputPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Notification\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Jarrod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net47"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net47": {
+            "projectReferences": {
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Model\\EasyMoolah.Model.csproj"
+              },
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net47": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[5.32.0, )"
             }
           }
         }

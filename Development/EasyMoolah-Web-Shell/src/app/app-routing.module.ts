@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 // Nedbank
 import { AccessAuthorisationComponent } from './views/nedbank/access-authorisation/access-authorisation.component'
 import { AuthorisationRedirectComponent } from './views/nedbank/authorisation-redirect/authorisation-redirect.component'
 import { GenerateAuthorisationComponent } from './views/nedbank/generate-authorisation/generate-authorisation.component'
-import { LoanOffersComponent } from './views/nedbank/loan-offers/loan-offers.component';
+import { LoanOffersComponent } from './views/nedbank/loan-offers/loan-offers.component'
 import { CustomerFinancialInformationComponent } from './views/nedbank/customer-financial-information/customer-financial-information.component'
 import { NedbankStepperComponent } from './views/nedbank/nedbank-stepper/nedbank-stepper.component'
 
@@ -34,7 +35,8 @@ import { Step16Component } from './views/data-points/step16/step16.component'
 
 const appRoutes: Routes = [
   { path: '', component: LandingScreenComponent, pathMatch: 'full' },
-  //Forward
+  { path: 'nedbank', component: AuthorisationRedirectComponent },
+
   { path: 'application/:guid', component: ApplicationComponent, data: {state: 'application'} },
   { path: 'step-1/:guid', component: Step1Component, data: {state: 'step-1'} },
   { path: 'step-2/:guid', component: Step2Component, data: {state: 'step-2'} },
@@ -53,9 +55,9 @@ const appRoutes: Routes = [
   { path: 'step-15/:guid', component: Step15Component , data: {state: 'step-15'}},
   { path: 'step-16/:guid', component: Step16Component , data: {state: 'step-16'}},
 
-  { path: 'nedbank/:guid', component: NedbankStepperComponent , data: {state: 'nedbank'}},
+  // { path: 'nedbank/:guid', component: NedbankStepperComponent,},
   { path: 'authorise/:guid', component: AccessAuthorisationComponent , data: {state: 'authorise'}},
-  { path: 'redirect', component: AuthorisationRedirectComponent , data: {state: 'access'}},
+//  { path: 'redirect', component: AuthorisationRedirectComponent , data: {state: 'access'}},
   { path: 'loans/:guid', component: LoanOffersComponent , data: {state: 'authorise'}},
   { path: 'cusinfos/:guid', component: CustomerFinancialInformationComponent , data: {state: 'authorise'}},
 
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy} ]
 })
 export class AppRoutingModule {
 

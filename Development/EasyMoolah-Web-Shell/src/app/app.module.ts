@@ -108,7 +108,8 @@ import { NedbankStepperComponent } from './views/nedbank/nedbank-stepper/nedbank
     CommonService,
     NedbankService,
     FormService,
-    GoogleMaps],
+    GoogleMaps,
+],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { AppRoutingModule }

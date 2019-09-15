@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "net47": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
+                "projectPath": "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -91,7 +95,22 @@
         }
       },
       "frameworks": {
-        "net47": {}
+        "net47": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[5.32.0, )"
+            }
+          }
+        }
       }
     },
     "D:\\Easymoolah\\EasyMoolah\\Development\\EasyMoolah-Service\\EasyMoolah.Repository\\EasyMoolah.Repository.csproj": {
