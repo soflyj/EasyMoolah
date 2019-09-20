@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetPersonalLoanOffers()
         {
-            EasyMoolah.Domain.Integration.PersonalLoanOffers personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffers();
+            EasyMoolah.Domain.Integration.PersonalLoanOffersDomain personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffersDomain();
 
             var loanAmount  = "5000";
 
@@ -25,7 +25,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetPersonalLoanOfferDetails()
         {
-            EasyMoolah.Domain.Integration.PersonalLoanOffers personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffers();
+            EasyMoolah.Domain.Integration.PersonalLoanOffersDomain personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffersDomain();
 
             var loanAmount = "5000";
             var loanTerm = "24";
@@ -40,7 +40,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetCustomerFinancialInformation()
         {
-            EasyMoolah.Domain.Integration.PersonalLoanOffers personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffers();
+            EasyMoolah.Domain.Integration.PersonalLoanOffersDomain personalLoanOffers = new EasyMoolah.Domain.Integration.PersonalLoanOffersDomain();
 
             var offerId = "605350";
 

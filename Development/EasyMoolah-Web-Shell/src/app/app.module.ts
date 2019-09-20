@@ -85,9 +85,9 @@ import { NedbankStepperComponent } from './views/nedbank/nedbank-stepper/nedbank
     NedbankStepperComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,    
     FormsModule,
     ReactiveFormsModule,
     TextMaskModule,

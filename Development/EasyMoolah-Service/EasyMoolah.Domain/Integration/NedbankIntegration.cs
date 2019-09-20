@@ -10,9 +10,9 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class NedbankIntegration
+    public class NedbankIntegrationDomain
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
+        EasyMoolah.Domain.LogsDomain logs = new LogsDomain();
 
         /// <summary>
         /// Step
@@ -21,11 +21,11 @@ namespace EasyMoolah.Domain.Integration
         public async Task<string> GenerateAuthorisationLink(int applicationKey, decimal loanAmount)
         {
 
-            EasyMoolah.Domain.Logs logs = new Logs();
+            EasyMoolah.Domain.LogsDomain logs = new LogsDomain();
 
-            EasyMoolah.Domain.Integration.Token token = new EasyMoolah.Domain.Integration.Token();
-            EasyMoolah.Domain.Integration.Intent intent = new EasyMoolah.Domain.Integration.Intent();
-            EasyMoolah.Domain.Integration.PersonalLoanAuthorisation personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisation();
+            EasyMoolah.Domain.Integration.TokenDomain token = new EasyMoolah.Domain.Integration.TokenDomain();
+            EasyMoolah.Domain.Integration.IntentDomain intent = new EasyMoolah.Domain.Integration.IntentDomain();
+            EasyMoolah.Domain.Integration.PersonalLoanAuthorisationDomain personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisationDomain();
 
             // Step 1
             var lightTokenResult = token.GetLightToken(applicationKey);
@@ -52,7 +52,7 @@ namespace EasyMoolah.Domain.Integration
 
             //Send email
             //var application = await Application.GetApplicationByKey(applicationKey);
-            var applicant = await Applicant.GetApplicantByApplicationKey(applicationKey);
+            var applicant = await ApplicantDomain.GetApplicantByApplicationKey(applicationKey);
             var request = new EasyMoolah.Model.Notification.Request()
             {
                 applicationKey = applicationKey,

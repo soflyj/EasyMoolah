@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task AcceptPersonalLoan()
         {
-            EasyMoolah.Domain.Integration.PersonalLoan personalLoan = new EasyMoolah.Domain.Integration.PersonalLoan();
+            EasyMoolah.Domain.Integration.PersonalLoanDomain personalLoan = new EasyMoolah.Domain.Integration.PersonalLoanDomain();
 
             var personalLoanRequest = new EasyMoolah.Model.NedbankAPI.PersonLoanRequest.RootObject() { };
 

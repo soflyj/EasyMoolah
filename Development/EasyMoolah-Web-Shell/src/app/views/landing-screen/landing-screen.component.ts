@@ -34,6 +34,11 @@ export class LandingScreenComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    if (this.router.url.search("state=loans&code=") > 0)
+    {
+      this.router.navigateByUrl('/nedbank');
+    }
     this.headerService.mode.next('determinate');
 
   this.http.get<{ip:string}>('https://jsonip.com')

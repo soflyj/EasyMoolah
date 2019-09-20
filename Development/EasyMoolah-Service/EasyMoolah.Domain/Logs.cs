@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyMoolah.Domain
 {
-    public class Logs
+    public class LogsDomain
     {
         public async Task<int> InsertErrorLog(Model.Logs.ErrorLog _errorLog)
         {

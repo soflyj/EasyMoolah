@@ -9,8 +9,9 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class PersonalLoanAuthorisation
-    {        
+    public class PersonalLoanAuthorisationDomain
+    {    
+        
         Nedbank.Integration.PersonalLoanAuthorisation personalLoanAuthorisation = new Nedbank.Integration.PersonalLoanAuthorisation();
 
         /// <summary>
@@ -23,7 +24,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<string> GetPersonalLoanAuthorisationURL(string intentId, string lightToken, int applicationKey)
         {
             var result = personalLoanAuthorisation.GetPersonalLoanAuthorisationURL(intentId, lightToken, applicationKey);
-            Logs.LogIntegration(result);
+            LogsDomain.LogIntegration(result);
 
             var response = result.Output.ToString();
 

@@ -34,32 +34,32 @@ import { Step15Component } from './views/data-points/step15/step15.component'
 import { Step16Component } from './views/data-points/step16/step16.component'
 
 const appRoutes: Routes = [
-  { path: '', component: LandingScreenComponent, pathMatch: 'full' },
   { path: 'nedbank', component: AuthorisationRedirectComponent },
+  { path: '', component: LandingScreenComponent, pathMatch: 'full' },
 
-  { path: 'application/:guid', component: ApplicationComponent, data: {state: 'application'} },
-  { path: 'step-1/:guid', component: Step1Component, data: {state: 'step-1'} },
-  { path: 'step-2/:guid', component: Step2Component, data: {state: 'step-2'} },
-  { path: 'step-3/:guid', component: Step3Component, data: {state: 'step-3'}  },
-  { path: 'step-4/:guid', component: Step4Component, data: {state: 'step-4'} },
-  { path: 'step-5/:guid', component: Step5Component, data: {state: 'step-5'} },
-  { path: 'step-6/:guid', component: Step6Component, data: {state: 'step-6'} },
-  { path: 'step-7/:guid', component: Step7Component, data: {state: 'step-7'} },
-  { path: 'step-8/:guid', component: Step8Component, data: {state: 'step-8'} },
-  { path: 'step-9/:guid', component: Step9Component , data: {state: 'step-9'}},
-  { path: 'step-10/:guid', component: Step10Component , data: {state: 'step-10'}},
-  { path: 'step-11/:guid', component: Step11Component , data: {state: 'step-11'}},
-  { path: 'step-12/:guid', component: Step12Component , data: {state: 'step-12'}},
-  { path: 'step-13/:guid', component: Step13Component , data: {state: 'step-13'}},
-  { path: 'step-14/:guid', component: Step14Component , data: {state: 'step-14'}},
-  { path: 'step-15/:guid', component: Step15Component , data: {state: 'step-15'}},
-  { path: 'step-16/:guid', component: Step16Component , data: {state: 'step-16'}},
+  { path: 'application/:guid', component: ApplicationComponent, data: { state: 'application' } },
+  { path: 'step-1/:guid', component: Step1Component, data: { state: 'step-1' } },
+  { path: 'step-2/:guid', component: Step2Component, data: { state: 'step-2' } },
+  { path: 'step-3/:guid', component: Step3Component, data: { state: 'step-3' } },
+  { path: 'step-4/:guid', component: Step4Component, data: { state: 'step-4' } },
+  { path: 'step-5/:guid', component: Step5Component, data: { state: 'step-5' } },
+  { path: 'step-6/:guid', component: Step6Component, data: { state: 'step-6' } },
+  { path: 'step-7/:guid', component: Step7Component, data: { state: 'step-7' } },
+  { path: 'step-8/:guid', component: Step8Component, data: { state: 'step-8' } },
+  { path: 'step-9/:guid', component: Step9Component, data: { state: 'step-9' } },
+  { path: 'step-10/:guid', component: Step10Component, data: { state: 'step-10' } },
+  { path: 'step-11/:guid', component: Step11Component, data: { state: 'step-11' } },
+  { path: 'step-12/:guid', component: Step12Component, data: { state: 'step-12' } },
+  { path: 'step-13/:guid', component: Step13Component, data: { state: 'step-13' } },
+  { path: 'step-14/:guid', component: Step14Component, data: { state: 'step-14' } },
+  { path: 'step-15/:guid', component: Step15Component, data: { state: 'step-15' } },
+  { path: 'step-16/:guid', component: Step16Component, data: { state: 'step-16' } },
 
   // { path: 'nedbank/:guid', component: NedbankStepperComponent,},
-  { path: 'authorise/:guid', component: AccessAuthorisationComponent , data: {state: 'authorise'}},
-//  { path: 'redirect', component: AuthorisationRedirectComponent , data: {state: 'access'}},
-  { path: 'loans/:guid', component: LoanOffersComponent , data: {state: 'authorise'}},
-  { path: 'cusinfos/:guid', component: CustomerFinancialInformationComponent , data: {state: 'authorise'}},
+  { path: 'authorise/:guid', component: AccessAuthorisationComponent, data: { state: 'authorise' } },
+  //  { path: 'redirect', component: AuthorisationRedirectComponent , data: {state: 'access'}},
+  { path: 'loans/:guid', component: LoanOffersComponent, data: { state: 'authorise' } },
+  { path: 'cusinfos/:guid', component: CustomerFinancialInformationComponent, data: { state: 'authorise' } },
 
   { path: '**', component: NotFoundComponent },
   { path: 'not-found', component: NotFoundComponent }
@@ -68,7 +68,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
-  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy} ]
+  // providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class AppRoutingModule {
 

@@ -7,7 +7,7 @@ using System;
 
 namespace EasyMoolah.Domain
 {
-    public class Applicant
+    public class ApplicantDomain
     {
         public static async Task<Model.Applicant> GetApplicantByApplicationKey(int _applicationKey)
         {

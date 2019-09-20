@@ -29,6 +29,8 @@ export class AuthorisationRedirectComponent implements OnInit {
         [Validators.required, Validators.maxLength(5), this.CheckReference.bind(this)])
     });
 
+    console.log(this.router.url.replace("/nedbank?state=loans&code=",""));
+
   }
 
   CheckReference(control: FormControl): { [s: string]: boolean } {

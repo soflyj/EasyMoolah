@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task InsertErrorLog()
         {
-            EasyMoolah.Domain.Logs logs = new EasyMoolah.Domain.Logs();
+            EasyMoolah.Domain.LogsDomain logs = new EasyMoolah.Domain.LogsDomain();
 
             var result = await logs.InsertErrorLog(new EasyMoolah.Model.Logs.ErrorLog()
             {
@@ -36,7 +36,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task InsertApiLog()
         {
-            EasyMoolah.Domain.Logs logs = new EasyMoolah.Domain.Logs();
+            EasyMoolah.Domain.LogsDomain logs = new EasyMoolah.Domain.LogsDomain();
 
             var result = await logs.InsertApiLog(new EasyMoolah.Model.Logs.ApiLog()
             {

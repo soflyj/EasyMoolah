@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task RegisterPersonalLoanOffer()
         {
-            EasyMoolah.Domain.Integration.PersonalLoanRequests personalLoanRequests = new EasyMoolah.Domain.Integration.PersonalLoanRequests();
+            EasyMoolah.Domain.Integration.PersonalLoanRequestsDomain personalLoanRequests = new EasyMoolah.Domain.Integration.PersonalLoanRequestsDomain();
 
             var intentId  = "a3b544d7-c146-4292-b980-9ef7737e5274";
             var offerId = "605350";

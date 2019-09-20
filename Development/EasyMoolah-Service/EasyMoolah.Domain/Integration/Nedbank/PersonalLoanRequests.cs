@@ -9,9 +9,9 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class PersonalLoanRequests
+    public class PersonalLoanRequestsDomain
     {
-        EasyMoolah.Domain.Logs logs = new Logs();
+        EasyMoolah.Domain.LogsDomain logs = new LogsDomain();
         Nedbank.Integration.PersonalLoanRequests personalLoaRequests = new Nedbank.Integration.PersonalLoanRequests();
 
         /// <summary>

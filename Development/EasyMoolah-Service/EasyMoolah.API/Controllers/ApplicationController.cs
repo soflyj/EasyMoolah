@@ -11,7 +11,7 @@ namespace EasyMoolah.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult SaveApplication(EasyMoolah.Model.Shared.ApplicationApplicationAccess _application)
         {
-            var response = EasyMoolah.Domain.Application.SaveApplication(_application);
+            var response = EasyMoolah.Domain.ApplicationDomain.SaveApplication(_application);
             return Ok(response);
         }
 
@@ -20,25 +20,25 @@ namespace EasyMoolah.API.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult SaveApplicant(EasyMoolah.Model.Applicant _applicant)
         {
-            var response = EasyMoolah.Domain.Application.SaveApplicant(_applicant);
+            var response = EasyMoolah.Domain.ApplicationDomain.SaveApplicant(_applicant);
             return Ok(response);
         }
 
-        [Route("api/applicationip/update")]
-        [System.Web.Http.AcceptVerbs("GET", "POST")]
-        [System.Web.Http.HttpPost]
-        public IHttpActionResult SaveApplicationIP(EasyMoolah.Model.ApplicationAccess _applicationAccess)
-        {
-            var response = EasyMoolah.Domain.ApplicationAccess.SaveApplicationAccess(_applicationAccess);
-            return Ok(response);
-        }
+        //[Route("api/applicationip/update")]
+        //[System.Web.Http.AcceptVerbs("GET", "POST")]
+        //[System.Web.Http.HttpPost]
+        //public IHttpActionResult SaveApplicationIP(EasyMoolah.Model.ApplicationAccess _applicationAccess)
+        //{
+        //    var response = EasyMoolah.Domain.ApplicationDomain.SaveApplicationAccess(_applicationAccess);
+        //    return Ok(response);
+        //}
 
         [Route("api/applicationformdata/update")]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpPut]
         public IHttpActionResult UpdateFormData(EasyMoolah.Model.ApplicationAudit _formData)
         {
-            var response = EasyMoolah.Domain.Application.UpdateFormData(_formData);
+            var response = EasyMoolah.Domain.ApplicationDomain.UpdateFormData(_formData);
             return Ok(response);
         }
 
@@ -47,7 +47,7 @@ namespace EasyMoolah.API.Controllers
         [System.Web.Http.HttpGet]
         public IHttpActionResult GetApplicationByKey(int id)
         {
-            var response = EasyMoolah.Domain.Application.GetApplicationByKey(id);
+            var response = EasyMoolah.Domain.ApplicationDomain.GetApplicationByKey(id);
             return Ok(response);
         }
     }

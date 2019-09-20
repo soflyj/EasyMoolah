@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace EasyMoolah.Domain
 {
-    public class Application
+    public class ApplicationDomain
     {
         public static async Task<Repository.Application> SaveApplication(Model.Shared.ApplicationApplicationAccess _applicationApplicationAccess)
         {

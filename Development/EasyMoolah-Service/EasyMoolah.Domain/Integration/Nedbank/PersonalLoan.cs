@@ -10,7 +10,7 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class PersonalLoan
+    public class PersonalLoanDomain
     {
         // EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.PersonalLoan personalLoan = new Nedbank.Integration.PersonalLoan();
@@ -25,7 +25,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.NedbankAPI.PersonLoanResponse.RootObject> AcceptPersonalLoan(Model.NedbankAPI.PersonLoanRequest.RootObject personalLoanRequest, string lightToken)
         {
             var result = personalLoan.AcceptPersonalLoan(personalLoanRequest, lightToken);
-            await Logs.LogIntegration(result);
+            await LogsDomain.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.NedbankAPI.PersonLoanResponse.RootObject>(result.Output);
 

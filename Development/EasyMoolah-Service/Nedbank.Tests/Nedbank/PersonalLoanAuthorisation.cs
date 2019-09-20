@@ -11,7 +11,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetPersonalLoanAuthorisationURL()
         {
-            EasyMoolah.Domain.Integration.PersonalLoanAuthorisation personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisation();
+            EasyMoolah.Domain.Integration.PersonalLoanAuthorisationDomain personalLoanAuthorisation = new EasyMoolah.Domain.Integration.PersonalLoanAuthorisationDomain();
 
             var intentId = "bce41f38-3d5c-4013-b907-b3798041cd56";
 

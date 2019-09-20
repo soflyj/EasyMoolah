@@ -10,7 +10,7 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class Intent
+    public class IntentDomain
     {
         Nedbank.Integration.Intent intent = new Nedbank.Integration.Intent();
 
@@ -24,7 +24,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.NedbankAPI.IntentResponse.RootObject> CreateIntent(Model.NedbankAPI.IntentRequest.RootObject intentRequest, string lightToken, int applicationKey)
         {
             var result = intent.CreateIntent(intentRequest, lightToken, applicationKey);
-            Logs.LogIntegration(result);
+            LogsDomain.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.NedbankAPI.IntentResponse.RootObject>(result.Output);
 

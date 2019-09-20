@@ -13,7 +13,7 @@ namespace Nedbank.Tests
         {
             decimal loanAmount = 5000;
 
-            EasyMoolah.Domain.Integration.NedbankIntegration nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegration();
+            EasyMoolah.Domain.Integration.NedbankIntegrationDomain nedbankIntegration = new EasyMoolah.Domain.Integration.NedbankIntegrationDomain();
 
             var result = nedbankIntegration.GenerateAuthorisationLink(1, loanAmount);
 

@@ -10,7 +10,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetLightToken()
         {
-            EasyMoolah.Domain.Integration.Token requestToken = new EasyMoolah.Domain.Integration.Token();
+            EasyMoolah.Domain.Integration.TokenDomain requestToken = new EasyMoolah.Domain.Integration.TokenDomain();
             var result = await requestToken.GetLightToken(1);
 
             Assert.IsTrue(result != null);
@@ -19,7 +19,7 @@ namespace Nedbank.Tests
         [TestMethod]
         public async Task GetHeavyToken()
         {
-            EasyMoolah.Domain.Integration.Token requestToken = new EasyMoolah.Domain.Integration.Token();
+            EasyMoolah.Domain.Integration.TokenDomain requestToken = new EasyMoolah.Domain.Integration.TokenDomain();
             var code = "Fhk2TrJCMXlcdfTJf4wRxiJKkhD1Ba";
 
             var result = await requestToken.GetHeavyToken(code);

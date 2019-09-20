@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace EasyMoolah.Domain
 {
-    public class ApplicationAccess
+    public class ApplicationAccessDomain
     {
         public static async Task<Repository.ApplicationAccess> SaveApplicationAccess(Model.ApplicationAccess _applicationAccess)
         {

@@ -13,7 +13,7 @@ namespace Tests
         {
             //EasyMoolah.Domain.ApplicationAccess applicationAccess = new EasyMoolah.Domain.ApplicationAccess();
 
-            var result = await EasyMoolah.Domain.ApplicationAccess.SaveApplicationAccess(new EasyMoolah.Model.ApplicationAccess()
+            var result = await EasyMoolah.Domain.ApplicationAccessDomain.SaveApplicationAccess(new EasyMoolah.Model.ApplicationAccess()
             {
                 ApplicationKey = 1050,                
                 IPAddress = "192.168.1.1",

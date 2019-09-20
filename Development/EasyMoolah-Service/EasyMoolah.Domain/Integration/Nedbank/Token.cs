@@ -9,7 +9,7 @@ using Nedbank.Integration;
 
 namespace EasyMoolah.Domain.Integration
 {
-    public class Token
+    public class TokenDomain
     {
         // EasyMoolah.Domain.Logs logs = new Logs();
         Nedbank.Integration.Token token = new Nedbank.Integration.Token();
@@ -22,7 +22,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.NedbankAPI.Token.TokenLightResponse> GetLightToken(int applicationKey)
         {
             var result = token.GetLightToken(applicationKey);
-            Logs.LogIntegration(result);
+            LogsDomain.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.NedbankAPI.Token.TokenLightResponse>(result.Output);
 
@@ -38,7 +38,7 @@ namespace EasyMoolah.Domain.Integration
         public async Task<Model.NedbankAPI.Token.TokenHeavyResponse> GetHeavyToken(string code)
         {
             var result = token.GetHeavyToken(code);
-            Logs.LogIntegration(result);
+            LogsDomain.LogIntegration(result);
 
             var response = JsonConvert.DeserializeObject<Model.NedbankAPI.Token.TokenHeavyResponse>(result.Output);
 
